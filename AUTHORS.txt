@@ -1,0 +1,2 @@
+evileg-core was originally created by Evgenii Legotckoi (evileg@evileg.com)
+with contributions from:
