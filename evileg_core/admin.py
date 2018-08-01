@@ -61,3 +61,12 @@ class EModerationMixinAdmin(admin.ModelAdmin):
 
 class EPostModeratedAdmin(EModerationMixinAdmin, EPostAdmin):
     list_display = EPostAdmin.list_display + EModerationMixinAdmin.list_display
+
+
+class EArticleAdmin(EPostAdmin):
+    list_display = EPostAdmin.list_display + ('views',)
+    search_fields = EPostAdmin.search_fields + ('title',)
+
+
+class EArticleModeratedAdmin(EModerationMixinAdmin, EArticleAdmin):
+    list_display = EArticleAdmin.list_display + EModerationMixinAdmin.list_display

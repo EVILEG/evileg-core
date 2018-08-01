@@ -43,5 +43,23 @@ class EModerationMixin(models.Model):
         abstract = True
 
 
-class EAbstractModeratedPost(EModerationMixin, EAbstractPost):
-    pass
+class EAbstractModeratedPost(EAbstractPost, EModerationMixin):
+    class Meta:
+        abstract = True
+
+
+class EAbstractArticle(EAbstractPost):
+
+    title = models.CharField(_('Title'), max_length=200, blank=True)
+    views = models.IntegerField(_('Views'), default=0)
+
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        abstract = True
+
+
+class EAbstractModeratedArticle(EModerationMixin, EAbstractArticle):
+    class Meta:
+        abstract = True
