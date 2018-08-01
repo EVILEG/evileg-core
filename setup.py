@@ -22,13 +22,6 @@ setup(
     zip_safe=False,
     packages=['evileg_core'],
 
-    package_data={
-        'evileg_core': [
-            'locale/ru/LC_MESSAGES/django.mo',
-            'locale/ru/LC_MESSAGES/django.po',
-        ],
-    },
-
     classifiers=[
         'Development Status :: 1 - Planning',
         'Environment :: Web Environment',

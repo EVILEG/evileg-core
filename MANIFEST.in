@@ -1,0 +1,4 @@
+include setup.py README.rst LICENSE requirements.txt AUTHORS.txt
+
+graft evileg_core
+global-exclude *.py[co]

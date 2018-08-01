@@ -1,5 +1,0 @@
-include setup.py
-include README.rst
-include LICENSE
-include requirements.txt
-include AUTHORS.txt

@@ -1,0 +1,33 @@
+{% load i18n %}
+<h3>{% blocktrans with filter_title=title %} By {{ filter_title }} {% endblocktrans %}</h3>
+<style>
+    .calendarbox, .clockbox {
+        z-index: 1100;
+        margin-left: -16em !important;
+        margin-top: 9em !important;
+    }
+    .datetimeshortcuts {
+        font-size: 0;
+    }
+    .datetimeshortcuts a:before {
+        content: " ";
+    }
+    .datetimeshortcuts a {
+        font-size: 7pt;
+    }
+    #changelist-filter a {
+        display: inline;
+    }
+</style>
+
+<form method="GET" action="">
+    {{ spec.form.media }}
+    {{ spec.form.as_p }}
+    <p class="submit-row">
+        {% for key, value in choices.0.get_query.items %}
+                <input type="hidden" name="{{ key }}" value="{{ value }}">
+        {% endfor %}
+    <input type="submit" value="{% trans "Search" %}">
+    <input type="reset" value="{% trans "Clear" %}">
+    </p>
+</form>

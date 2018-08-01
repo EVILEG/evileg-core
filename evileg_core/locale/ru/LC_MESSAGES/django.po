@@ -7,8 +7,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-07-31 23:17+0200\n"
-"PO-Revision-Date: 2018-08-01 19:35+0200\n"
+"POT-Creation-Date: 2018-08-01 23:53+0200\n"
+"PO-Revision-Date: 2018-08-01 23:48+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -16,70 +18,97 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
 "%100>=11 && n%100<=14)? 2 : 3);\n"
-"Last-Translator: \n"
-"Language-Team: \n"
 "X-Generator: Poedit 1.8.7.1\n"
 
-#: evileg_core/admin.py:29 evileg_core/models.py:29
+#: evileg_core/evileg_core/admin.py:32 evileg_core/evileg_core/models.py:29
 msgid "SPAM"
 msgstr "СПАМ"
 
-#: evileg_core/admin.py:32
+#: evileg_core/evileg_core/admin.py:35
 msgid "Set marked as SPAM"
 msgstr "Пометить как СПАМ"
 
-#: evileg_core/admin.py:38
+#: evileg_core/evileg_core/admin.py:41
 msgid "NOT MODERATED"
 msgstr "Не модерировано"
 
-#: evileg_core/admin.py:41
+#: evileg_core/evileg_core/admin.py:44
 msgid "Set marked as NOT MODERATED"
 msgstr "Пометить как не модерированный контент"
 
-#: evileg_core/admin.py:47
+#: evileg_core/evileg_core/admin.py:50
 msgid "POST MODERATED"
 msgstr "Пост модерация"
 
-#: evileg_core/admin.py:50
+#: evileg_core/evileg_core/admin.py:53
 msgid "Set marked as POST MODERATED"
 msgstr "Пометить как пост модерируемый контент"
 
-#: evileg_core/admin.py:56
+#: evileg_core/evileg_core/admin.py:59
 msgid "MODERATED"
 msgstr "Модерировано"
 
-#: evileg_core/admin.py:59
+#: evileg_core/evileg_core/admin.py:62
 msgid "Set marked as MODERATED"
 msgstr "Пометить как модерированный контент"
 
-#: evileg_core/models.py:10
+#: evileg_core/evileg_core/forms.py:27
+msgid "From date"
+msgstr "С даты"
+
+#: evileg_core/evileg_core/forms.py:34
+msgid "To date"
+msgstr "До даты"
+
+#: evileg_core/evileg_core/models.py:10
 msgid "Author"
 msgstr "Автор"
 
-#: evileg_core/models.py:11
+#: evileg_core/evileg_core/models.py:11
 msgid "Content"
 msgstr "Содержание"
 
-#: evileg_core/models.py:12
+#: evileg_core/evileg_core/models.py:12
 msgid "Publication date"
 msgstr "Дата публикации"
 
-#: evileg_core/models.py:13
+#: evileg_core/evileg_core/models.py:13
 msgid "Last modification date"
 msgstr "Дата последнего изменения"
 
-#: evileg_core/models.py:30
+#: evileg_core/evileg_core/models.py:30
 msgid "Not Moderated"
 msgstr "Не модерировано"
 
-#: evileg_core/models.py:31
+#: evileg_core/evileg_core/models.py:31
 msgid "Post Moderated"
 msgstr "Пост модерируемый контент"
 
-#: evileg_core/models.py:32
+#: evileg_core/evileg_core/models.py:32
 msgid "Moderated"
 msgstr "Модерировано"
 
-#: evileg_core/models.py:36
+#: evileg_core/evileg_core/models.py:36
 msgid "Moderation"
 msgstr "Модерация"
+
+#: evileg_core/evileg_core/models.py:53
+msgid "Title"
+msgstr "Заголовок"
+
+#: evileg_core/evileg_core/models.py:54
+msgid "Views"
+msgstr "Просмотры"
+
+#: evileg_core/evileg_core/templates/evileg_core/date_range_filter.html:2
+#, python-format
+msgid " By %(filter_title)s "
+msgstr "%(filter_title)s "
+
+#: evileg_core/evileg_core/templates/evileg_core/date_range_filter.html:30
+msgid "Search"
+msgstr "Найти"
+
+#: evileg_core/evileg_core/templates/evileg_core/date_range_filter.html:31
+msgid "Clear"
+msgstr "Очистить"

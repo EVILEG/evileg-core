@@ -3,9 +3,12 @@
 from django.contrib import admin
 from django.utils.translation import ugettext_lazy as _
 
+from .filters import EDateRangeFilter
+
 
 class EPostAdmin(admin.ModelAdmin):
     list_display = ('__str__', 'author', 'pub_date', 'lastmod')
+    list_filter = (('pub_date', EDateRangeFilter),)
     autocomplete_fields = ['author']
     search_fields = ('content', 'author__username')
 
@@ -61,6 +64,7 @@ class EModerationMixinAdmin(admin.ModelAdmin):
 
 class EPostModeratedAdmin(EModerationMixinAdmin, EPostAdmin):
     list_display = EPostAdmin.list_display + EModerationMixinAdmin.list_display
+    list_filter = EPostAdmin.list_filter + EModerationMixinAdmin.list_filter
 
 
 class EArticleAdmin(EPostAdmin):
@@ -70,3 +74,4 @@ class EArticleAdmin(EPostAdmin):
 
 class EArticleModeratedAdmin(EModerationMixinAdmin, EArticleAdmin):
     list_display = EArticleAdmin.list_display + EModerationMixinAdmin.list_display
+    list_filter = EArticleAdmin.list_filter + EModerationMixinAdmin.list_filter
