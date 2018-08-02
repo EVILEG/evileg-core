@@ -6,19 +6,22 @@ from django.utils.translation import ugettext_lazy as _
 from .filters import EDateRangeFilter
 
 
-class EPostAdmin(admin.ModelAdmin):
-    list_display = ('__str__', 'author', 'pub_date', 'lastmod')
-    list_filter = (('pub_date', EDateRangeFilter),)
-    autocomplete_fields = ['author']
-    search_fields = ('content', 'author__username')
-
-
 class EModerationMixinAdmin(admin.ModelAdmin):
+    """
+    Mixin for representation table in Django administration panel with content which includes moderation opportunity
+    """
     list_display = ('moderation',)
     list_filter = ('moderation',)
     actions = ['make_spam', 'make_not_moderated', 'make_post_moderated', 'make_moderated']
 
     def moderate(self, request, rows_updated, choice_description):
+        """
+        Common method for representation of marking result
+
+        :param request: HTTP request
+        :param rows_updated: count of updated ibjects
+        :param choice_description: SPAM, NOT MODERATED, POST MODERATED or MODERATED
+        """
         if rows_updated == 1:
             message_bit = "1 entry is marked as %s" % choice_description
         else:
@@ -26,6 +29,12 @@ class EModerationMixinAdmin(admin.ModelAdmin):
         self.message_user(request, "%s" % message_bit)
 
     def make_spam(self, request, queryset):
+        """
+        Action for marking content like SPAM
+
+        :param request: HTTP request
+        :param queryset: queryset of model objects
+        """
         self.moderate(
             request=request,
             rows_updated=queryset.update(moderation=self.model.SPAM),
@@ -35,6 +44,12 @@ class EModerationMixinAdmin(admin.ModelAdmin):
     make_spam.short_description = _("Set marked as SPAM")
 
     def make_not_moderated(self, request, queryset):
+        """
+        Action for marking content like NOT MODERATED
+
+        :param request: HTTP request
+        :param queryset: queryset of model objects
+        """
         self.moderate(
             request=request,
             rows_updated=queryset.update(moderation=self.model.NOT_MODERATED),
@@ -44,6 +59,12 @@ class EModerationMixinAdmin(admin.ModelAdmin):
     make_not_moderated.short_description = _("Set marked as NOT MODERATED")
 
     def make_post_moderated(self, request, queryset):
+        """
+        Action for marking content like POST MODERATED
+
+        :param request: HTTP request
+        :param queryset: queryset of model objects
+        """
         self.moderate(
             request=request,
             rows_updated=queryset.update(moderation=self.model.POST_MODERATED),
@@ -53,6 +74,12 @@ class EModerationMixinAdmin(admin.ModelAdmin):
     make_post_moderated.short_description = _("Set marked as POST MODERATED")
 
     def make_moderated(self, request, queryset):
+        """
+        Action for marking content like MODERATED
+
+        :param request: HTTP request
+        :param queryset: queryset of model objects
+        """
         self.moderate(
             request=request,
             rows_updated=queryset.update(moderation=self.model.MODERATED),
@@ -62,16 +89,37 @@ class EModerationMixinAdmin(admin.ModelAdmin):
     make_moderated.short_description = _("Set marked as MODERATED")
 
 
+class EPostAdmin(admin.ModelAdmin):
+    """
+    Base class for representation table in Django administration panel.
+    This class is designed for classes which inherits from evileg_core.models.EAbstractPost
+    """
+    list_display = ('__str__', 'author', 'pub_date', 'lastmod')
+    list_filter = (('pub_date', EDateRangeFilter),)
+    autocomplete_fields = ['author']
+    search_fields = ('content', 'author__username')
+
+
 class EPostModeratedAdmin(EModerationMixinAdmin, EPostAdmin):
+    """
+    This class is the EPostAdmin with moderation opportunity
+    """
     list_display = EPostAdmin.list_display + EModerationMixinAdmin.list_display
     list_filter = EPostAdmin.list_filter + EModerationMixinAdmin.list_filter
 
 
 class EArticleAdmin(EPostAdmin):
+    """
+    Base class for representation table in Django administration panel.
+    This class is designed for classes which inherits from evileg_core.models.EAbstractArticle
+    """
     list_display = EPostAdmin.list_display + ('views',)
     search_fields = EPostAdmin.search_fields + ('title',)
 
 
 class EArticleModeratedAdmin(EModerationMixinAdmin, EArticleAdmin):
+    """
+    This class is the EArticleAdmin with moderation opportunity
+    """
     list_display = EArticleAdmin.list_display + EModerationMixinAdmin.list_display
     list_filter = EArticleAdmin.list_filter + EModerationMixinAdmin.list_filter

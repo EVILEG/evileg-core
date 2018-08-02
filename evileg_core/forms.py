@@ -8,7 +8,9 @@ from .widgets import ELesserAdminDateWidget
 
 
 class EDateRangeForm(forms.Form):
-
+    """
+    Form with range input of dates. This form is using in Django administration panel
+    """
     class Media:
         js = (
             static("admin/js/calendar.js"),
@@ -19,6 +21,9 @@ class EDateRangeForm(forms.Form):
         }
 
     def __init__(self, request, *args, **kwargs):
+        """
+        Constructor. In this constructor we initialize fields for date range filter
+        """
         field_name = kwargs.pop('field_name')
         super().__init__(*args, **kwargs)
 

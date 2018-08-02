@@ -9,6 +9,11 @@ from .forms import EDateRangeForm
 
 
 class EDateRangeFilter(FieldListFilter):
+    """
+    Date range filter for Django administration panel
+
+    :param template: html template for filter rendering
+    """
     template = 'evileg_core/date_range_filter.html'
 
     def __init__(self, field, request, params, model, model_admin, field_path):
@@ -26,6 +31,11 @@ class EDateRangeFilter(FieldListFilter):
         return [self.lookup_kwarg_since, self.lookup_kwarg_upto]
 
     def get_form(self, request):
+        """
+
+        :param request: HTTP request with filter parameters
+        :return: EDateRangeForm
+        """
         return EDateRangeForm(request, data=self.used_parameters, field_name=self.field_path)
 
     def queryset(self, request, queryset):
