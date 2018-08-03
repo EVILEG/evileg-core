@@ -43,6 +43,14 @@ evileg\_core.forms module
     :undoc-members:
     :show-inheritance:
 
+evileg\_core.managers module
+----------------------------
+
+.. automodule:: evileg_core.managers
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
 evileg\_core.models module
 --------------------------
 

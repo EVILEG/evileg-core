@@ -9,6 +9,8 @@ from django.contrib.auth.models import User
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 
+from .managers import EPostManager
+
 
 class EAbstractPost(models.Model):
     """
@@ -19,12 +21,19 @@ class EAbstractPost(models.Model):
     :param content: content, html message, django.db.models.TextField
     :param pub_date: publication date of content, django.db.models.DateTimeField
     :param lastmod: last modification date, django.db.models.DateTimeField
+    :param lookup_fields: fields for search via EPostManager
+    :param related_lookup_fields: fields for search in related models via EPostManager
     """
 
     author = models.ForeignKey(User, verbose_name=_("Author"), on_delete=models.CASCADE)
     content = models.TextField(_('Content'), blank=True)
     pub_date = models.DateTimeField(_('Publication date'), blank=True, null=True)
     lastmod = models.DateTimeField(_('Last modification date'), blank=True, null=True)
+
+    lookup_fields = ('content',)
+    related_lookup_fields = ()
+
+    objects = EPostManager()
 
     def __str__(self):
         return self.content[:150]
@@ -85,6 +94,8 @@ class EAbstractArticle(EAbstractPost):
 
     title = models.CharField(_('Title'), max_length=200, blank=True)
     views = models.IntegerField(_('Views'), default=0)
+
+    lookup_fields = EAbstractPost.lookup_fields + ('title',)
 
     def __str__(self):
         return self.title
