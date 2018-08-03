@@ -44,3 +44,34 @@ class EPostManager(models.Manager):
 
         qs = qs.distinct()
         return qs
+
+
+class EActivityManager(models.Manager):
+    use_for_related_fields = True
+
+    def search(self, model=None, query=None, in_related=False, date_from=None, date_to=None):
+        model_name = model.__name__.lower()
+        qs = self.get_queryset().filter(content_type__model=model_name).order_by("-{}s__pub_date".format(model_name))
+        if query is not None:
+            or_lookup = Q()
+            if model.lookup_fields:
+                for field in model.lookup_fields:
+                    or_lookup |= Q(**{"{}s__{}__icontains".format(model_name, field): query})
+
+            if in_related and model.related_lookup_fields:
+                for related_field in model.related_lookup_fields:
+                    or_lookup |= Q(**{"{}s__{}__icontains".format(model_name, related_field): query})
+
+            qs = qs.filter(or_lookup)
+
+        if date_from is not None and date_to is not None:
+            qs = qs.filter({"{}s__pub_date__range": [date_from, date_to]})
+
+        qs = qs.distinct()
+        return qs
+
+    def by_users(self, q):
+        if q:
+            return self.get_queryset().filter(Q(user__username__icontains=q) | Q(user__first_name__icontains=q) | Q(
+                user__last_name__icontains=q)).order_by('user__username')
+        return self.get_queryset().order_by('user__username')

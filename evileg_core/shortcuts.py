@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 
+from django.contrib.contenttypes.models import ContentType
+
 
 def get_object_or_none(klass, *args, **kwargs):
     """
@@ -20,3 +22,13 @@ def get_object_or_none(klass, *args, **kwargs):
         return klass._default_manager.get(*args, **kwargs)
     except klass.DoesNotExist:
         return None
+
+
+def get_content_type_id(obj):
+    """
+    Function for getting content type
+
+    :param obj: model object from which we want to get content type id
+    :return: Content Type Id
+    """
+    return ContentType.objects.get_for_model(obj).id

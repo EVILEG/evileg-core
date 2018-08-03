@@ -123,3 +123,13 @@ class EArticleModeratedAdmin(EModerationMixinAdmin, EArticleAdmin):
     """
     list_display = EArticleAdmin.list_display + EModerationMixinAdmin.list_display
     list_filter = EArticleAdmin.list_filter + EModerationMixinAdmin.list_filter
+
+
+class ESectionAdmin(EArticleAdmin):
+    list_display = EArticleAdmin.list_display
+    list_filter = EArticleAdmin.list_filter
+
+
+class ESectionModeratedAdmin(EModerationMixinAdmin, ESectionAdmin):
+    list_display = ESectionAdmin.list_display + EModerationMixinAdmin.list_display
+    list_filter = ESectionAdmin.list_filter + EModerationMixinAdmin.list_filter

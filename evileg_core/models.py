@@ -6,6 +6,8 @@ It includes classes for creating content and moderation of this content
 """
 
 from django.contrib.auth.models import User
+from django.contrib.contenttypes.fields import GenericForeignKey
+from django.contrib.contenttypes.models import ContentType
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 
@@ -104,9 +106,41 @@ class EAbstractArticle(EAbstractPost):
         abstract = True
 
 
-class EAbstractModeratedArticle(EModerationMixin, EAbstractArticle):
+class EAbstractModeratedArticle(EAbstractArticle, EModerationMixin):
     """
     This class is the EAbstractArticle with moderation opportunity
     """
+    class Meta:
+        abstract = True
+
+
+class EAbstractSection(EAbstractArticle):
+    class Meta:
+        abstract = True
+
+
+class EAbstractModeratedSection(EAbstractSection, EModerationMixin):
+    class Meta:
+        abstract = True
+
+
+class EAbstractActivity(models.Model):
+    """
+    Class for creating different activities like subscriptions, bookmarks, likes dislikes and so on
+
+    :param user: User which creates made this action
+    :param content_type: Django has ContentType model in which stores all types of Models of your web-site.
+    :param object_id: ID of object in some table on your web-site
+    :param content_object: parameter via which you can access to object
+    """
+    user = models.ForeignKey(User, verbose_name=_("User"), on_delete=models.CASCADE)
+
+    content_type = models.ForeignKey(ContentType, on_delete=models.CASCADE)
+    object_id = models.PositiveIntegerField()
+    content_object = GenericForeignKey()
+
+    def __str__(self):
+        return self.content_object.__str__()[:150]
+
     class Meta:
         abstract = True
