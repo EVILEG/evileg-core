@@ -12,6 +12,7 @@ from django.db import models
 from django.utils.translation import ugettext_lazy as _
 
 from .managers import EPostManager
+from .mixins import EInterfaceMixin
 
 
 class EAbstractPost(models.Model):
@@ -74,6 +75,20 @@ class EModerationMixin(models.Model):
         default=NOT_MODERATED
     )
 
+    def is_approved(self):
+        return self.moderation is not self.SPAM
+
+    class Meta:
+        abstract = True
+
+
+class EAbstractPostWithInterface(EAbstractPost, EInterfaceMixin):
+    """
+    This class is the EAbstractPost with template interface
+    """
+    def get_preview(self):
+        return self.content
+
     class Meta:
         abstract = True
 
@@ -81,6 +96,14 @@ class EModerationMixin(models.Model):
 class EAbstractModeratedPost(EAbstractPost, EModerationMixin):
     """
     This class is the EAbstractPost with moderation opportunity
+    """
+    class Meta:
+        abstract = True
+
+
+class EAbstractModeratedPostWithInterface(EAbstractPostWithInterface, EModerationMixin):
+    """
+    This class is the EAbstractPost with template interface and moderation opportunity
     """
     class Meta:
         abstract = True
@@ -106,9 +129,31 @@ class EAbstractArticle(EAbstractPost):
         abstract = True
 
 
+class EAbstractArticleWithInterface(EAbstractArticle, EInterfaceMixin):
+    """
+    This class is the EAbstractArticle with template interface
+    """
+    def get_title(self):
+        return self.title
+
+    def get_preview(self):
+        return self.content
+
+    class Meta:
+        abstract = True
+
+
 class EAbstractModeratedArticle(EAbstractArticle, EModerationMixin):
     """
     This class is the EAbstractArticle with moderation opportunity
+    """
+    class Meta:
+        abstract = True
+
+
+class EAbstractModeratedArticleWithInterface(EAbstractArticleWithInterface, EModerationMixin):
+    """
+    This class is the EAbstractArticle wtemplate interface and moderation opportunity
     """
     class Meta:
         abstract = True
@@ -119,7 +164,24 @@ class EAbstractSection(EAbstractArticle):
         abstract = True
 
 
+class EAbstractSectionWithInterface(EAbstractSection, EInterfaceMixin):
+
+    def get_title(self):
+        return self.title
+
+    def get_preview(self):
+        return self.content
+
+    class Meta:
+        abstract = True
+
+
 class EAbstractModeratedSection(EAbstractSection, EModerationMixin):
+    class Meta:
+        abstract = True
+
+
+class EAbstractModeratedSectionWithInterface(EAbstractSectionWithInterface, EModerationMixin):
     class Meta:
         abstract = True
 
