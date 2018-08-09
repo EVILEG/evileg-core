@@ -11205,8 +11205,7 @@ pre.prettyprint {
   visibility: visible; }
 
 body {
-  padding-top: 60px;
-  background-color: #dae0e6; }
+  padding-top: 60px; }
 
 @media (min-width: 1200px) {
   .drawer {
