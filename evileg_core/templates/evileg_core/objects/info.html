@@ -1,0 +1,10 @@
+<div class="card card-body">
+    <div class="media-body">
+        <small class="float-right text-muted mr-0">{{ object.pub_date }}</small>
+        <h6 class="mt-0">{{ object.author.get_full_name|default:object.author.username }}</h6>
+        {% if object.get_title is not None %}
+            <p class="mb-1"><a href="{{ object.get_absolute_url }}">{{ object.get_title }}</a></p>
+        {% endif %}
+        <div>{{ object.content|truncatechars_html:"200"|safe|linebreaksbr|striptags }}</div>
+    </div>
+</div>

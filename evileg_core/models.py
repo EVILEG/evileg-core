@@ -82,7 +82,7 @@ class EModerationMixin(models.Model):
         abstract = True
 
 
-class EAbstractPostWithInterface(EAbstractPost, EInterfaceMixin):
+class EAbstractPostWithInterface(EInterfaceMixin, EAbstractPost):
     """
     This class is the EAbstractPost with template interface
     """
@@ -93,7 +93,7 @@ class EAbstractPostWithInterface(EAbstractPost, EInterfaceMixin):
         abstract = True
 
 
-class EAbstractModeratedPost(EAbstractPost, EModerationMixin):
+class EAbstractModeratedPost(EModerationMixin, EAbstractPost):
     """
     This class is the EAbstractPost with moderation opportunity
     """
@@ -101,7 +101,7 @@ class EAbstractModeratedPost(EAbstractPost, EModerationMixin):
         abstract = True
 
 
-class EAbstractModeratedPostWithInterface(EAbstractPostWithInterface, EModerationMixin):
+class EAbstractModeratedPostWithInterface(EModerationMixin, EAbstractPostWithInterface):
     """
     This class is the EAbstractPost with template interface and moderation opportunity
     """
@@ -129,7 +129,7 @@ class EAbstractArticle(EAbstractPost):
         abstract = True
 
 
-class EAbstractArticleWithInterface(EAbstractArticle, EInterfaceMixin):
+class EAbstractArticleWithInterface(EInterfaceMixin, EAbstractArticle):
     """
     This class is the EAbstractArticle with template interface
     """
@@ -143,7 +143,7 @@ class EAbstractArticleWithInterface(EAbstractArticle, EInterfaceMixin):
         abstract = True
 
 
-class EAbstractModeratedArticle(EAbstractArticle, EModerationMixin):
+class EAbstractModeratedArticle(EModerationMixin, EAbstractArticle):
     """
     This class is the EAbstractArticle with moderation opportunity
     """
@@ -151,7 +151,7 @@ class EAbstractModeratedArticle(EAbstractArticle, EModerationMixin):
         abstract = True
 
 
-class EAbstractModeratedArticleWithInterface(EAbstractArticleWithInterface, EModerationMixin):
+class EAbstractModeratedArticleWithInterface(EModerationMixin, EAbstractArticleWithInterface):
     """
     This class is the EAbstractArticle wtemplate interface and moderation opportunity
     """
@@ -164,7 +164,7 @@ class EAbstractSection(EAbstractArticle):
         abstract = True
 
 
-class EAbstractSectionWithInterface(EAbstractSection, EInterfaceMixin):
+class EAbstractSectionWithInterface(EInterfaceMixin, EAbstractSection):
 
     def get_title(self):
         return self.title
@@ -176,12 +176,12 @@ class EAbstractSectionWithInterface(EAbstractSection, EInterfaceMixin):
         abstract = True
 
 
-class EAbstractModeratedSection(EAbstractSection, EModerationMixin):
+class EAbstractModeratedSection(EModerationMixin, EAbstractSection):
     class Meta:
         abstract = True
 
 
-class EAbstractModeratedSectionWithInterface(EAbstractSectionWithInterface, EModerationMixin):
+class EAbstractModeratedSectionWithInterface(EModerationMixin, EAbstractSectionWithInterface):
     class Meta:
         abstract = True
 
