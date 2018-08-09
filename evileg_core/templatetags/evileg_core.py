@@ -26,9 +26,9 @@ def evileg_core_min_css():
 
 @register.simple_tag
 def evileg_core_js():
-    return static("css/evileg_core.js")
+    return static("js/evileg_core.js")
 
 
 @register.simple_tag
 def evileg_core_min_js():
-    return static("css/evileg_core.min.js")
+    return static("js/evileg_core.min.js")
