@@ -9,6 +9,7 @@ from django.contrib.auth.models import User
 from django.contrib.contenttypes.fields import GenericForeignKey
 from django.contrib.contenttypes.models import ContentType
 from django.db import models
+from django.utils.html import strip_tags
 from django.utils.translation import ugettext_lazy as _
 
 from .managers import EPostManager
@@ -86,8 +87,12 @@ class EAbstractPostWithInterface(EInterfaceMixin, EAbstractPost):
     """
     This class is the EAbstractPost with template interface
     """
+
     def get_preview(self):
         return self.content
+
+    def get_meta_description(self):
+        return strip_tags(self.content)[0:200]
 
     class Meta:
         abstract = True
@@ -119,6 +124,7 @@ class EAbstractArticle(EAbstractPost):
 
     title = models.CharField(_('Title'), max_length=200, blank=True)
     views = models.IntegerField(_('Views'), default=0)
+    slug = models.SlugField(_('URL'), max_length=50, blank=True)
 
     lookup_fields = EAbstractPost.lookup_fields + ('title',)
 
@@ -133,11 +139,15 @@ class EAbstractArticleWithInterface(EInterfaceMixin, EAbstractArticle):
     """
     This class is the EAbstractArticle with template interface
     """
+
     def get_title(self):
         return self.title
 
     def get_preview(self):
         return self.content
+
+    def get_meta_description(self):
+        return "{}. {}".format(self.title, strip_tags(self.content)[0:200])
 
     class Meta:
         abstract = True
@@ -171,6 +181,9 @@ class EAbstractSectionWithInterface(EInterfaceMixin, EAbstractSection):
 
     def get_preview(self):
         return self.content
+
+    def get_meta_description(self):
+        return "{}. {}".format(self.title, strip_tags(self.content)[0:200])
 
     class Meta:
         abstract = True

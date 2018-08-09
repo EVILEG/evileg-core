@@ -18,6 +18,9 @@ class EInterfaceMixin:
     def get_parent(self):
         raise NotImplementedError("Please return parent object or None")
 
+    def get_meta_description(self):
+        raise NotImplementedError("Please return meta description about content or None")
+
 
 class EAjaxableMixin:
 
