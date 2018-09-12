@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-08-07 20:12+0200\n"
+"POT-Creation-Date: 2018-09-12 21:15+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: evileg_core/evileg_core/admin.py:41 evileg_core/evileg_core/models.py:64
+#: evileg_core/evileg_core/admin.py:41 evileg_core/evileg_core/models.py:66
 msgid "SPAM"
 msgstr ""
 
@@ -58,47 +58,51 @@ msgstr ""
 msgid "To date"
 msgstr ""
 
-#: evileg_core/evileg_core/models.py:30
+#: evileg_core/evileg_core/models.py:32
 msgid "Author"
 msgstr ""
 
-#: evileg_core/evileg_core/models.py:31
+#: evileg_core/evileg_core/models.py:33
 msgid "Content"
 msgstr ""
 
-#: evileg_core/evileg_core/models.py:32
+#: evileg_core/evileg_core/models.py:34
 msgid "Publication date"
 msgstr ""
 
-#: evileg_core/evileg_core/models.py:33
+#: evileg_core/evileg_core/models.py:35
 msgid "Last modification date"
 msgstr ""
 
-#: evileg_core/evileg_core/models.py:65
+#: evileg_core/evileg_core/models.py:67
 msgid "Not Moderated"
 msgstr ""
 
-#: evileg_core/evileg_core/models.py:66
+#: evileg_core/evileg_core/models.py:68
 msgid "Post Moderated"
 msgstr ""
 
-#: evileg_core/evileg_core/models.py:67
+#: evileg_core/evileg_core/models.py:69
 msgid "Moderated"
 msgstr ""
 
-#: evileg_core/evileg_core/models.py:71
+#: evileg_core/evileg_core/models.py:73
 msgid "Moderation"
 msgstr ""
 
-#: evileg_core/evileg_core/models.py:97
+#: evileg_core/evileg_core/models.py:125
 msgid "Title"
 msgstr ""
 
-#: evileg_core/evileg_core/models.py:98
+#: evileg_core/evileg_core/models.py:126
 msgid "Views"
 msgstr ""
 
-#: evileg_core/evileg_core/models.py:136
+#: evileg_core/evileg_core/models.py:127
+msgid "URL"
+msgstr ""
+
+#: evileg_core/evileg_core/models.py:211
 msgid "User"
 msgstr ""
 

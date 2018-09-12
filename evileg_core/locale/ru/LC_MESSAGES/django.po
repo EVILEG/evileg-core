@@ -7,9 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-08-07 20:12+0200\n"
-"PO-Revision-Date: 2018-08-01 23:48+0200\n"
-"Last-Translator: \n"
+"POT-Creation-Date: 2018-09-12 21:15+0200\n"
+"PO-Revision-Date: 2018-09-12 21:23+0200\n"
+"Last-Translator: Evgenii Legotckoi <evileg@evileg.com>\n"
 "Language-Team: \n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
@@ -20,7 +20,7 @@ msgstr ""
 "%100>=11 && n%100<=14)? 2 : 3);\n"
 "X-Generator: Poedit 1.8.7.1\n"
 
-#: evileg_core/evileg_core/admin.py:41 evileg_core/evileg_core/models.py:64
+#: evileg_core/evileg_core/admin.py:41 evileg_core/evileg_core/models.py:66
 msgid "SPAM"
 msgstr "СПАМ"
 
@@ -60,49 +60,53 @@ msgstr "С даты"
 msgid "To date"
 msgstr "До даты"
 
-#: evileg_core/evileg_core/models.py:30
+#: evileg_core/evileg_core/models.py:32
 msgid "Author"
 msgstr "Автор"
 
-#: evileg_core/evileg_core/models.py:31
+#: evileg_core/evileg_core/models.py:33
 msgid "Content"
 msgstr "Содержание"
 
-#: evileg_core/evileg_core/models.py:32
+#: evileg_core/evileg_core/models.py:34
 msgid "Publication date"
 msgstr "Дата публикации"
 
-#: evileg_core/evileg_core/models.py:33
+#: evileg_core/evileg_core/models.py:35
 msgid "Last modification date"
 msgstr "Дата последнего изменения"
 
-#: evileg_core/evileg_core/models.py:65
+#: evileg_core/evileg_core/models.py:67
 msgid "Not Moderated"
 msgstr "Не модерировано"
 
-#: evileg_core/evileg_core/models.py:66
+#: evileg_core/evileg_core/models.py:68
 msgid "Post Moderated"
 msgstr "Пост модерируемый контент"
 
-#: evileg_core/evileg_core/models.py:67
+#: evileg_core/evileg_core/models.py:69
 msgid "Moderated"
 msgstr "Модерировано"
 
-#: evileg_core/evileg_core/models.py:71
+#: evileg_core/evileg_core/models.py:73
 msgid "Moderation"
 msgstr "Модерация"
 
-#: evileg_core/evileg_core/models.py:97
+#: evileg_core/evileg_core/models.py:125
 msgid "Title"
 msgstr "Заголовок"
 
-#: evileg_core/evileg_core/models.py:98
+#: evileg_core/evileg_core/models.py:126
 msgid "Views"
 msgstr "Просмотры"
 
-#: evileg_core/evileg_core/models.py:136
+#: evileg_core/evileg_core/models.py:127
+msgid "URL"
+msgstr "URL"
+
+#: evileg_core/evileg_core/models.py:211
 msgid "User"
-msgstr ""
+msgstr "Пользователь"
 
 #: evileg_core/evileg_core/templates/evileg_core/date_range_filter.html:2
 #, python-format
