@@ -11204,13 +11204,13 @@ pre.prettyprint {
   opacity: 0.5;
   visibility: visible; }
 
-body {
+.body {
   padding-top: 60px; }
 
 @media (min-width: 1200px) {
   .drawer {
     left: 0; }
-  body, header {
+  .body, .header {
     margin-left: 239px; }
   .shadow-show {
     opacity: 0;
