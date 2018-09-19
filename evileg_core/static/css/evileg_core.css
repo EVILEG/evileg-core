@@ -10967,27 +10967,6 @@ h6 {
   width: 64px;
   height: 64px; }
 
-.social {
-  display: inline-block;
-  height: 20px;
-  width: 20px;
-  -webkit-background-size: 100% 100%;
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
-  background-position: 50%;
-  vertical-align: middle; }
-
-.social-subscribe {
-  display: inline-block;
-  width: 32px;
-  height: 32px;
-  -webkit-background-size: 80% 80%;
-  background-size: 80% 80%;
-  background-repeat: no-repeat;
-  background-position: 50%;
-  border: 1px solid black;
-  border-radius: 50%; }
-
 blockquote {
   border-left: 5px solid #dee2e6;
   padding-left: 1rem;
@@ -11039,33 +11018,6 @@ blockquote > p {
 
 .form-row {
   overflow: unset; }
-
-.vk {
-  background-image: url(/static/images/social/vk.svg); }
-
-.twitter {
-  background-image: url(/static/images/social/twitter.svg); }
-
-.facebook {
-  background-image: url(/static/images/social/facebook.svg); }
-
-.google-plus {
-  background-image: url(/static/images/social/google-plus.svg); }
-
-.linkedin {
-  background-image: url(/static/images/social/linkedin.svg); }
-
-.pocket {
-  background-image: url(/static/images/social/pocket.svg); }
-
-.reddit {
-  background-image: url(/static/images/social/reddit.svg); }
-
-.youtube {
-  background-image: url(/static/images/social/youtube-play.svg); }
-
-.rss {
-  background-image: url(/static/images/social/rss.svg); }
 
 li.L0, li.L1, li.L2, li.L3,
 li.L5, li.L6, li.L7, li.L8 {
