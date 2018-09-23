@@ -21,6 +21,9 @@ class EInterfaceMixin:
     def get_meta_description(self):
         raise NotImplementedError("Please return meta description about content or None")
 
+    def was_edited(self):
+        raise NotImplementedError("Please return information if object was edited")
+
 
 class EAjaxableMixin:
 

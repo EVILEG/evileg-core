@@ -88,6 +88,9 @@ class EAbstractPostWithInterface(EInterfaceMixin, EAbstractPost):
     This class is the EAbstractPost with template interface
     """
 
+    def was_edited(self):
+        return self.lastmod and self.lastmod != self.pub_date
+
     def get_preview(self):
         return self.content
 
