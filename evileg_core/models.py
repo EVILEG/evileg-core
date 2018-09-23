@@ -89,7 +89,7 @@ class EAbstractPostWithInterface(EInterfaceMixin, EAbstractPost):
     """
 
     def was_edited(self):
-        return self.lastmod and self.lastmod != self.pub_date
+        return self.lastmod and (self.pub_date - self.lastmod).total_seconds() > 1
 
     def get_preview(self):
         return self.content
