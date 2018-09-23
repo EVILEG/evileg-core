@@ -31,8 +31,8 @@ class EAbstractPost(models.Model):
 
     author = models.ForeignKey(User, verbose_name=_("Author"), on_delete=models.CASCADE)
     content = models.TextField(_('Content'), blank=True)
-    pub_date = models.DateTimeField(_('Publication date'), blank=True, null=True)
-    lastmod = models.DateTimeField(_('Last modification date'), blank=True, null=True)
+    pub_date = models.DateTimeField(_('Publication date'), blank=True, null=True, auto_now_add=True)
+    lastmod = models.DateTimeField(_('Last modification date'), blank=True, null=True, auto_now=True)
 
     lookup_fields = ('content',)
     related_lookup_fields = ()

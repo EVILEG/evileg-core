@@ -98,6 +98,7 @@ class EPostAdmin(admin.ModelAdmin):
     list_filter = (('pub_date', EDateRangeFilter),)
     autocomplete_fields = ['author']
     search_fields = ('content', 'author__username')
+    readonly_fields = ('pub_date', 'lastmod')
 
 
 class EPostModeratedAdmin(EModerationMixinAdmin, EPostAdmin):
