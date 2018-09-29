@@ -40,3 +40,30 @@ class EDateRangeForm(forms.Form):
             localize=True,
             required=False,
         )
+
+
+class EPostForm(forms.ModelForm):
+    class Meta:
+        fields = ['content']
+
+    def __init__(self, author=None, *args, **kwargs):
+        if not author:
+            raise ValueError('This parameter is mandatory')
+        self.author = author
+        super().__init__(*args, **kwargs)
+
+    def save(self, commit=True):
+        instance = super().save(commit=False)
+        instance.author = self.author
+        if commit:
+            instance.save()
+        return instance
+
+
+class EArticleForm(EPostForm):
+    class Meta:
+        fields = ['title'] + EPostForm.Meta.fields
+
+
+class ESectionForm(EArticleForm):
+    pass
