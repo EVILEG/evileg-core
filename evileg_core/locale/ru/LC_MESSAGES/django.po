@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-09-22 22:49+0200\n"
+"POT-Creation-Date: 2018-09-23 12:08+0200\n"
 "PO-Revision-Date: 2018-09-12 21:23+0200\n"
 "Last-Translator: Evgenii Legotckoi <evileg@evileg.com>\n"
 "Language-Team: \n"
@@ -92,19 +92,19 @@ msgstr "Модерировано"
 msgid "Moderation"
 msgstr "Модерация"
 
-#: evileg_core/evileg_core/models.py:125
+#: evileg_core/evileg_core/models.py:128
 msgid "Title"
 msgstr "Заголовок"
 
-#: evileg_core/evileg_core/models.py:126
+#: evileg_core/evileg_core/models.py:129
 msgid "Views"
 msgstr "Просмотры"
 
-#: evileg_core/evileg_core/models.py:127
+#: evileg_core/evileg_core/models.py:130
 msgid "URL"
 msgstr "URL"
 
-#: evileg_core/evileg_core/models.py:211
+#: evileg_core/evileg_core/models.py:214
 msgid "User"
 msgstr "Пользователь"
 

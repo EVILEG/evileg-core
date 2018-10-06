@@ -1,0 +1,10 @@
+<div id="object-list">
+    {% load trans from i18n %}
+    {% load bootstrap_pagination from bootstrap4 %}
+    {% for object in object_list %}
+        {% include object.get_self.TEMPLATE_PREVIEW with object=object.get_self %}
+    {% empty %}
+        <div class="card card-body mb-3">{{ not_found_message|default:_("Nothing found") }}</div>
+    {% endfor %}
+    <div class="mt-3">{% bootstrap_pagination object_list pages_to_show="3" url=last_question %}</div>
+</div>

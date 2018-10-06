@@ -42,6 +42,9 @@ class EAbstractPost(models.Model):
     def __str__(self):
         return self.content[:150]
 
+    def get_self(self):
+        return self
+
     class Meta:
         abstract = True
 
@@ -219,6 +222,9 @@ class EAbstractActivity(models.Model):
 
     def __str__(self):
         return self.content_object.__str__()[:150]
+
+    def get_self(self):
+        return self.content_object
 
     class Meta:
         abstract = True

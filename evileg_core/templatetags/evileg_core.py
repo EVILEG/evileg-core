@@ -42,3 +42,8 @@ def evileg_core_popper_min_js():
 @register.simple_tag
 def evileg_core_jquery_min_js():
     return static("js/jquery-3.3.1.min.js")
+
+
+@register.inclusion_tag('evileg_core/partials/object_list_preview.html', takes_context=True)
+def object_list_preview(context):
+    return context
