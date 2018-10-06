@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-09-23 12:08+0200\n"
-"PO-Revision-Date: 2018-09-12 21:23+0200\n"
+"POT-Creation-Date: 2018-10-06 21:38+0600\n"
+"PO-Revision-Date: 2018-10-06 17:32+0200\n"
 "Last-Translator: Evgenii Legotckoi <evileg@evileg.com>\n"
 "Language-Team: \n"
 "Language: ru\n"
@@ -18,9 +18,9 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
 "%100>=11 && n%100<=14)? 2 : 3);\n"
-"X-Generator: Poedit 1.8.7.1\n"
+"X-Generator: Poedit 2.0.6\n"
 
-#: evileg_core/evileg_core/admin.py:41 evileg_core/evileg_core/models.py:66
+#: evileg_core/evileg_core/admin.py:41 evileg_core/evileg_core/models.py:69
 msgid "SPAM"
 msgstr "СПАМ"
 
@@ -52,6 +52,10 @@ msgstr "Модерировано"
 msgid "Set marked as MODERATED"
 msgstr "Пометить как модерированный контент"
 
+#: evileg_core/evileg_core/apps.py:9
+msgid "EVILEG Core"
+msgstr "Ядро EVILEG"
+
 #: evileg_core/evileg_core/forms.py:32
 msgid "From date"
 msgstr "С даты"
@@ -76,42 +80,42 @@ msgstr "Дата публикации"
 msgid "Last modification date"
 msgstr "Дата последнего изменения"
 
-#: evileg_core/evileg_core/models.py:67
+#: evileg_core/evileg_core/models.py:70
 msgid "Not Moderated"
 msgstr "Не модерировано"
 
-#: evileg_core/evileg_core/models.py:68
+#: evileg_core/evileg_core/models.py:71
 msgid "Post Moderated"
 msgstr "Пост модерируемый контент"
 
-#: evileg_core/evileg_core/models.py:69
+#: evileg_core/evileg_core/models.py:72
 msgid "Moderated"
 msgstr "Модерировано"
 
-#: evileg_core/evileg_core/models.py:73
+#: evileg_core/evileg_core/models.py:76
 msgid "Moderation"
 msgstr "Модерация"
 
-#: evileg_core/evileg_core/models.py:128
+#: evileg_core/evileg_core/models.py:131
 msgid "Title"
 msgstr "Заголовок"
 
-#: evileg_core/evileg_core/models.py:129
+#: evileg_core/evileg_core/models.py:132
 msgid "Views"
 msgstr "Просмотры"
 
-#: evileg_core/evileg_core/models.py:130
+#: evileg_core/evileg_core/models.py:133
 msgid "URL"
 msgstr "URL"
 
-#: evileg_core/evileg_core/models.py:214
+#: evileg_core/evileg_core/models.py:217
 msgid "User"
 msgstr "Пользователь"
 
 #: evileg_core/evileg_core/templates/evileg_core/date_range_filter.html:2
 #, python-format
 msgid " By %(filter_title)s "
-msgstr "%(filter_title)s "
+msgstr "%(filter_title)s"
 
 #: evileg_core/evileg_core/templates/evileg_core/date_range_filter.html:30
 msgid "Search"
@@ -120,3 +124,7 @@ msgstr "Найти"
 #: evileg_core/evileg_core/templates/evileg_core/date_range_filter.html:31
 msgid "Clear"
 msgstr "Очистить"
+
+#: evileg_core/evileg_core/templates/evileg_core/partials/object_list_preview.html:7
+msgid "Nothing found"
+msgstr "Ничего не найдено"
