@@ -10251,9 +10251,9 @@ thead.thead-inverse th,
   color: rgba(0, 0, 0, 0.54); }
   .nav-tabs .nav-link.active {
     color: rgba(0, 0, 0, 0.87);
-    border-color: theme-color(primary); }
+    border-color: #41cd52; }
     .nav-tabs .nav-link.active:hover, .nav-tabs .nav-link.active:focus {
-      border-color: theme-color(primary); }
+      border-color: #41cd52; }
   .nav-tabs .nav-link.disabled {
     color: rgba(0, 0, 0, 0.26); }
     .nav-tabs .nav-link.disabled, .nav-tabs .nav-link.disabled:hover, .nav-tabs .nav-link.disabled:focus {
