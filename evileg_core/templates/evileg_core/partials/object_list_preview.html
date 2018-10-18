@@ -6,5 +6,5 @@
     {% empty %}
         <div class="card card-body mb-3">{{ not_found_message|default:_("Nothing found") }}</div>
     {% endfor %}
-    <div class="mt-3">{% bootstrap_pagination object_list pages_to_show="3" url=last_question %}</div>
+    <div class="mt-3">{% bootstrap_pagination object_list pages_to_show="3" url=last_question justify_content='center' %}</div>
 </div>
