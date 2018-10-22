@@ -11173,3 +11173,17 @@ pre.prettyprint {
   position: relative;
   top: -60px;
   visibility: hidden; }
+
+.youtube-wrapper {
+  left: 0px;
+  width: 100%;
+  height: 0px;
+  position: relative;
+  padding-bottom: 56.2493%; }
+
+.youtube-iframe {
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  position: absolute; }
