@@ -11187,3 +11187,35 @@ pre.prettyprint {
   width: 100%;
   height: 100%;
   position: absolute; }
+
+.img-profile-box {
+  position: relative;
+  z-index: 1;
+  background-color: transparent;
+  width: 200px;
+  height: 200px;
+  margin: auto;
+  overflow: hidden; }
+
+.img-profile-actions {
+  position: absolute;
+  z-index: 2;
+  background-color: transparent;
+  color: #fff !important;
+  width: 200px;
+  height: 40px;
+  top: 200px;
+  transition: all 200ms ease-in-out;
+  overflow: hidden; }
+
+.img-profile-box:hover .img-profile-actions {
+  top: 160px;
+  background-color: rgba(29, 32, 34, 0.7); }
+
+.img-profile-action {
+  opacity: 0.8;
+  color: #fff !important; }
+
+.img-profile-action:hover {
+  opacity: 0.8;
+  color: #e1e1e1 !important; }
