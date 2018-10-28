@@ -11219,3 +11219,24 @@ pre.prettyprint {
 .img-profile-action:hover {
   opacity: 0.8;
   color: #e1e1e1 !important; }
+
+.fb-color {
+  color: #4267b2 !important; }
+
+.google-color {
+  color: #db4437 !important; }
+
+.vk-color {
+  color: #4a76a8 !important; }
+
+.twitter-color {
+  color: #1da1f2 !important; }
+
+.rss-color {
+  color: #e19126 !important; }
+
+.youtube-color {
+  color: #ff0000 !important; }
+
+.reddit-color {
+  color: #ff4500 !important; }
