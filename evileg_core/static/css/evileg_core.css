@@ -11223,20 +11223,47 @@ pre.prettyprint {
 .fb-color {
   color: #4267b2 !important; }
 
+.fb-color:hover {
+  color: #4157a0 !important; }
+
 .google-color {
   color: #db4437 !important; }
+
+.google-color:hover {
+  color: #a84134 !important; }
 
 .vk-color {
   color: #4a76a8 !important; }
 
+.vk-color:hover {
+  color: #49689a !important; }
+
 .twitter-color {
   color: #1da1f2 !important; }
+
+.twitter-color:hover {
+  color: #1e7ccc !important; }
 
 .rss-color {
   color: #e19126 !important; }
 
+.rss-color:hover {
+  color: #c27325 !important; }
+
 .youtube-color {
   color: #ff0000 !important; }
 
+.youtube-color:hover {
+  color: #d00000 !important; }
+
 .reddit-color {
   color: #ff4500 !important; }
+
+.reddit-color:hover {
+  color: #d14300 !important; }
+
+.github-color {
+  color: #24292e !important; }
+
+.github-color:hover {
+  color: #1d2126 !important; }
