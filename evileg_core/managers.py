@@ -12,7 +12,7 @@ class EPostManager(models.Manager):
     """
     use_for_related_fields = True
 
-    def search(self, query=None, in_related=False, user=None, date_from=None, date_to=None):
+    def search(self, query=None, in_related=False, user=None, date_from=None, date_to=None, **kwargs):
         """
         Method for search content
 
@@ -49,7 +49,7 @@ class EPostManager(models.Manager):
 class EActivityManager(models.Manager):
     use_for_related_fields = True
 
-    def search(self, model=None, query=None, in_related=False, date_from=None, date_to=None):
+    def search(self, model=None, query=None, in_related=False, date_from=None, date_to=None, **kwargs):
         model_name = model.__name__.lower()
         qs = self.get_queryset().filter(content_type__model=model_name).order_by("-{}s__pub_date".format(model_name))
         if query is not None:
