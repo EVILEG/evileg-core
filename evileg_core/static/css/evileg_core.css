@@ -11157,7 +11157,7 @@ pre.prettyprint {
   visibility: visible; }
 
 .body {
-  padding-top: 60px; }
+  padding-top: 57px; }
 
 @media (min-width: 1200px) {
   .drawer {
@@ -11267,3 +11267,9 @@ pre.prettyprint {
 
 .github-color:hover {
   color: #1d2126 !important; }
+
+.telegram-color {
+  color: #5682a3 !important; }
+
+.telegram-color:hover {
+  color: #497391 !important; }
