@@ -10967,6 +10967,83 @@ h6 {
   width: 64px;
   height: 64px; }
 
+.avatar-120 {
+  width: 120px;
+  height: 120px; }
+
+.card-avatar {
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  margin-top: -60px;
+  overflow: hidden;
+  border: 5px solid #fff; }
+
+.card-preview-box {
+  height: 120px;
+  overflow: hidden; }
+
+.aqua-gradient {
+  background: -webkit-linear-gradient(50deg, #2096ff, #05ffa3) !important;
+  background: -o-linear-gradient(50deg, #2096ff, #05ffa3) !important;
+  background: linear-gradient(40deg, #2096ff, #05ffa3) !important; }
+
+.clear-sky-gradient {
+  background: -webkit-linear-gradient(50deg, #005C97, #363795) !important;
+  background: -o-linear-gradient(50deg, #005C97, #363795) !important;
+  background: linear-gradient(40deg, #005C97, #363795) !important; }
+
+.passion-gradient {
+  background: -webkit-linear-gradient(50deg, #e53935, #e35d5b) !important;
+  background: -o-linear-gradient(50deg, #e53935, #e35d5b) !important;
+  background: linear-gradient(40deg, #e53935, #e35d5b) !important; }
+
+.timber-gradient {
+  background: -webkit-linear-gradient(50deg, #fc00ff, #00dbde) !important;
+  background: -o-linear-gradient(50deg, #fc00ff, #00dbde) !important;
+  background: linear-gradient(40deg, #fc00ff, #00dbde) !important; }
+
+.night-and-day-gradient {
+  background: -webkit-linear-gradient(50deg, #2c3e50, #3498db) !important;
+  background: -o-linear-gradient(50deg, #2c3e50, #3498db) !important;
+  background: linear-gradient(40deg, #2c3e50, #3498db) !important; }
+
+.sage-percuasion-gradient {
+  background: -webkit-linear-gradient(50deg, #CCCCB2, #757519) !important;
+  background: -o-linear-gradient(50deg, #CCCCB2, #757519) !important;
+  background: linear-gradient(40deg, #CCCCB2, #757519) !important; }
+
+.lizard-gradient {
+  background: -webkit-linear-gradient(50deg, #304352, #d7d2cc) !important;
+  background: -o-linear-gradient(50deg, #304352, #d7d2cc) !important;
+  background: linear-gradient(40deg, #304352, #d7d2cc) !important; }
+
+.piglet-gradient {
+  background: -webkit-linear-gradient(50deg, #ee9ca7, #ffdde1) !important;
+  background: -o-linear-gradient(50deg, #ee9ca7, #ffdde1) !important;
+  background: linear-gradient(40deg, #ee9ca7, #ffdde1) !important; }
+
+.dark-knight-gradient {
+  background: -webkit-linear-gradient(50deg, #BA8B02, #181818) !important;
+  background: -o-linear-gradient(50deg, #BA8B02, #181818) !important;
+  background: linear-gradient(40deg, #BA8B02, #181818) !important; }
+
+.curiosity-blue-gradient {
+  background: -webkit-linear-gradient(50deg, #525252, #3d72b4) !important;
+  background: -o-linear-gradient(50deg, #525252, #3d72b4) !important;
+  background: linear-gradient(40deg, #525252, #3d72b4) !important; }
+
+.virgin-amerika-gradient {
+  background: -webkit-linear-gradient(50deg, #7b4397, #dc2430) !important;
+  background: -o-linear-gradient(50deg, #7b4397, #dc2430) !important;
+  background: linear-gradient(40deg, #7b4397, #dc2430) !important; }
+
+.vine-gradient {
+  background: -webkit-linear-gradient(50deg, #00bf8f, #001510) !important;
+  background: -o-linear-gradient(50deg, #00bf8f, #001510) !important;
+  background: linear-gradient(40deg, #00bf8f, #001510) !important; }
+
 blockquote {
   border-left: 5px solid #dee2e6;
   padding-left: 1rem;
@@ -11083,10 +11160,10 @@ pre.prettyprint {
 ::-webkit-scrollbar-thumb:hover {
   background: #7f7f7f; }
 
-.sticky-right {
+.sticky {
   position: -webkit-sticky;
   position: sticky;
-  top: 60px; }
+  top: 57px; }
 
 .select2-container--default .select2-selection--multiple,
 .select2-container--default .select2-container--focus .select2-selection--multiple,
@@ -11159,6 +11236,18 @@ pre.prettyprint {
 .body {
   padding-top: 57px; }
 
+.box-shadow {
+  -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12); }
+
+.img-preview-box {
+  min-height: 50px;
+  max-height: 240px;
+  overflow: hidden; }
+
+.main {
+  z-index: 1; }
+
 @media (min-width: 1200px) {
   .drawer {
     left: 0; }
@@ -11219,6 +11308,10 @@ pre.prettyprint {
 .img-profile-action:hover {
   opacity: 0.8;
   color: #e1e1e1 !important; }
+
+.full-height {
+  overflow: auto;
+  height: calc(100vh - 57px); }
 
 .fb-color {
   color: #4267b2 !important; }
