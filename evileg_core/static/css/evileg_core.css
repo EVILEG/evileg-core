@@ -11044,6 +11044,14 @@ h6 {
   background: -o-linear-gradient(50deg, #00bf8f, #001510) !important;
   background: linear-gradient(40deg, #00bf8f, #001510) !important; }
 
+@media (min-width: 576px) {
+  .card-columns {
+    column-count: 2; } }
+
+@media (min-width: 1700px) {
+  .card-columns {
+    column-count: 3; } }
+
 blockquote {
   border-left: 5px solid #dee2e6;
   padding-left: 1rem;
