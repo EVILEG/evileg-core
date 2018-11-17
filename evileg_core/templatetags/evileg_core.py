@@ -3,8 +3,38 @@
 from django import template
 from django.contrib.contenttypes.models import ContentType
 from django.templatetags.static import static
+from django.utils.translation import ugettext_lazy as _
 
 register = template.Library()
+
+
+CLASSIC = 1
+DARCULA = 2
+
+STYLE_CHOICES = (
+    (CLASSIC, _('Classic')),
+    (DARCULA, _('Darcula'))
+)
+
+THEMES_CSS = {
+    CLASSIC: 'css/evileg_core.css',
+    DARCULA: 'css/evileg_core_darcula.css'
+}
+
+THEMES_CSS_MIN = {
+    CLASSIC: 'css/evileg_core.min.css',
+    DARCULA: 'css/evileg_core_darcula.min.css'
+}
+
+
+@register.simple_tag
+def get_theme(theme):
+    return static(THEMES_CSS[theme])
+
+
+@register.simple_tag
+def get_theme_min(theme):
+    return static(THEMES_CSS_MIN[theme])
 
 
 @register.filter
