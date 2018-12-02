@@ -11515,3 +11515,10 @@ li.L9 {
 
 hr {
   border-color: #4d4d4d !important; }
+
+.resizable_editor > textarea {
+  background-color: #2b2b2b !important;
+  border-color: #4d4d4d !important; }
+
+.select2-container--default .select2-search--inline .select2-search__field {
+  color: inherit; }
