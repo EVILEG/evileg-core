@@ -10298,7 +10298,7 @@ thead.thead-inverse th,
 .navbar-dark .form-control, .navbar-dark .custom-file-control {
   color: #fff; }
   .navbar-dark .form-control::placeholder, .navbar-dark .custom-file-control::placeholder {
-    color: rgba(0, 0, 0, 0.5); }
+    color: rgba(255, 255, 255, 0.5); }
 
 .alert {
   border: 0;

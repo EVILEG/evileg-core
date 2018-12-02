@@ -11518,7 +11518,8 @@ hr {
 
 .resizable_editor > textarea {
   background-color: #2b2b2b !important;
-  border-color: #4d4d4d !important; }
+  border-color: #4d4d4d !important;
+  color: inherit; }
 
 .select2-container--default .select2-search--inline .select2-search__field {
   color: inherit; }
