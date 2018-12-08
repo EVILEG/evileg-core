@@ -1,8 +1,11 @@
 {% load trans from i18n %}
 <div id="{{ widget_id }}_markdown_widget">
     <ul class="nav nav-tabs">
-        <li class="nav-item"><a class="nav-link py-1 active" href="#{{ widget_id }}-content-markdown" data-toggle="tab">Markdown</a></li>
-        <li class="nav-item"><a id="{{ widget_id }}-tab-preview" class="nav-link py-1" href="#{{ widget_id }}-content-preview" data-toggle="tab">{% trans 'Preview' %}</a></li>
+        <li class="nav-item"><a class="nav-link py-0 active md-btn" href="#{{ widget_id }}-content-markdown" data-toggle="tab"><span class="mdi mdi-markdown mdi-24px"></span></a></li>
+        <li class="nav-item mr-auto"><a id="{{ widget_id }}-tab-preview" class="nav-link py-2 md-btn" href="#{{ widget_id }}-content-preview" data-toggle="tab">{% trans 'Preview' %}</a></li>
+        {% if documentation_link %}
+            <li class="nav-item"><a class="nav-link py-0 md-btn border-0" href="{{ documentation_link }}"><span class="mdi mdi-information mdi-24px"></span></a></li>
+        {% endif %}
     </ul>
     <div class="tab-content">
         <div class="tab-pane fade in active show" id="{{ widget_id }}-content-markdown">

@@ -22,13 +22,14 @@ class EMarkdownField(models.TextField):
 
         def __set__(self, obj, value):
             obj.__dict__[self.field.name] = value
-            languages = getattr(settings, "LANGUAGES", None)
-            if 'modeltranslation' in settings.INSTALLED_APPS and self.field.name.endswith(
-                    tuple([code for code, language in languages])):
-                obj.__dict__['{}_{}'.format(self.field.html_field, self.field.name[-2:])] = EMarkdownWorker(
-                    value).get_text()
-            else:
-                obj.__dict__[self.field.html_field] = EMarkdownWorker(value).get_text()
+            if value and len(value) > 0:
+                languages = getattr(settings, "LANGUAGES", None)
+                if 'modeltranslation' in settings.INSTALLED_APPS and self.field.name.endswith(
+                        tuple([code for code, language in languages])):
+                    obj.__dict__['{}_{}'.format(self.field.html_field, self.field.name[-2:])] = EMarkdownWorker(
+                        value).get_text()
+                else:
+                    obj.__dict__[self.field.html_field] = EMarkdownWorker(value).get_text()
 
     def contribute_to_class(self, cls, name, **kwargs):
         super().contribute_to_class(cls, name, **kwargs)
@@ -40,7 +41,8 @@ class EMarkdownField(models.TextField):
 
     def formfield(self, **kwargs):
         defaults = {
-            'form_class': self._get_form_class()
+            'form_class': self._get_form_class(),
+            'documentation_link': getattr(settings, "MARKDOWN_DOCUMENTATION_LINK", None)
         }
         defaults.update(**kwargs)
         return super().formfield(**defaults)
@@ -52,6 +54,6 @@ class EMarkdownField(models.TextField):
 
 class EMarkdownFormField(forms.fields.CharField):
 
-    def __init__(self, *args, **kwargs):
-        kwargs.update({'widget': EMarkdownWidget()})
+    def __init__(self, documentation_link=None, *args, **kwargs):
+        kwargs.update({'widget': EMarkdownWidget(documentation_link=documentation_link)})
         super().__init__(*args, **kwargs)

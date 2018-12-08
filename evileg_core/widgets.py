@@ -31,11 +31,16 @@ class ELesserAdminDateWidget(AdminDateWidget):
 
 class EMarkdownWidget(forms.Widget):
 
+    def __init__(self, attrs=None, documentation_link=None):
+        self.documentation_link = documentation_link
+        super().__init__(attrs=attrs)
+
     def render(self, name, value, attrs=None, renderer=None):
         return render_to_string(
             template_name='evileg_core/markdown_widget.html',
             context={
                 'widget_id': attrs['id'],
+                'documentation_link': self.documentation_link,
                 'final_attrs': flatatt(self.build_attrs(self.attrs, attrs, name=name)),
                 'text': force_text(value or '')
             }

@@ -11339,6 +11339,9 @@ pre.prettyprint {
   overflow: auto;
   height: calc(100vh - 170px); }
 
+.md-btn {
+  height: 41px; }
+
 .fb-color {
   color: #4267b2 !important; }
 

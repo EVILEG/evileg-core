@@ -55,6 +55,16 @@ def evileg_core_min_css():
 
 
 @register.simple_tag
+def evileg_core_icons_css():
+    return static("css/materialdesignicons.css")
+
+
+@register.simple_tag
+def evileg_core_icons_min_css():
+    return static("css/materialdesignicons.min.css")
+
+
+@register.simple_tag
 def evileg_core_js():
     return static("js/evileg_core.js")
 
