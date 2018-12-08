@@ -12,6 +12,7 @@ from django.db import models
 from django.utils.html import strip_tags
 from django.utils.translation import ugettext_lazy as _
 
+from .fields import EMarkdownField
 from .managers import EPostManager
 from .mixins import EInterfaceMixin
 
@@ -30,9 +31,10 @@ class EAbstractPost(models.Model):
     """
 
     author = models.ForeignKey(User, verbose_name=_("Author"), on_delete=models.CASCADE)
-    content = models.TextField(_('Content'), blank=True)
-    pub_date = models.DateTimeField(_('Publication date'), blank=True, null=True, auto_now_add=True)
-    lastmod = models.DateTimeField(_('Last modification date'), blank=True, null=True, auto_now=True)
+    content = models.TextField(verbose_name=_('Content - HTML'), blank=True)
+    content_markdown = EMarkdownField(verbose_name=_('Content - Markdown'), html_field='content', default='')
+    pub_date = models.DateTimeField(verbose_name=_('Publication date'), blank=True, null=True, auto_now_add=True)
+    lastmod = models.DateTimeField(verbose_name=_('Last modification date'), blank=True, null=True, auto_now=True)
 
     lookup_fields = ('content',)
     related_lookup_fields = ()

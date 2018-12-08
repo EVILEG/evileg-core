@@ -1,0 +1,30 @@
+{% load trans from i18n %}
+<div id="{{ widget_id }}_markdown_widget">
+    <ul class="nav nav-tabs">
+        <li class="nav-item"><a class="nav-link py-1 active" href="#{{ widget_id }}-content-markdown" data-toggle="tab">Markdown</a></li>
+        <li class="nav-item"><a id="{{ widget_id }}-tab-preview" class="nav-link py-1" href="#{{ widget_id }}-content-preview" data-toggle="tab">{% trans 'Preview' %}</a></li>
+    </ul>
+    <div class="tab-content">
+        <div class="tab-pane fade in active show" id="{{ widget_id }}-content-markdown">
+            <textarea {{ final_attrs }} style="height: 200px; max-height: 600px;">{{ text }}</textarea>
+        </div>
+        <div class="tab-pane fade in" id="{{ widget_id }}-content-preview">
+            <div id="{{ widget_id }}_preview" class="border p-2"></div>
+        </div>
+    </div>
+</div>
+<script>
+    jQuery("#{{ widget_id }}-tab-preview").on('shown.bs.tab', function (e) {
+        $.ajax({
+            url: '/evileg_core/markdown/',
+            type: 'POST',
+            data: {'content': jQuery('#{{ widget_id }}').val(),},
+            dataType: 'json',
+
+            success: function (json) {
+                jQuery('#{{ widget_id }}_preview').html(json.preview);
+                prettyPrint();
+            }
+        });
+    })
+</script>

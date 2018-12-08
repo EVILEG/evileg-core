@@ -44,7 +44,7 @@ class EDateRangeForm(forms.Form):
 
 class EPostForm(forms.ModelForm):
     class Meta:
-        fields = ['content']
+        fields = ['content_markdown']
 
     def __init__(self, author=None, *args, **kwargs):
         if not author:

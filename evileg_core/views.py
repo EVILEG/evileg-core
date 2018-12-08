@@ -1,3 +1,12 @@
-from django.shortcuts import render
+# -*- coding: utf-8 -*-
 
-# Create your views here.
+from django.http import JsonResponse
+from django.views import View
+
+from .utils import EMarkdownWorker
+
+
+class EMarkdownView(View):
+
+    def post(self, request):
+        return JsonResponse({'preview': EMarkdownWorker(request.POST.get('content')).get_text()})

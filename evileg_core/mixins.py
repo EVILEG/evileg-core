@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from django.conf import settings
+from django.db import models
 
 
 class EInterfaceMixin:
@@ -23,6 +24,10 @@ class EInterfaceMixin:
 
     def was_edited(self):
         raise NotImplementedError("Please return information if object was edited")
+
+    @models.permalink
+    def get_edit_url(self):
+        return None
 
 
 class EAjaxableMixin:
