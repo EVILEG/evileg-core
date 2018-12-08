@@ -4,7 +4,7 @@
         <li class="nav-item"><a class="nav-link py-0 active md-btn" href="#{{ widget_id }}-content-markdown" data-toggle="tab"><span class="mdi mdi-markdown mdi-24px"></span></a></li>
         <li class="nav-item mr-auto"><a id="{{ widget_id }}-tab-preview" class="nav-link py-2 md-btn" href="#{{ widget_id }}-content-preview" data-toggle="tab">{% trans 'Preview' %}</a></li>
         {% if documentation_link %}
-            <li class="nav-item"><a class="nav-link py-0 md-btn border-0" href="{{ documentation_link }}"><span class="mdi mdi-information mdi-24px"></span></a></li>
+            <li class="nav-item"><a class="nav-link py-0 md-btn border-0" href="{{ documentation_link }}" target="_blank"><span class="mdi mdi-information mdi-24px"></span></a></li>
         {% endif %}
     </ul>
     <div class="tab-content">
