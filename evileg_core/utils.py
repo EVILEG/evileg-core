@@ -96,7 +96,7 @@ class ESoup:
             soup = self.__remove_all_attrs_except_saving(
                 soup=soup,
                 whitelist_tags=('img', 'a', 'iframe'),
-                whitelist_attrs=('src', 'href',),
+                whitelist_attrs=('src', 'href', 'name'),
                 whitelist_classes=(
                     'youtube-wrapper', 'youtube-iframe', 'prettyprint', 'lang-bsh', 'lang-c', 'lang-cc', 'lang-cpp',
                     'lang-cs', 'lang-csh', 'lang-cyc', 'lang-cv', 'lang-htm', 'lang-html', 'lang-java', 'lang-js',
