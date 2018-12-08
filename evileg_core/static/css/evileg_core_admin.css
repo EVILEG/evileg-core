@@ -1,0 +1,8 @@
+.tab-content {
+    margin-left: 160px;
+}
+
+.tab-content .tab-pane,
+.tab-content .tab-pane textarea {
+    width: 610px;
+}
