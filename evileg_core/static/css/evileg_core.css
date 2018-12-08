@@ -11265,7 +11265,7 @@ pre.prettyprint {
     opacity: 0;
     visibility: hidden; } }
 
-.anchor {
+.anchor, a[name] {
   display: block;
   position: relative;
   top: -60px;
