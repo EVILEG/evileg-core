@@ -55,7 +55,7 @@ class ESoup:
         site_url = getattr(settings, "SITE_URL", '/')
         for tag in soup.find_all(tag):
             attr_content = tag.get(attr)
-            if not attr_content.startswith(site_url) and not attr_content.startswith('/'):
+            if attr_content and not attr_content.startswith(site_url) and not attr_content.startswith('/'):
                 tag['rel'] = ['nofollow']
         return soup
 
@@ -78,9 +78,10 @@ class ESoup:
 
             for tag in soup.find_all(tag):
                 attr_content = tag.get(attr)
-                attr_content = site_url_parser.sub(site_url, attr_content)
-                attr_content = relational_url_parser.sub('', attr_content)
-                tag[attr] = attr_content
+                if attr_content:
+                    attr_content = site_url_parser.sub(site_url, attr_content)
+                    attr_content = relational_url_parser.sub('', attr_content)
+                    tag[attr] = attr_content
 
         return soup
 
