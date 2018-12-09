@@ -1,33 +1,97 @@
 {% load trans from i18n %}
 <div id="{{ widget_id }}_markdown_widget">
+    {# Add link dialog #}
+    <div id="{{ widget_id }}_add_link_dialog" class="modal fade">
+        <div class="modal-dialog modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">{% trans "Add Link" %}</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span class="mdi mdi-close"></span></button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="{{ widget_id }}_link_text">{% trans 'Text' %}</label>
+                    <input id="{{ widget_id }}_link_text" type="text" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="{{ widget_id }}_link_url">{% trans 'URL' %}</label>
+                    <input id="{{ widget_id }}_link_url" type="text" class="form-control">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="">{% trans "Close" %}</button>
+                <button id="{{ widget_id }}_insert_link_btn" type="button" class="btn btn-primary" data-dismiss="modal">{% trans "Insert" %}</button>
+            </div>
+        </div>
+    </div>
+
+    {# Code Dialog #}
+    <div id="{{ widget_id }}_code_dialog" class="modal fade">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">{% trans "Insert code" %}</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <label for="{{ widget_id }}_select_code" class="col-md-2 control-label">{% trans "Select language" %}</label>
+                        <div class="col-md-10">
+                            <select class="form-control" id="{{ widget_id }}_select_code">
+                                <option value="">{% trans "Other language" %}</option>
+                                <option value="lang-bsh">Bash</option>
+                                <option value="lang-c">C</option>
+                                <option value="lang-cc">CC</option>
+                                <option value="lang-cpp" selected="selected">C++</option>
+                                <option value="lang-cs">C#</option>
+                                <option value="lang-csh">CSH</option>
+                                <option value="lang-cyc">CYC</option>
+                                <option value="lang-cv">CV</option>
+                                <option value="lang-htm">htm</option>
+                                <option value="lang-html">html</option>
+                                <option value="lang-java">Java</option>
+                                <option value="lang-js">QML/JavaScript</option>
+                                <option value="lang-m">m</option>
+                                <option value="lang-mxml">MXML</option>
+                                <option value="lang-perl">Perl</option>
+                                <option value="lang-pl">Pl</option>
+                                <option value="lang-pm">Pm</option>
+                                <option value="lang-py">Python</option>
+                                <option value="lang-rb">Ruby</option>
+                                <option value="lang-sh">sh</option>
+                                <option value="lang-xhtml">XHTML</option>
+                                <option value="lang-xml">XML</option>
+                                <option value="lang-xsl">XSL</option>
+                            </select>
+                        </div>
+                    </div>
+                    <label for="{{ widget_id }}_code_input" class="control-label">{% trans "Insert your code" %}</label>
+                    <textarea class="form-control" rows="10" id="{{ widget_id }}_code_input" style="font-family: 'monospace';"></textarea>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="">{% trans "Close" %}</button>
+                    <button id="{{ widget_id }}_insert_code_btn" type="button" class="btn btn-primary" data-dismiss="modal">{% trans "Insert" %}</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {# Editor #}
     <ul class="nav nav-tabs">
-        <li class="nav-item"><a class="nav-link py-0 active md-btn" href="#{{ widget_id }}-content-markdown" data-toggle="tab"><span class="mdi mdi-markdown mdi-24px"></span></a></li>
-        <li class="nav-item mr-auto"><a id="{{ widget_id }}-tab-preview" class="nav-link py-2 md-btn" href="#{{ widget_id }}-content-preview" data-toggle="tab">{% trans 'Preview' %}</a></li>
+        <li class="nav-item"><a class="nav-link py-0 active md-btn" href="#{{ widget_id }}_tab_markdown" data-toggle="tab"><span class="mdi mdi-markdown mdi-24px"></span></a></li>
+        <li class="nav-item mr-auto"><a id="{{ widget_id }}_tab_preview_link" class="nav-link py-2 md-btn" href="#{{ widget_id }}_tab_preview" data-toggle="tab">{% trans 'Preview' %}</a></li>
+        <li class="nav-item"><a id="{{ widget_id }}_add_code_btn" class="nav-link py-0 md-btn border-0" href="#" data-toggle="tooltip" title="{% trans 'Insert code' %}"><span class="mdi mdi-code-tags mdi-24px"></span></a></li>
+        <li class="nav-item"><a id="{{ widget_id }}_add_link_btn" class="nav-link py-0 md-btn border-0" href="#" data-toggle="tooltip" title="{% trans 'Add link' %}"><span class="mdi mdi-link-variant mdi-24px"></span></a></li>
         {% if documentation_link %}
-            <li class="nav-item"><a class="nav-link py-0 md-btn border-0" href="{{ documentation_link }}" target="_blank"><span class="mdi mdi-information mdi-24px"></span></a></li>
+            <li class="nav-item"><a class="nav-link py-0 md-btn border-0" href="{{ documentation_link }}" target="_blank" data-toggle="tooltip" title="{% trans 'Markdown syntax' %}"><span class="mdi mdi-information mdi-24px"></span></a></li>
         {% endif %}
     </ul>
     <div class="tab-content">
-        <div class="tab-pane fade in active show" id="{{ widget_id }}-content-markdown">
+        <div class="tab-pane fade in active show" id="{{ widget_id }}_tab_markdown">
             <textarea {{ final_attrs }} style="height: 200px; max-height: 600px;">{{ text }}</textarea>
         </div>
-        <div class="tab-pane fade in" id="{{ widget_id }}-content-preview">
+        <div class="tab-pane fade in" id="{{ widget_id }}_tab_preview">
             <div id="{{ widget_id }}_preview" class="border p-2"></div>
         </div>
     </div>
 </div>
-<script>
-    jQuery("#{{ widget_id }}-tab-preview").on('shown.bs.tab', function (e) {
-        $.ajax({
-            url: '/evileg_core/markdown/',
-            type: 'POST',
-            data: {'content': jQuery('#{{ widget_id }}').val(),},
-            dataType: 'json',
-
-            success: function (json) {
-                jQuery('#{{ widget_id }}_preview').html(json.preview);
-                prettyPrint();
-            }
-        });
-    })
-</script>
+<script>EMarkdownEditor.create('{{ widget_id }}');</script>

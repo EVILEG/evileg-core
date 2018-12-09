@@ -84,6 +84,16 @@ def evileg_core_jquery_min_js():
     return static("js/jquery-3.3.1.min.js")
 
 
+@register.simple_tag
+def evileg_core_markdown_js():
+    return static("js/markdown.js")
+
+
+@register.simple_tag
+def evileg_core_markdown_min_js():
+    return static("js/markdown.min.js")
+
+
 @register.inclusion_tag('evileg_core/partials/object_list_preview.html', takes_context=True)
 def object_list_preview(context):
     return context
