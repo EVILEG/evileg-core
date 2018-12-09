@@ -7,15 +7,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-09 16:12+0600\n"
-"PO-Revision-Date: 2018-12-09 11:12+0100\n"
+"POT-Creation-Date: 2018-12-09 18:49+0600\n"
+"PO-Revision-Date: 2018-12-09 13:50+0100\n"
+"Last-Translator: Evgenii Legotckoi <evileg@evileg.com>\n"
+"Language-Team: \n"
 "Language: en\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"Last-Translator: Evgenii Legotckoi <evileg@evileg.com>\n"
-"Language-Team: \n"
 "X-Generator: Poedit 2.0.6\n"
 
 #: evileg_core/evileg_core/admin.py:41 evileg_core/evileg_core/models.py:71
@@ -147,7 +147,7 @@ msgid "Insert"
 msgstr "Insert"
 
 #: evileg_core/evileg_core/templates/evileg_core/markdown_widget.html:32
-#: evileg_core/evileg_core/templates/evileg_core/markdown_widget.html:82
+#: evileg_core/evileg_core/templates/evileg_core/markdown_widget.html:86
 msgid "Insert code"
 msgstr "Insert code"
 
@@ -167,11 +167,20 @@ msgstr "Insert your code"
 msgid "Preview"
 msgstr "Preview"
 
-#: evileg_core/evileg_core/templates/evileg_core/markdown_widget.html:83
+#: evileg_core/evileg_core/templates/evileg_core/markdown_widget.html:82
+#| msgid "Content - Markdown"
+msgid "Content separator"
+msgstr "Content separator"
+
+#: evileg_core/evileg_core/templates/evileg_core/markdown_widget.html:84
+msgid "Upload image"
+msgstr "Upload image"
+
+#: evileg_core/evileg_core/templates/evileg_core/markdown_widget.html:87
 msgid "Add link"
 msgstr "Add link"
 
-#: evileg_core/evileg_core/templates/evileg_core/markdown_widget.html:85
+#: evileg_core/evileg_core/templates/evileg_core/markdown_widget.html:89
 msgid "Markdown syntax"
 msgstr "Markdown syntax"
 

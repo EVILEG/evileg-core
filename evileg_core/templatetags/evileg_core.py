@@ -65,6 +65,16 @@ def evileg_core_icons_min_css():
 
 
 @register.simple_tag
+def evileg_core_cropper_css():
+    return static("css/cropper.css")
+
+
+@register.simple_tag
+def evileg_core_cropper_min_css():
+    return static("css/cropper.min.css")
+
+
+@register.simple_tag
 def evileg_core_js():
     return static("js/evileg_core.js")
 
@@ -92,6 +102,16 @@ def evileg_core_markdown_js():
 @register.simple_tag
 def evileg_core_markdown_min_js():
     return static("js/markdown.min.js")
+
+
+@register.simple_tag
+def evileg_core_cropper_js():
+    return static("js/cropper.js")
+
+
+@register.simple_tag
+def evileg_core_cropper_min_js():
+    return static("js/cropper.min.js")
 
 
 @register.inclusion_tag('evileg_core/partials/object_list_preview.html', takes_context=True)

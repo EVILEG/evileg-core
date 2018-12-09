@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ESNF-C\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-09 16:12+0600\n"
-"PO-Revision-Date: 2018-12-09 11:14+0100\n"
+"POT-Creation-Date: 2018-12-09 18:49+0600\n"
+"PO-Revision-Date: 2018-12-09 13:49+0100\n"
 "Last-Translator: Evgenii Legotckoi <evileg@evileg.com>\n"
 "Language-Team: EVILEG Team <info@evileg.com>\n"
 "Language: ru\n"
@@ -148,7 +148,7 @@ msgid "Insert"
 msgstr "Вставить"
 
 #: evileg_core/evileg_core/templates/evileg_core/markdown_widget.html:32
-#: evileg_core/evileg_core/templates/evileg_core/markdown_widget.html:82
+#: evileg_core/evileg_core/templates/evileg_core/markdown_widget.html:86
 msgid "Insert code"
 msgstr "Вставить код"
 
@@ -168,11 +168,19 @@ msgstr "Вставьте ваш код"
 msgid "Preview"
 msgstr "Предпросмотр"
 
-#: evileg_core/evileg_core/templates/evileg_core/markdown_widget.html:83
+#: evileg_core/evileg_core/templates/evileg_core/markdown_widget.html:82
+msgid "Content separator"
+msgstr "Разделитель контента"
+
+#: evileg_core/evileg_core/templates/evileg_core/markdown_widget.html:84
+msgid "Upload image"
+msgstr "Загрузить изображение"
+
+#: evileg_core/evileg_core/templates/evileg_core/markdown_widget.html:87
 msgid "Add link"
 msgstr "Добавить ссылку"
 
-#: evileg_core/evileg_core/templates/evileg_core/markdown_widget.html:85
+#: evileg_core/evileg_core/templates/evileg_core/markdown_widget.html:89
 msgid "Markdown syntax"
 msgstr "Синтаксис Markdown"
 

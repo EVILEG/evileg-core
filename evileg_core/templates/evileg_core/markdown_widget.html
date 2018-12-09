@@ -79,6 +79,10 @@
     <ul class="nav nav-tabs">
         <li class="nav-item"><a class="nav-link py-0 active md-btn" href="#{{ widget_id }}_tab_markdown" data-toggle="tab"><span class="mdi mdi-markdown mdi-24px"></span></a></li>
         <li class="nav-item mr-auto"><a id="{{ widget_id }}_tab_preview_link" class="nav-link py-2 md-btn" href="#{{ widget_id }}_tab_preview" data-toggle="tab">{% trans 'Preview' %}</a></li>
+        <li class="nav-item"><a id="{{ widget_id }}_add_cut_btn" class="nav-link py-0 md-btn border-0" href="#" data-toggle="tooltip" title="{% trans 'Content separator' %}"><span class="mdi mdi-arrow-split-horizontal mdi-24px"></span></a></li>
+        {% if upload_link %}
+            <li class="nav-item"><a id="{{ widget_id }}_add_image_btn" class="nav-link py-0 md-btn border-0" href="#" data-toggle="tooltip" title="{% trans 'Upload image' %}"><span class="mdi mdi-image mdi-24px"></span></a></li>
+        {% endif %}
         <li class="nav-item"><a id="{{ widget_id }}_add_code_btn" class="nav-link py-0 md-btn border-0" href="#" data-toggle="tooltip" title="{% trans 'Insert code' %}"><span class="mdi mdi-code-tags mdi-24px"></span></a></li>
         <li class="nav-item"><a id="{{ widget_id }}_add_link_btn" class="nav-link py-0 md-btn border-0" href="#" data-toggle="tooltip" title="{% trans 'Add link' %}"><span class="mdi mdi-link-variant mdi-24px"></span></a></li>
         {% if documentation_link %}
@@ -87,11 +91,11 @@
     </ul>
     <div class="tab-content">
         <div class="tab-pane fade in active show" id="{{ widget_id }}_tab_markdown">
-            <textarea {{ final_attrs }} style="height: 200px; max-height: 600px;">{{ text }}</textarea>
+            <textarea {{ final_attrs }} style="height: 200px; max-height: 600px;" placeholder="{{ placeholder }}">{{ text }}</textarea>
         </div>
         <div class="tab-pane fade in" id="{{ widget_id }}_tab_preview">
             <div id="{{ widget_id }}_preview" class="border p-2"></div>
         </div>
     </div>
 </div>
-<script>EMarkdownEditor.create('{{ widget_id }}');</script>
+<script>EMarkdownEditor.create('{{ widget_id }}', '{{ upload_link }}');</script>

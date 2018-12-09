@@ -37,12 +37,18 @@ class EMarkdownField(models.TextField):
 
     def __init__(self, html_field=None, *args, **kwargs):
         self.html_field = html_field
+        self.placeholder = kwargs.pop("placeholder", '')
+        self.upload_link = kwargs.pop("upload_link", None)
+        if not self.upload_link:
+            self.upload_link = getattr(settings, 'MARKDOWN_UPLOAD_LINK', None)
         super().__init__(*args, **kwargs)
 
     def formfield(self, **kwargs):
         defaults = {
             'form_class': self._get_form_class(),
-            'documentation_link': getattr(settings, "MARKDOWN_DOCUMENTATION_LINK", None)
+            'documentation_link': getattr(settings, "MARKDOWN_DOCUMENTATION_LINK", None),
+            'placeholder': self.placeholder,
+            'upload_link': self.upload_link,
         }
         defaults.update(**kwargs)
         return super().formfield(**defaults)
@@ -54,6 +60,10 @@ class EMarkdownField(models.TextField):
 
 class EMarkdownFormField(forms.fields.CharField):
 
-    def __init__(self, documentation_link=None, *args, **kwargs):
-        kwargs.update({'widget': EMarkdownWidget(documentation_link=documentation_link)})
+    def __init__(self, documentation_link=None, placeholder=None, upload_link=None, *args, **kwargs):
+        kwargs.update({'widget': EMarkdownWidget(
+            documentation_link=documentation_link,
+            placeholder=placeholder,
+            upload_link=upload_link
+        )})
         super().__init__(*args, **kwargs)

@@ -5,4 +5,5 @@ INSTALLED_APPS = [
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'bootstrap4',
+    'markdown'
 ]

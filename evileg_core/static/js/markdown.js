@@ -30,7 +30,7 @@ insertAtCaret: function(myValue){
 });
 
 class EMarkdownEditor {
-    constructor (widgetId) {
+    constructor (widgetId, uploadLink='') {
         this.id = widgetId;
         this.textarea = jQuery("#" + widgetId);
         this.tabPreviewLink = jQuery("#" + widgetId + "_tab_preview_link");
@@ -51,6 +51,111 @@ class EMarkdownEditor {
         this.insertCodeBtn.bind('click', {widgetId: widgetId}, EMarkdownEditor.insertCode);
         this.selectCode = jQuery('#' + widgetId + '_select_code');
         this.codeInput = jQuery('#' + widgetId + '_code_input');
+        // Upload Image Dialog
+        this.uploadLink = uploadLink;
+        this.addImageBtn = jQuery('#' + widgetId + '_add_image_btn');
+        this.addImageBtn.bind("click", {widgetId: widgetId}, EMarkdownEditor.showUploadDialog);
+        // Add special symbols
+        this.addCutBtn = jQuery('#' + widgetId + '_add_cut_btn');
+        this.addCutBtn.bind('click', {widgetId: widgetId}, EMarkdownEditor.insertCut)
+    }
+
+    static insertCut(e) {
+        e.preventDefault();
+        let editor = EMarkdownEditor.get(e.data.widgetId);
+        if (editor) {
+            editor.textarea.insertAtCaret('\n___\n');
+        }
+        return false;
+    }
+
+    static showUploadDialog(e) {
+        e.preventDefault();
+        let widgetId = e.data.widgetId;
+        let editor = EMarkdownEditor.get(widgetId);
+        if (editor.uploadLink.length) {
+            let uploadDialog = jQuery('#uploadDialog');
+            if (uploadDialog.length) {
+                EMarkdownEditor.initUploadDialog(widgetId);
+                uploadDialog.modal('show');
+            } else {
+                jQuery.ajax({
+                    url: editor.uploadLink,
+                    type: 'GET',
+                    dataType: 'json',
+
+                    success: function (json) {
+                        jQuery(json.uploadDialog).appendTo(jQuery('body'));
+                        EMarkdownEditor.showUploadDialog(e);
+                    }
+                });
+            }
+        }
+    }
+
+    static initUploadDialog(widgetId) {
+        let editor = EMarkdownEditor.get(widgetId);
+        let uploadDialog = jQuery('#uploadDialog');
+        uploadDialog.find("#id_file").change(function () {
+            if (this.files && this.files[0]) {
+                let reader = new FileReader();
+                reader.onload = function (e) {
+                    let img = jQuery("#upload_image");
+                    img.on("load", function (e) {
+                        let cropper = new Cropper(upload_image, { viewMode: 1 });
+                        uploadDialog.find("#js-zoom-in").click(function () { cropper.zoom(0.1); });
+                        uploadDialog.find("#js-zoom-out").click(function () { cropper.zoom(-0.1); });
+                        uploadDialog.on("hidden.bs.modal", function () {
+                            uploadDialog.remove();
+                            cropper.destroy();
+                        });
+
+                        uploadDialog.find("#js-crop-and-upload").click(function (e) {
+                            e.preventDefault();
+                            let formUpload = new FormData(uploadDialog.find("#formUpload").get(0));
+                            if (formUpload) {
+
+                                let canvas = cropper.getCroppedCanvas();
+                                canvas.toBlob(function (blob) {
+                                    formUpload.set('file', blob, 'photo.jpg');
+
+                                    jQuery.ajax({
+                                        url: editor.uploadLink,
+                                        type: "POST",
+                                        data: formUpload,
+                                        cache: false,
+                                        processData: false,
+                                        contentType: false,
+                                        success: function (json) {
+                                            if (json.result) {
+                                                let image = '\n[![' + json.description + '](' + json.src + ')](' + json.url + ')\n';
+                                                EMarkdownEditor.restoreSelection();
+                                                editor.textarea.insertAtCaret(image);
+                                                uploadDialog.find("#upload-size-warning").addClass("d-none");
+                                                uploadDialog.modal("hide");
+                                            }
+                                        },
+                                        error: function (jqXHR, textStatus, errorThrown) {
+                                            if (jqXHR.status === 413) {
+                                                uploadDialog.find("#upload-size-warning").removeClass("d-none");
+                                            }
+                                        }
+                                    });
+                                });
+                            }
+                            return false;
+                        });
+
+                        uploadDialog.find("#upload-size-warning").addClass("d-none");
+                        uploadDialog.find("#cropBody").removeClass("d-none");
+                        uploadDialog.find("#cropFooter").removeClass("d-none");
+                        uploadDialog.find("#file_form_group").addClass("d-none");
+                    });
+                    img.attr("src", e.target.result);
+                };
+                reader.readAsDataURL(this.files[0]);
+            }
+        });
     }
 
     static insertCode(e) {
@@ -64,7 +169,7 @@ class EMarkdownEditor {
                 let resultCode = '\n```' + lang + '\n' + code + '\n```\n';
                 EMarkdownEditor.restoreSelection();
                 editor.textarea.insertAtCaret(resultCode);
-                editor.code_input.val('');
+                editor.codeInput.val('');
                 return true;
             }
         }
@@ -100,8 +205,8 @@ class EMarkdownEditor {
         return false;
     }
 
-    static create(widgetId) {
-        let editor = new EMarkdownEditor(widgetId);
+    static create(widgetId, upload_link='') {
+        let editor = new EMarkdownEditor(widgetId, upload_link);
         allEditors[widgetId] = editor;
         return editor;
     }
