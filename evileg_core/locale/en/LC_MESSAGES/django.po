@@ -3,126 +3,186 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-19 02:06+0600\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"POT-Creation-Date: 2018-12-09 16:12+0600\n"
+"PO-Revision-Date: 2018-12-09 11:12+0100\n"
+"Language: en\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Last-Translator: Evgenii Legotckoi <evileg@evileg.com>\n"
+"Language-Team: \n"
+"X-Generator: Poedit 2.0.6\n"
 
-#: evileg_core/evileg_core/admin.py:41 evileg_core/evileg_core/models.py:69
+#: evileg_core/evileg_core/admin.py:41 evileg_core/evileg_core/models.py:71
 msgid "SPAM"
-msgstr ""
+msgstr "SPAM"
 
 #: evileg_core/evileg_core/admin.py:44
 msgid "Set marked as SPAM"
-msgstr ""
+msgstr "Set marked as SPAM"
 
 #: evileg_core/evileg_core/admin.py:56
 msgid "NOT MODERATED"
-msgstr ""
+msgstr "NOT MODERATED"
 
 #: evileg_core/evileg_core/admin.py:59
 msgid "Set marked as NOT MODERATED"
-msgstr ""
+msgstr "Set marked as NOT MODERATED"
 
 #: evileg_core/evileg_core/admin.py:71
 msgid "POST MODERATED"
-msgstr ""
+msgstr "POST MODERATED"
 
 #: evileg_core/evileg_core/admin.py:74
 msgid "Set marked as POST MODERATED"
-msgstr ""
+msgstr "Set marked as POST MODERATED"
 
 #: evileg_core/evileg_core/admin.py:86
 msgid "MODERATED"
-msgstr ""
+msgstr "MODERATED"
 
 #: evileg_core/evileg_core/admin.py:89
 msgid "Set marked as MODERATED"
-msgstr ""
+msgstr "Set marked as MODERATED"
 
 #: evileg_core/evileg_core/apps.py:9
 msgid "EVILEG Core"
-msgstr ""
+msgstr "EVILEG Core"
 
 #: evileg_core/evileg_core/forms.py:32
 msgid "From date"
-msgstr ""
+msgstr "From date"
 
 #: evileg_core/evileg_core/forms.py:39
 msgid "To date"
-msgstr ""
-
-#: evileg_core/evileg_core/models.py:32
-msgid "Author"
-msgstr ""
+msgstr "To date"
 
 #: evileg_core/evileg_core/models.py:33
-msgid "Content"
-msgstr ""
+msgid "Author"
+msgstr "Author"
 
 #: evileg_core/evileg_core/models.py:34
-msgid "Publication date"
-msgstr ""
+msgid "Content - HTML"
+msgstr "Content - HTML"
 
 #: evileg_core/evileg_core/models.py:35
+msgid "Content - Markdown"
+msgstr "Content - Markdown"
+
+#: evileg_core/evileg_core/models.py:36
+msgid "Publication date"
+msgstr "Publication date"
+
+#: evileg_core/evileg_core/models.py:37
 msgid "Last modification date"
-msgstr ""
-
-#: evileg_core/evileg_core/models.py:70
-msgid "Not Moderated"
-msgstr ""
-
-#: evileg_core/evileg_core/models.py:71
-msgid "Post Moderated"
-msgstr ""
+msgstr "Last modification date"
 
 #: evileg_core/evileg_core/models.py:72
+msgid "Not Moderated"
+msgstr "Not Moderated"
+
+#: evileg_core/evileg_core/models.py:73
+msgid "Post Moderated"
+msgstr "Post Moderated"
+
+#: evileg_core/evileg_core/models.py:74
 msgid "Moderated"
-msgstr ""
+msgstr "Moderated"
 
-#: evileg_core/evileg_core/models.py:76
+#: evileg_core/evileg_core/models.py:78
 msgid "Moderation"
-msgstr ""
-
-#: evileg_core/evileg_core/models.py:131
-msgid "Title"
-msgstr ""
-
-#: evileg_core/evileg_core/models.py:132
-msgid "Views"
-msgstr ""
+msgstr "Moderation"
 
 #: evileg_core/evileg_core/models.py:133
-msgid "URL"
-msgstr ""
+msgid "Title"
+msgstr "Title"
 
-#: evileg_core/evileg_core/models.py:217
+#: evileg_core/evileg_core/models.py:134
+msgid "Views"
+msgstr "Views"
+
+#: evileg_core/evileg_core/models.py:135
+#: evileg_core/evileg_core/templates/evileg_core/markdown_widget.html:16
+msgid "URL"
+msgstr "URL"
+
+#: evileg_core/evileg_core/models.py:219
 msgid "User"
-msgstr ""
+msgstr "User"
 
 #: evileg_core/evileg_core/templates/evileg_core/date_range_filter.html:2
 #, python-format
 msgid " By %(filter_title)s "
-msgstr ""
+msgstr " By %(filter_title)s "
 
 #: evileg_core/evileg_core/templates/evileg_core/date_range_filter.html:30
 msgid "Search"
-msgstr ""
+msgstr "Search"
 
 #: evileg_core/evileg_core/templates/evileg_core/date_range_filter.html:31
 msgid "Clear"
-msgstr ""
+msgstr "Clear"
+
+#: evileg_core/evileg_core/templates/evileg_core/markdown_widget.html:7
+msgid "Add Link"
+msgstr "Add Link"
+
+#: evileg_core/evileg_core/templates/evileg_core/markdown_widget.html:12
+msgid "Text"
+msgstr "Text"
+
+#: evileg_core/evileg_core/templates/evileg_core/markdown_widget.html:21
+#: evileg_core/evileg_core/templates/evileg_core/markdown_widget.html:71
+msgid "Close"
+msgstr "Close"
+
+#: evileg_core/evileg_core/templates/evileg_core/markdown_widget.html:22
+#: evileg_core/evileg_core/templates/evileg_core/markdown_widget.html:72
+msgid "Insert"
+msgstr "Insert"
+
+#: evileg_core/evileg_core/templates/evileg_core/markdown_widget.html:32
+#: evileg_core/evileg_core/templates/evileg_core/markdown_widget.html:82
+msgid "Insert code"
+msgstr "Insert code"
+
+#: evileg_core/evileg_core/templates/evileg_core/markdown_widget.html:37
+msgid "Select language"
+msgstr "Select language"
+
+#: evileg_core/evileg_core/templates/evileg_core/markdown_widget.html:40
+msgid "Other language"
+msgstr "Other language"
+
+#: evileg_core/evileg_core/templates/evileg_core/markdown_widget.html:67
+msgid "Insert your code"
+msgstr "Insert your code"
+
+#: evileg_core/evileg_core/templates/evileg_core/markdown_widget.html:81
+msgid "Preview"
+msgstr "Preview"
+
+#: evileg_core/evileg_core/templates/evileg_core/markdown_widget.html:83
+msgid "Add link"
+msgstr "Add link"
+
+#: evileg_core/evileg_core/templates/evileg_core/markdown_widget.html:85
+msgid "Markdown syntax"
+msgstr "Markdown syntax"
 
 #: evileg_core/evileg_core/templates/evileg_core/partials/object_list_preview.html:7
 msgid "Nothing found"
-msgstr ""
+msgstr "Nothing found"
+
+#: evileg_core/evileg_core/templatetags/evileg_core.py:15
+msgid "Classic"
+msgstr "Classic"
+
+#: evileg_core/evileg_core/templatetags/evileg_core.py:16
+msgid "Darcula"
+msgstr "Darcula"
