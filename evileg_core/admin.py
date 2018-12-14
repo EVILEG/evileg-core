@@ -99,6 +99,7 @@ class EPostAdmin(admin.ModelAdmin):
     autocomplete_fields = ['author']
     search_fields = ('content', 'author__username')
     readonly_fields = ('pub_date', 'lastmod')
+    fields = ['author', 'content_markdown', 'pub_date', 'lastmod']
 
 
 class EPostModeratedAdmin(EModerationMixinAdmin, EPostAdmin):
