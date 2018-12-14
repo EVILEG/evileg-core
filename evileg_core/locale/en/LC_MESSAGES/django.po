@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-15 02:32+0600\n"
+"POT-Creation-Date: 2018-12-15 04:30+0600\n"
 "PO-Revision-Date: 2018-12-14 21:33+0100\n"
 "Last-Translator: Evgenii Legotckoi <evileg@evileg.com>\n"
 "Language-Team: \n"
@@ -172,7 +172,6 @@ msgid "Content separator"
 msgstr "Content separator"
 
 #: evileg_core/evileg_core/templates/evileg_core/markdown_widget.html:84
-#| msgid "Upload image"
 msgid "Upload Image"
 msgstr "Upload Image"
 
