@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ESNF-C\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-09 18:49+0600\n"
-"PO-Revision-Date: 2018-12-09 13:49+0100\n"
+"POT-Creation-Date: 2018-12-15 01:01+0600\n"
+"PO-Revision-Date: 2018-12-14 21:33+0100\n"
 "Last-Translator: Evgenii Legotckoi <evileg@evileg.com>\n"
 "Language-Team: EVILEG Team <info@evileg.com>\n"
 "Language: ru\n"
@@ -173,7 +173,8 @@ msgid "Content separator"
 msgstr "Разделитель контента"
 
 #: evileg_core/evileg_core/templates/evileg_core/markdown_widget.html:84
-msgid "Upload image"
+#| msgid "Upload image"
+msgid "Upload Image"
 msgstr "Загрузить изображение"
 
 #: evileg_core/evileg_core/templates/evileg_core/markdown_widget.html:87

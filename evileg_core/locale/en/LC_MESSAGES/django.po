@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-09 18:49+0600\n"
-"PO-Revision-Date: 2018-12-09 13:50+0100\n"
+"POT-Creation-Date: 2018-12-15 02:32+0600\n"
+"PO-Revision-Date: 2018-12-14 21:33+0100\n"
 "Last-Translator: Evgenii Legotckoi <evileg@evileg.com>\n"
 "Language-Team: \n"
 "Language: en\n"
@@ -168,13 +168,13 @@ msgid "Preview"
 msgstr "Preview"
 
 #: evileg_core/evileg_core/templates/evileg_core/markdown_widget.html:82
-#| msgid "Content - Markdown"
 msgid "Content separator"
 msgstr "Content separator"
 
 #: evileg_core/evileg_core/templates/evileg_core/markdown_widget.html:84
-msgid "Upload image"
-msgstr "Upload image"
+#| msgid "Upload image"
+msgid "Upload Image"
+msgstr "Upload Image"
 
 #: evileg_core/evileg_core/templates/evileg_core/markdown_widget.html:87
 msgid "Add link"

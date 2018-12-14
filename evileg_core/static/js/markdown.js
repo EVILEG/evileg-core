@@ -150,6 +150,7 @@ class EMarkdownEditor {
                         uploadDialog.find("#cropBody").removeClass("d-none");
                         uploadDialog.find("#cropFooter").removeClass("d-none");
                         uploadDialog.find("#file_form_group").addClass("d-none");
+                        uploadDialog.find("#id_content").parent().removeClass("d-none");
                     });
                     img.attr("src", e.target.result);
                 };
