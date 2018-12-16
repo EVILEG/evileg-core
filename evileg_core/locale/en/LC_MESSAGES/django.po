@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-15 04:30+0600\n"
-"PO-Revision-Date: 2018-12-14 21:33+0100\n"
+"POT-Creation-Date: 2018-12-17 03:01+0600\n"
+"PO-Revision-Date: 2018-12-16 21:38+0100\n"
 "Last-Translator: Evgenii Legotckoi <evileg@evileg.com>\n"
 "Language-Team: \n"
 "Language: en\n"
@@ -53,6 +53,18 @@ msgstr "Set marked as MODERATED"
 #: evileg_core/evileg_core/apps.py:9
 msgid "EVILEG Core"
 msgstr "EVILEG Core"
+
+#: evileg_core/evileg_core/filters.py:60 evileg_core/evileg_core/filters.py:81
+msgid "Filter title not set"
+msgstr "Filter title not set"
+
+#: evileg_core/evileg_core/filters.py:65 evileg_core/evileg_core/filters.py:86
+msgid "Not empty only"
+msgstr "Not empty only"
+
+#: evileg_core/evileg_core/filters.py:66 evileg_core/evileg_core/filters.py:87
+msgid "Empty only"
+msgstr "Empty only"
 
 #: evileg_core/evileg_core/forms.py:32
 msgid "From date"

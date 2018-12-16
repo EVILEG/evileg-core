@@ -2,8 +2,11 @@
 
 import datetime
 
+from django.contrib import admin
 from django.contrib.admin.filters import FieldListFilter
 from django.db.models import DateField
+from django.db.models import Q
+from django.utils.translation import ugettext_lazy as _
 
 from .forms import EDateRangeForm
 
@@ -51,3 +54,45 @@ class EDateRangeFilter(FieldListFilter):
 
 
 FieldListFilter.register(lambda f: isinstance(f, DateField), EDateRangeFilter)
+
+
+class ENotNullFilter(admin.SimpleListFilter):
+    title = _('Filter title not set')
+    parameter_name = 'parameter name not set'
+
+    def lookups(self, request, model_admin):
+        return (
+            ('not_null', _('Not empty only')),
+            ('null', _('Empty only')),
+        )
+
+    def queryset(self, request, queryset):
+        filter_string = self.parameter_name + '__isnull'
+        if self.value() == 'not_null':
+            is_null_false = {filter_string: False}
+            return queryset.filter(**is_null_false)
+
+        if self.value() == 'null':
+            is_null_true = {filter_string: True}
+            return queryset.filter(**is_null_true)
+
+
+class EExactEmptyFilter(admin.SimpleListFilter):
+    title = _('Filter title not set')
+    parameter_name = 'parameter name not set'
+
+    def lookups(self, request, model_admin):
+        return (
+            ('not_null', _('Not empty only')),
+            ('null', _('Empty only')),
+        )
+
+    def queryset(self, request, queryset):
+        filter_string = self.parameter_name + '__exact'
+        if self.value() == 'not_null':
+            is_null_false = {filter_string: ''}
+            return queryset.filter(~Q(**is_null_false))
+
+        if self.value() == 'null':
+            is_null_true = {filter_string: ''}
+            return queryset.filter(Q(**is_null_true))
