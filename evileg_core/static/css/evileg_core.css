@@ -11379,3 +11379,38 @@ pre.prettyprint {
 
 pre > pre {
   margin-bottom: 0 !important; }
+
+.avatar-initials {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white !important;
+  text-decoration: none !important;
+  font-weight: bold; }
+
+.avatar-initials-size-1 {
+  font-size: 80%; }
+
+.avatar-initials-size-2 {
+  font-size: 100%; }
+
+.avatar-initials-size-3 {
+  font-size: 120%; }
+
+.avatar-initials-size-4 {
+  font-size: 140%; }
+
+.avatar-initials-size-5 {
+  font-size: 180%; }
+
+.avatar-initials-size-6 {
+  font-size: 230%; }
+
+.avatar-initials-size-120 {
+  font-size: 300%; }
+
+.text-decoration-none {
+  text-decoration: none !important; }
+
+.message:hover {
+  background-color: #e0e0e0 !important; }
