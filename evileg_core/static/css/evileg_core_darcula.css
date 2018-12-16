@@ -11083,29 +11083,10 @@ blockquote > p {
   font-size: .875rem;
   font-weight: 400; }
 
-.e-text > pre {
-  margin-top: 0;
-  margin-bottom: 1rem; }
-
-.e-text > p > br, .e-text > div > br, .e-text > br {
-  content: "";
-  display: block;
-  margin-top: 0;
-  margin-bottom: 1rem; }
-
 .e-text {
   margin: 0;
   font-size: .875rem;
   font-weight: 400; }
-
-.e-sign {
-  margin: 0;
-  font-size: 80%;
-  font-weight: 400; }
-
-.e-sign > p, .e-sign > div, .e-sign > ul, .e-sign > blockquote,
-.e-sign > p > br, .e-sign > div > br, .e-sign > br {
-  margin: 0; }
 
 .e-text-widget {
   clear: both; }
@@ -11526,3 +11507,6 @@ hr {
 
 .select2-container--default .select2-search--inline .select2-search__field {
   color: inherit; }
+
+pre > pre {
+  margin-bottom: 0 !important; }
