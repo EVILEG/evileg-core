@@ -11,6 +11,7 @@ from django.contrib.contenttypes.models import ContentType
 from django.db import models
 from django.utils.html import strip_tags
 from django.utils.translation import ugettext_lazy as _
+from django.utils import timezone
 
 from .fields import EMarkdownField
 from .managers import EPostManager
@@ -93,8 +94,11 @@ class EAbstractPostWithInterface(EInterfaceMixin, EAbstractPost):
     This class is the EAbstractPost with template interface
     """
 
+    def editable(self):
+        return (timezone.now() - self.pub_date) < timezone.timedelta(days=1)
+
     def was_edited(self):
-        return self.lastmod and (self.pub_date - self.lastmod).total_seconds() > 1
+        return self.lastmod and (self.lastmod - self.pub_date).total_seconds() > 1
 
     def get_preview(self):
         return self.content
@@ -148,6 +152,9 @@ class EAbstractArticleWithInterface(EInterfaceMixin, EAbstractArticle):
     This class is the EAbstractArticle with template interface
     """
 
+    def editable(self):
+        return True
+
     def get_title(self):
         return self.title
 
@@ -183,6 +190,9 @@ class EAbstractSection(EAbstractArticle):
 
 
 class EAbstractSectionWithInterface(EInterfaceMixin, EAbstractSection):
+
+    def editable(self):
+        return True
 
     def get_title(self):
         return self.title

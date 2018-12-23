@@ -25,6 +25,9 @@ class EInterfaceMixin:
     def was_edited(self):
         raise NotImplementedError("Please return information if object was edited")
 
+    def editable(self):
+        raise NotImplementedError("Please add editable condition or return True")
+
     @models.permalink
     def get_edit_url(self):
         return None
