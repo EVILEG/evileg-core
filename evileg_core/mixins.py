@@ -32,10 +32,17 @@ class EInterfaceMixin:
 
 class EAjaxableMixin:
 
-    def get(self, request, *args, **kwargs):
-        handler = getattr(self, 'get_ajax' if request.is_ajax() else 'get_common', self.http_method_not_allowed)
-        return handler(request, *args, **kwargs)
-
-    def post(self, request, *args, **kwargs):
-        handler = getattr(self, 'post_ajax' if request.is_ajax() else 'post_common', self.http_method_not_allowed)
+    def dispatch(self, request, *args, **kwargs):
+        # Try to dispatch to the right method; if a method doesn't exist,
+        # defer to the error handler. Also defer to the error handler if the
+        # request method isn't on the approved list.
+        if request.method.lower() in self.http_method_names:
+            if request.is_ajax():
+                handler = getattr(self,
+                                  '{}_ajax'.format(request.method.lower()),
+                                  getattr(self, request.method.lower(), self.http_method_not_allowed))
+            else:
+                handler = getattr(self, request.method.lower(), self.http_method_not_allowed)
+        else:
+            handler = self.http_method_not_allowed
         return handler(request, *args, **kwargs)
