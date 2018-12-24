@@ -143,6 +143,12 @@ class EAbstractArticle(EAbstractPost):
     def __str__(self):
         return self.title
 
+    def get_comments(self):
+        raise NotImplementedError('Please implement method for return comments query set')
+
+    def get_subscribers_url(self):
+        raise NotImplementedError('Please implement method for return url of subscribers page')
+
     class Meta:
         abstract = True
 
