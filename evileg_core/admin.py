@@ -117,6 +117,7 @@ class EArticleAdmin(EPostAdmin):
     """
     list_display = EPostAdmin.list_display + ('views',)
     search_fields = EPostAdmin.search_fields + ('title',)
+    fields = ['author', 'title', 'content_markdown', 'slug', 'pub_date', 'lastmod']
 
 
 class EArticleModeratedAdmin(EModerationMixinAdmin, EArticleAdmin):
