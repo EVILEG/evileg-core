@@ -151,6 +151,8 @@ class EAbstractArticleWithInterface(EInterfaceMixin, EAbstractArticle):
     """
     This class is the EAbstractArticle with template interface
     """
+    def was_edited(self):
+        return self.lastmod and (self.lastmod - self.pub_date).total_seconds() > 1
 
     def editable(self):
         return True
@@ -190,6 +192,9 @@ class EAbstractSection(EAbstractArticle):
 
 
 class EAbstractSectionWithInterface(EInterfaceMixin, EAbstractSection):
+
+    def was_edited(self):
+        return self.lastmod and (self.lastmod - self.pub_date).total_seconds() > 1
 
     def editable(self):
         return True
