@@ -31,10 +31,11 @@ class ELesserAdminDateWidget(AdminDateWidget):
 
 class EMarkdownWidget(forms.Widget):
 
-    def __init__(self, attrs=None, documentation_link=None, placeholder=None, upload_link=None):
+    def __init__(self, attrs=None, documentation_link=None, placeholder=None, upload_link=None, upload_file_link=None):
         self.documentation_link = documentation_link
         self.placeholder = placeholder
         self.upload_link = upload_link
+        self.upload_file_link = upload_file_link
         super().__init__(attrs=attrs)
 
     def render(self, name, value, attrs=None, renderer=None):
@@ -45,6 +46,7 @@ class EMarkdownWidget(forms.Widget):
                 'documentation_link': self.documentation_link,
                 'placeholer': self.placeholder,
                 'upload_link': self.upload_link,
+                'upload_file_link': self.upload_file_link,
                 'final_attrs': flatatt(self.build_attrs(self.attrs, attrs, name=name)),
                 'text': force_text(value or '')
             }

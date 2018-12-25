@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ESNF-C\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-17 04:25+0600\n"
-"PO-Revision-Date: 2018-12-16 23:11+0100\n"
+"POT-Creation-Date: 2018-12-25 18:41+0600\n"
+"PO-Revision-Date: 2018-12-25 13:43+0100\n"
 "Last-Translator: Evgenii Legotckoi <evileg@evileg.com>\n"
 "Language-Team: EVILEG Team <info@evileg.com>\n"
 "Language: ru\n"
@@ -19,7 +19,7 @@ msgstr ""
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Generator: Poedit 2.0.6\n"
 
-#: evileg_core/evileg_core/admin.py:41 evileg_core/evileg_core/models.py:71
+#: evileg_core/evileg_core/admin.py:41 evileg_core/evileg_core/models.py:72
 msgid "SPAM"
 msgstr "СПАМ"
 
@@ -75,56 +75,56 @@ msgstr "С даты"
 msgid "To date"
 msgstr "До даты"
 
-#: evileg_core/evileg_core/models.py:33
+#: evileg_core/evileg_core/models.py:34
 msgid "Author"
 msgstr "Автор"
 
-#: evileg_core/evileg_core/models.py:34
+#: evileg_core/evileg_core/models.py:35
 msgid "Content - HTML"
 msgstr "Содержание - HTML"
 
-#: evileg_core/evileg_core/models.py:35
+#: evileg_core/evileg_core/models.py:36
 msgid "Content - Markdown"
 msgstr "Содержание Markdown"
 
-#: evileg_core/evileg_core/models.py:36
+#: evileg_core/evileg_core/models.py:37
 msgid "Publication date"
 msgstr "Дата публикации"
 
-#: evileg_core/evileg_core/models.py:37
+#: evileg_core/evileg_core/models.py:38
 msgid "Last modification date"
 msgstr "Дата последнего изменения"
 
-#: evileg_core/evileg_core/models.py:72
+#: evileg_core/evileg_core/models.py:73
 msgid "Not Moderated"
 msgstr "Не модерировано"
 
-#: evileg_core/evileg_core/models.py:73
+#: evileg_core/evileg_core/models.py:74
 msgid "Post Moderated"
 msgstr "Пост модерируемый контент"
 
-#: evileg_core/evileg_core/models.py:74
+#: evileg_core/evileg_core/models.py:75
 msgid "Moderated"
 msgstr "Модерировано"
 
-#: evileg_core/evileg_core/models.py:78
+#: evileg_core/evileg_core/models.py:79
 msgid "Moderation"
 msgstr "Модерация"
 
-#: evileg_core/evileg_core/models.py:133
+#: evileg_core/evileg_core/models.py:137
 msgid "Title"
 msgstr "Заголовок"
 
-#: evileg_core/evileg_core/models.py:134
+#: evileg_core/evileg_core/models.py:138
 msgid "Views"
 msgstr "Просмотры"
 
-#: evileg_core/evileg_core/models.py:135
+#: evileg_core/evileg_core/models.py:139
 #: evileg_core/evileg_core/templates/evileg_core/markdown_widget.html:16
 msgid "URL"
 msgstr "URL"
 
-#: evileg_core/evileg_core/models.py:219
+#: evileg_core/evileg_core/models.py:240
 msgid "User"
 msgstr "Пользователь"
 
@@ -160,7 +160,7 @@ msgid "Insert"
 msgstr "Вставить"
 
 #: evileg_core/evileg_core/templates/evileg_core/markdown_widget.html:32
-#: evileg_core/evileg_core/templates/evileg_core/markdown_widget.html:86
+#: evileg_core/evileg_core/templates/evileg_core/markdown_widget.html:89
 msgid "Insert code"
 msgstr "Вставить код"
 
@@ -185,14 +185,18 @@ msgid "Content separator"
 msgstr "Разделитель контента"
 
 #: evileg_core/evileg_core/templates/evileg_core/markdown_widget.html:84
+msgid "Upload File"
+msgstr "Загрузить файл"
+
+#: evileg_core/evileg_core/templates/evileg_core/markdown_widget.html:87
 msgid "Upload Image"
 msgstr "Загрузить изображение"
 
-#: evileg_core/evileg_core/templates/evileg_core/markdown_widget.html:87
+#: evileg_core/evileg_core/templates/evileg_core/markdown_widget.html:90
 msgid "Add link"
 msgstr "Добавить ссылку"
 
-#: evileg_core/evileg_core/templates/evileg_core/markdown_widget.html:89
+#: evileg_core/evileg_core/templates/evileg_core/markdown_widget.html:92
 msgid "Markdown syntax"
 msgstr "Синтаксис Markdown"
 

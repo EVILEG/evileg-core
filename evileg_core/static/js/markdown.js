@@ -30,7 +30,7 @@ insertAtCaret: function(myValue){
 });
 
 class EMarkdownEditor {
-    constructor (widgetId, uploadLink='') {
+    constructor (widgetId, uploadLink='', uploadFileLink='') {
         this.id = widgetId;
         this.textarea = jQuery("#" + widgetId);
         this.tabPreviewLink = jQuery("#" + widgetId + "_tab_preview_link");
@@ -55,6 +55,10 @@ class EMarkdownEditor {
         this.uploadLink = uploadLink;
         this.addImageBtn = jQuery('#' + widgetId + '_add_image_btn');
         this.addImageBtn.bind("click", {widgetId: widgetId}, EMarkdownEditor.showUploadDialog);
+        // Upload file dialog
+        this.uploadFileLink = uploadFileLink;
+        this.addFileBtn = jQuery('#' + widgetId + '_add_file_btn');
+        this.addFileBtn.bind('click', {widgetId: widgetId}, EMarkdownEditor.showUploadFileDialog);
         // Add special symbols
         this.addCutBtn = jQuery('#' + widgetId + '_add_cut_btn');
         this.addCutBtn.bind('click', {widgetId: widgetId}, EMarkdownEditor.insertCut)
@@ -106,7 +110,6 @@ class EMarkdownEditor {
                         uploadDialog.find("#js-zoom-in").click(function () { cropper.zoom(0.1); });
                         uploadDialog.find("#js-zoom-out").click(function () { cropper.zoom(-0.1); });
                         uploadDialog.on("hidden.bs.modal", function () {
-                            uploadDialog.remove();
                             cropper.destroy();
                         });
 
@@ -157,6 +160,82 @@ class EMarkdownEditor {
                 reader.readAsDataURL(this.files[0]);
             }
         });
+
+        uploadDialog.on("hidden.bs.modal", function () {
+            uploadDialog.remove();
+        });
+    }
+
+    static  initUploadFileDialog(widgetId) {
+        let editor = EMarkdownEditor.get(widgetId);
+        let uploadFileDialog = jQuery('#uploadFileDialog');
+        uploadFileDialog.find("#id_file").change(function (e) {
+            if (this.files && this.files[0]) {
+                uploadFileDialog.find('#file-upload-submit').click(function (e) {
+                    e.preventDefault();
+                    let formUpload = new FormData(uploadFileDialog.find("#formUpload").get(0));
+                    if (formUpload) {
+                        jQuery.ajax({
+                            url: editor.uploadFileLink,
+                            type: "POST",
+                            data: formUpload,
+                            cache: false,
+                            processData: false,
+                            contentType: false,
+                            success: function (json) {
+                                if (json.result) {
+                                    let file = '\n[![' + json.name + '](/static/images/file.svg) ' + json.name + '](' + json.url + ')\n';
+                                    EMarkdownEditor.restoreSelection();
+                                    editor.textarea.insertAtCaret(file);
+                                    uploadFileDialog.find("#upload-size-warning").addClass("d-none");
+                                    uploadFileDialog.modal("hide");
+                                }
+                            },
+                            error: function (jqXHR, textStatus, errorThrown) {
+                                if (jqXHR.status === 413) {
+                                    uploadFileDialog.find("#upload-size-warning").removeClass("d-none");
+                                }
+                            }
+                        });
+                    }
+                    return false;
+                });
+
+                uploadFileDialog.find("#file_info").removeClass("d-none");
+                uploadFileDialog.find("#file_name").html(e.target.files[0].name);
+                uploadFileDialog.find("#file_form_group").addClass("d-none");
+                uploadFileDialog.find("#id_content").parent().removeClass("d-none");
+                uploadFileDialog.find(("#uploadFooter")).removeClass("d-none");
+            }
+        });
+
+        uploadFileDialog.on("hidden.bs.modal", function () {
+            uploadFileDialog.remove();
+        });
+    }
+
+    static showUploadFileDialog(e) {
+        e.preventDefault();
+        let widgetId = e.data.widgetId;
+        let editor = EMarkdownEditor.get(widgetId);
+        if (editor.uploadFileLink.length) {
+            let uploadDialog = jQuery('#uploadFileDialog');
+            if (uploadDialog.length) {
+                EMarkdownEditor.initUploadFileDialog(widgetId);
+                uploadDialog.modal('show');
+            } else {
+                jQuery.ajax({
+                    url: editor.uploadFileLink,
+                    type: 'GET',
+                    dataType: 'json',
+
+                    success: function (json) {
+                        jQuery(json.uploadDialog).appendTo(jQuery('body'));
+                        EMarkdownEditor.showUploadFileDialog(e);
+                    }
+                });
+            }
+        }
     }
 
     static insertCode(e) {
@@ -206,8 +285,8 @@ class EMarkdownEditor {
         return false;
     }
 
-    static create(widgetId, upload_link='') {
-        let editor = new EMarkdownEditor(widgetId, upload_link);
+    static create(widgetId, upload_link='', upload_file_link) {
+        let editor = new EMarkdownEditor(widgetId, upload_link, upload_file_link);
         allEditors[widgetId] = editor;
         return editor;
     }
