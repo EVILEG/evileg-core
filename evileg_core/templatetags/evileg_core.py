@@ -37,6 +37,34 @@ def get_theme_min(theme):
     return static(THEMES_CSS_MIN[theme])
 
 
+@register.simple_tag(takes_context=True)
+def render_template_full(context, obj):
+    if obj:
+        return obj.render_template_full(context)
+    return ''
+
+
+@register.simple_tag(takes_context=True)
+def render_template_preview(context, obj):
+    if obj:
+        return obj.render_template_preview(context)
+    return ''
+
+
+@register.simple_tag(takes_context=True)
+def render_template_info(context, obj):
+    if obj:
+        return obj.render_template_info(context)
+    return ''
+
+
+@register.simple_tag
+def render_template_mail(obj):
+    if obj:
+        return obj.render_template_mail()
+    return ''
+
+
 @register.filter
 def activities_count(activity_set, model_name):
     if model_name:

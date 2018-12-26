@@ -1,8 +1,8 @@
 <div id="object-list">
-    {% load trans from i18n %}
     {% load bootstrap_pagination from bootstrap4 %}
+    {% load render_template_preview from evileg_core %}
     {% for object in object_list %}
-        {% include object.get_self.TEMPLATE_PREVIEW with object=object.get_self %}
+        {% render_template_preview object.get_self %}
     {% empty %}
         <div class="card card-body mb-3">{{ not_found_message|default:_("Nothing found") }}</div>
     {% endfor %}
