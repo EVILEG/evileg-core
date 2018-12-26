@@ -1,4 +1,6 @@
 {% load trans from i18n %}
+{% load djangocodemirror_tags %}
+
 <div id="{{ widget_id }}_markdown_widget">
     {# Add link dialog #}
     <div id="{{ widget_id }}_add_link_dialog" class="modal fade">
@@ -65,7 +67,12 @@
                         </div>
                     </div>
                     <label for="{{ widget_id }}_code_input" class="control-label">{% trans "Insert your code" %}</label>
-                    <textarea class="form-control" rows="10" id="{{ widget_id }}_code_input" style="font-family: 'monospace';"></textarea>
+                    {% with widget_id|add:'_code_input' as codeId %}
+                        <textarea name="{{ codeId }}" class="form-control" rows="10" id="{{ codeId }}" style="font-family: 'monospace';"></textarea>
+                        {% with codeId|add:'_codemirror' as codemirror %}
+                            {% codemirror_instance 'empty' codemirror codeId %}
+                        {% endwith %}
+                    {% endwith %}
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="">{% trans "Close" %}</button>

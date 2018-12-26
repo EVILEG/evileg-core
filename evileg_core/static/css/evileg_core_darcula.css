@@ -11546,3 +11546,10 @@ pre > pre {
 
 .message:hover {
   background-color: rgba(153, 153, 153, 0.2) !important; }
+
+.CodeMirror-linenumbers {
+  min-width: 44px !important;
+  width: 44px !important; }
+
+.CodeMirror-sizer {
+  margin-left: 44px !important; }

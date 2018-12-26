@@ -11414,3 +11414,10 @@ pre > pre {
 
 .message:hover {
   background-color: #e0e0e0 !important; }
+
+.CodeMirror-linenumbers {
+  min-width: 44px !important;
+  width: 44px !important; }
+
+.CodeMirror-sizer {
+  margin-left: 44px !important; }

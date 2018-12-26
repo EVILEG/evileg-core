@@ -1,5 +1,30 @@
 let allEditors = {};
-let selectionRange = null;
+let LANGUAGES = {
+    "": "text/x-c++src",
+    "lang-bsh": "text/x-sh",
+    "lang-c": "text/x-csrc",
+    "lang-cc": "text/x-csrc",
+    "lang-cpp": "text/x-c++src",
+    "lang-cs": "text/x-c++src",
+    "lang-csh": "text/x-c++src",
+    "lang-cyc": "text/x-c++src",
+    "lang-cv": "text/x-c++src",
+    "lang-htm": "text/html",
+    "lang-html": "text/html",
+    "lang-java": "text/x-java",
+    "lang-js": "text/javascript",
+    "lang-m": "text/html",
+    "lang-mxml": "text/html",
+    "lang-perl": "text/x-perl",
+    "lang-pl": "text/x-sh",
+    "lang-pm": "text/x-sh",
+    "lang-py": "text/x-python",
+    "lang-rb": "text/x-ruby",
+    "lang-sh": "text/x-sh",
+    "lang-xhtml": "htmlmixed",
+    "lang-xml": "text/html",
+    "lang-xsl": "text/html",
+};
 
 jQuery.fn.extend({
 insertAtCaret: function(myValue){
@@ -50,7 +75,9 @@ class EMarkdownEditor {
         this.insertCodeBtn = jQuery("#" + widgetId + "_insert_code_btn");
         this.insertCodeBtn.bind('click', {widgetId: widgetId}, EMarkdownEditor.insertCode);
         this.selectCode = jQuery('#' + widgetId + '_select_code');
+        this.selectCode.bind('change', {widgetId: widgetId}, EMarkdownEditor.onSelectCode);
         this.codeInput = jQuery('#' + widgetId + '_code_input');
+        this.mirrorEditor = eval(widgetId + '_code_input_codemirror');
         // Upload Image Dialog
         this.uploadLink = uploadLink;
         this.addImageBtn = jQuery('#' + widgetId + '_add_image_btn');
@@ -62,6 +89,11 @@ class EMarkdownEditor {
         // Add special symbols
         this.addCutBtn = jQuery('#' + widgetId + '_add_cut_btn');
         this.addCutBtn.bind('click', {widgetId: widgetId}, EMarkdownEditor.insertCut)
+    }
+
+    static onSelectCode(e) {
+        let editor = EMarkdownEditor.get(e.data.widgetId);
+        editor.mirrorEditor.setOption("mode", LANGUAGES[editor.selectCode.val()])
     }
 
     static insertCut(e) {
@@ -242,6 +274,7 @@ class EMarkdownEditor {
         e.preventDefault();
         let editor = EMarkdownEditor.get(e.data.widgetId);
         if (editor) {
+            editor.codeInput.val(editor.mirrorEditor.getValue());
             let code = editor.codeInput.val();
             let lang = editor.selectCode.val();
             if (code.length > 0)
@@ -250,6 +283,7 @@ class EMarkdownEditor {
                 EMarkdownEditor.restoreSelection();
                 editor.textarea.insertAtCaret(resultCode);
                 editor.codeInput.val('');
+                editor.mirrorEditor.getDoc().setValue('');
                 return true;
             }
         }
