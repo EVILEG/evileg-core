@@ -26,36 +26,9 @@ let LANGUAGES = {
     "lang-xsl": "text/html",
 };
 
-jQuery.fn.extend({
-insertAtCaret: function(myValue){
-  return this.each(function(i) {
-    if (document.selection) {
-      //For browsers like Internet Explorer
-      this.focus();
-      var sel = document.selection.createRange();
-      sel.text = myValue;
-      this.focus();
-    }
-    else if (this.selectionStart || this.selectionStart == '0') {
-      //For browsers like Firefox and Webkit based
-      var startPos = this.selectionStart;
-      var endPos = this.selectionEnd;
-      var scrollTop = this.scrollTop;
-      this.value = this.value.substring(0, startPos)+myValue+this.value.substring(endPos,this.value.length);
-      this.focus();
-      this.selectionStart = startPos + myValue.length;
-      this.selectionEnd = startPos + myValue.length;
-      this.scrollTop = scrollTop;
-    } else {
-      this.value += myValue;
-      this.focus();
-    }
-  });
-}
-});
-
 class EMarkdownEditor {
     constructor (widgetId, uploadLink='', uploadFileLink='') {
+        let editor = this;
         this.id = widgetId;
         this.textarea = jQuery("#" + widgetId);
         this.tabPreviewLink = jQuery("#" + widgetId + "_tab_preview_link");
@@ -77,7 +50,6 @@ class EMarkdownEditor {
         this.selectCode = jQuery('#' + widgetId + '_select_code');
         this.selectCode.bind('change', {widgetId: widgetId}, EMarkdownEditor.onSelectCode);
         this.codeInput = jQuery('#' + widgetId + '_code_input');
-        this.mirrorEditor = eval(widgetId + '_code_input_codemirror');
         // Upload Image Dialog
         this.uploadLink = uploadLink;
         this.addImageBtn = jQuery('#' + widgetId + '_add_image_btn');
@@ -88,7 +60,18 @@ class EMarkdownEditor {
         this.addFileBtn.bind('click', {widgetId: widgetId}, EMarkdownEditor.showUploadFileDialog);
         // Add special symbols
         this.addCutBtn = jQuery('#' + widgetId + '_add_cut_btn');
-        this.addCutBtn.bind('click', {widgetId: widgetId}, EMarkdownEditor.insertCut)
+        this.addCutBtn.bind('click', {widgetId: widgetId}, EMarkdownEditor.insertCut);
+
+        // Code Mirror
+        this.mirrorEditor = eval(widgetId + '_code_input_codemirror');
+        this.mirrorEditor.on('change', function(cm){
+            editor.codeInput.val(cm.getValue());
+        });
+
+        this.markdownMirrorEditor = eval(widgetId + '_codemirror');
+        this.markdownMirrorEditor.on('change', function(cm){
+            editor.textarea.val(cm.getValue());
+        });
     }
 
     static onSelectCode(e) {
@@ -100,7 +83,7 @@ class EMarkdownEditor {
         e.preventDefault();
         let editor = EMarkdownEditor.get(e.data.widgetId);
         if (editor) {
-            editor.textarea.insertAtCaret('\n___\n');
+            editor.markdownMirrorEditor.replaceSelection('\n___\n');
         }
         return false;
     }
@@ -164,8 +147,7 @@ class EMarkdownEditor {
                                         success: function (json) {
                                             if (json.result) {
                                                 let image = '\n[![' + json.description + '](' + json.src + ')](' + json.url + ')\n';
-                                                EMarkdownEditor.restoreSelection();
-                                                editor.textarea.insertAtCaret(image);
+                                                editor.markdownMirrorEditor.replaceSelection(image);
                                                 uploadDialog.find("#upload-size-warning").addClass("d-none");
                                                 uploadDialog.modal("hide");
                                             }
@@ -217,8 +199,7 @@ class EMarkdownEditor {
                             success: function (json) {
                                 if (json.result) {
                                     let file = '\n[![' + json.name + '](/static/images/file.svg) ' + json.name + '](' + json.url + ')\n';
-                                    EMarkdownEditor.restoreSelection();
-                                    editor.textarea.insertAtCaret(file);
+                                    editor.markdownMirrorEditor.replaceSelection(file);
                                     uploadFileDialog.find("#upload-size-warning").addClass("d-none");
                                     uploadFileDialog.modal("hide");
                                 }
@@ -274,14 +255,12 @@ class EMarkdownEditor {
         e.preventDefault();
         let editor = EMarkdownEditor.get(e.data.widgetId);
         if (editor) {
-            editor.codeInput.val(editor.mirrorEditor.getValue());
             let code = editor.codeInput.val();
             let lang = editor.selectCode.val();
             if (code.length > 0)
             {
                 let resultCode = '\n```' + lang + '\n' + code + '\n```\n';
-                EMarkdownEditor.restoreSelection();
-                editor.textarea.insertAtCaret(resultCode);
+                editor.markdownMirrorEditor.replaceSelection(resultCode);
                 editor.codeInput.val('');
                 editor.mirrorEditor.getDoc().setValue('');
                 return true;
@@ -304,8 +283,7 @@ class EMarkdownEditor {
                 else {
                     link = "[" + linkUrl + "](" + linkUrl + ")"
                 }
-                EMarkdownEditor.restoreSelection();
-                editor.textarea.insertAtCaret(link);
+                editor.markdownMirrorEditor.replaceSelection(link);
                 editor.linkUrl.val('');
                 editor.linkText.val('');
                 return true;
@@ -343,18 +321,6 @@ class EMarkdownEditor {
             return document.selection.createRange();
         }
         return null;
-    }
-
-    static restoreSelection(range) {
-        if (range) {
-            if (window.getSelection) {
-                let sel = window.getSelection();
-                sel.removeAllRanges();
-                sel.addRange(range);
-            } else if (document.selection && range.select) {
-                range.select();
-            }
-        }
     }
 
     static updatePreview(e) {

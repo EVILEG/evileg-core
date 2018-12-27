@@ -11553,3 +11553,9 @@ pre > pre {
 
 .CodeMirror-sizer {
   margin-left: 44px !important; }
+
+.CodeMirror {
+  height: auto; }
+
+.markdown_editor > .CodeMirror > .CodeMirror-scroll > .CodeMirror-sizer {
+  margin-left: 0 !important; }

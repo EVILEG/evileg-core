@@ -67,12 +67,14 @@
                         </div>
                     </div>
                     <label for="{{ widget_id }}_code_input" class="control-label">{% trans "Insert your code" %}</label>
-                    {% with widget_id|add:'_code_input' as codeId %}
-                        <textarea name="{{ codeId }}" class="form-control" rows="10" id="{{ codeId }}" style="font-family: 'monospace';"></textarea>
-                        {% with codeId|add:'_codemirror' as codemirror %}
-                            {% codemirror_instance 'empty' codemirror codeId %}
+                    <div class="border">
+                         {% with widget_id|add:'_code_input' as codeId %}
+                            <textarea  class="form-control" rows="10" id="{{ codeId }}" style="font-family: 'monospace';"></textarea>
+                            {% with codeId|add:'_codemirror' as codemirror %}
+                                {% codemirror_instance codemirror_theme codemirror codeId %}
+                            {% endwith %}
                         {% endwith %}
-                    {% endwith %}
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="">{% trans "Close" %}</button>
@@ -101,7 +103,12 @@
     </ul>
     <div class="tab-content">
         <div class="tab-pane fade in active show" id="{{ widget_id }}_tab_markdown">
-            <textarea {{ final_attrs }} style="height: 200px; max-height: 600px;" placeholder="{{ placeholder }}">{{ text }}</textarea>
+            <div class="border markdown_editor">
+                <textarea {{ final_attrs }} style="height: 200px; max-height: 600px;" placeholder="{{ placeholder }}">{{ text }}</textarea>
+                {% with widget_id|add:'_codemirror' as codemirror %}
+                    {% codemirror_instance markdown_codemirror_theme codemirror widget_id %}
+                {% endwith %}
+            </div>
         </div>
         <div class="tab-pane fade in" id="{{ widget_id }}_tab_preview">
             <div id="{{ widget_id }}_preview" class="border p-2"></div>

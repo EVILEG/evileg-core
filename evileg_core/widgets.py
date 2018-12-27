@@ -36,6 +36,8 @@ class EMarkdownWidget(forms.Widget):
         self.placeholder = placeholder
         self.upload_link = upload_link
         self.upload_file_link = upload_file_link
+        self.codemirror_theme = 'idea'
+        self.markdown_codemirror_theme = 'markdown_idea'
         super().__init__(attrs=attrs)
 
     def render(self, name, value, attrs=None, renderer=None):
@@ -48,7 +50,9 @@ class EMarkdownWidget(forms.Widget):
                 'upload_link': self.upload_link,
                 'upload_file_link': self.upload_file_link,
                 'final_attrs': flatatt(self.build_attrs(self.attrs, attrs, name=name)),
-                'text': force_text(value or '')
+                'text': force_text(value or ''),
+                'codemirror_theme': self.codemirror_theme,
+                'markdown_codemirror_theme': self.markdown_codemirror_theme
             }
         )
 
