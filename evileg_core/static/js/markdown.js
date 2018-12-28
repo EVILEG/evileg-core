@@ -29,10 +29,18 @@ let LANGUAGES = {
 class EMarkdownEditor {
     constructor (widgetId, uploadLink='', uploadFileLink='') {
         let editor = this;
+        this.fullscreen = false;
         this.id = widgetId;
+        this.widget = jQuery('#' + widgetId + '_markdown_widget');
         this.textarea = jQuery("#" + widgetId);
         this.tabPreviewLink = jQuery("#" + widgetId + "_tab_preview_link");
         this.tabPreviewLink.bind('shown.bs.tab', {widgetId: widgetId}, EMarkdownEditor.updatePreview);
+        // Fullscreen
+        this.fullScreenButton = jQuery("#" + widgetId + "_fullscreen_btn");
+        this.fullScreenButton.on('click', function(e){
+            e.preventDefault();
+            editor.fullScreen();
+        });
         // Link Dialog
         this.linkDialog = jQuery("#" + widgetId + "_add_link_dialog");
         this.addLinkBtn = jQuery("#" + widgetId + "_add_link_btn");
@@ -72,6 +80,37 @@ class EMarkdownEditor {
         this.markdownMirrorEditor.on('change', function(cm){
             editor.textarea.val(cm.getValue());
         });
+
+        this.markdownMirrorEditor.setOption("extraKeys", {
+            "F11": function(cm) {
+                editor.fullScreen();
+            },
+            "Esc": function(cm) {
+                editor.widget.removeClass('markdown-fullscreen');
+                this.fullscreen = false;
+                this.fullScreenButton.find('span').removeClass('mdi-fullscreen-exit');
+                this.fullScreenButton.find('span').addClass('mdi-fullscreen');
+            },
+            "Ctrl-/": "toggleComment"
+        });
+
+        this.mirrorEditor.setOption("extraKeys", {
+            "Ctrl-/": "toggleComment"
+        });
+    }
+
+    fullScreen() {
+        if (this.fullscreen) {
+            this.widget.removeClass('markdown-fullscreen');
+            this.fullscreen = false;
+            this.fullScreenButton.find('span').removeClass('mdi-fullscreen-exit');
+            this.fullScreenButton.find('span').addClass('mdi-fullscreen');
+        } else {
+            this.widget.addClass('markdown-fullscreen');
+            this.fullscreen = true;
+            this.fullScreenButton.find('span').removeClass('mdi-fullscreen');
+            this.fullScreenButton.find('span').addClass('mdi-fullscreen-exit');
+        }
     }
 
     static onSelectCode(e) {
@@ -294,6 +333,7 @@ class EMarkdownEditor {
 
     static showDialog(e) {
         e.data.dialog.modal('show');
+        e.data.dialog.css('z-index', 2000);
         return false;
     }
 

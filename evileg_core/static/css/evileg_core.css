@@ -11182,7 +11182,7 @@ pre.prettyprint {
   height: 100%;
   width: 239px;
   position: fixed;
-  z-index: 1040;
+  z-index: 1033;
   top: 0;
   left: -239px;
   background-color: white;
@@ -11425,5 +11425,49 @@ pre > pre {
 .CodeMirror {
   height: auto; }
 
+.CodeMirror-fullscreen {
+  z-index: 5000 !important; }
+
 .markdown_editor > .CodeMirror > .CodeMirror-scroll > .CodeMirror-sizer {
   margin-left: 0 !important; }
+
+.paste-header > div[class^='col-md'] > .bmd-form-group > input,
+.paste-header > div[class^='col-md'] > .bmd-form-group > select {
+  height: 36px !important; }
+
+.codemirror_editor > .CodeMirror {
+  height: calc(100vh - 159px); }
+
+.paste-item {
+  max-width: 220px; }
+
+.markdown-fullscreen {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  height: auto !important;
+  z-index: 1035 !important;
+  background-color: white !important; }
+
+.markdown-fullscreen > .tab-content > .tab-pane > .markdown_editor > .CodeMirror,
+.markdown-fullscreen > .tab-content > .tab-pane > div {
+  height: calc(100vh - 41px) !important; }
+
+.markdown-fullscreen > .tab-content > .tab-pane > div {
+  overflow-y: auto; }
+
+@media (min-width: 1250px) {
+  .d-exl-block {
+    display: block !important; } }
+
+@media (min-width: 1250px) {
+  .d-exl-none {
+    display: none !important; } }
+
+.drawer, .fixed-top .navbar, .expanded-menu {
+  background-color: white; }
+
+.uptl_container {
+  z-index: 900 !important; }
