@@ -105,14 +105,14 @@
     <div class="tab-content">
         <div class="tab-pane fade in active show" id="{{ widget_id }}_tab_markdown">
             <div class="border markdown_editor">
-                <textarea {{ final_attrs }} style="height: 200px; max-height: 600px;" placeholder="{{ placeholder }}">{{ text }}</textarea>
+                <textarea {{ final_attrs }} placeholder="{{ placeholder }}">{{ text }}</textarea>
                 {% with widget_id|add:'_codemirror' as codemirror %}
                     {% codemirror_instance markdown_codemirror_theme codemirror widget_id %}
                 {% endwith %}
             </div>
         </div>
         <div class="tab-pane fade in" id="{{ widget_id }}_tab_preview">
-            <div id="{{ widget_id }}_preview" class="border p-2"></div>
+            <div id="{{ widget_id }}_preview" class="border p-2 tab-preview"></div>
         </div>
     </div>
 </div>

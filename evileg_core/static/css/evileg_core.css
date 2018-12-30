@@ -11438,6 +11438,17 @@ pre > pre {
 .codemirror_editor > .CodeMirror {
   height: calc(100vh - 159px); }
 
+.message-form > div > .tab-content > .tab-pane > .markdown_editor > .CodeMirror {
+  height: 150px;
+  min-height: 150px; }
+
+.message-form > div > .tab-content > .tab-pane > .tab-preview {
+  height: 152px;
+  min-height: 152px; }
+
+.message-form > div > .tab-content > .tab-pane > .tab-preview {
+  overflow-y: auto; }
+
 .paste-item {
   max-width: 220px; }
 

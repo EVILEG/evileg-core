@@ -87,9 +87,9 @@ class EMarkdownEditor {
             },
             "Esc": function(cm) {
                 editor.widget.removeClass('markdown-fullscreen');
-                this.fullscreen = false;
-                this.fullScreenButton.find('span').removeClass('mdi-fullscreen-exit');
-                this.fullScreenButton.find('span').addClass('mdi-fullscreen');
+                editor.fullscreen = false;
+                editor.fullScreenButton.find('span').removeClass('mdi-fullscreen-exit');
+                editor.fullScreenButton.find('span').addClass('mdi-fullscreen');
             },
             "Ctrl-/": "toggleComment"
         });
