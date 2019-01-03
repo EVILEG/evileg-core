@@ -96,7 +96,7 @@ class ESoup:
             soup = self.__remove_all_attrs_except_saving(
                 soup=soup,
                 whitelist_tags=('img', 'a', 'iframe'),
-                whitelist_attrs=('src', 'href', 'name'),
+                whitelist_attrs=('src', 'href', 'name', 'width', 'height', 'alt'),
                 whitelist_classes=(
                     'youtube-wrapper', 'youtube-iframe', 'prettyprint', 'lang-bsh', 'lang-c', 'lang-cc', 'lang-cpp',
                     'lang-cs', 'lang-csh', 'lang-cyc', 'lang-cv', 'lang-htm', 'lang-html', 'lang-java', 'lang-js',
@@ -130,7 +130,8 @@ class EMarkdownWorker:
     def make_html_from_markdown(self):
         self.markdown_text = markdown.markdown(
             self.pre_markdown_text,
-            extensions=['markdown.extensions.tables',
+            extensions=['markdown.extensions.attr_list',
+                        'markdown.extensions.tables',
                         'markdown.extensions.fenced_code'],
             output_format='html5'
         )
