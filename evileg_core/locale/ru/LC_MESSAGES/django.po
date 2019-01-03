@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ESNF-C\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-25 18:41+0600\n"
-"PO-Revision-Date: 2018-12-25 13:43+0100\n"
+"POT-Creation-Date: 2019-01-04 04:22+0600\n"
+"PO-Revision-Date: 2019-01-03 23:20+0100\n"
 "Last-Translator: Evgenii Legotckoi <evileg@evileg.com>\n"
 "Language-Team: EVILEG Team <info@evileg.com>\n"
 "Language: ru\n"
@@ -61,7 +61,7 @@ msgstr "Заголовок фильтра не установлен"
 
 #: evileg_core/evileg_core/filters.py:65 evileg_core/evileg_core/filters.py:86
 msgid "Not empty only"
-msgstr "Не только не пустой"
+msgstr "Только не пустой"
 
 #: evileg_core/evileg_core/filters.py:66 evileg_core/evileg_core/filters.py:87
 msgid "Empty only"
@@ -120,7 +120,7 @@ msgid "Views"
 msgstr "Просмотры"
 
 #: evileg_core/evileg_core/models.py:139
-#: evileg_core/evileg_core/templates/evileg_core/markdown_widget.html:16
+#: evileg_core/evileg_core/templates/evileg_core/markdown_widget.html:17
 msgid "URL"
 msgstr "URL"
 
@@ -141,62 +141,62 @@ msgstr "Найти"
 msgid "Clear"
 msgstr "Очистить"
 
-#: evileg_core/evileg_core/templates/evileg_core/markdown_widget.html:7
+#: evileg_core/evileg_core/templates/evileg_core/markdown_widget.html:8
 msgid "Add Link"
 msgstr "Добавить ссылку"
 
-#: evileg_core/evileg_core/templates/evileg_core/markdown_widget.html:12
+#: evileg_core/evileg_core/templates/evileg_core/markdown_widget.html:13
 msgid "Text"
 msgstr "Текст"
 
-#: evileg_core/evileg_core/templates/evileg_core/markdown_widget.html:21
-#: evileg_core/evileg_core/templates/evileg_core/markdown_widget.html:71
+#: evileg_core/evileg_core/templates/evileg_core/markdown_widget.html:22
+#: evileg_core/evileg_core/templates/evileg_core/markdown_widget.html:79
 msgid "Close"
 msgstr "Закрыть"
 
-#: evileg_core/evileg_core/templates/evileg_core/markdown_widget.html:22
-#: evileg_core/evileg_core/templates/evileg_core/markdown_widget.html:72
+#: evileg_core/evileg_core/templates/evileg_core/markdown_widget.html:23
+#: evileg_core/evileg_core/templates/evileg_core/markdown_widget.html:80
 msgid "Insert"
 msgstr "Вставить"
 
-#: evileg_core/evileg_core/templates/evileg_core/markdown_widget.html:32
-#: evileg_core/evileg_core/templates/evileg_core/markdown_widget.html:89
+#: evileg_core/evileg_core/templates/evileg_core/markdown_widget.html:33
+#: evileg_core/evileg_core/templates/evileg_core/markdown_widget.html:99
 msgid "Insert code"
 msgstr "Вставить код"
 
-#: evileg_core/evileg_core/templates/evileg_core/markdown_widget.html:37
+#: evileg_core/evileg_core/templates/evileg_core/markdown_widget.html:38
 msgid "Select language"
 msgstr "Выбрать язык"
 
-#: evileg_core/evileg_core/templates/evileg_core/markdown_widget.html:40
+#: evileg_core/evileg_core/templates/evileg_core/markdown_widget.html:41
 msgid "Other language"
 msgstr "Другой язык"
 
-#: evileg_core/evileg_core/templates/evileg_core/markdown_widget.html:67
+#: evileg_core/evileg_core/templates/evileg_core/markdown_widget.html:68
 msgid "Insert your code"
 msgstr "Вставьте ваш код"
 
-#: evileg_core/evileg_core/templates/evileg_core/markdown_widget.html:81
+#: evileg_core/evileg_core/templates/evileg_core/markdown_widget.html:90
 msgid "Preview"
 msgstr "Предпросмотр"
 
-#: evileg_core/evileg_core/templates/evileg_core/markdown_widget.html:82
+#: evileg_core/evileg_core/templates/evileg_core/markdown_widget.html:92
 msgid "Content separator"
 msgstr "Разделитель контента"
 
-#: evileg_core/evileg_core/templates/evileg_core/markdown_widget.html:84
+#: evileg_core/evileg_core/templates/evileg_core/markdown_widget.html:94
 msgid "Upload File"
 msgstr "Загрузить файл"
 
-#: evileg_core/evileg_core/templates/evileg_core/markdown_widget.html:87
+#: evileg_core/evileg_core/templates/evileg_core/markdown_widget.html:97
 msgid "Upload Image"
 msgstr "Загрузить изображение"
 
-#: evileg_core/evileg_core/templates/evileg_core/markdown_widget.html:90
+#: evileg_core/evileg_core/templates/evileg_core/markdown_widget.html:100
 msgid "Add link"
 msgstr "Добавить ссылку"
 
-#: evileg_core/evileg_core/templates/evileg_core/markdown_widget.html:92
+#: evileg_core/evileg_core/templates/evileg_core/markdown_widget.html:102
 msgid "Markdown syntax"
 msgstr "Синтаксис Markdown"
 
