@@ -48,8 +48,6 @@ class EPostManager(models.Manager):
 
         if prefetcth_related:
             qs = qs.prefetch_related(*prefetcth_related)
-
-        qs = qs.distinct()
         return qs
 
 
@@ -74,7 +72,6 @@ class EActivityManager(models.Manager):
         if date_from is not None and date_to is not None:
             qs = qs.filter({"{}s__pub_date__range": [date_from, date_to]})
 
-        qs = qs.distinct()
         return qs
 
     def by_users(self, q):
