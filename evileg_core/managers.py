@@ -12,8 +12,7 @@ class EPostManager(models.Manager):
     """
     use_for_related_fields = True
 
-    def search(self, query=None, in_related=False, user=None, date_from=None, date_to=None, select_related=None,
-               prefetcth_related=None, **kwargs):
+    def search(self, query=None, in_related=False, user=None, date_from=None, date_to=None, **kwargs):
         """
         Method for search content
 
@@ -42,12 +41,6 @@ class EPostManager(models.Manager):
 
         if date_from is not None and date_to is not None:
             qs = qs.filter(pub_date__range=[date_from, date_to])
-
-        if select_related:
-            qs = qs.select_related(*select_related)
-
-        if prefetcth_related:
-            qs = qs.prefetch_related(*prefetcth_related)
 
         qs = qs.distinct()
         return qs
