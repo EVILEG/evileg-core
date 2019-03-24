@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 
 from django.conf import settings
-from django.db import models
 from django.template import loader
 
 
@@ -70,7 +69,6 @@ class EInterfaceMixin:
     def render_template_mail(self):
         return self.__render_template_mail(self)
 
-    @models.permalink
     def get_edit_url(self):
         return None
 
