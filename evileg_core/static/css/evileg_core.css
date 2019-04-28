@@ -11132,10 +11132,12 @@ pre.prettyprint {
   content: "›"; }
 
 ::-webkit-scrollbar {
-  width: 5px; }
+  width: 10px;
+  background: transparent; }
 
 ::-webkit-scrollbar:horizontal {
-  height: 5px; }
+  height: 10px;
+  background: transparent; }
 
 ::-webkit-scrollbar-track {
   background: transparent; }
@@ -11143,7 +11145,7 @@ pre.prettyprint {
 /* Handle */
 ::-webkit-scrollbar-thumb {
   background: #cecece;
-  border-radius: 3px; }
+  border-radius: 5px; }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
