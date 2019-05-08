@@ -10993,6 +10993,10 @@ h6 {
   height: 120px;
   overflow: hidden; }
 
+.profile-preview-box {
+  height: 160px;
+  overflow: hidden; }
+
 .aqua-gradient {
   background: -webkit-linear-gradient(50deg, #2096ff, #05ffa3) !important;
   background: -o-linear-gradient(50deg, #2096ff, #05ffa3) !important;
@@ -11126,10 +11130,6 @@ blockquote > p {
 @media (min-width: 768px) {
   .profile-activity {
     max-width: calc(100% - 270px); } }
-
-.profile-avatar {
-  min-width: 270px;
-  max-width: 270px; }
 
 .profile-avatar-img {
   width: 200px;
@@ -11302,8 +11302,13 @@ blockquote > p {
   background-color: transparent;
   width: 200px;
   height: 200px;
-  margin: auto;
-  overflow: hidden; }
+  overflow: hidden;
+  margin-top: -100px; }
+
+@media (min-width: 768px) {
+  .profile-info {
+    margin-left: 240px;
+    margin-top: -100px; } }
 
 .img-profile-actions {
   position: absolute;
