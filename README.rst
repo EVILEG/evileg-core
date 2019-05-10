@@ -16,3 +16,9 @@ You can donate to us with following ways:
 
 1. `PayPal.Me <https://www.paypal.me/legotckoi>`_
 2. `Yandex.Money <https://money.yandex.ru/to/410011306906193>`_
+
+=============
+Documentation
+=============
+
+You can read documentation of this module on `Read The Docs <https://evileg-core.readthedocs.io/en/latest/>`_
