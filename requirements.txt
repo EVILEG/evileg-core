@@ -1,4 +1,5 @@
 Django>=2.0
 django-bootstrap4>=0.0.5
-Markdown==2.6.11
-beautifulsoup4==4.6.0
+Markdown>=2.6.11
+beautifulsoup4>=4.6.0
+djangocodemirror>=2.0.0

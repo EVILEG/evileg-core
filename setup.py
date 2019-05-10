@@ -21,9 +21,6 @@ setup(
     include_package_data=True,
     zip_safe=False,
     packages=['evileg_core'],
-    install_requires=[
-        'djangocodemirror'
-    ],
 
     classifiers=[
         'Development Status :: 1 - Planning',
