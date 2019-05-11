@@ -129,10 +129,17 @@ class EArticleModeratedAdmin(EModerationMixinAdmin, EArticleAdmin):
 
 
 class ESectionAdmin(EArticleAdmin):
+    """
+    Base class for representation table in Django administration panel.
+    This class is designed for classes which inherits from evileg_core.models.EAbstractSection
+    """
     list_display = EArticleAdmin.list_display
     list_filter = EArticleAdmin.list_filter
 
 
 class ESectionModeratedAdmin(EModerationMixinAdmin, ESectionAdmin):
+    """
+    This class is the ESectionAdmin with moderation opportunity
+    """
     list_display = ESectionAdmin.list_display + EModerationMixinAdmin.list_display
     list_filter = ESectionAdmin.list_filter + EModerationMixinAdmin.list_filter
