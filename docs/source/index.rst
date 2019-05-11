@@ -7,6 +7,7 @@
 
     getting_started
     admin
+    backends
     decorators
     fields
     filters
