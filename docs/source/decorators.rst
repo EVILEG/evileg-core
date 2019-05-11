@@ -35,7 +35,7 @@ Using recaptcha
 
     app_name = 'registration'
     urlpatterns = [
-        url(r'^register/$', check_recaptcha(views.RegisterView.as_view()), name='register'),
+        url(r'^register/$', recaptcha(views.RegisterView.as_view()), name='register'),
     ]
 
 2. Add recaptcha site key in template with form
