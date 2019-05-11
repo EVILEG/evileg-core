@@ -8,28 +8,31 @@ from django.conf import settings
 
 
 class ESoup:
+    """
+    Clean up class for extracting unwanted content from text, which was posted by users
+    """
     def __init__(self, text, tags_for_extracting=()):
         self.soup = BeautifulSoup(text, "lxml") if text else None
         self.tags_for_extracting = ('script', 'style',) + tags_for_extracting
 
-    def __extract_tags(self, soup, tags=()):
+    def _extract_tags(self, soup, tags=()):
         for tag in tags:
             for current_tag in soup.find_all(tag):
                 current_tag.extract()
         return soup
 
-    def __remove_attrs(self, soup):
+    def _remove_attrs(self, soup):
         for tag in soup.find_all(True):
             tag.attrs = {}
         return soup
 
-    def __remove_all_attrs_except(self, soup, whitelist_tags=()):
+    def _remove_all_attrs_except(self, soup, whitelist_tags=()):
         for tag in soup.find_all(True):
             if tag.name not in whitelist_tags:
                 tag.attrs = {}
         return soup
 
-    def __remove_all_attrs_except_saving(self, soup, whitelist_tags=(), whitelist_attrs=(), whitelist_classes=()):
+    def _remove_all_attrs_except_saving(self, soup, whitelist_tags=(), whitelist_attrs=(), whitelist_classes=()):
         for tag in soup.find_all(True):
             saved_classes = []
             if tag.has_attr('class'):
@@ -51,7 +54,7 @@ class ESoup:
 
         return soup
 
-    def __add_rel_attr(self, soup, tag, attr):
+    def _add_rel_attr(self, soup, tag, attr):
         site_url = getattr(settings, "SITE_URL", '/')
         for tag in soup.find_all(tag):
             attr_content = tag.get(attr)
@@ -59,7 +62,7 @@ class ESoup:
                 tag['rel'] = ['nofollow']
         return soup
 
-    def __add_class_attr(self, soup, tag, classes=()):
+    def _add_class_attr(self, soup, tag, classes=()):
         for tag in soup.find_all(tag):
             saved_classes = []
             if tag.has_attr('class'):
@@ -68,7 +71,7 @@ class ESoup:
             tag['class'] = ' '.join(saved_classes)
         return soup
 
-    def __correct_url(self, soup, tag, attr):
+    def _correct_url(self, soup, tag, attr):
         site_url = getattr(settings, "SITE_URL", None)
         languages = getattr(settings, "LANGUAGES", None)
 
@@ -85,15 +88,15 @@ class ESoup:
 
         return soup
 
-    def __change_tag_name(self, soup, old_tag, new_tag):
+    def _change_tag_name(self, soup, old_tag, new_tag):
         for tag in soup.find_all(old_tag):
             tag.name = new_tag
         return soup
 
     def clean(self):
         if self.soup:
-            soup = self.__extract_tags(soup=self.soup, tags=self.tags_for_extracting)
-            soup = self.__remove_all_attrs_except_saving(
+            soup = self._extract_tags(soup=self.soup, tags=self.tags_for_extracting)
+            soup = self._remove_all_attrs_except_saving(
                 soup=soup,
                 whitelist_tags=('img', 'a', 'iframe'),
                 whitelist_attrs=('src', 'href', 'name', 'width', 'height', 'alt'),
@@ -104,14 +107,14 @@ class ESoup:
                     'lang-xhtml', 'lang-xml', 'lang-xsl'
                 )
             )
-            soup = self.__add_rel_attr(soup=soup, tag='a', attr='href')
-            soup = self.__add_rel_attr(soup=soup, tag='img', attr='src')
-            soup = self.__correct_url(soup=soup, tag='a', attr='href')
-            soup = self.__correct_url(soup=soup, tag='img', attr='src')
-            soup = self.__add_class_attr(soup=soup, tag='img', classes=('img-fluid',))
-            soup = self.__add_class_attr(soup=soup, tag='table', classes=('table', 'table-bordered', 'table-hover'))
-            soup = self.__add_class_attr(soup=soup, tag='code', classes=('prettyprint linenums',))
-            soup = self.__change_tag_name(soup=soup, old_tag='code', new_tag='pre')
+            soup = self._add_rel_attr(soup=soup, tag='a', attr='href')
+            soup = self._add_rel_attr(soup=soup, tag='img', attr='src')
+            soup = self._correct_url(soup=soup, tag='a', attr='href')
+            soup = self._correct_url(soup=soup, tag='img', attr='src')
+            soup = self._add_class_attr(soup=soup, tag='img', classes=('img-fluid',))
+            soup = self._add_class_attr(soup=soup, tag='table', classes=('table', 'table-bordered', 'table-hover'))
+            soup = self._add_class_attr(soup=soup, tag='code', classes=('prettyprint linenums',))
+            soup = self._change_tag_name(soup=soup, old_tag='code', new_tag='pre')
             return re.sub('<body>|</body>', '', soup.body.prettify())
         return ''
 
@@ -122,6 +125,9 @@ class ESoup:
 
 
 class EMarkdownWorker:
+    """
+    Markdown converter. It will convert markdown text to html text with clean up from unwanted content, using ESoap class
+    """
     def __init__(self, text):
         self.pre_markdown_text = text
         self.markdown_text = None

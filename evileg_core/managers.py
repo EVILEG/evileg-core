@@ -7,7 +7,7 @@ from django.db.models import Q
 
 class EPostManager(models.Manager):
     """
-    EPostManager is a manager for search in ESNF-C models. It is setted to EAbstractPost.
+    EPostManager is a manager for search in ESNF-C models. It is set to EAbstractPost.
     It searches content by lookup fields, related lookup fields, author, and pub_date range
     """
     use_for_related_fields = True
@@ -52,6 +52,10 @@ class EPostManager(models.Manager):
 
 
 class EActivityManager(models.Manager):
+    """
+    EActivityManager is a manager for search in ESNF-C activity models. It is set to EAbstractActivity.
+    It searches content by lookup fields, related lookup fields, and pub_date range in targeted model
+    """
     use_for_related_fields = True
 
     def search(self, model=None, query=None, in_related=False, date_from=None, date_to=None, **kwargs):

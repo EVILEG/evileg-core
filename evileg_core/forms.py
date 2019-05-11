@@ -43,6 +43,10 @@ class EDateRangeForm(forms.Form):
 
 
 class EPostForm(forms.ModelForm):
+    """
+    Form class for class, which inherits from evileg_core.models.EAbstractPost.
+    Author of post should be sent to constructor.
+    """
     class Meta:
         fields = ['content_markdown']
 
@@ -61,9 +65,16 @@ class EPostForm(forms.ModelForm):
 
 
 class EArticleForm(EPostForm):
+    """
+    Form class for class, which inherits from evileg_core.models.EAbstractArticle.
+    In this form added title field.
+    """
     class Meta:
         fields = ['title'] + EPostForm.Meta.fields
 
 
 class ESectionForm(EArticleForm):
+    """
+    Form class for class, which inherits from evileg_core.models.EAbstractSection.
+    """
     pass

@@ -9,6 +9,15 @@ from .widgets import EMarkdownWidget
 
 
 class EMarkdownField(models.TextField):
+    """
+    This field save markdown text with auto-populate text to html field.
+    This field must be used with second text field for html content.
+    This field support django-modeltranslation package.
+
+    EMarkdownField can use upload_link and upload_file_link for invoke upload dialog from backend.
+    Unfortunately, this mechanism is not fully developed for using like 3d party.
+    We develop this in near future.
+    """
     class EMarkdownProxy:
         def __init__(self, field):
             self.field = field
@@ -63,7 +72,9 @@ class EMarkdownField(models.TextField):
 
 
 class EMarkdownFormField(forms.fields.CharField):
-
+    """
+    EMarkdownFormField using in django forms
+    """
     def __init__(self, documentation_link=None, placeholder=None, upload_link=None, upload_file_link=None, *args, **kwargs):
         kwargs.update({'widget': EMarkdownWidget(
             documentation_link=documentation_link,

@@ -57,6 +57,12 @@ FieldListFilter.register(lambda f: isinstance(f, DateField), EDateRangeFilter)
 
 
 class ENotNullFilter(admin.SimpleListFilter):
+    """
+    Filter by null fields, for example for Foreign Key
+
+    :param title: Title of filter
+    :param parameter_name: Field name
+    """
     title = _('Filter title not set')
     parameter_name = 'parameter name not set'
 
@@ -78,6 +84,12 @@ class ENotNullFilter(admin.SimpleListFilter):
 
 
 class EExactEmptyFilter(admin.SimpleListFilter):
+    """
+    Filter by empty fields, for example for CharField or Url
+
+    :param title: Title of filter
+    :param parameter_name: Field name
+    """
     title = _('Filter title not set')
     parameter_name = 'parameter name not set'
 

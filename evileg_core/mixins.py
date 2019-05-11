@@ -91,6 +91,10 @@ class EInterfaceMixin:
 
 
 class EAjaxableMixin:
+    """
+    Ajaxable mixin for adding ajax methods to view.
+    For example, get_ajax or post_ajax
+    """
 
     def dispatch(self, request, *args, **kwargs):
         # Try to dispatch to the right method; if a method doesn't exist,

@@ -14,7 +14,7 @@ from django.utils.html import strip_tags
 from django.utils.translation import ugettext_lazy as _
 
 from .fields import EMarkdownField
-from .managers import EPostManager
+from .managers import EPostManager, EActivityManager
 from .mixins import EInterfaceMixin
 
 
@@ -249,6 +249,8 @@ class EAbstractActivity(models.Model):
     content_type = models.ForeignKey(ContentType, on_delete=models.CASCADE)
     object_id = models.PositiveIntegerField()
     content_object = GenericForeignKey()
+
+    objects = EActivityManager()
 
     def __str__(self):
         return self.content_object.__str__()[:150]

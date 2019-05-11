@@ -30,6 +30,9 @@ class ELesserAdminDateWidget(AdminDateWidget):
 
 
 class EMarkdownWidget(forms.Widget):
+    """
+    Markdown widget for rendering in the templates
+    """
 
     def __init__(self, attrs=None, documentation_link=None, placeholder=None, upload_link=None, upload_file_link=None):
         self.documentation_link = documentation_link
