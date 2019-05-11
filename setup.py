@@ -27,6 +27,7 @@ setup(
         'Markdown',
         'beautifulsoup4',
         'djangocodemirror',
+        'requests'
     ],
     zip_safe=False,
     packages=['evileg_core'],

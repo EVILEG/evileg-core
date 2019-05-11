@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 
+from bootstrap4.utils import add_css_class
 from django import template
+from django.conf import settings
 from django.contrib.contenttypes.models import ContentType
 from django.templatetags.static import static
 from django.utils.translation import ugettext_lazy as _
@@ -145,3 +147,17 @@ def evileg_core_cropper_min_js():
 @register.inclusion_tag('evileg_core/partials/object_list_preview.html', takes_context=True)
 def object_list_preview(context):
     return context
+
+
+@register.inclusion_tag('evileg_core/recaptcha.html')
+def recaptcha(classes=''):
+    """
+    Google recaptcha template tag, which should be included in forms
+
+    :param classes: additional classes
+    :return: rendered template
+    """
+    return {
+        'classes': add_css_class('g-recaptcha', classes, prepend=True),
+        'site_key': getattr(settings, "GOOGLE_RECAPTCHA_SITE_KEY", ''),
+    }

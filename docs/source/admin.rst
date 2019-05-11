@@ -10,8 +10,8 @@ evileg\_core.admin module
     :undoc-members:
     :show-inheritance:
 
-Example
--------
+Examples
+--------
 
 Using of EPostModeratedAdmin for Post Model, which inherits from EAbstractModeratedPost.
 
