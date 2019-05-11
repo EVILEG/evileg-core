@@ -9,9 +9,9 @@ from django.contrib.auth.models import User
 from django.contrib.contenttypes.fields import GenericForeignKey
 from django.contrib.contenttypes.models import ContentType
 from django.db import models
+from django.utils import timezone
 from django.utils.html import strip_tags
 from django.utils.translation import ugettext_lazy as _
-from django.utils import timezone
 
 from .fields import EMarkdownField
 from .managers import EPostManager
@@ -25,6 +25,7 @@ class EAbstractPost(models.Model):
 
     :param author: author of content, ForeignKey to django.contrib.auth.models.User
     :param content: content, html message, django.db.models.TextField
+    :param content_markdown: markdown content, which is editing by user
     :param pub_date: publication date of content, django.db.models.DateTimeField
     :param lastmod: last modification date, django.db.models.DateTimeField
     :param lookup_fields: fields for search via EPostManager
@@ -46,6 +47,12 @@ class EAbstractPost(models.Model):
         return self.content[:150]
 
     def get_self(self):
+        """
+        This method return object, which has view representation for rendering in template.
+        For example Activity object has Foreign key to Post object, and will return Post object instead of self.
+
+        :return: object
+        """
         return self
 
     class Meta:
