@@ -2,7 +2,13 @@
 Getting started
 ===============
 
-1. Add "evileg_core" to your INSTALLED_APPS setting like this
+1. Install Evileg Core
+
+.. code-block:: bash
+
+    pip install evileg_core
+
+2. Add "evileg_core" to your INSTALLED_APPS setting like this
 
 .. code-block:: python
 
@@ -11,20 +17,20 @@ Getting started
         'evileg_core',
     ]
 
-2. Create your first moderated model
+3. Create your first moderated model
 
 .. code-block:: python
 
    class Post(EAbstractModeratedPost):
       pass
 
-3. Make migrations
+4. Make migrations
 
 .. code-block:: bash
 
    python manage.py makemigrations
 
-4. Migrate
+5. Migrate
 
 .. code-block:: bash
 

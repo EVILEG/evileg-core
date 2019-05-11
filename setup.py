@@ -11,7 +11,7 @@ os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
 
 setup(
     name='evileg_core',
-    version='0.0.2',
+    version='0.0.3',
     license='LGPLv3 License',
     description='(ESNF-C) EVILEG Social Network Framework - Core Module.',
     long_description=README,
@@ -21,6 +21,13 @@ setup(
     keywords='django evileg core',
 
     include_package_data=True,
+    install_requires=[
+        'Django',
+        'django-bootstrap4',
+        'Markdown',
+        'beautifulsoup4',
+        'djangocodemirror',
+    ],
     zip_safe=False,
     packages=['evileg_core'],
 
