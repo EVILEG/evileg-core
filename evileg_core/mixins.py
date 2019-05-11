@@ -1,7 +1,10 @@
 # -*- coding: utf-8 -*-
 
 from django.conf import settings
+from django.contrib.auth.decorators import login_required
 from django.template import loader
+from django.utils.decorators import method_decorator
+from django.views.generic.edit import FormMixin
 
 
 class EInterfaceMixin:
@@ -50,6 +53,9 @@ class EInterfaceMixin:
     def editable(self):
         raise NotImplementedError("Please add editable condition or return True")
 
+    def get_edit_url(self):
+        return None
+
     @classmethod
     def __render_template_full(cls, obj, request_context):
         if not cls.template_full:
@@ -86,14 +92,12 @@ class EInterfaceMixin:
     def render_template_mail(self):
         return self.__render_template_mail(self)
 
-    def get_edit_url(self):
-        return None
-
 
 class EAjaxableMixin:
     """
     Ajaxable mixin for adding ajax methods to view.
-    For example, get_ajax or post_ajax
+    If method not exists, then try to invoke common method.
+    For example, call get_ajax() for ajax request if this method exists, otherwise call get() method
     """
 
     def dispatch(self, request, *args, **kwargs):
@@ -110,3 +114,13 @@ class EAjaxableMixin:
         else:
             handler = self.http_method_not_allowed
         return handler(request, *args, **kwargs)
+
+
+class EPostFormMixin(FormMixin):
+    """
+    Mixin for call form_valid() and from_invalid() methods for post requests
+    """
+    @method_decorator(login_required)
+    def post(self, request, *args, **kwargs):
+        form = self.form_class(**self.get_form_kwargs())
+        return self.form_valid(form) if form.is_valid() else self.form_invalid(form)
