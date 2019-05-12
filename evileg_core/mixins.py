@@ -54,7 +54,10 @@ class EInterfaceMixin:
         raise NotImplementedError("Please add editable condition or return True")
 
     def get_edit_url(self):
-        return None
+        raise NotImplementedError("Please return edit url or None")
+
+    def get_self(self):
+        raise NotImplementedError("Please return self or related object for representation")
 
     @classmethod
     def __render_template_full(cls, obj, request_context):

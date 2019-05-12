@@ -46,6 +46,21 @@ class EAbstractPost(models.Model):
     def __str__(self):
         return self.content[:150]
 
+    def get_parent(self):
+        raise NotImplementedError("Please return parent object or None")
+
+    def get_title(self):
+        raise NotImplementedError("Please return title or None")
+
+    def editable(self):
+        return (timezone.now() - self.pub_date) < timezone.timedelta(days=1)
+
+    def was_edited(self):
+        return self.lastmod and (self.lastmod - self.pub_date).total_seconds() > 1
+
+    def get_edit_url(self):
+        raise NotImplementedError("Please return edit url or None")
+
     def get_self(self):
         """
         This method return object, which has view representation for rendering in template.
@@ -96,16 +111,10 @@ class EModerationMixin(models.Model):
         abstract = True
 
 
-class EAbstractPostWithInterface(EInterfaceMixin, EAbstractPost):
+class EAbstractPostWithInterface(EAbstractPost, EInterfaceMixin):
     """
     This class is the EAbstractPost with template interface
     """
-
-    def editable(self):
-        return (timezone.now() - self.pub_date) < timezone.timedelta(days=1)
-
-    def was_edited(self):
-        return self.lastmod and (self.lastmod - self.pub_date).total_seconds() > 1
 
     def get_preview(self):
         return self.content
@@ -148,7 +157,13 @@ class EAbstractArticle(EAbstractPost):
     lookup_fields = EAbstractPost.lookup_fields + ('title',)
 
     def __str__(self):
+        return self.get_title()
+
+    def get_title(self):
         return self.title
+
+    def editable(self):
+        return True
 
     def get_comments(self):
         raise NotImplementedError('Please implement method for return comments query set')
@@ -160,18 +175,10 @@ class EAbstractArticle(EAbstractPost):
         abstract = True
 
 
-class EAbstractArticleWithInterface(EInterfaceMixin, EAbstractArticle):
+class EAbstractArticleWithInterface(EAbstractArticle, EInterfaceMixin):
     """
     This class is the EAbstractArticle with template interface
     """
-    def was_edited(self):
-        return self.lastmod and (self.lastmod - self.pub_date).total_seconds() > 1
-
-    def editable(self):
-        return True
-
-    def get_title(self):
-        return self.title
 
     def get_preview(self):
         return self.content
@@ -200,20 +207,14 @@ class EAbstractModeratedArticleWithInterface(EModerationMixin, EAbstractArticleW
 
 
 class EAbstractSection(EAbstractArticle):
+    def get_parent(self):
+        return None
+
     class Meta:
         abstract = True
 
 
-class EAbstractSectionWithInterface(EInterfaceMixin, EAbstractSection):
-
-    def was_edited(self):
-        return self.lastmod and (self.lastmod - self.pub_date).total_seconds() > 1
-
-    def editable(self):
-        return True
-
-    def get_title(self):
-        return self.title
+class EAbstractSectionWithInterface(EAbstractSection, EInterfaceMixin):
 
     def get_preview(self):
         return self.content
@@ -256,6 +257,12 @@ class EAbstractActivity(models.Model):
         return self.content_object.__str__()[:150]
 
     def get_self(self):
+        """
+        This method return object, which has view representation for rendering in template.
+        Activity object has Foreign key to Post object, and will return Post object instead of self.
+
+        :return: object
+        """
         return self.content_object
 
     class Meta:
