@@ -5,6 +5,7 @@ import re
 import markdown
 from bs4 import BeautifulSoup
 from django.conf import settings
+from django.utils.http import is_safe_url, urlunquote
 
 
 class ESoup:
@@ -144,3 +145,29 @@ class EMarkdownWorker:
 
     def get_text(self):
         return ESoup.clean_text(self.markdown_text)
+
+
+def get_next_url(request):
+    """
+    Get next url parameter
+
+    :param request: HTTP request
+    :return: String
+    """
+    next_url = request.META.get('HTTP_REFERER')
+    if next_url:
+        next_url = urlunquote(next_url)
+    if not is_safe_url(url=next_url, allowed_hosts=request.get_host()):
+        next_url = '/'
+    return next_url
+
+
+def get_client_ip(request):
+    """
+    Get client ip address from HTTP request
+
+    :param request: HTTP request
+    :return: IP Address
+    """
+    x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
+    return x_forwarded_for.split(',')[-1].strip() if x_forwarded_for else request.META.get('REMOTE_ADDR')
