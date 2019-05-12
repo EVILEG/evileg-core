@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ESNF-C\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-04 04:22+0600\n"
-"PO-Revision-Date: 2019-01-03 23:20+0100\n"
+"POT-Creation-Date: 2019-05-13 00:19+0600\n"
+"PO-Revision-Date: 2019-05-12 20:21+0200\n"
 "Last-Translator: Evgenii Legotckoi <evileg@evileg.com>\n"
 "Language-Team: EVILEG Team <info@evileg.com>\n"
 "Language: ru\n"
@@ -19,7 +19,7 @@ msgstr ""
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Generator: Poedit 2.0.6\n"
 
-#: evileg_core/evileg_core/admin.py:41 evileg_core/evileg_core/models.py:72
+#: evileg_core/evileg_core/admin.py:41 evileg_core/evileg_core/models.py:94
 msgid "SPAM"
 msgstr "СПАМ"
 
@@ -55,15 +55,19 @@ msgstr "Пометить как модерированный контент"
 msgid "EVILEG Core"
 msgstr "Ядро EVILEG"
 
-#: evileg_core/evileg_core/filters.py:60 evileg_core/evileg_core/filters.py:81
+#: evileg_core/evileg_core/decorators.py:35
+msgid "Invalid reCAPTCHA. Please try again."
+msgstr "Невалидная reCAPTCHA. Попробуйте ещё раз."
+
+#: evileg_core/evileg_core/filters.py:66 evileg_core/evileg_core/filters.py:93
 msgid "Filter title not set"
 msgstr "Заголовок фильтра не установлен"
 
-#: evileg_core/evileg_core/filters.py:65 evileg_core/evileg_core/filters.py:86
+#: evileg_core/evileg_core/filters.py:71 evileg_core/evileg_core/filters.py:98
 msgid "Not empty only"
 msgstr "Только не пустой"
 
-#: evileg_core/evileg_core/filters.py:66 evileg_core/evileg_core/filters.py:87
+#: evileg_core/evileg_core/filters.py:72 evileg_core/evileg_core/filters.py:99
 msgid "Empty only"
 msgstr "Только пустой"
 
@@ -75,56 +79,56 @@ msgstr "С даты"
 msgid "To date"
 msgstr "До даты"
 
-#: evileg_core/evileg_core/models.py:34
+#: evileg_core/evileg_core/models.py:35
 msgid "Author"
 msgstr "Автор"
 
-#: evileg_core/evileg_core/models.py:35
+#: evileg_core/evileg_core/models.py:36
 msgid "Content - HTML"
 msgstr "Содержание - HTML"
 
-#: evileg_core/evileg_core/models.py:36
+#: evileg_core/evileg_core/models.py:37
 msgid "Content - Markdown"
 msgstr "Содержание Markdown"
 
-#: evileg_core/evileg_core/models.py:37
+#: evileg_core/evileg_core/models.py:38
 msgid "Publication date"
 msgstr "Дата публикации"
 
-#: evileg_core/evileg_core/models.py:38
+#: evileg_core/evileg_core/models.py:39
 msgid "Last modification date"
 msgstr "Дата последнего изменения"
 
-#: evileg_core/evileg_core/models.py:73
+#: evileg_core/evileg_core/models.py:95
 msgid "Not Moderated"
 msgstr "Не модерировано"
 
-#: evileg_core/evileg_core/models.py:74
+#: evileg_core/evileg_core/models.py:96
 msgid "Post Moderated"
 msgstr "Пост модерируемый контент"
 
-#: evileg_core/evileg_core/models.py:75
+#: evileg_core/evileg_core/models.py:97
 msgid "Moderated"
 msgstr "Модерировано"
 
-#: evileg_core/evileg_core/models.py:79
+#: evileg_core/evileg_core/models.py:101
 msgid "Moderation"
 msgstr "Модерация"
 
-#: evileg_core/evileg_core/models.py:137
+#: evileg_core/evileg_core/models.py:153
 msgid "Title"
 msgstr "Заголовок"
 
-#: evileg_core/evileg_core/models.py:138
+#: evileg_core/evileg_core/models.py:154
 msgid "Views"
 msgstr "Просмотры"
 
-#: evileg_core/evileg_core/models.py:139
+#: evileg_core/evileg_core/models.py:155
 #: evileg_core/evileg_core/templates/evileg_core/markdown_widget.html:17
 msgid "URL"
 msgstr "URL"
 
-#: evileg_core/evileg_core/models.py:240
+#: evileg_core/evileg_core/models.py:248
 msgid "User"
 msgstr "Пользователь"
 
@@ -204,10 +208,10 @@ msgstr "Синтаксис Markdown"
 msgid "Nothing found"
 msgstr "Ничего не найдено"
 
-#: evileg_core/evileg_core/templatetags/evileg_core.py:15
+#: evileg_core/evileg_core/templatetags/evileg_core.py:17
 msgid "Classic"
 msgstr "Классическая"
 
-#: evileg_core/evileg_core/templatetags/evileg_core.py:16
+#: evileg_core/evileg_core/templatetags/evileg_core.py:18
 msgid "Darcula"
 msgstr "Darcula"
