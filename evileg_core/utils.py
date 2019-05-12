@@ -149,17 +149,17 @@ class EMarkdownWorker:
 
 def get_next_url(request):
     """
-    Get next url parameter
+    Get next url from request. For example it needed for return to previous url.
 
     :param request: HTTP request
     :return: String
     """
-    next_url = request.META.get('HTTP_REFERER')
-    if next_url:
-        next_url = urlunquote(next_url)
-    if not is_safe_url(url=next_url, allowed_hosts=request.get_host()):
-        next_url = '/'
-    return next_url
+    next = request.META.get('HTTP_REFERER')
+    if next:
+        next = urlunquote(next)  # HTTP_REFERER may be encoded.
+    if not is_safe_url(url=next, allowed_hosts=request.get_host()):
+        next = '/'
+    return next
 
 
 def get_client_ip(request):
