@@ -161,3 +161,23 @@ def recaptcha(classes=''):
         'classes': add_css_class('g-recaptcha', classes, prepend=True),
         'site_key': getattr(settings, "GOOGLE_RECAPTCHA_SITE_KEY", ''),
     }
+
+
+@register.simple_tag
+def breadcrumb_schema():
+    return "http://schema.org/BreadcrumbList"
+
+
+@register.inclusion_tag('evileg_core/breadcrumb_home.html')
+def breadcrumb_home(url='/', title=''):
+    return {'url': url, 'title': title}
+
+
+@register.inclusion_tag('evileg_core/breadcrumb_item.html')
+def breadcrumb_item(url, title, position):
+    return {'url': url, 'title': title, 'position': position}
+
+
+@register.inclusion_tag('evileg_core/breadcrumb_active.html')
+def breadcrumb_active(url, title, position):
+    return {'url': url, 'title': title, 'position': position}
