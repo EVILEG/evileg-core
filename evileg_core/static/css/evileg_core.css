@@ -11442,6 +11442,9 @@ pre > pre {
 .markdown_editor > .CodeMirror > .CodeMirror-scroll > .CodeMirror-sizer {
   margin-left: 0 !important; }
 
+.is-invalid > div > .tab-content > .tab-pane > .markdown_editor {
+  border-color: #f44336 !important; }
+
 .paste-header > div[class^='col-md'] > .bmd-form-group > input,
 .paste-header > div[class^='col-md'] > .bmd-form-group > select {
   height: 36px !important; }
