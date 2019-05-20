@@ -49,6 +49,7 @@ class EMarkdownField(models.TextField):
         self.placeholder = kwargs.pop("placeholder", '')
         self.upload_link = kwargs.pop("upload_link", None)
         self.upload_file_link = kwargs.pop("upload_file_link", None)
+        self.extended_mode = kwargs.pop("extended_mode", True)
         if not self.upload_link:
             self.upload_link = getattr(settings, 'MARKDOWN_UPLOAD_LINK', None)
         if not self.upload_file_link:
@@ -62,6 +63,7 @@ class EMarkdownField(models.TextField):
             'placeholder': self.placeholder,
             'upload_link': self.upload_link,
             'upload_file_link': self.upload_file_link,
+            'extended_mode': self.extended_mode
         }
         defaults.update(**kwargs)
         return super().formfield(**defaults)
@@ -75,11 +77,13 @@ class EMarkdownFormField(forms.fields.CharField):
     """
     EMarkdownFormField using in django forms
     """
-    def __init__(self, documentation_link=None, placeholder=None, upload_link=None, upload_file_link=None, *args, **kwargs):
+    def __init__(self, documentation_link=None, placeholder=None, upload_link=None, upload_file_link=None,
+                 extended_mode=True, *args, **kwargs):
         kwargs.update({'widget': EMarkdownWidget(
             documentation_link=documentation_link,
             placeholder=placeholder,
             upload_link=upload_link,
-            upload_file_link=upload_file_link
+            upload_file_link=upload_file_link,
+            extended_mode=extended_mode
         )})
         super().__init__(*args, **kwargs)

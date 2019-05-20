@@ -34,13 +34,15 @@ class EMarkdownWidget(forms.Widget):
     Markdown widget for rendering in the templates
     """
 
-    def __init__(self, attrs=None, documentation_link=None, placeholder=None, upload_link=None, upload_file_link=None):
+    def __init__(self, attrs=None, documentation_link=None, placeholder=None, upload_link=None, upload_file_link=None,
+                 extended_mode=True):
         self.documentation_link = documentation_link
         self.placeholder = placeholder
         self.upload_link = upload_link
         self.upload_file_link = upload_file_link
         self.codemirror_theme = 'idea'
         self.markdown_codemirror_theme = 'markdown_idea'
+        self.extended_mode = extended_mode
         super().__init__(attrs=attrs)
 
     def render(self, name, value, attrs=None, renderer=None):
@@ -55,7 +57,8 @@ class EMarkdownWidget(forms.Widget):
                 'final_attrs': flatatt(self.build_attrs(self.attrs, attrs, name=name)),
                 'text': force_text(value or ''),
                 'codemirror_theme': self.codemirror_theme,
-                'markdown_codemirror_theme': self.markdown_codemirror_theme
+                'markdown_codemirror_theme': self.markdown_codemirror_theme,
+                'extended_mode': self.extended_mode
             }
         )
 
