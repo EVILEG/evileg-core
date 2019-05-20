@@ -11483,11 +11483,11 @@ pre > pre {
 .markdown-fullscreen > .tab-content > .tab-pane > div {
   overflow-y: auto; }
 
-@media (min-width: 1250px) {
+@media (min-width: 1500px) {
   .d-exl-block {
     display: block !important; } }
 
-@media (min-width: 1250px) {
+@media (min-width: 1500px) {
   .d-exl-none {
     display: none !important; } }
 
