@@ -11615,7 +11615,9 @@ pre > pre {
   background: transparent;
   width: 112px;
   height: 112px;
-  border-radius: 12px; }
+  border-radius: 12px;
+  overflow: hidden;
+  line-height: 1.2; }
 
 .btn-menu:hover {
   background-color: whitesmoke;
