@@ -18,7 +18,7 @@ class EEmailOrUsernameModelBackend:
         :param password: password
         :return: User Object or None
         """
-        user = get_object_or_none(get_user_model(), Q(username__iexact=username) | Q(email__iexact=username))
+        user = get_object_or_none(get_user_model(), Q(username__exact=username) | Q(email__exact=username))
         return user if user and user.check_password(password) else None
 
     def get_user(self, user_id):
