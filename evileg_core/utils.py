@@ -139,7 +139,8 @@ class EMarkdownWorker:
             self.pre_markdown_text,
             extensions=['markdown.extensions.attr_list',
                         'markdown.extensions.tables',
-                        'markdown.extensions.fenced_code'],
+                        'markdown.extensions.fenced_code',
+                        'markdown.extensions.nl2br'],
             output_format='html5'
         )
 
