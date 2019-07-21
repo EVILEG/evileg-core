@@ -12,19 +12,23 @@ class EPostManager(models.Manager):
     """
     use_for_related_fields = True
 
-    def search(self, query=None, in_related=False, user=None, date_from=None, date_to=None, select_related=None,
-               prefetch_related=None, order_by=None, **kwargs):
+    def search(self, query=None, in_related=False, user=None, approved=True, date_from=None, date_to=None,
+               select_related=None, prefetch_related=None, order_by=None, **kwargs):
         """
         Method for search content
 
         :param query: search request
         :param in_related: True if you want search content by by fields in related content
         :param user: search by user
+        :param approved: select only approved content
         :param date_from: "From date" for pub_date range searching
         :param date_to: "To date" for pub_date range searching
+        :param select_related: list of select related query sets
+        :param prefetch_related: list of prefetch related query sets
+        :param order_by: list of fields for ordering
         :return: QuerySet of model objects
         """
-        qs = self.get_queryset()
+        qs = self.approved() if approved else self.get_queryset()
         if query is not None:
             or_lookup = Q()
             if self.model.lookup_fields:
@@ -52,7 +56,17 @@ class EPostManager(models.Manager):
         if order_by:
             qs = qs.order_by(*order_by)
 
+        qs = qs.distinct()
         return qs
+
+    def approved(self):
+        """
+        Method for return approved content, like is published content or moderated content
+        Override it by your needs
+
+        :return: QuerySet of model objects
+        """
+        return self.get_queryset()
 
 
 class EActivityManager(models.Manager):
@@ -62,7 +76,7 @@ class EActivityManager(models.Manager):
     """
     use_for_related_fields = True
 
-    def search(self, model=None, query=None, in_related=False, date_from=None, date_to=None, **kwargs):
+    def search(self, model=None, query=None, in_related=False, date_from=None, date_to=None, approved_dict=None, **kwargs):
         model_name = model.__name__.lower()
         qs = self.get_queryset().filter(content_type__model=model_name).order_by("-{}s__pub_date".format(model_name))
         if query is not None:
@@ -78,7 +92,10 @@ class EActivityManager(models.Manager):
             qs = qs.filter(or_lookup)
 
         if date_from is not None and date_to is not None:
-            qs = qs.filter({"{}s__pub_date__range": [date_from, date_to]})
+            qs = qs.filter({"{}s__pub_date__range".format(model_name): [date_from, date_to]})
+
+        if approved_dict:
+            qs = qs.filter(**{"{}s__{}".format(model_name, field_name): condition for field_name, condition in approved_dict.items()})
 
         return qs
 
