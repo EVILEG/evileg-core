@@ -13,7 +13,7 @@ class EPostManager(models.Manager):
     use_for_related_fields = True
 
     def search(self, query=None, in_related=False, user=None, date_from=None, date_to=None, select_related=None,
-               prefetcth_related=None, **kwargs):
+               prefetch_related=None, order_by=None, **kwargs):
         """
         Method for search content
 
@@ -46,8 +46,12 @@ class EPostManager(models.Manager):
         if select_related:
             qs = qs.select_related(*select_related)
 
-        if prefetcth_related:
-            qs = qs.prefetch_related(*prefetcth_related)
+        if prefetch_related:
+            qs = qs.prefetch_related(*prefetch_related)
+
+        if order_by:
+            qs = qs.order_by(*order_by)
+
         return qs
 
 
