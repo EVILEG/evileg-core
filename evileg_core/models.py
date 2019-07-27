@@ -165,9 +165,6 @@ class EAbstractArticle(EAbstractPost):
     def editable(self):
         return True
 
-    def get_comments(self):
-        raise NotImplementedError('Please implement method for return comments query set')
-
     def get_subscribers_url(self):
         raise NotImplementedError('Please implement method for return url of subscribers page')
 
