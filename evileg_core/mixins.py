@@ -3,6 +3,7 @@
 from django.conf import settings
 from django.contrib.auth.decorators import login_required
 from django.template import loader
+from django.urls import reverse
 from django.utils.decorators import method_decorator
 from django.views.generic.edit import FormMixin
 
@@ -35,6 +36,8 @@ class EInterfaceMixin:
     template_info = None
     template_mail = None
 
+    edit_url_name = None
+
     def get_title(self):
         raise NotImplementedError("Please return title or related information about title")
 
@@ -54,7 +57,9 @@ class EInterfaceMixin:
         raise NotImplementedError("Please add editable condition or return True")
 
     def get_edit_url(self):
-        raise NotImplementedError("Please return edit url or None")
+        if self.edit_url_name:
+            return reverse(self.edit_url_name, kwargs={'pk': self.pk})
+        raise NotImplementedError("Need implement get_edit_url or set name of url path")
 
     def get_self(self):
         raise NotImplementedError("Please return self or related object for representation")

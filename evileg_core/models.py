@@ -9,6 +9,7 @@ from django.contrib.auth.models import User
 from django.contrib.contenttypes.fields import GenericForeignKey
 from django.contrib.contenttypes.models import ContentType
 from django.db import models
+from django.urls import reverse
 from django.utils import timezone
 from django.utils.html import strip_tags
 from django.utils.translation import ugettext_lazy as _
@@ -31,6 +32,8 @@ class EAbstractPost(models.Model):
     :param lookup_fields: fields for search via EPostManager
     :param related_lookup_fields: fields for search in related models via EPostManager
     """
+
+    edit_url_name = None
 
     author = models.ForeignKey(User, verbose_name=_("Author"), on_delete=models.CASCADE)
     content = models.TextField(verbose_name=_('Content - HTML'), blank=True)
@@ -59,7 +62,9 @@ class EAbstractPost(models.Model):
         return self.lastmod and (self.lastmod - self.pub_date).total_seconds() > 1
 
     def get_edit_url(self):
-        raise NotImplementedError("Please return edit url or None")
+        if self.edit_url_name:
+            return reverse(self.edit_url_name, kwargs={'pk': self.pk})
+        raise NotImplementedError("Need implement get_edit_url or set name of url path")
 
     def get_self(self):
         """
