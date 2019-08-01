@@ -49,8 +49,13 @@ class EAbstractPost(models.Model):
     def __str__(self):
         return self.content[:150]
 
-    def get_parent(self):
-        raise NotImplementedError("Please return parent object or None")
+    @property
+    def parent(self):
+        return None
+
+    @parent.setter
+    def parent(self, value):
+        raise NotImplementedError("Implement parent setter")
 
     def get_title(self):
         raise NotImplementedError("Please return title or None")
@@ -209,9 +214,6 @@ class EAbstractModeratedArticleWithInterface(EModerationMixin, EAbstractArticleW
 
 
 class EAbstractSection(EAbstractArticle):
-    def get_parent(self):
-        return None
-
     class Meta:
         abstract = True
 

@@ -44,8 +44,13 @@ class EInterfaceMixin:
     def get_preview(self):
         raise NotImplementedError("Please return short information about object")
 
-    def get_parent(self):
-        raise NotImplementedError("Please return parent object or None")
+    @property
+    def parent(self):
+        return None
+
+    @parent.setter
+    def parent(self, value):
+        raise NotImplementedError("Implement parent setter")
 
     def get_meta_description(self):
         raise NotImplementedError("Please return meta description about content or None")
