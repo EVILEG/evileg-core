@@ -39,7 +39,10 @@ class EInterfaceMixin:
     edit_url_name = None
 
     def get_title(self):
-        raise NotImplementedError("Please return title or related information about title")
+        p = self.parent
+        if p:
+            return p.get_title()
+        raise NotImplementedError("Return title or None")
 
     def get_preview(self):
         raise NotImplementedError("Please return short information about object")

@@ -58,7 +58,10 @@ class EAbstractPost(models.Model):
         raise NotImplementedError("Implement parent setter")
 
     def get_title(self):
-        raise NotImplementedError("Please return title or None")
+        p = self.parent
+        if p:
+            return p.get_title()
+        raise NotImplementedError("Return title or None")
 
     def editable(self):
         return (timezone.now() - self.pub_date) < timezone.timedelta(days=1)
