@@ -11287,7 +11287,11 @@ blockquote > p {
   width: 100%;
   height: 0px;
   position: relative;
-  padding-bottom: 56.2493%; }
+  padding-bottom: 56.2493%;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px; }
 
 .youtube-iframe {
   top: 0px;

@@ -140,7 +140,8 @@ class EMarkdownWorker:
             extensions=['markdown.extensions.attr_list',
                         'markdown.extensions.tables',
                         'markdown.extensions.fenced_code',
-                        'markdown.extensions.nl2br'],
+                        'markdown.extensions.nl2br',
+                        'evileg_core.extensions.video'],
             output_format='html5'
         )
 
