@@ -8,6 +8,9 @@ from django.utils.decorators import method_decorator
 from django.views.generic.edit import FormMixin
 
 
+_interface_templates_cache = {}
+
+
 class EInterfaceMixin:
     """
     Interface Mixin for representation object in the templates.
@@ -30,11 +33,6 @@ class EInterfaceMixin:
     TEMPLATE_PREVIEW = getattr(settings, "TEMPLATE_PREVIEW", 'evileg_core/objects/preview.html')
     TEMPLATE_INFO = getattr(settings, "TEMPLATE_INFO", 'evileg_core/objects/info.html')
     TEMPLATE_MAIL = getattr(settings, "TEMPLATE_MAIL", 'evileg_core/objects/mail.html')
-
-    template_full = None
-    template_preview = None
-    template_info = None
-    template_mail = None
 
     edit_url_name = None
 
@@ -74,36 +72,36 @@ class EInterfaceMixin:
 
     @classmethod
     def __render_template_full(cls, obj, request_context):
-        if not cls.template_full:
-            cls.template_full = loader.get_template(cls.TEMPLATE_FULL)
-        return cls.template_full.render({'object': obj, 'user': request_context['user']})
+        if cls.TEMPLATE_FULL not in _interface_templates_cache:
+            _interface_templates_cache[cls.TEMPLATE_FULL] = loader.get_template(cls.TEMPLATE_FULL)
+        return _interface_templates_cache[cls.TEMPLATE_FULL].render({'object': obj, 'user': request_context['user']})
 
     def render_template_full(self, request_context):
         return self.__render_template_full(self, request_context)
 
     @classmethod
     def __render_template_preview(cls, obj, request_context):
-        if not cls.template_preview:
-            cls.template_preview = loader.get_template(cls.TEMPLATE_PREVIEW)
-        return cls.template_preview.render({'object': obj, 'user': request_context['user']})
+        if cls.TEMPLATE_PREVIEW not in _interface_templates_cache:
+            _interface_templates_cache[cls.TEMPLATE_PREVIEW] = loader.get_template(cls.TEMPLATE_PREVIEW)
+        return _interface_templates_cache[cls.TEMPLATE_PREVIEW].render({'object': obj, 'user': request_context['user']})
 
     def render_template_preview(self, request_context):
         return self.__render_template_preview(self, request_context)
 
     @classmethod
     def __render_template_info(cls, obj, request_context):
-        if not cls.template_info:
-            cls.template_info = loader.get_template(cls.TEMPLATE_INFO)
-        return cls.template_info.render({'object': obj, 'user': request_context['user']})
+        if cls.TEMPLATE_INFO not in _interface_templates_cache:
+            _interface_templates_cache[cls.TEMPLATE_INFO] = loader.get_template(cls.TEMPLATE_INFO)
+        return _interface_templates_cache[cls.TEMPLATE_INFO].render({'object': obj, 'user': request_context['user']})
 
     def render_template_info(self, request_context):
         return self.__render_template_info(self, request_context)
 
     @classmethod
     def __render_template_mail(cls, obj):
-        if not cls.template_mail:
-            cls.template_mail = loader.get_template(cls.TEMPLATE_MAIL)
-        return cls.template_mail.render({'object': obj})
+        if cls.TEMPLATE_MAIL not in _interface_templates_cache:
+            _interface_templates_cache[cls.TEMPLATE_MAIL] = loader.get_template(cls.TEMPLATE_MAIL)
+        return _interface_templates_cache[cls.TEMPLATE_MAIL].render({'object': obj})
 
     def render_template_mail(self):
         return self.__render_template_mail(self)
