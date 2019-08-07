@@ -24,10 +24,6 @@ class EInterfaceMixin:
     :param TEMPLATE_PREVIEW: preview template representation
     :param TEMPLATE_INFO: information template representation, commonly it has smaller info than TEMPLATE_PREVIEW
     :param TEMPLATE_MAIL: template representation for rendering this content in mail
-    :param template_full: cache variable for TEMPLATE_FULL, in which will be cached rendered template, it is performance improvement
-    :param template_preview: cache variable for TEMPLATE_PREVIEW, in which will be cached rendered template, it is performance improvement
-    :param template_info: cache variable for TEMPLATE_INFO, in which will be cached rendered template, it is performance improvement
-    :param template_mail: cache variable for TEMPLATE_MAIL, in which will be cached rendered template, it is performance improvement
     """
     TEMPLATE_FULL = getattr(settings, "TEMPLATE_FULL", 'evileg_core/objects/full.html')
     TEMPLATE_PREVIEW = getattr(settings, "TEMPLATE_PREVIEW", 'evileg_core/objects/preview.html')
