@@ -181,6 +181,7 @@ table, td, tr {
 div.rek {
     position: fixed;
     width: 320px;
+    min-height: 600px;
     margin: auto;
     top: 0;
     left: 940px;
