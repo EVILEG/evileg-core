@@ -70,33 +70,43 @@ class EMarkdownEditor {
         this.addCutBtn = jQuery('#' + widgetId + '_add_cut_btn');
         this.addCutBtn.bind('click', {widgetId: widgetId}, EMarkdownEditor.insertCut);
 
-        // Code Mirror
-        this.mirrorEditor = eval(widgetId + '_code_input_codemirror');
-        this.mirrorEditor.on('change', function(cm){
-            editor.codeInput.val(cm.getValue());
-        });
+        // Code Mirror - Code Editor
+        try {
+            this.mirrorEditor = eval(widgetId + '_code_input_codemirror');
+            this.mirrorEditor.on('change', function (cm) {
+                editor.codeInput.val(cm.getValue());
+            });
+            this.mirrorEditor.setOption("extraKeys", {
+                "Ctrl-/": "toggleComment"
+            });
+        }
+        catch(err) {
+            console.log("Code editor not found");
+        }
 
-        this.markdownMirrorEditor = eval(widgetId + '_codemirror');
-        this.markdownMirrorEditor.on('change', function(cm){
-            editor.textarea.val(cm.getValue());
-        });
+        // Code Mirror - Markdown Editor
+        try {
+            this.markdownMirrorEditor = eval(widgetId + '_codemirror');
+            this.markdownMirrorEditor.on('change', function (cm) {
+                editor.textarea.val(cm.getValue());
+            });
 
-        this.markdownMirrorEditor.setOption("extraKeys", {
-            "F11": function(cm) {
-                editor.fullScreen();
-            },
-            "Esc": function(cm) {
-                editor.widget.removeClass('markdown-fullscreen');
-                editor.fullscreen = false;
-                editor.fullScreenButton.find('span').removeClass('mdi-fullscreen-exit');
-                editor.fullScreenButton.find('span').addClass('mdi-fullscreen');
-            },
-            "Ctrl-/": "toggleComment"
-        });
-
-        this.mirrorEditor.setOption("extraKeys", {
-            "Ctrl-/": "toggleComment"
-        });
+            this.markdownMirrorEditor.setOption("extraKeys", {
+                "F11": function (cm) {
+                    editor.fullScreen();
+                },
+                "Esc": function (cm) {
+                    editor.widget.removeClass('markdown-fullscreen');
+                    editor.fullscreen = false;
+                    editor.fullScreenButton.find('span').removeClass('mdi-fullscreen-exit');
+                    editor.fullScreenButton.find('span').addClass('mdi-fullscreen');
+                },
+                "Ctrl-/": "toggleComment"
+            });
+        }
+        catch (err) {
+            console.log("Markdown editor not found");
+        }
     }
 
     fullScreen() {

@@ -90,7 +90,9 @@
     <ul class="nav nav-tabs">
         <li class="nav-item"><a class="nav-link py-0 active md-btn" href="#{{ widget_id }}_tab_markdown" data-toggle="tab"><span class="mdi mdi-markdown mdi-24px"></span></a></li>
         <li class="nav-item mr-auto"><a id="{{ widget_id }}_tab_preview_link" class="nav-link py-2 md-btn" href="#{{ widget_id }}_tab_preview" data-toggle="tab">{% trans 'Preview' %}</a></li>
-        <li class="nav-item"><a id="{{ widget_id }}_fullscreen_btn" class="nav-link py-0 md-btn border-0" href="#"><span class="mdi mdi-fullscreen mdi-24px"></span></a></li>
+        {% if fullscreen %}
+            <li class="nav-item"><a id="{{ widget_id }}_fullscreen_btn" class="nav-link py-0 md-btn border-0" href="#"><span class="mdi mdi-fullscreen mdi-24px"></span></a></li>
+        {% endif %}
 
         {% if extended_mode %}
             <li class="nav-item"><a id="{{ widget_id }}_add_cut_btn" class="nav-link py-0 md-btn border-0" href="#" data-toggle="tooltip" title="{% trans 'Content separator' %}"><span class="mdi mdi-arrow-split-horizontal mdi-24px"></span></a></li>

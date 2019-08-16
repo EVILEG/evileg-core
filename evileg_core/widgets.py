@@ -35,7 +35,7 @@ class EMarkdownWidget(forms.Widget):
     """
 
     def __init__(self, attrs=None, documentation_link=None, placeholder=None, upload_link=None, upload_file_link=None,
-                 extended_mode=True):
+                 extended_mode=True, fullscreen=True):
         self.documentation_link = documentation_link
         self.placeholder = placeholder
         self.upload_link = upload_link
@@ -43,6 +43,7 @@ class EMarkdownWidget(forms.Widget):
         self.codemirror_theme = 'idea'
         self.markdown_codemirror_theme = 'markdown_idea'
         self.extended_mode = extended_mode
+        self.fullscreen = fullscreen
         super().__init__(attrs=attrs)
 
     def render(self, name, value, attrs=None, renderer=None):
@@ -58,7 +59,8 @@ class EMarkdownWidget(forms.Widget):
                 'text': force_text(value or ''),
                 'codemirror_theme': self.codemirror_theme,
                 'markdown_codemirror_theme': self.markdown_codemirror_theme,
-                'extended_mode': self.extended_mode
+                'extended_mode': self.extended_mode,
+                'fullscreen': self.fullscreen
             }
         )
 

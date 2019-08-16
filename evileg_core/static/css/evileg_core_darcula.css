@@ -11095,6 +11095,9 @@ blockquote > p {
 .e-text-widget {
   clear: both; }
 
+.e-text > p:last-child {
+  margin-bottom: 0 !important; }
+
 .form-row {
   overflow: unset; }
 
