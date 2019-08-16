@@ -21,4 +21,4 @@ You can donate to us with following ways:
 Documentation
 =============
 
-You can read documentation of this module on `Read The Docs <https://evileg-core.readthedocs.io/en/latest/>`_
+You can read documentation of this module on `EVILEG <https://evileg.com/docs/evileg_core/index.html>`_

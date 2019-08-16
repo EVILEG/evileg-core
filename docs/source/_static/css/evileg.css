@@ -1,0 +1,193 @@
+/** css/yourtheme.css **/
+
+/* This line is theme specific - it includes the base theme CSS */
+@import '../alabaster.css';  /* for Alabaster */
+/*@import 'theme.css';       /* for the Read the Docs theme */
+
+:root {
+    --font-family-sans-serif: "Roboto","Helvetica","Arial",sans-serif;
+    --font-family-monospace: SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
+}
+
+html {
+    color: #a9b7c6!important;
+    font-family: "Roboto";
+}
+
+body {
+    background-color: #2b2b2b!important;
+    font-family: "Roboto";
+}
+
+div.body {
+    background-color: #2b2b2b!important;
+    border-right: 1px solid #4d4d4d!important;
+    color: #a9b7c6!important;
+    font-family: "Roboto";
+}
+
+div.modindex-jumpbox {
+    border-top: 1px solid #4d4d4d!important;
+    border-bottom: 1px solid #4d4d4d!important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Roboto"!important;
+}
+
+div.sphinxsidebar h1,
+div.sphinxsidebar h2,
+div.sphinxsidebar h3,
+div.sphinxsidebar h4,
+div.sphinxsidebar h5,
+div.sphinxsidebar h6 {
+    color: #a9b7c6!important;
+    font-family: "Roboto";
+}
+
+div.document {
+    margin: 0!important;
+    font-family: "Roboto";
+}
+
+div.sphinxsidebar {
+    width: 239px;
+    background-color: #3c3f41!important;
+    height: 100vh;
+    z-index: 100;
+    position: fixed;
+    overflow-x: hidden;
+    top: 0;
+    left: 0;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
+    margin: auto;
+    color: #a9b7c6!important;
+    font-family: "Roboto";
+}
+
+div.sphinxsidebarwrapper {
+    font-family: "Roboto";
+}
+
+div.bodywrapper {
+    margin: 0 0 0 239px!important;
+    font-family: "Roboto";
+}
+
+div.footer {
+    width: auto;
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+    font-family: "Roboto";
+}
+
+a, a.reference, div.sphinxsidebar a {
+    color: #729fcf!important;
+    text-decoration: none;
+    border: none;
+    font-family: "Roboto";
+}
+
+a:hover, a.reference:hover, div.sphinxsidebar a:hover {
+    color: #3e78b6!important;
+    border: none;
+    text-decoration: underline;
+}
+
+div.searchformwrapper {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+pre {
+    background-color: #262626!important;
+}
+
+tt, code {
+    color: #619647!important;
+}
+
+a.headerlink:hover {
+    color: #3e78b6!important;
+    background: none;
+}
+
+input {
+    background-color: #2b2b2b!important;
+    border: 1px solid #4d4d4d!important;
+    color: #a9b7c6!important;
+    font-family: "Roboto"!important;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  background: transparent;
+}
+
+::-webkit-scrollbar:horizontal {
+  height: 10px;
+  background: transparent;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #1b1b1b!important;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #1b1b1b!important;
+}
+
+.highlight .nf, .highlight .nt {
+    color: #cb772f!important;
+}
+
+div.viewcode-block:target {
+    background-color: #303030!important;
+}
+
+dt:target, .highlight {
+    background: #262626!important;
+}
+
+div.related {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin: 0;
+}
+
+tt.xref, code.xref, a tt {
+    color: #729fcf!important;;
+    background-color: transparent;
+    border-bottom: none;
+}
+
+tt.xref:hover, code.xref:hover, a tt:hover {
+    color: #3e78b6!important;
+    background-color: transparent;
+    border-bottom: none;
+}
+
+table, td, tr {
+    background-color: transparent!important;
+}
+
+div.rek {
+    position: fixed;
+    width: 320px;
+    margin: auto;
+    top: 0;
+    left: 940px;
+    z-index: 100;
+    height: 10px;
+}
+
+div.sphinxsidebar hr {
+    width: 100%;
+}

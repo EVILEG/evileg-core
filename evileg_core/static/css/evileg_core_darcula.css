@@ -11158,8 +11158,7 @@ blockquote > p {
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #1e1e1e;
-  border-radius: 5px; }
+  background: #1e1e1e; }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {

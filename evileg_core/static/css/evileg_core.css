@@ -11151,8 +11151,7 @@ pre.prettyprint {
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #cecece;
-  border-radius: 5px; }
+  background: #cecece; }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
