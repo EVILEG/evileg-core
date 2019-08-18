@@ -11758,3 +11758,24 @@ div.drw > a:active {
 div.drw > a > .badge {
   margin-right: 0;
   margin-left: auto; }
+
+span[class^="mdi-"] {
+  display: inline-block;
+  font: normal normal normal 24px/1 "Material Design Icons";
+  font-size: inherit;
+  text-rendering: auto;
+  line-height: inherit;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+span.mdi-18px:before {
+  font-size: 18px; }
+
+span.mdi-24px:before {
+  font-size: 24px; }
+
+span.mdi-36px:before {
+  font-size: 36px; }
+
+span.mdi-48px:before {
+  font-size: 48px; }
