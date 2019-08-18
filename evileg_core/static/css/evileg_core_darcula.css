@@ -11720,3 +11720,41 @@ pre > pre {
 @media (max-width: 1800px) {
   .d-none-1800 {
     display: none !important; } }
+
+div.drw {
+  padding: .25rem 0;
+  border-bottom: 1px solid #4d4d4d;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1; }
+
+div.drw > a {
+  color: rgba(169, 183, 198, 0.5);
+  padding: .5rem 1rem;
+  text-decoration: none;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  line-height: 1;
+  position: relative; }
+
+div.drw:last-child {
+  margin-bottom: 0;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0; }
+
+div.drw:first-child {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0; }
+
+div.drw > a:hover {
+  color: rgba(169, 183, 198, 0.7);
+  background-color: rgba(153, 153, 153, 0.2); }
+
+div.drw > a:active {
+  color: rgba(169, 183, 198, 0.9);
+  background-color: rgba(153, 153, 153, 0.2); }
+
+div.drw > a > .badge {
+  margin-right: 0;
+  margin-left: auto; }
