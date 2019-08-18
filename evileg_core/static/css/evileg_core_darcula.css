@@ -11146,11 +11146,11 @@ blockquote > p {
   content: "›"; }
 
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 6px;
   background: transparent; }
 
 ::-webkit-scrollbar:horizontal {
-  height: 10px;
+  height: 6px;
   background: transparent; }
 
 ::-webkit-scrollbar-track {
@@ -11158,11 +11158,11 @@ blockquote > p {
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #1e1e1e; }
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
   background: #121212; }
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #121212 transparent; }
 
 .sticky {
   position: -webkit-sticky;

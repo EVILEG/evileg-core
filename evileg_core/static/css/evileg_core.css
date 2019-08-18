@@ -11139,11 +11139,11 @@ pre.prettyprint {
   content: "›"; }
 
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 6px;
   background: transparent; }
 
 ::-webkit-scrollbar:horizontal {
-  height: 10px;
+  height: 6px;
   background: transparent; }
 
 ::-webkit-scrollbar-track {
@@ -11151,11 +11151,11 @@ pre.prettyprint {
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #cecece; }
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
   background: #7f7f7f; }
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #7f7f7f transparent; }
 
 .sticky {
   position: -webkit-sticky;
