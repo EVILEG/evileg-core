@@ -95,18 +95,18 @@
         {% endif %}
 
         {% if extended_mode %}
-            <li class="nav-item"><a id="{{ widget_id }}_add_cut_btn" class="nav-link py-0 md-btn border-0" href="#" data-toggle="tooltip" title="{% trans 'Content separator' %}"><span class="mdi mdi-arrow-split-horizontal mdi-24px"></span></a></li>
+            <li class="nav-item"><a id="{{ widget_id }}_add_cut_btn" class="nav-link py-0 md-btn border-0" href="#" title="{% trans 'Content separator' %}"><span class="mdi mdi-arrow-split-horizontal mdi-24px"></span></a></li>
             {% if upload_file_link %}
-                <li class="nav-item"><a id="{{ widget_id }}_add_file_btn" class="nav-link py-0 md-btn border-0" href="#" data-toggle="tooltip" title="{% trans 'Upload File' %}"><span class="mdi mdi-file-upload mdi-24px"></span></a></li>
+                <li class="nav-item"><a id="{{ widget_id }}_add_file_btn" class="nav-link py-0 md-btn border-0" href="#" title="{% trans 'Upload File' %}"><span class="mdi mdi-file-upload mdi-24px"></span></a></li>
             {% endif %}
             {% if upload_link %}
-                <li class="nav-item"><a id="{{ widget_id }}_add_image_btn" class="nav-link py-0 md-btn border-0" href="#" data-toggle="tooltip" title="{% trans 'Upload Image' %}"><span class="mdi mdi-image mdi-24px"></span></a></li>
+                <li class="nav-item"><a id="{{ widget_id }}_add_image_btn" class="nav-link py-0 md-btn border-0" href="#" title="{% trans 'Upload Image' %}"><span class="mdi mdi-image mdi-24px"></span></a></li>
             {% endif %}
-            <li class="nav-item"><a id="{{ widget_id }}_add_code_btn" class="nav-link py-0 md-btn border-0" href="#" data-toggle="tooltip" title="{% trans 'Insert code' %}"><span class="mdi mdi-code-tags mdi-24px"></span></a></li>
-            <li class="nav-item"><a id="{{ widget_id }}_add_link_btn" class="nav-link py-0 md-btn border-0" href="#" data-toggle="tooltip" title="{% trans 'Add link' %}"><span class="mdi mdi-link-variant mdi-24px"></span></a></li>
+            <li class="nav-item"><a id="{{ widget_id }}_add_code_btn" class="nav-link py-0 md-btn border-0" href="#" title="{% trans 'Insert code' %}"><span class="mdi mdi-code-tags mdi-24px"></span></a></li>
+            <li class="nav-item"><a id="{{ widget_id }}_add_link_btn" class="nav-link py-0 md-btn border-0" href="#" title="{% trans 'Add link' %}"><span class="mdi mdi-link-variant mdi-24px"></span></a></li>
         {% endif %}
         {% if documentation_link %}
-            <li class="nav-item"><a class="nav-link py-0 md-btn border-0" href="{{ documentation_link }}" target="_blank" data-toggle="tooltip" title="{% trans 'Markdown syntax' %}"><span class="mdi mdi-information mdi-24px"></span></a></li>
+            <li class="nav-item"><a class="nav-link py-0 md-btn border-0" href="{{ documentation_link }}" target="_blank" title="{% trans 'Markdown syntax' %}"><span class="mdi mdi-information mdi-24px"></span></a></li>
         {% endif %}
     </ul>
     <div class="tab-content">
