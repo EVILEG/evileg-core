@@ -13,7 +13,7 @@ class EPostManager(models.Manager):
     use_for_related_fields = True
 
     def search(self, query=None, in_related=False, user=None, approved=True, date_from=None, date_to=None,
-               select_related=None, prefetch_related=None, order_by=None, **kwargs):
+               select_related=None, prefetch_related=None, order_by=None, distinct=False, **kwargs):
         """
         Method for search content
 
@@ -56,7 +56,8 @@ class EPostManager(models.Manager):
         if order_by:
             qs = qs.order_by(*order_by)
 
-        qs = qs.distinct()
+        if distinct:
+            qs = qs.distinct()
         return qs
 
     def approved(self):
