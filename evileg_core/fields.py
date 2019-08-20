@@ -3,6 +3,7 @@
 from django import forms
 from django.conf import settings
 from django.db import models
+from django.db.models.signals import pre_save
 
 from .utils import EMarkdownWorker
 from .widgets import EMarkdownWidget
@@ -18,31 +19,21 @@ class EMarkdownField(models.TextField):
     Unfortunately, this mechanism is not fully developed for using like 3d party.
     We develop this in near future.
     """
-    class EMarkdownProxy:
-        def __init__(self, field):
-            self.field = field
 
-        def __get__(self, obj, model):
-            if obj is None:
-                return self.field
-
-            value = obj.__dict__[self.field.name]
-            return value
-
-        def __set__(self, obj, value):
-            obj.__dict__[self.field.name] = value
-            if value and len(value) > 0:
-                languages = getattr(settings, "LANGUAGES", None)
-                if 'modeltranslation' in settings.INSTALLED_APPS and self.field.name.endswith(
-                        tuple([code for code, language in languages])):
-                    obj.__dict__['{}_{}'.format(self.field.html_field, self.field.name[-2:])] = EMarkdownWorker(
-                        value).get_text()
-                else:
-                    obj.__dict__[self.field.html_field] = EMarkdownWorker(value).get_text()
+    def set_markdown(self, instance=None, **kwargs):
+        value = getattr(instance, self.attname)
+        if value and len(value) > 0:
+            languages = getattr(settings, "LANGUAGES", None)
+            if 'modeltranslation' in settings.INSTALLED_APPS and self.name.endswith(
+                    tuple([code for code, language in languages])):
+                instance.__dict__['{}_{}'.format(self.html_field, self.name[-2:])] = EMarkdownWorker(
+                    value).get_text()
+            else:
+                instance.__dict__[self.html_field] = EMarkdownWorker(value).get_text()
 
     def contribute_to_class(self, cls, name, **kwargs):
         super().contribute_to_class(cls, name, **kwargs)
-        setattr(cls, name, EMarkdownField.EMarkdownProxy(self))
+        pre_save.connect(self.set_markdown, sender=cls)
 
     def __init__(self, html_field=None, *args, **kwargs):
         self.html_field = html_field
