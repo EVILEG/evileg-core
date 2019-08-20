@@ -5,7 +5,7 @@ Module which contains abstract models for fast development of web-site content.
 It includes classes for creating content and moderation of this content
 """
 
-from django.contrib.auth.models import User
+from django.conf import settings
 from django.contrib.contenttypes.fields import GenericForeignKey
 from django.contrib.contenttypes.models import ContentType
 from django.db import models
@@ -24,7 +24,7 @@ class EAbstractPost(models.Model):
     This is base abstract class of content in the your social network. You can use this class for generating post,
     comments, messages and so on
 
-    :param author: author of content, ForeignKey to django.contrib.auth.models.User
+    :param author: author of content, ForeignKey to settings.AUTH_USER_MODEL
     :param content: content, html message, django.db.models.TextField
     :param content_markdown: markdown content, which is editing by user
     :param pub_date: publication date of content, django.db.models.DateTimeField
@@ -35,7 +35,7 @@ class EAbstractPost(models.Model):
 
     edit_url_name = None
 
-    author = models.ForeignKey(User, verbose_name=_("Author"), on_delete=models.CASCADE)
+    author = models.ForeignKey(settings.AUTH_USER_MODEL, verbose_name=_("Author"), on_delete=models.CASCADE)
     content = models.TextField(verbose_name=_('Content - HTML'), blank=True)
     content_markdown = EMarkdownField(verbose_name=_('Content - Markdown'), html_field='content', default='')
     pub_date = models.DateTimeField(verbose_name=_('Publication date'), blank=True, null=True, auto_now_add=True)
@@ -252,7 +252,7 @@ class EAbstractActivity(models.Model):
     :param object_id: ID of object in some table on your web-site
     :param content_object: parameter via which you can access to object
     """
-    user = models.ForeignKey(User, verbose_name=_("User"), on_delete=models.CASCADE)
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, verbose_name=_("User"), on_delete=models.CASCADE)
 
     content_type = models.ForeignKey(ContentType, on_delete=models.CASCADE)
     object_id = models.PositiveIntegerField()
