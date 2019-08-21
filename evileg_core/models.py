@@ -252,7 +252,8 @@ class EAbstractActivity(models.Model):
     :param object_id: ID of object in some table on your web-site
     :param content_object: parameter via which you can access to object
     """
-    user = models.ForeignKey(settings.AUTH_USER_MODEL, verbose_name=_("User"), on_delete=models.CASCADE)
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, related_name='%(class)ss', related_query_name='%(class)ss',
+                             verbose_name=_("User"), on_delete=models.CASCADE)
 
     content_type = models.ForeignKey(ContentType, on_delete=models.CASCADE)
     object_id = models.PositiveIntegerField()
