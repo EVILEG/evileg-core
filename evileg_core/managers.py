@@ -77,7 +77,8 @@ class EActivityManager(models.Manager):
     """
     use_for_related_fields = True
 
-    def search(self, model=None, query=None, in_related=False, date_from=None, date_to=None, approved_dict=None, **kwargs):
+    def search(self, model=None, query=None, in_related=False, date_from=None, date_to=None, approved_dict=None,
+               prefetch_related=None, **kwargs):
         model_name = model.__name__.lower()
         qs = self.get_queryset().filter(content_type__model=model_name).order_by("-{}s__pub_date".format(model_name))
         if query is not None:
@@ -97,6 +98,9 @@ class EActivityManager(models.Manager):
 
         if approved_dict:
             qs = qs.filter(**{"{}s__{}".format(model_name, field_name): condition for field_name, condition in approved_dict.items()})
+
+        if prefetch_related:
+            qs = qs.prefetch_related(*prefetch_related)
 
         return qs
 
