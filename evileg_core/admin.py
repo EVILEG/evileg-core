@@ -94,12 +94,12 @@ class EPostAdmin(admin.ModelAdmin):
     Base class for representation table in Django administration panel.
     This class is designed for classes which inherits from evileg_core.models.EAbstractPost
     """
-    list_display = ('__str__', 'author', 'pub_date', 'lastmod')
+    list_display = ('__str__', 'user', 'pub_date', 'lastmod')
     list_filter = (('pub_date', EDateRangeFilter),)
-    autocomplete_fields = ['author']
-    search_fields = ('content', 'author__username')
+    autocomplete_fields = ['user']
+    search_fields = ('content', 'user__username')
     readonly_fields = ('pub_date', 'lastmod')
-    fields = ['author', 'content_markdown', 'pub_date', 'lastmod']
+    fields = ['user', 'content_markdown', 'pub_date', 'lastmod']
 
 
 class EPostModeratedAdmin(EModerationMixinAdmin, EPostAdmin):
@@ -117,7 +117,7 @@ class EArticleAdmin(EPostAdmin):
     """
     list_display = EPostAdmin.list_display + ('views',)
     search_fields = EPostAdmin.search_fields + ('title',)
-    fields = ['author', 'title', 'content_markdown', 'slug', 'pub_date', 'lastmod']
+    fields = ['user', 'title', 'content_markdown', 'slug', 'pub_date', 'lastmod']
 
 
 class EArticleModeratedAdmin(EModerationMixinAdmin, EArticleAdmin):

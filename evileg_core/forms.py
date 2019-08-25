@@ -45,20 +45,20 @@ class EDateRangeForm(forms.Form):
 class EPostForm(forms.ModelForm):
     """
     Form class for class, which inherits from evileg_core.models.EAbstractPost.
-    Author of post should be sent to constructor.
+    User (author) of post should be sent to constructor.
     """
     class Meta:
         fields = ['content_markdown']
 
-    def __init__(self, author=None, *args, **kwargs):
-        if not author:
+    def __init__(self, user=None, *args, **kwargs):
+        if not user:
             raise ValueError('This parameter is mandatory')
-        self.author = author
+        self.user = user
         super().__init__(*args, **kwargs)
 
     def save(self, commit=True):
         instance = super().save(commit=False)
-        instance.author = self.author
+        instance.user = self.user
         if commit:
             instance.save()
         return instance

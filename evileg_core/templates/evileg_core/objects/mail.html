@@ -1,6 +1,6 @@
 <div>
     <small style="float: right;">{{ object.pub_date }}</small>
-    <h3 style="margin-top: 0; margin-bottom: 5px; color: #41cd52;">{{ object.author.get_full_name|default:object.author.username }}</h3>
+    <h3 style="margin-top: 0; margin-bottom: 5px; color: #41cd52;">{{ object.user.get_full_name|default:object.user.username }}</h3>
     {% if object.get_title is not None %}
         <p style="margin-top: 0; margin-bottom: 10px; color: #212529;">{{ object.get_title }}</p>
     {% endif %}

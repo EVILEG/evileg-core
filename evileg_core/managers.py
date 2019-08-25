@@ -8,7 +8,7 @@ from django.db.models import Q
 class EPostManager(models.Manager):
     """
     EPostManager is a manager for search in ESNF-C models. It is set to EAbstractPost.
-    It searches content by lookup fields, related lookup fields, author, and pub_date range
+    It searches content by lookup fields, related lookup fields, user, and pub_date range
     """
     use_for_related_fields = True
 
@@ -42,7 +42,7 @@ class EPostManager(models.Manager):
             qs = qs.filter(or_lookup)
 
         if user is not None:
-            qs = qs.filter(author=user)
+            qs = qs.filter(user=user)
 
         if date_from is not None and date_to is not None:
             qs = qs.filter(pub_date__range=[date_from, date_to])
