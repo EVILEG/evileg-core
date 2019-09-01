@@ -11547,6 +11547,18 @@ h6 {
   width: 120px;
   height: 120px; }
 
+.online {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 2px solid whitesmoke;
+  background-color: green;
+  position: relative; }
+
+.online-3 {
+  top: 26px;
+  left: 1px; }
+
 .card-avatar {
   -webkit-border-radius: 50%;
   border-radius: 50%;
