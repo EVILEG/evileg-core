@@ -11553,11 +11553,17 @@ h6 {
   border-radius: 50%;
   border: 2px solid whitesmoke;
   background-color: green;
-  position: relative; }
+  position: absolute;
+  left: 1px; }
+
+.online-2 {
+  top: 18px; }
 
 .online-3 {
-  top: 26px;
-  left: 1px; }
+  top: 26px; }
+
+.online-4 {
+  top: 34px; }
 
 .card-avatar {
   -webkit-border-radius: 50%;
