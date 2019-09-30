@@ -13,7 +13,7 @@ class EPostManager(models.Manager):
     use_for_related_fields = True
 
     def search(self, query=None, in_related=False, user=None, approved=True, date_from=None, date_to=None,
-               select_related=None, prefetch_related=None, order_by=None, distinct=False, **kwargs):
+               select_related=None, prefetch_related=None,  only=None, order_by=None, distinct=False, **kwargs):
         """
         Method for search content
 
@@ -53,6 +53,9 @@ class EPostManager(models.Manager):
         if prefetch_related:
             qs = qs.prefetch_related(*prefetch_related)
 
+        if only:
+            qs = qs.only(*only)
+
         if order_by:
             qs = qs.order_by(*order_by)
 
@@ -78,7 +81,7 @@ class EActivityManager(models.Manager):
     use_for_related_fields = True
 
     def search(self, model=None, query=None, in_related=False, date_from=None, date_to=None, approved_dict=None,
-               prefetch_related=None, **kwargs):
+               prefetch_related=None, only=None, **kwargs):
         model_name = model.__name__.lower()
         qs = self.get_queryset().filter(content_type__model=model_name).order_by("-{}s__pub_date".format(model_name))
         if query is not None:
@@ -101,6 +104,9 @@ class EActivityManager(models.Manager):
 
         if prefetch_related:
             qs = qs.prefetch_related(*prefetch_related)
+
+        if only:
+            qs = qs.only(*only)
 
         return qs
 

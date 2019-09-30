@@ -9,6 +9,8 @@ from django.utils.http import is_safe_url, urlunquote
 
 
 class ESoup:
+    __slots__ = ['soup', 'tags_for_extracting']
+
     """
     Clean up class for extracting unwanted content from text, which was posted by users
     """
@@ -126,6 +128,8 @@ class ESoup:
 
 
 class EMarkdownWorker:
+    __slots__ = ['pre_markdown_text', 'markdown_text']
+
     """
     Markdown converter. It will convert markdown text to html text with clean up from unwanted content, using ESoap class
     """
