@@ -13,7 +13,8 @@ class EPostManager(models.Manager):
     use_for_related_fields = True
 
     def search(self, query=None, in_related=False, user=None, approved=True, date_from=None, date_to=None,
-               select_related=None, prefetch_related=None,  only=None, order_by=None, distinct=False, **kwargs):
+               select_related=None, prefetch_related=None,  only=None, order_by=None, distinct=False, annotation=None,
+               **kwargs):
         """
         Method for search content
 
@@ -47,6 +48,9 @@ class EPostManager(models.Manager):
         if date_from is not None and date_to is not None:
             qs = qs.filter(pub_date__range=[date_from, date_to])
 
+        if annotation:
+            qs = qs.annotate(**annotation)
+
         if select_related:
             qs = qs.select_related(*select_related)
 
@@ -61,6 +65,7 @@ class EPostManager(models.Manager):
 
         if distinct:
             qs = qs.distinct()
+
         return qs
 
     def approved(self):
@@ -110,8 +115,15 @@ class EActivityManager(models.Manager):
 
         return qs
 
-    def by_users(self, q):
+    def by_users(self, q, select_related=None, only=None):
+        qs = self.get_queryset()
         if q:
-            return self.get_queryset().filter(Q(user__username__icontains=q) | Q(user__first_name__icontains=q) | Q(
-                user__last_name__icontains=q)).order_by('user__username')
-        return self.get_queryset().order_by('user__username')
+            qs = qs.filter(Q(user__username__icontains=q) | Q(user__first_name__icontains=q) | Q(user__last_name__icontains=q))
+
+        if select_related:
+            qs = qs.select_related(*select_related)
+
+        if only:
+            qs = qs.only(*only)
+
+        return qs.order_by('user__username')
