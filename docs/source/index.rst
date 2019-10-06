@@ -15,6 +15,7 @@
     managers
     mixins
     models
+    receivers
     shortcuts
     templatetags
     utils

@@ -11,7 +11,7 @@ os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
 
 setup(
     name='evileg_core',
-    version='0.0.3',
+    version='0.0.4',
     license='LGPLv3 License',
     description='(ESNF-C) EVILEG Social Network Framework - Core Module.',
     long_description=README,

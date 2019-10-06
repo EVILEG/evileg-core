@@ -31,7 +31,7 @@ author = 'Evgenii Legotckoi'
 # The short X.Y version
 version = ''
 # The full version, including alpha/beta/rc tags
-release = '0.0.3-alpha'
+release = '0.0.4-alpha'
 
 
 # -- General configuration ---------------------------------------------------
