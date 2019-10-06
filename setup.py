@@ -27,7 +27,9 @@ setup(
         'Markdown',
         'beautifulsoup4',
         'djangocodemirror',
-        'requests'
+        'requests',
+        'redis',
+        'django-redis'
     ],
     zip_safe=False,
     packages=['evileg_core'],

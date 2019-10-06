@@ -3,6 +3,7 @@
 import requests
 from django.conf import settings
 from django.contrib import messages
+from django.core.cache import cache
 from django.utils.translation import ugettext_lazy as _
 
 
@@ -34,6 +35,29 @@ def recaptcha(function):
                 request.recaptcha_is_valid = False
                 messages.error(request, _('Invalid reCAPTCHA. Please try again.'))
         return function(request, *args, **kwargs)
+
+    wrap.__doc__ = function.__doc__
+    wrap.__name__ = function.__name__
+    return wrap
+
+
+def cached_property(function):
+    """
+    Decorator for caching expensive properties in django models
+
+    :param function: wrapped function, which should be cached
+    :return: wrapped function
+    """
+    def wrap(model_object, *args, **kwargs):
+        cache_key = 'evileg_core_cached_property_{}_{}_{}_'.format(
+            model_object._meta.db_table, model_object.id, function.__name__
+        )
+        result = cache.get(cache_key)
+        if result is not None:
+            return result
+        result = function(model_object, *args, **kwargs)
+        cache.set(cache_key, result)
+        return result
 
     wrap.__doc__ = function.__doc__
     wrap.__name__ = function.__name__
