@@ -26,6 +26,14 @@ let LANGUAGES = {
     "lang-xsl": "text/html",
 };
 
+function escapeRegExp(str) {
+    return str.replace(/([.*+?^=!:${}()|\[\]\/\\])/g, "\\$1");
+}
+
+function replaceAll(str, find, replace) {
+    return str.replace(new RegExp(escapeRegExp(find), 'g'), replace);
+}
+
 class EMarkdownEditor {
     constructor (widgetId, uploadLink='', uploadFileLink='') {
         let editor = this;
@@ -70,9 +78,11 @@ class EMarkdownEditor {
         this.addCutBtn = jQuery('#' + widgetId + '_add_cut_btn');
         this.addCutBtn.bind('click', {widgetId: widgetId}, EMarkdownEditor.insertCut);
 
+        const underlinedWidgetId = replaceAll(widgetId, '-', '_');
+
         // Code Mirror - Code Editor
         try {
-            this.mirrorEditor = eval(widgetId + '_code_input_codemirror');
+            this.mirrorEditor = eval(underlinedWidgetId + '_code_input_codemirror');
             this.mirrorEditor.on('change', function (cm) {
                 editor.codeInput.val(cm.getValue());
             });
@@ -81,12 +91,12 @@ class EMarkdownEditor {
             });
         }
         catch(err) {
-            console.log("Code editor not found");
+            console.log("Code editor not found. id:", underlinedWidgetId + '_code_input_codemirror');
         }
 
         // Code Mirror - Markdown Editor
         try {
-            this.markdownMirrorEditor = eval(widgetId + '_codemirror');
+            this.markdownMirrorEditor = eval(underlinedWidgetId + '_codemirror');
             this.markdownMirrorEditor.on('change', function (cm) {
                 editor.textarea.val(cm.getValue());
             });
@@ -105,7 +115,7 @@ class EMarkdownEditor {
             });
         }
         catch (err) {
-            console.log("Markdown editor not found");
+            console.log("Markdown editor not found. id:", underlinedWidgetId + '_codemirror' );
         }
     }
 
