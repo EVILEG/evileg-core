@@ -14,6 +14,7 @@ from django.utils import timezone
 from django.utils.html import strip_tags
 from django.utils.translation import ugettext_lazy as _
 
+from .decorators import model_cached_property
 from .fields import EMarkdownField
 from .managers import EPostManager, EActivityManager
 from .mixins import EInterfaceMixin
@@ -50,6 +51,7 @@ class EAbstractPost(models.Model):
         return self.content[:150]
 
     @property
+    @model_cached_property
     def parent(self):
         return None
 
