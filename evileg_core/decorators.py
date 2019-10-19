@@ -41,7 +41,7 @@ def recaptcha(function):
     return wrap
 
 
-def cached_property(function):
+def model_cached_property(function):
     """
     Decorator for caching expensive properties in django models
 
@@ -49,7 +49,7 @@ def cached_property(function):
     :return: wrapped function
     """
     def wrap(model_object, *args, **kwargs):
-        cache_key = 'evileg_core_cached_property_{}_{}_{}_'.format(
+        cache_key = 'evileg_core_model_cached_property_{}_{}_{}_'.format(
             model_object._meta.db_table, model_object.id, function.__name__
         )
         result = cache.get(cache_key)
