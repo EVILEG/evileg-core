@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 
+from functools import wraps, partial
+
 import requests
 from django.conf import settings
 from django.contrib import messages
@@ -41,24 +43,32 @@ def recaptcha(function):
     return wrap
 
 
-def model_cached_property(function):
+def model_cached_property(function=None, timeout=getattr(settings, "MODEL_CACHED_PROPERTY_TIMEOUT", 60)):
     """
     Decorator for caching expensive properties in django models
 
+    WARNING:
+    This decorator doesn`t work with dynamic objects in function arguments,
+    For example it doesn`t work with AnonymousUser, only with authenticated User
+
+    :param timeout: cache timeout
     :param function: wrapped function, which should be cached
     :return: wrapped function
     """
-    def wrap(model_object, *args, **kwargs):
-        cache_key = 'evileg_core_model_cached_property_{}_{}_{}_'.format(
-            model_object._meta.db_table, model_object.id, function.__name__
+    if function is None:
+        return partial(model_cached_property, timeout=timeout)
+
+    @wraps(function)
+    def function_wrapper(model_object, *args, **kwargs):
+        cache_key = 'evileg_core_model_cached_property_{}_{}_{}_{}_'.format(
+            model_object._meta.db_table, model_object.id, function.__name__,
+            "{} {}".format(args, kwargs).replace(" ", "_")
         )
         result = cache.get(cache_key)
         if result is not None:
             return result
         result = function(model_object, *args, **kwargs)
-        cache.set(cache_key, result)
+        cache.set(cache_key, result, timeout=timeout)
         return result
 
-    wrap.__doc__ = function.__doc__
-    wrap.__name__ = function.__name__
-    return wrap
+    return function_wrapper

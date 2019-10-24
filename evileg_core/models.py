@@ -273,5 +273,8 @@ class EAbstractActivity(models.Model):
         """
         return self.content_object
 
+    def invalidate_cache(self):
+        pass
+
     class Meta:
         abstract = True

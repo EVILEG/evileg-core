@@ -5,6 +5,7 @@ import re
 import markdown
 from bs4 import BeautifulSoup
 from django.conf import settings
+from django.core.cache import cache
 from django.utils.http import is_safe_url, urlunquote
 
 
@@ -177,3 +178,20 @@ def get_client_ip(request):
     """
     x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
     return x_forwarded_for.split(',')[-1].strip() if x_forwarded_for else request.META.get('REMOTE_ADDR')
+
+
+def invalidate_model_cached_property(model_object, function):
+    """
+    Function for invalidation model cached property
+
+    :param model_object: model instance, on which should be invalidated property
+    :param function: wrapped function, which should be invalidated
+    :return:
+    """
+    cache_keys = cache.keys('evileg_core_model_cached_property_{}_{}_{}_*'.format(
+        model_object._meta.db_table,
+        model_object.id,
+        function.__name__,
+    ))
+    for key in cache_keys:
+        cache.delete(key)
