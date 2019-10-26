@@ -8,6 +8,7 @@
     getting_started
     admin
     backends
+    cache
     decorators
     fields
     filters
@@ -15,7 +16,6 @@
     managers
     mixins
     models
-    receivers
     shortcuts
     templatetags
     utils
