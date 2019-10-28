@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ESNF-C\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-08-11 16:18+0200\n"
-"PO-Revision-Date: 2019-08-06 23:00+0200\n"
+"POT-Creation-Date: 2019-10-28 20:42+0600\n"
+"PO-Revision-Date: 2019-10-28 15:46+0100\n"
 "Last-Translator: Evgenii Legotckoi <evileg@evileg.com>\n"
 "Language-Team: EVILEG Team <info@evileg.com>\n"
 "Language: ru\n"
@@ -128,7 +128,7 @@ msgstr "Просмотры"
 msgid "URL"
 msgstr "URL"
 
-#: evileg_core/evileg_core/models.py:255
+#: evileg_core/evileg_core/models.py:256
 msgid "User"
 msgstr "Пользователь"
 
@@ -164,7 +164,7 @@ msgid "Insert"
 msgstr "Вставить"
 
 #: evileg_core/evileg_core/templates/evileg_core/markdown_widget.html:34
-#: evileg_core/evileg_core/templates/evileg_core/markdown_widget.html:103
+#: evileg_core/evileg_core/templates/evileg_core/markdown_widget.html:105
 msgid "Insert code"
 msgstr "Вставить код"
 
@@ -184,23 +184,23 @@ msgstr "Вставьте ваш код"
 msgid "Preview"
 msgstr "Предпросмотр"
 
-#: evileg_core/evileg_core/templates/evileg_core/markdown_widget.html:96
+#: evileg_core/evileg_core/templates/evileg_core/markdown_widget.html:98
 msgid "Content separator"
 msgstr "Разделитель контента"
 
-#: evileg_core/evileg_core/templates/evileg_core/markdown_widget.html:98
+#: evileg_core/evileg_core/templates/evileg_core/markdown_widget.html:100
 msgid "Upload File"
 msgstr "Загрузить файл"
 
-#: evileg_core/evileg_core/templates/evileg_core/markdown_widget.html:101
+#: evileg_core/evileg_core/templates/evileg_core/markdown_widget.html:103
 msgid "Upload Image"
 msgstr "Загрузить изображение"
 
-#: evileg_core/evileg_core/templates/evileg_core/markdown_widget.html:104
+#: evileg_core/evileg_core/templates/evileg_core/markdown_widget.html:106
 msgid "Add link"
 msgstr "Добавить ссылку"
 
-#: evileg_core/evileg_core/templates/evileg_core/markdown_widget.html:107
+#: evileg_core/evileg_core/templates/evileg_core/markdown_widget.html:109
 msgid "Markdown syntax"
 msgstr "Синтаксис Markdown"
 

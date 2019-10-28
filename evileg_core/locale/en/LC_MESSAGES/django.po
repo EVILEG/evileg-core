@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-08-11 16:18+0200\n"
-"PO-Revision-Date: 2019-08-06 23:00+0200\n"
+"POT-Creation-Date: 2019-10-28 20:42+0600\n"
+"PO-Revision-Date: 2019-10-28 15:47+0100\n"
 "Last-Translator: Evgenii Legotckoi <evileg@evileg.com>\n"
 "Language-Team: \n"
 "Language: en\n"
@@ -127,7 +127,7 @@ msgstr "Views"
 msgid "URL"
 msgstr "URL"
 
-#: evileg_core/evileg_core/models.py:255
+#: evileg_core/evileg_core/models.py:256
 msgid "User"
 msgstr "User"
 
@@ -163,7 +163,7 @@ msgid "Insert"
 msgstr "Insert"
 
 #: evileg_core/evileg_core/templates/evileg_core/markdown_widget.html:34
-#: evileg_core/evileg_core/templates/evileg_core/markdown_widget.html:103
+#: evileg_core/evileg_core/templates/evileg_core/markdown_widget.html:105
 msgid "Insert code"
 msgstr "Insert code"
 
@@ -183,23 +183,23 @@ msgstr "Insert your code"
 msgid "Preview"
 msgstr "Preview"
 
-#: evileg_core/evileg_core/templates/evileg_core/markdown_widget.html:96
+#: evileg_core/evileg_core/templates/evileg_core/markdown_widget.html:98
 msgid "Content separator"
 msgstr "Content separator"
 
-#: evileg_core/evileg_core/templates/evileg_core/markdown_widget.html:98
+#: evileg_core/evileg_core/templates/evileg_core/markdown_widget.html:100
 msgid "Upload File"
 msgstr "Upload File"
 
-#: evileg_core/evileg_core/templates/evileg_core/markdown_widget.html:101
+#: evileg_core/evileg_core/templates/evileg_core/markdown_widget.html:103
 msgid "Upload Image"
 msgstr "Upload Image"
 
-#: evileg_core/evileg_core/templates/evileg_core/markdown_widget.html:104
+#: evileg_core/evileg_core/templates/evileg_core/markdown_widget.html:106
 msgid "Add link"
 msgstr "Add link"
 
-#: evileg_core/evileg_core/templates/evileg_core/markdown_widget.html:107
+#: evileg_core/evileg_core/templates/evileg_core/markdown_widget.html:109
 msgid "Markdown syntax"
 msgstr "Markdown syntax"
 
