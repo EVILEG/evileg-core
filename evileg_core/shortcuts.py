@@ -32,3 +32,24 @@ def get_content_type_id(obj):
     :return: Content Type Id
     """
     return ContentType.objects.get_for_model(obj).id
+
+
+def get_initials(user):
+    """
+    Function for getting initials from user full name of username
+    If user is non authenticated, then function return symbol "A"
+
+    :param user: user object
+    :return: initials
+    """
+    def first(value):
+        try:
+            return value[0]
+        except IndexError:
+            return ''
+
+    if user.is_authenticated:
+        if user.get_full_name():
+            return '{}{}'.format(first(user.first_name), first(user.last_name))
+        return first(user.username)
+    return 'A'
