@@ -2,11 +2,11 @@
 
 from django.conf import settings
 from django.contrib.auth.decorators import login_required
+from django.core.paginator import Paginator
 from django.template import loader
 from django.urls import reverse
 from django.utils.decorators import method_decorator
 from django.views.generic.edit import FormMixin
-
 
 _interface_templates_cache = {}
 
@@ -134,3 +134,28 @@ class EPostFormMixin(FormMixin):
     def post(self, request, *args, **kwargs):
         form = self.form_class(**self.get_form_kwargs())
         return self.form_valid(form) if form.is_valid() else self.form_invalid(form)
+
+
+class EPaginateMixin:
+    """
+    Mixin for adding page pagination functionality into Class Based View.
+    Mixin support get and post requests
+    """
+    def get_paginated_page(self, objects, number=10):
+        """
+        Method get queryset for creating paginated page by page number form request
+
+        :param objects: QuerySet or objects list
+        :param number: number of objects on the page
+        :return: page with objects
+        """
+        return Paginator(objects, number).get_page(
+            self.request.GET.get('page') if self.request.method == 'GET' else self.request.POST.get('page'))
+
+    def get_pagination_url(self):
+        """
+        Method for creating pagination url for bootstrap_pagination from django-bootstrap4
+
+        :return: pagination url
+        """
+        return self.request.get_full_path().replace(self.request.path, '')
