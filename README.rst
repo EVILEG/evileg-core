@@ -14,8 +14,10 @@ Please, support development of evileg-core module. We open part of EVILEG source
 
 You can donate to us with following ways:
 
-1. `PayPal.Me <https://www.paypal.me/legotckoi>`_
-2. `Yandex.Money <https://money.yandex.ru/to/410011306906193>`_
+- `PayPal.Me <https://www.paypal.me/legotckoi>`_
+- `Yandex.Money <https://money.yandex.ru/to/410011306906193>`_
+- `Patreon <https://www.patreon.com/evileg>`_
+- Bitcoin: 13aqaPG8NZhX3By3he9LtrnHsmvRgsbt95
 
 =============
 Documentation
