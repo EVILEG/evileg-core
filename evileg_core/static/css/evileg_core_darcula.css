@@ -12215,7 +12215,6 @@ pre > pre {
   overflow-y: auto; }
 
 .btn-menu {
-  background: transparent;
   width: 112px;
   height: 112px;
   max-width: 112px;
@@ -12223,28 +12222,12 @@ pre > pre {
   border-radius: 12px;
   overflow: hidden;
   line-height: 1.2;
-  text-decoration: none !important;
-  color: #a9b7c6;
   text-align: center !important;
   padding: 0.25rem !important;
   padding-top: 0.5rem !important;
   margin: 0.25rem !important;
-  display: inline-block !important; }
-
-.btn-menu:hover {
-  background-color: whitesmoke;
-  opacity: 0.5;
-  cursor: pointer;
-  color: #222840 !important; }
-
-.menu-dashboard.show ~ .blur {
-  opacity: 0.5;
-  filter: blur(5px);
-  -webkit-filter: blur(5px);
-  -moz-filter: blur(5px);
-  -o-filter: blur(5px);
-  -ms-filter: blur(5px);
-  filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><filter id='svgMask'><feGaussianBlur stdDeviation='10' /></filter></svg>#svgMask"); }
+  display: inline-block !important;
+  white-space: initial; }
 
 .pointer {
   cursor: pointer; }
