@@ -10,6 +10,8 @@ from django.utils.translation import ugettext_lazy as _
 register = template.Library()
 
 
+STATIC_CONTENT_VERSION = 50
+
 CLASSIC = 1
 DARCULA = 2
 
@@ -28,15 +30,15 @@ THEMES_CSS_MIN = {
     DARCULA: 'css/evileg_core_darcula.min.css'
 }
 
+THEMES_CSS_CDN = {
+    CLASSIC: 'https://gitcdn.xyz/repo/EVILEG/evileg-core/master/evileg_core/static/css/evileg_core.css',
+    DARCULA: 'https://gitcdn.xyz/repo/EVILEG/evileg-core/master/evileg_core/static/css/evileg_core_darcula.css'
+}
 
-@register.simple_tag
-def get_theme(theme):
-    return static(THEMES_CSS[theme])
-
-
-@register.simple_tag
-def get_theme_min(theme):
-    return static(THEMES_CSS_MIN[theme])
+THEMES_CSS_MIN_CDN = {
+    CLASSIC: 'https://gitcdn.xyz/repo/EVILEG/evileg-core/master/evileg_core/static/css/evileg_core.min.css',
+    DARCULA: 'https://gitcdn.xyz/repo/EVILEG/evileg-core/master/evileg_core/static/css/evileg_core_darcula.min.css'
+}
 
 
 @register.simple_tag(takes_context=True)
@@ -75,13 +77,16 @@ def activities_count(activity_set, model_name):
 
 
 @register.simple_tag
-def evileg_core_css():
-    return static("css/evileg_core.css")
-
-
-@register.simple_tag
-def evileg_core_min_css():
-    return static("css/evileg_core.min.css")
+def evileg_core_css(theme=CLASSIC,
+                    min=getattr(settings, "EVILEG_CORE_MIN_STATIC_FILES", True),
+                    cdn=getattr(settings, "EVILEG_CORE_CDN", True)):
+    if cdn:
+        return THEMES_CSS_CDN[theme]
+    elif cdn and min:
+        return THEMES_CSS_MIN_CDN[theme]
+    elif min:
+        return '{}?{}'.format(static(THEMES_CSS_MIN[theme]), STATIC_CONTENT_VERSION)
+    return '{}?{}'.format(static(THEMES_CSS[theme]), STATIC_CONTENT_VERSION)
 
 
 @register.simple_tag
