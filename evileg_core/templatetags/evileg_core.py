@@ -52,6 +52,23 @@ EVILEG_CORE_JS_STATIC_FILES = {
     CDN_MIN: 'https://gitcdn.xyz/repo/EVILEG/evileg-core/master/evileg_core/static/js/evileg_core.min.js'
 }
 
+POPPER_JS_STATIC_FILES = {
+    COMMON_MIN: 'js/popper.min.js',
+    CDN_MIN: 'https://gitcdn.xyz/repo/EVILEG/evileg-core/master/evileg_core/static/js/popper.min.js'
+}
+
+
+JQUERY_JS_STATIC_FILES = {
+    COMMON_MIN: 'js/jquery-3.3.1.min.js',
+    CDN_MIN: 'https://gitcdn.xyz/repo/EVILEG/evileg-core/master/evileg_core/static/js/jquery-3.3.1.min.js'
+}
+
+
+def select_static_minified_file(cdn, files_dict):
+    if cdn:
+        return files_dict[CDN_MIN]
+    return '{}?{}'.format(static(files_dict[COMMON_MIN]), STATIC_CONTENT_VERSION)
+
 
 def select_static_file(cdn, minified, files_dict):
     if cdn:
@@ -138,13 +155,13 @@ def evileg_core_js(minified=getattr(settings, "EVILEG_CORE_MIN_STATIC_FILES", Tr
 
 
 @register.simple_tag
-def evileg_core_popper_min_js():
-    return static("js/popper.min.js")
+def evileg_core_popper_js(cdn=getattr(settings, "EVILEG_CORE_CDN", True)):
+    return select_static_minified_file(cdn=cdn, files_dict=POPPER_JS_STATIC_FILES)
 
 
 @register.simple_tag
-def evileg_core_jquery_min_js():
-    return static("js/jquery-3.3.1.min.js")
+def evileg_core_jquery_js(cdn=getattr(settings, "EVILEG_CORE_CDN", True)):
+    return select_static_minified_file(cdn=cdn, files_dict=JQUERY_JS_STATIC_FILES)
 
 
 @register.simple_tag
