@@ -40,6 +40,28 @@ THEMES_CSS_MIN_CDN = {
     DARCULA: 'https://gitcdn.xyz/repo/EVILEG/evileg-core/master/evileg_core/static/css/evileg_core_darcula.min.css'
 }
 
+COMMON = 1
+COMMON_MIN = 2
+CDN = 3
+CDN_MIN = 4
+
+EVILEG_CORE_JS_STATIC_FILES = {
+    COMMON: 'js/evileg_core.js',
+    COMMON_MIN: 'js/evileg_core.min.js',
+    CDN: 'https://gitcdn.xyz/repo/EVILEG/evileg-core/master/evileg_core/static/js/evileg_core.js',
+    CDN_MIN: 'https://gitcdn.xyz/repo/EVILEG/evileg-core/master/evileg_core/static/js/evileg_core.min.js'
+}
+
+
+def select_static_file(cdn, minified, files_dict):
+    if cdn:
+        return files_dict[CDN]
+    elif cdn and minified:
+        return files_dict[CDN_MIN]
+    elif minified:
+        return '{}?{}'.format(static(files_dict[COMMON]), STATIC_CONTENT_VERSION)
+    return '{}?{}'.format(static(files_dict[COMMON_MIN]), STATIC_CONTENT_VERSION)
+
 
 @register.simple_tag(takes_context=True)
 def render_template_full(context, obj):
@@ -78,13 +100,13 @@ def activities_count(activity_set, model_name):
 
 @register.simple_tag
 def evileg_core_css(theme=CLASSIC,
-                    min=getattr(settings, "EVILEG_CORE_MIN_STATIC_FILES", True),
+                    minified=getattr(settings, "EVILEG_CORE_MIN_STATIC_FILES", True),
                     cdn=getattr(settings, "EVILEG_CORE_CDN", True)):
     if cdn:
         return THEMES_CSS_CDN[theme]
-    elif cdn and min:
+    elif cdn and minified:
         return THEMES_CSS_MIN_CDN[theme]
-    elif min:
+    elif minified:
         return '{}?{}'.format(static(THEMES_CSS_MIN[theme]), STATIC_CONTENT_VERSION)
     return '{}?{}'.format(static(THEMES_CSS[theme]), STATIC_CONTENT_VERSION)
 
@@ -110,13 +132,9 @@ def evileg_core_cropper_min_css():
 
 
 @register.simple_tag
-def evileg_core_js():
-    return static("js/evileg_core.js")
-
-
-@register.simple_tag
-def evileg_core_min_js():
-    return static("js/evileg_core.min.js")
+def evileg_core_js(minified=getattr(settings, "EVILEG_CORE_MIN_STATIC_FILES", True),
+                   cdn=getattr(settings, "EVILEG_CORE_CDN", True)):
+    return select_static_file(cdn=cdn, minified=minified, files_dict=EVILEG_CORE_JS_STATIC_FILES)
 
 
 @register.simple_tag
