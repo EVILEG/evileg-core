@@ -118,7 +118,7 @@ def activities_count(activity_set, model_name):
 @register.simple_tag
 def evileg_core_css(theme=CLASSIC,
                     minified=getattr(settings, "EVILEG_CORE_MIN_STATIC_FILES", True),
-                    cdn=getattr(settings, "EVILEG_CORE_CDN", True)):
+                    cdn=getattr(settings, "EVILEG_CORE_CDN", False)):
     if cdn:
         return THEMES_CSS_CDN[theme]
     elif cdn and minified:
@@ -150,17 +150,17 @@ def evileg_core_cropper_min_css():
 
 @register.simple_tag
 def evileg_core_js(minified=getattr(settings, "EVILEG_CORE_MIN_STATIC_FILES", True),
-                   cdn=getattr(settings, "EVILEG_CORE_CDN", True)):
+                   cdn=getattr(settings, "EVILEG_CORE_CDN", False)):
     return select_static_file(cdn=cdn, minified=minified, files_dict=EVILEG_CORE_JS_STATIC_FILES)
 
 
 @register.simple_tag
-def evileg_core_popper_js(cdn=getattr(settings, "EVILEG_CORE_CDN", True)):
+def evileg_core_popper_js(cdn=getattr(settings, "EVILEG_CORE_CDN", False)):
     return select_static_minified_file(cdn=cdn, files_dict=POPPER_JS_STATIC_FILES)
 
 
 @register.simple_tag
-def evileg_core_jquery_js(cdn=getattr(settings, "EVILEG_CORE_CDN", True)):
+def evileg_core_jquery_js(cdn=getattr(settings, "EVILEG_CORE_CDN", False)):
     return select_static_minified_file(cdn=cdn, files_dict=JQUERY_JS_STATIC_FILES)
 
 
