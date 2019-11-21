@@ -31,13 +31,13 @@ THEMES_CSS_MIN = {
 }
 
 THEMES_CSS_CDN = {
-    CLASSIC: 'https://raw.githubusercontent.com/EVILEG/evileg-core/master/evileg_core/static/css/evileg_core.css',
-    DARCULA: 'https://raw.githubusercontent.com/EVILEG/evileg-core/master/evileg_core/static/css/evileg_core_darcula.css'
+    CLASSIC: 'https://gitcdn.xyz/repo/EVILEG/evileg-core/master/evileg_core/static/css/evileg_core.css',
+    DARCULA: 'https://gitcdn.xyz/repo/EVILEG/evileg-core/master/evileg_core/static/css/evileg_core_darcula.css'
 }
 
 THEMES_CSS_MIN_CDN = {
-    CLASSIC: 'https://raw.githubusercontent.com/EVILEG/evileg-core/master/evileg_core/static/css/evileg_core.min.css',
-    DARCULA: 'https://raw.githubusercontent.com/EVILEG/evileg-core/master/evileg_core/static/css/evileg_core_darcula.min.css'
+    CLASSIC: 'https://gitcdn.xyz/repo/EVILEG/evileg-core/master/evileg_core/static/css/evileg_core.min.css',
+    DARCULA: 'https://gitcdn.xyz/repo/EVILEG/evileg-core/master/evileg_core/static/css/evileg_core_darcula.min.css'
 }
 
 COMMON = 1
@@ -48,19 +48,19 @@ CDN_MIN = 4
 EVILEG_CORE_JS_STATIC_FILES = {
     COMMON: 'js/evileg_core.js',
     COMMON_MIN: 'js/evileg_core.min.js',
-    CDN: 'https://raw.githubusercontent.com/EVILEG/evileg-core/master/evileg_core/static/js/evileg_core.js',
-    CDN_MIN: 'https://raw.githubusercontent.com/EVILEG/evileg-core/master/evileg_core/static/js/evileg_core.min.js'
+    CDN: 'https://gitcdn.xyz/repo/EVILEG/evileg-core/master/evileg_core/static/js/evileg_core.js',
+    CDN_MIN: 'https://gitcdn.xyz/repo/EVILEG/evileg-core/master/evileg_core/static/js/evileg_core.min.js'
 }
 
 POPPER_JS_STATIC_FILES = {
     COMMON_MIN: 'js/popper.min.js',
-    CDN_MIN: 'https://raw.githubusercontent.com/EVILEG/evileg-core/master/evileg_core/static/js/popper.min.js'
+    CDN_MIN: 'https://gitcdn.xyz/repo/EVILEG/evileg-core/master/evileg_core/static/js/popper.min.js'
 }
 
 
 JQUERY_JS_STATIC_FILES = {
     COMMON_MIN: 'js/jquery-3.3.1.min.js',
-    CDN_MIN: 'https://raw.githubusercontent.com/EVILEG/evileg-core/master/evileg_core/static/js/jquery-3.3.1.min.js'
+    CDN_MIN: 'https://gitcdn.xyz/repo/EVILEG/evileg-core/master/evileg_core/static/js/jquery-3.3.1.min.js'
 }
 
 
