@@ -73,10 +73,10 @@ def select_static_minified_file(cdn, files_dict):
 
 
 def select_static_file(cdn, minified, files_dict):
-    if cdn:
-        file_url = files_dict[CDN]
-    elif cdn and minified:
+    if cdn and minified:
         file_url = files_dict[CDN_MIN]
+    elif cdn:
+        file_url = files_dict[CDN]
     elif minified:
         file_url = static(files_dict[COMMON])
     else:
@@ -123,10 +123,10 @@ def activities_count(activity_set, model_name):
 def evileg_core_css(theme=CLASSIC,
                     minified=getattr(settings, "EVILEG_CORE_MIN_STATIC_FILES", True),
                     cdn=getattr(settings, "EVILEG_CORE_CDN", False)):
-    if cdn:
-        file_url = THEMES_CSS_CDN[theme]
-    elif cdn and minified:
+    if cdn and minified:
         file_url = THEMES_CSS_MIN_CDN[theme]
+    elif cdn:
+        file_url = THEMES_CSS_CDN[theme]
     elif minified:
         file_url = static(THEMES_CSS_MIN[theme])
     else:
