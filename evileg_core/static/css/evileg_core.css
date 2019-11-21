@@ -12179,14 +12179,14 @@ pre > pre {
   .d-none-1800 {
     display: none !important; } }
 
-div.drw {
+div.drawer_items_list {
   padding: .25rem 0;
   border-bottom: 1px solid #dee2e6;
   display: flex;
   flex-direction: column;
   flex-grow: 1; }
 
-div.drw > a {
+div.drawer_items_list > a {
   color: rgba(0, 0, 0, 0.5);
   padding: .5rem 1rem;
   text-decoration: none;
@@ -12196,24 +12196,24 @@ div.drw > a {
   line-height: 1;
   position: relative; }
 
-div.drw:last-child {
+div.drawer_items_list:last-child {
   margin-bottom: 0;
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0; }
 
-div.drw:first-child {
+div.drawer_items_list:first-child {
   border-top-left-radius: 0;
   border-top-right-radius: 0; }
 
-div.drw > a:hover {
+div.drawer_items_list > a:hover {
   color: rgba(0, 0, 0, 0.7);
   background-color: rgba(153, 153, 153, 0.2); }
 
-div.drw > a:active {
+div.drawer_items_list > a:active {
   color: rgba(0, 0, 0, 0.9);
   background-color: rgba(153, 153, 153, 0.2); }
 
-div.drw > a > .badge {
+div.drawer_items_list > a > .badge {
   margin-right: 0;
   margin-left: auto; }
 
