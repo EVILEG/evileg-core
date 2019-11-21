@@ -227,3 +227,31 @@ def breadcrumb_item(url, title, position):
 @register.inclusion_tag('evileg_core/breadcrumb_active.html')
 def breadcrumb_active(url, title, position):
     return {'url': url, 'title': title, 'position': position}
+
+
+@register.filter
+def human_format(num, round_to=1):
+    magnitude = 0
+    while abs(num) >= 1000:
+        magnitude += 1
+        num = round(num / 1000.0, round_to)
+    return '{}{}'.format(
+        '{:.{}f}'.format(round(num, round_to), round_to).rstrip('0').rstrip('.'),
+        ['', 'K', 'M', 'G', 'T', 'P'][magnitude]
+    )
+
+
+@register.inclusion_tag('evileg_core/drawer_item.html')
+def drawer_item(title, url='#', icon=None, **kwargs):
+    item_id = kwargs.pop('item_id', None)
+    counter = kwargs.pop('counter', None)
+
+    return {
+        'title': title,
+        'url': url,
+        'icon': icon,
+        'counter': human_format(counter) if counter is not None else counter,
+        'item_id': 'id={}'.format(item_id) if item_id is not None else '',
+        'badge': kwargs.pop('badge', 'light'),
+        'visible': True if counter is not None and (kwargs.pop('always_visible', False) or counter > 0) else False,
+    }
