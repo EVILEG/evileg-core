@@ -31,13 +31,13 @@ THEMES_CSS_MIN = {
 }
 
 THEMES_CSS_CDN = {
-    CLASSIC: 'https://gitcdn.xyz/repo/EVILEG/evileg-core/master/evileg_core/static/css/evileg_core.css',
-    DARCULA: 'https://gitcdn.xyz/repo/EVILEG/evileg-core/master/evileg_core/static/css/evileg_core_darcula.css'
+    CLASSIC: 'https://raw.githubusercontent.com/EVILEG/evileg-core/master/evileg_core/static/css/evileg_core.css',
+    DARCULA: 'https://raw.githubusercontent.com/EVILEG/evileg-core/master/evileg_core/static/css/evileg_core_darcula.css'
 }
 
 THEMES_CSS_MIN_CDN = {
-    CLASSIC: 'https://gitcdn.xyz/repo/EVILEG/evileg-core/master/evileg_core/static/css/evileg_core.min.css',
-    DARCULA: 'https://gitcdn.xyz/repo/EVILEG/evileg-core/master/evileg_core/static/css/evileg_core_darcula.min.css'
+    CLASSIC: 'https://raw.githubusercontent.com/EVILEG/evileg-core/master/evileg_core/static/css/evileg_core.min.css',
+    DARCULA: 'https://raw.githubusercontent.com/EVILEG/evileg-core/master/evileg_core/static/css/evileg_core_darcula.min.css'
 }
 
 COMMON = 1
@@ -48,36 +48,40 @@ CDN_MIN = 4
 EVILEG_CORE_JS_STATIC_FILES = {
     COMMON: 'js/evileg_core.js',
     COMMON_MIN: 'js/evileg_core.min.js',
-    CDN: 'https://gitcdn.xyz/repo/EVILEG/evileg-core/master/evileg_core/static/js/evileg_core.js',
-    CDN_MIN: 'https://gitcdn.xyz/repo/EVILEG/evileg-core/master/evileg_core/static/js/evileg_core.min.js'
+    CDN: 'https://raw.githubusercontent.com/EVILEG/evileg-core/master/evileg_core/static/js/evileg_core.js',
+    CDN_MIN: 'https://raw.githubusercontent.com/EVILEG/evileg-core/master/evileg_core/static/js/evileg_core.min.js'
 }
 
 POPPER_JS_STATIC_FILES = {
     COMMON_MIN: 'js/popper.min.js',
-    CDN_MIN: 'https://gitcdn.xyz/repo/EVILEG/evileg-core/master/evileg_core/static/js/popper.min.js'
+    CDN_MIN: 'https://raw.githubusercontent.com/EVILEG/evileg-core/master/evileg_core/static/js/popper.min.js'
 }
 
 
 JQUERY_JS_STATIC_FILES = {
     COMMON_MIN: 'js/jquery-3.3.1.min.js',
-    CDN_MIN: 'https://gitcdn.xyz/repo/EVILEG/evileg-core/master/evileg_core/static/js/jquery-3.3.1.min.js'
+    CDN_MIN: 'https://raw.githubusercontent.com/EVILEG/evileg-core/master/evileg_core/static/js/jquery-3.3.1.min.js'
 }
 
 
 def select_static_minified_file(cdn, files_dict):
     if cdn:
-        return files_dict[CDN_MIN]
-    return '{}?{}'.format(static(files_dict[COMMON_MIN]), STATIC_CONTENT_VERSION)
+        file_url = files_dict[CDN_MIN]
+    else:
+        file_url = static(files_dict[COMMON_MIN])
+    return '{}?{}'.format(file_url, STATIC_CONTENT_VERSION)
 
 
 def select_static_file(cdn, minified, files_dict):
     if cdn:
-        return files_dict[CDN]
+        file_url = files_dict[CDN]
     elif cdn and minified:
-        return files_dict[CDN_MIN]
+        file_url = files_dict[CDN_MIN]
     elif minified:
-        return '{}?{}'.format(static(files_dict[COMMON]), STATIC_CONTENT_VERSION)
-    return '{}?{}'.format(static(files_dict[COMMON_MIN]), STATIC_CONTENT_VERSION)
+        file_url = static(files_dict[COMMON])
+    else:
+        file_url = static(files_dict[COMMON_MIN])
+    return '{}?{}'.format(file_url, STATIC_CONTENT_VERSION)
 
 
 @register.simple_tag(takes_context=True)
@@ -120,12 +124,14 @@ def evileg_core_css(theme=CLASSIC,
                     minified=getattr(settings, "EVILEG_CORE_MIN_STATIC_FILES", True),
                     cdn=getattr(settings, "EVILEG_CORE_CDN", False)):
     if cdn:
-        return THEMES_CSS_CDN[theme]
+        file_url = THEMES_CSS_CDN[theme]
     elif cdn and minified:
-        return THEMES_CSS_MIN_CDN[theme]
+        file_url = THEMES_CSS_MIN_CDN[theme]
     elif minified:
-        return '{}?{}'.format(static(THEMES_CSS_MIN[theme]), STATIC_CONTENT_VERSION)
-    return '{}?{}'.format(static(THEMES_CSS[theme]), STATIC_CONTENT_VERSION)
+        file_url = static(THEMES_CSS_MIN[theme])
+    else:
+        file_url = static(THEMES_CSS[theme])
+    return '{}?{}'.format(file_url, STATIC_CONTENT_VERSION)
 
 
 @register.simple_tag
