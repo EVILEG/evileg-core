@@ -66,7 +66,7 @@ JQUERY_JS_STATIC_FILES = {
 
 def select_static_minified_file(cdn, files_dict):
     if cdn:
-        file_url = files_dict[CDN_MIN]
+        return files_dict[CDN_MIN]
     else:
         file_url = static(files_dict[COMMON_MIN])
     return '{}?{}'.format(file_url, STATIC_CONTENT_VERSION)
@@ -74,9 +74,9 @@ def select_static_minified_file(cdn, files_dict):
 
 def select_static_file(cdn, minified, files_dict):
     if cdn:
-        file_url = files_dict[CDN]
+        return files_dict[CDN]
     elif cdn and minified:
-        file_url = files_dict[CDN_MIN]
+        return files_dict[CDN_MIN]
     elif minified:
         file_url = static(files_dict[COMMON])
     else:
@@ -124,9 +124,9 @@ def evileg_core_css(theme=CLASSIC,
                     minified=getattr(settings, "EVILEG_CORE_MIN_STATIC_FILES", True),
                     cdn=getattr(settings, "EVILEG_CORE_CDN", False)):
     if cdn:
-        file_url = THEMES_CSS_CDN[theme]
+        return THEMES_CSS_CDN[theme]
     elif cdn and minified:
-        file_url = THEMES_CSS_MIN_CDN[theme]
+        return THEMES_CSS_MIN_CDN[theme]
     elif minified:
         file_url = static(THEMES_CSS_MIN[theme])
     else:
