@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 
+import random
+
 from bootstrap4.utils import add_css_class
 from django import template
 from django.conf import settings
@@ -39,6 +41,27 @@ THEMES_CSS_MIN_CDN = {
     CLASSIC: 'https://cdn.jsdelivr.net/gh/EVILEG/evileg-core@master/evileg_core/static/css/evileg_core.min.css',
     DARCULA: 'https://cdn.jsdelivr.net/gh/EVILEG/evileg-core@master/evileg_core/static/css/evileg_core_darcula.min.css'
 }
+
+GRADIENTS = (
+    'aqua-gradient',
+    'clear-sky-gradient',
+    'passion-gradient',
+    'timber-gradient',
+    'night-and-day-gradient',
+    'sage-percuasion-gradient',
+    'lizard-gradient',
+    'piglet-gradient',
+    'dark-knight-gradient',
+    'curiosity-blue-gradient',
+    'virgin-amerika-gradient',
+    'vine-gradient'
+)
+
+
+@register.simple_tag
+def random_gradient():
+    return random.choice(GRADIENTS)
+
 
 COMMON = 1
 COMMON_MIN = 2
