@@ -101,9 +101,9 @@ def select_static_file(cdn, minified, files_dict):
     elif cdn:
         file_url = files_dict[CDN]
     elif minified:
-        file_url = static(files_dict[COMMON])
-    else:
         file_url = static(files_dict[COMMON_MIN])
+    else:
+        file_url = static(files_dict[COMMON])
     return '{}?{}'.format(file_url, STATIC_CONTENT_VERSION)
 
 
