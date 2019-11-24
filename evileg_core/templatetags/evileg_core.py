@@ -214,12 +214,20 @@ def evileg_core_cropper_min_js():
 
 
 @register.inclusion_tag('evileg_core/partials/object_list_preview.html', takes_context=True)
-def object_list_preview(context):
+def object_list_preview(context, not_found_message=None, object_list=None):
+    if object_list is not None:
+        context['object_list'] = object_list
+    if not_found_message is not None:
+        context['not_found_message'] = not_found_message
     return context
 
 
 @register.inclusion_tag('evileg_core/partials/object_list_preview_columns.html', takes_context=True)
-def object_list_preview_columns(context):
+def object_list_preview_columns(context, not_found_message=None, object_list=None):
+    if object_list is not None:
+        context['object_list'] = object_list
+    if not_found_message is not None:
+        context['not_found_message'] = not_found_message
     return context
 
 
@@ -294,3 +302,69 @@ def filter_view(context):
 def search_form(context, search_filter):
     context.update({'search_filter': search_filter})
     return context
+
+
+def get_active(context, url, startswith=False, **kwargs):
+    active_to_css_class = {
+        True: 'active',
+        None: '',
+        False: 'disabled'
+    }
+
+    if 'active' in kwargs:
+        active = kwargs.pop('active', None)
+    elif 'request' in context:
+        if startswith:
+            active = True if context['request'].path.startswith(url) else None
+        else:
+            active = True if context['request'].path == url else None
+    else:
+        active = None
+    return active_to_css_class[active]
+
+
+def get_nav_item_context(context, title, url='#', icon=None, **kwargs):
+    item_id = kwargs.pop('item_id', None)
+    item_id = 'id={}'.format(item_id) if item_id is not None else ''
+    counter = kwargs.pop('counter', None)
+    visible = True if counter is not None and (kwargs.pop('always_visible', False) or counter > 0) else False
+    text_color = kwargs.pop('text', None)
+
+    return {
+        'title': title,
+        'url': url,
+        'icon': icon,
+        'active': get_active(context=context, url=url, **kwargs),
+        'counter': human_format(counter) if counter is not None else counter,
+        'item_id': item_id,
+        'badge': kwargs.pop('badge', 'light'),
+        'visible': visible,
+        'mr_auto': 'mr-auto' if kwargs.pop('mr_auto', False) else '',
+        'ml_auto': 'ml-auto' if kwargs.pop('ml_auto', False) else '',
+        'text_color': 'text-{}'.format(text_color) if text_color else ''
+    }
+
+
+@register.inclusion_tag('evileg_core/tab_item.html', takes_context=True)
+def tab_item(context, title, url='#', icon=None, **kwargs):
+    return get_nav_item_context(context=context, title=title, url=url, icon=icon, **kwargs)
+
+
+@register.inclusion_tag('evileg_core/tab_item_2.html', takes_context=True)
+def tab_item_2(context, title, url='#', icon=None, counter=0, counter_2=0, counter_color='light', counter_color_2='light', counter_title='', counter_title_2='', **kwargs):
+    text_color = kwargs.pop('text', None)
+    return {
+        'title': title,
+        'url': url,
+        'icon': icon,
+        'active': get_active(context=context, url=url, **kwargs),
+        'counter': human_format(counter),
+        'counter_2': human_format(counter_2),
+        'counter_color': counter_color,
+        'counter_color_2': counter_color_2,
+        'counter_title': counter_title,
+        'counter_title_2': counter_title_2,
+        'mr_auto': 'mr-auto' if kwargs.pop('mr_auto', False) else '',
+        'ml_auto': 'ml-auto' if kwargs.pop('ml_auto', False) else '',
+        'text_color': 'text-{}'.format(text_color) if text_color else ''
+    }

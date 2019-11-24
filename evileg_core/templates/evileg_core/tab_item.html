@@ -1,0 +1,24 @@
+<li {{ item_id }} class="nav-item {{ mr_auto }}" itemprop="name">
+  {% if icon %}
+    <a class="nav-link {{ text_color }} {{ active }} d-none d-sm-block" href="{{ url }}" itemprop="url">
+      <span class="mdi-{{ icon }} mr-2"></span>
+      <span>{{ title }}</span>
+      {% if counter is not None %}
+        <span class="badge badge-{{ badge }} {{ visible|yesno:'d-inline-block,d-none' }} ml-2">{{ counter }}</span>
+      {% endif %}
+    </a>
+    <a class="nav-link {{ text_color }} {{ active }} d-block d-sm-none pt-2 pb-3 px-3" href="{{ url }}">
+      <span class="mdi-{{ icon }} mdi-24px" title="{{ title }}"></span>
+      {% if counter is not None %}
+        <span class="badge badge-{{ badge }} {{ visible|yesno:'d-inline-block,d-none' }}" style="margin-left: -0.6rem!important;">{{ counter }}</span>
+      {% endif %}
+    </a>
+  {% else %}
+    <a class="nav-link {{ text_color }} {{ active }}" href="{{ url }}" itemprop="url">
+      <span>{{ title }}</span>
+      {% if counter is not None %}
+        <span class="badge badge-{{ badge }} {{ visible|yesno:'d-inline-block,d-none' }}">{{ counter }}</span>
+      {% endif %}
+    </a>
+  {% endif %}
+</li>
