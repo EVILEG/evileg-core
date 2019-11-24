@@ -159,3 +159,25 @@ class EPaginateMixin:
         :return: pagination url
         """
         return self.request.get_full_path().replace(self.request.path, '')
+
+
+class EUpCounterMixin:
+    counter_field_name = 'views'
+
+    def get(self, request, *args, **kwargs):
+        response = super().get(request, *args, **kwargs)
+        if hasattr(self.object, self.counter_field_name):
+            setattr(self.object, self.counter_field_name, getattr(self.object, self.counter_field_name, 0) + 1)
+            self.object.save(update_fields=[self.counter_field_name])
+        return response
+
+
+class EBreadCrumbListMixin:
+
+    def get_breadcrumb_list(self, **kwargs):
+        return None
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context.update({'breadcrumb_list': self.get_breadcrumb_list(**kwargs)})
+        return context

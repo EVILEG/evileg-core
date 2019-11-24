@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-11-24 19:02+0600\n"
-"PO-Revision-Date: 2019-11-24 14:02+0100\n"
+"POT-Creation-Date: 2019-11-25 00:23+0600\n"
+"PO-Revision-Date: 2019-11-24 19:24+0100\n"
 "Last-Translator: Evgenii Legotckoi <evileg@evileg.com>\n"
 "Language-Team: \n"
 "Language: en\n"
@@ -238,7 +238,7 @@ msgstr "Nothing found"
 
 #: evileg_core/evileg_core/templates/evileg_core/search_form.html:11
 msgid "Advanced search"
-msgstr ""
+msgstr "Advanced search"
 
 #: evileg_core/evileg_core/templatetags/evileg_core.py:21
 msgid "Classic"

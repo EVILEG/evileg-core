@@ -11,6 +11,7 @@ from django.template.loader import render_to_string
 from django.utils.http import is_safe_url
 from django.utils.translation import LANGUAGE_SESSION_KEY, check_for_language
 from django.views import View
+from django.views.generic import DetailView
 from django.views.generic.base import ContextMixin
 
 from .mixins import EAjaxableMixin, EPaginateMixin
@@ -137,3 +138,23 @@ class EFilterView(EPaginatedView):
             'search_filter': f,
             'columns_view': self.columns_view
         }
+
+
+class EFilterDetailView(EFilterView, DetailView):
+    object_queryset = None
+    object_pk_field_name = None
+
+    def get(self, request, *args, **kwargs):
+        self.object = self.get_object()
+        return super().get(request, *args, **kwargs)
+
+    def get_ajax(self, request, *args, **kwargs):
+        self.object = self.get_object()
+        return super().get_ajax(request, *args, **kwargs)
+
+    def get_object(self, **kwargs):
+        return super().get_object(queryset=self.object_queryset)
+
+    def get_queryset(self, **kwargs):
+        qs = super().get_queryset(**kwargs)
+        return qs.filter(**{self.object_pk_field_name: self.object.pk}) if qs else qs
