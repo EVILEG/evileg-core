@@ -1,0 +1,7 @@
+{% load search_form object_list_preview_columns object_list_preview from evileg_core %}
+{% search_form search_filter %}
+{% if columns_view %}
+  {% object_list_preview_columns %}
+{% else %}
+  {% object_list_preview %}
+{% endif %}

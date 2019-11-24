@@ -218,6 +218,11 @@ def object_list_preview(context):
     return context
 
 
+@register.inclusion_tag('evileg_core/partials/object_list_preview_columns.html', takes_context=True)
+def object_list_preview_columns(context):
+    return context
+
+
 @register.inclusion_tag('evileg_core/recaptcha.html')
 def recaptcha(classes=''):
     """
@@ -278,3 +283,14 @@ def drawer_item(title, url='#', icon=None, **kwargs):
         'badge': kwargs.pop('badge', 'light'),
         'visible': True if counter is not None and (kwargs.pop('always_visible', False) or counter > 0) else False,
     }
+
+
+@register.inclusion_tag('evileg_core/filter_view.html', takes_context=True)
+def filter_view(context):
+    return context
+
+
+@register.inclusion_tag('evileg_core/search_form.html', takes_context=True)
+def search_form(context, search_filter):
+    context.update({'search_filter': search_filter})
+    return context

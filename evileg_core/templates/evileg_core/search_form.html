@@ -1,0 +1,21 @@
+{% load trans from i18n %}
+{% load bootstrap_form from bootstrap4 %}
+<form method="get" class="px-3 pb-3 m-0 mt-3">
+  <div class="input-group bmd-form-group pt-0">
+    <input class="form-control" id="{{ search_filter.form.search.auto_id }}" name="{{ search_filter.form.search.name }}" placeholder="{% trans 'Search' %}" value="{{ search_filter.form.search.value|default:"" }}" type="text">
+    <div class="input-group-append">
+      <button type="submit" class="btn btn-outline-secondary"><span class="mdi-magnify"></span></button>
+    </div>
+  </div>
+  {% if search_filter.advanced_search %}
+    <div data-toggle="collapse" data-target="#advanced_search" class="btn btn-sm btn-secondary btn-block mt-3 mb-0">{% trans 'Advanced search' %}</div>
+    <div id="advanced_search" class="collapse">
+      {{ search_filter.form.media }}
+      {% if search_filter.custom_advanced_template %}
+        {% include search_filter.custom_advanced_template %}
+      {% else %}
+        {% bootstrap_form search_filter.form exclude='search' %}
+      {% endif %}
+    </div>
+  {% endif %}
+</form>
