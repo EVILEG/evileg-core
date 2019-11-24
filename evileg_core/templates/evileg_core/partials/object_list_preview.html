@@ -1,10 +1,10 @@
 <div id="object-list">
-    {% load bootstrap_pagination from bootstrap4 %}
-    {% load render_template_preview from evileg_core %}
-    {% for object in object_list %}
-        {% render_template_preview object.get_self %}
-    {% empty %}
-        <div class="card card-body mb-3">{{ not_found_message|default:_("Nothing found") }}</div>
-    {% endfor %}
-    <div class="mt-3">{% bootstrap_pagination object_list pages_to_show="3" url=last_question justify_content='center' %}</div>
+  {% load bootstrap_pagination from bootstrap4 %}
+  {% load render_template_preview from evileg_core %}
+  {% for object in object_list %}
+    {% render_template_preview object.get_self %}
+  {% empty %}
+    <div class="card card-body mb-3">{{ not_found_message|default:_("Nothing found") }}</div>
+  {% endfor %}
+  <div class="mt-3">{% bootstrap_pagination object_list pages_to_show="3" url=last_question justify_content='center' %}</div>
 </div>

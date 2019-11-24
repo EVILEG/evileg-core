@@ -4,16 +4,16 @@ import re
 from urllib.parse import urlsplit, urlunsplit
 
 from django.conf import settings
-from django.http import HttpResponseRedirect, HttpResponse
-from django.http import JsonResponse
+from django.contrib.auth import get_user_model
+from django.http import HttpResponseRedirect, HttpResponse, JsonResponse
+from django.shortcuts import render, get_object_or_404
+from django.template.loader import render_to_string
 from django.utils.http import is_safe_url
-from django.utils.translation import (
-    LANGUAGE_SESSION_KEY,
-    check_for_language
-)
+from django.utils.translation import LANGUAGE_SESSION_KEY, check_for_language
 from django.views import View
+from django.views.generic.base import ContextMixin
 
-from .mixins import EAjaxableMixin
+from .mixins import EAjaxableMixin, EPaginateMixin
 from .utils import EMarkdownWorker, get_next_url
 
 
@@ -68,3 +68,65 @@ def lang(request, lang_code):
                 domain=settings.LANGUAGE_COOKIE_DOMAIN,
             )
     return response
+
+
+class EPaginatedView(ContextMixin, EPaginateMixin, EAjaxableView):
+    model = None
+    queryset = None
+    template_name = None
+    template_partials_name = 'evileg_core/partials/object_list_preview.html'
+    paginated_by = 10
+    by_user = False
+    columns_view = False
+
+    def get_user(self, **kwargs):
+        username = kwargs.pop('user', None)
+        if username:
+            return get_object_or_404(get_user_model(), username=username, is_active=True)
+        else:
+            return self.request.user
+
+    def get_queryset(self, **kwargs):
+        qs = self.queryset.all() if self.queryset else self.model.objects.all()
+        if self.by_user:
+            qs = qs.filter(user=self.get_user(**kwargs))
+        return qs
+
+    def get(self, request, *args, **kwargs):
+        return render(request=request, template_name=self.template_name, context=self.get_context_data(**kwargs))
+
+    def get_ajax(self, request, *args, **kwargs):
+        return JsonResponse({
+            'object_list': render_to_string(
+                request=request,
+                template_name=self.template_partials_name,
+                context=self.get_context_data(**kwargs)
+            ),
+        })
+
+    def _get_context_data(self, **kwargs):
+        qs = self.get_queryset(**kwargs)
+        return {
+            'object_list': self.get_paginated_page(qs, self.paginated_by),
+            'last_question': self.get_pagination_url(),
+            'columns_view': self.columns_view
+        }
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context.update(self._get_context_data(**kwargs))
+        return context
+
+
+class EFilterView(EPaginatedView):
+    model_filter = None
+
+    def _get_context_data(self, **kwargs):
+        data = self.request.GET if self.request.method == 'GET' else self.request.POST
+        f = self.model_filter(data, queryset=self.get_queryset(**kwargs))
+        return {
+            'object_list': self.get_paginated_page(f.qs, self.paginated_by),
+            'last_question': self.get_pagination_url(),
+            'search_filter': f,
+            'columns_view': self.columns_view
+        }
