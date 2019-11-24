@@ -164,3 +164,10 @@ class ESectionModeratedAdmin(EModerationMixinAdmin, ESectionAdmin):
     """
     list_display = ESectionAdmin.list_display + EModerationMixinAdmin.list_display
     list_filter = ESectionAdmin.list_filter + EModerationMixinAdmin.list_filter
+
+
+class EActivityBaseAdmin(admin.ModelAdmin):
+    autocomplete_fields = ['user']
+    list_display = ('user', '__str__', 'content_type')
+    search_fields = ('user__username',)
+    list_filter = ('content_type',)
