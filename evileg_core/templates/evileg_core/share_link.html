@@ -1,0 +1,14 @@
+{% load trans from i18n %}
+<li class="float-right">
+  {% load get_content_type_id from evileg_core %}
+  {% get_content_type_id object as content_type %}
+  <button class="activity-footer-btn" role="button" id="shareButton-{{ content_type }}-{{ object.id }}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="{% trans 'Share link' %}">
+    <span class="mdi mdi-share-variant"></span>
+  </button>
+  <div class="dropdown-menu dropdown-menu-right" aria-labelledby="shareButton-{{ content_type }}-{{ object.id }}">
+    <a class="dropdown-item" href="https://www.facebook.com/sharer/sharer.php?u=https://evileg.com{{ object.get_absolute_url }}" onclick="window.open(this.href, '{% trans 'Share link in Facebook' %}', 'width=640,height=436,toolbar=0,status=0'); return false;"  target="_blank" rel="nofollow">Facebook</a>
+    <a class="dropdown-item" href="http://vk.com/share.php?url=https://evileg.com{{ object.get_absolute_url }}" onclick="window.open(this.href, '{% trans 'Share link in VKontakte' %}', 'width=800,height=300'); pages.clearCache(this.href); return false;" target="_blank" rel="nofollow">VKontakte</a>
+    <a class="dropdown-item" href="https://twitter.com/share?url=https://evileg.com{{ object.get_absolute_url }}" onclick="window.open(this.href, '{% trans 'Share link in Twitter' %}'); return false;" target="_blank" rel="nofollow">Twitter</a>
+    <a class="dropdown-item" href="https://www.linkedin.com/shareArticle?mini=true&url=https://evileg.com{{ object.get_absolute_url }}" onclick="window.open(this.href, '{% trans 'Share link in LinkedIn' %}', 'width=800,height=600'); return false;" target="_blank" rel="nofollow">LinkedIn</a>
+  </div>
+</li>

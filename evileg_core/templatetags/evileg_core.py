@@ -213,6 +213,22 @@ def evileg_core_cropper_min_js():
     return static("js/cropper.min.js")
 
 
+@register.simple_tag
+def get_content_type_id(obj):
+    """
+    Function for getting content type
+
+    :param obj: model object from which we want to get content type id
+    :return: Content Type Id
+    """
+    return ContentType.objects.get_for_model(obj).id
+
+
+@register.inclusion_tag('evileg_core/share_link.html')
+def share_link(object):
+    return {'object': object}
+
+
 @register.inclusion_tag('evileg_core/partials/object_list_preview.html', takes_context=True)
 def object_list_preview(context, not_found_message=None, object_list=None):
     if object_list is not None:
