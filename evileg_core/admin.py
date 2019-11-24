@@ -6,7 +6,28 @@ from django.utils.translation import ugettext_lazy as _
 from .filters import EDateRangeFilter
 
 
-class EModerationMixinAdmin(admin.ModelAdmin):
+class EAdmin(admin.ModelAdmin):
+    class Media:
+        js = (
+            '//code.jquery.com/jquery.min.js',
+            '/static/js/prettify.js',
+            '/static/js/cropper.min.js',
+            'https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js',
+            '/static/js/evileg_core.min.js?1',
+            '/static/js/markdown.min.js',
+        )
+        css = {
+            'all': (
+                '/static/css/evileg_core.min.css',
+                '/static/css/materialdesignicons.min.css',
+                '/static/css/cropper.min.css',
+                'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons',
+                '/static/css/evileg_core_admin.css'
+            )
+        }
+
+
+class EModerationMixinAdmin(EAdmin):
     """
     Mixin for representation table in Django administration panel with content which includes moderation opportunity
     """
@@ -89,7 +110,7 @@ class EModerationMixinAdmin(admin.ModelAdmin):
     make_moderated.short_description = _("Set marked as MODERATED")
 
 
-class EPostAdmin(admin.ModelAdmin):
+class EPostAdmin(EAdmin):
     """
     Base class for representation table in Django administration panel.
     This class is designed for classes which inherits from evileg_core.models.EAbstractPost
