@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-10-28 20:42+0600\n"
-"PO-Revision-Date: 2019-10-28 15:47+0100\n"
+"POT-Creation-Date: 2019-11-24 18:43+0600\n"
+"PO-Revision-Date: 2019-11-24 13:47+0100\n"
 "Last-Translator: Evgenii Legotckoi <evileg@evileg.com>\n"
 "Language-Team: \n"
 "Language: uk\n"
@@ -21,35 +21,35 @@ msgstr ""
 "(n % 100 >=11 && n % 100 <=14 )) ? 2: 3);\n"
 "X-Generator: Poedit 2.0.6\n"
 
-#: evileg_core/evileg_core/admin.py:41 evileg_core/evileg_core/models.py:107
+#: evileg_core/evileg_core/admin.py:62 evileg_core/evileg_core/models.py:107
 msgid "SPAM"
 msgstr "СПАМ"
 
-#: evileg_core/evileg_core/admin.py:44
+#: evileg_core/evileg_core/admin.py:65
 msgid "Set marked as SPAM"
 msgstr "Встановити позначено як СПАМ"
 
-#: evileg_core/evileg_core/admin.py:56
+#: evileg_core/evileg_core/admin.py:77
 msgid "NOT MODERATED"
 msgstr "NOT MODERATED"
 
-#: evileg_core/evileg_core/admin.py:59
+#: evileg_core/evileg_core/admin.py:80
 msgid "Set marked as NOT MODERATED"
 msgstr "Встановити позначку як NOT MODERATED"
 
-#: evileg_core/evileg_core/admin.py:71
+#: evileg_core/evileg_core/admin.py:92
 msgid "POST MODERATED"
 msgstr "POST MODERATED"
 
-#: evileg_core/evileg_core/admin.py:74
+#: evileg_core/evileg_core/admin.py:95
 msgid "Set marked as POST MODERATED"
 msgstr "Встановити позначено як POST MODERATED"
 
-#: evileg_core/evileg_core/admin.py:86
+#: evileg_core/evileg_core/admin.py:107
 msgid "MODERATED"
 msgstr "MODERATED"
 
-#: evileg_core/evileg_core/admin.py:89
+#: evileg_core/evileg_core/admin.py:110
 msgid "Set marked as MODERATED"
 msgstr "Встановити позначено як MODERATED"
 
@@ -57,21 +57,60 @@ msgstr "Встановити позначено як MODERATED"
 msgid "EVILEG Core"
 msgstr "EVILEG Core"
 
-#: evileg_core/evileg_core/decorators.py:35
+#: evileg_core/evileg_core/decorators.py:36
 msgid "Invalid reCAPTCHA. Please try again."
 msgstr "Недійсний RECAPTCHA. Будь ласка спробуйте ще раз."
 
-#: evileg_core/evileg_core/filters.py:66 evileg_core/evileg_core/filters.py:93
+#: evileg_core/evileg_core/filters.py:67 evileg_core/evileg_core/filters.py:94
 msgid "Filter title not set"
 msgstr "Назва фільтра не встановлена"
 
-#: evileg_core/evileg_core/filters.py:71 evileg_core/evileg_core/filters.py:98
+#: evileg_core/evileg_core/filters.py:72 evileg_core/evileg_core/filters.py:99
 msgid "Not empty only"
 msgstr "Не лише порожній"
 
-#: evileg_core/evileg_core/filters.py:72 evileg_core/evileg_core/filters.py:99
+#: evileg_core/evileg_core/filters.py:73 evileg_core/evileg_core/filters.py:100
 msgid "Empty only"
 msgstr "Порожній лише"
+
+#: evileg_core/evileg_core/filters.py:137
+#: evileg_core/evileg_core/filters.py:161 evileg_core/evileg_core/models.py:166
+msgid "Title"
+msgstr "Назва"
+
+#: evileg_core/evileg_core/filters.py:138
+#: evileg_core/evileg_core/filters.py:162
+msgid "Title (descending)"
+msgstr "Назва (у зменшенні)"
+
+#: evileg_core/evileg_core/filters.py:139
+#: evileg_core/evileg_core/filters.py:163
+msgid "Sort by title"
+msgstr "Сортувати за назвою"
+
+#: evileg_core/evileg_core/filters.py:141 evileg_core/evileg_core/models.py:167
+msgid "Views"
+msgstr "Перегляди"
+
+#: evileg_core/evileg_core/filters.py:142
+msgid "Views (descending)"
+msgstr "Перегляди (у зменшенні)"
+
+#: evileg_core/evileg_core/filters.py:143
+msgid "Sort by views"
+msgstr "Сортувати за переглядами"
+
+#: evileg_core/evileg_core/filters.py:145 evileg_core/evileg_core/models.py:41
+msgid "Publication date"
+msgstr "Дата публікації"
+
+#: evileg_core/evileg_core/filters.py:146
+msgid "Publication date (descending)"
+msgstr "Дата публікації (у зменшенні)"
+
+#: evileg_core/evileg_core/filters.py:147
+msgid "Sort by publication date"
+msgstr "Сортувати за датою публікації"
 
 #: evileg_core/evileg_core/forms.py:32
 msgid "From date"
@@ -93,10 +132,6 @@ msgstr "Зміст - HTML"
 msgid "Content - Markdown"
 msgstr "Зміст - Markdown"
 
-#: evileg_core/evileg_core/models.py:41
-msgid "Publication date"
-msgstr "Дата публікації"
-
 #: evileg_core/evileg_core/models.py:42
 msgid "Last modification date"
 msgstr "Дата останньої модифікації"
@@ -116,14 +151,6 @@ msgstr "Модеровано"
 #: evileg_core/evileg_core/models.py:114
 msgid "Moderation"
 msgstr "Модерація"
-
-#: evileg_core/evileg_core/models.py:166
-msgid "Title"
-msgstr "Назва"
-
-#: evileg_core/evileg_core/models.py:167
-msgid "Views"
-msgstr "Перегляди"
 
 #: evileg_core/evileg_core/models.py:168
 #: evileg_core/evileg_core/templates/evileg_core/markdown_widget.html:18
@@ -210,10 +237,10 @@ msgstr "Синтаксис Markdown"
 msgid "Nothing found"
 msgstr "Нічого не знайдено"
 
-#: evileg_core/evileg_core/templatetags/evileg_core.py:17
+#: evileg_core/evileg_core/templatetags/evileg_core.py:21
 msgid "Classic"
 msgstr "Класичний"
 
-#: evileg_core/evileg_core/templatetags/evileg_core.py:18
+#: evileg_core/evileg_core/templatetags/evileg_core.py:22
 msgid "Darcula"
 msgstr "Darcula"
