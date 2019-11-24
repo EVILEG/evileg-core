@@ -87,7 +87,14 @@ class EPaginatedView(ContextMixin, EPaginateMixin, EAjaxableView):
             return self.request.user
 
     def get_queryset(self, **kwargs):
-        qs = self.queryset.all() if self.queryset else self.model.objects.all()
+        qs = None
+        if self.queryset:
+            qs = self.queryset.all()
+        elif self.model and qs is None:
+            qs = self.model.objects.all()
+        else:
+            return qs
+
         if self.by_user:
             qs = qs.filter(user=self.get_user(**kwargs))
         return qs
@@ -107,7 +114,7 @@ class EPaginatedView(ContextMixin, EPaginateMixin, EAjaxableView):
     def _get_context_data(self, **kwargs):
         qs = self.get_queryset(**kwargs)
         return {
-            'object_list': self.get_paginated_page(qs, self.paginated_by),
+            'object_list': self.get_paginated_page(qs, self.paginated_by) if qs else None,
             'last_question': self.get_pagination_url(),
             'columns_view': self.columns_view
         }
