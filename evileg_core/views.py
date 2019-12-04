@@ -5,6 +5,7 @@ from urllib.parse import urlsplit, urlunsplit
 
 from django.conf import settings
 from django.contrib.auth import get_user_model
+from django.contrib.contenttypes.models import ContentType
 from django.http import HttpResponseRedirect, HttpResponse, JsonResponse
 from django.shortcuts import render, get_object_or_404
 from django.template.loader import render_to_string
@@ -158,3 +159,19 @@ class EFilterDetailView(EFilterView, DetailView):
     def get_queryset(self, **kwargs):
         qs = super().get_queryset(**kwargs)
         return qs.filter(**{self.object_pk_field_name: self.object.pk}) if qs else qs
+
+
+class EActivityView(View):
+    activity_model = None
+
+    def post(self, request):
+        pk = request.POST.get('obj')
+        ct = ContentType.objects.get(pk=request.POST.get('content_type'))
+        obj, created = self.activity_model.objects.get_or_create(content_type=ct, object_id=pk, user=request.user)
+        if not created:
+            obj.delete()
+
+        return JsonResponse({
+            "result": created,
+            "count": self.activity_model.objects.filter(content_type=ct, object_id=pk).count()
+        })
