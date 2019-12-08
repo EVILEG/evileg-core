@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ESNF-C\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-11-25 00:23+0600\n"
-"PO-Revision-Date: 2019-11-24 14:02+0100\n"
+"POT-Creation-Date: 2019-12-08 21:45+0600\n"
+"PO-Revision-Date: 2019-12-08 16:48+0100\n"
 "Last-Translator: Evgenii Legotckoi <evileg@evileg.com>\n"
 "Language-Team: EVILEG Team <info@evileg.com>\n"
 "Language: ru\n"
@@ -87,6 +87,7 @@ msgid "Sort by title"
 msgstr "Сортировать по заголовку"
 
 #: evileg_core/evileg_core/filters.py:141 evileg_core/evileg_core/models.py:167
+#: evileg_core/evileg_core/templates/evileg_core/views.html:2
 msgid "Views"
 msgstr "Просмотры"
 
@@ -159,6 +160,10 @@ msgstr "URL"
 msgid "User"
 msgstr "Пользователь"
 
+#: evileg_core/evileg_core/templates/evileg_core/comments_link.html:2
+msgid "Comments"
+msgstr "Комментарии"
+
 #: evileg_core/evileg_core/templates/evileg_core/date_range_filter.html:2
 #, python-format
 msgid " By %(filter_title)s "
@@ -172,6 +177,10 @@ msgstr "Найти"
 #: evileg_core/evileg_core/templates/evileg_core/date_range_filter.html:31
 msgid "Clear"
 msgstr "Очистить"
+
+#: evileg_core/evileg_core/templates/evileg_core/edit.html:3
+msgid "Edit"
+msgstr "Редактирование"
 
 #: evileg_core/evileg_core/templates/evileg_core/markdown_widget.html:9
 msgid "Add Link"
@@ -240,6 +249,26 @@ msgstr "Ничего не найдено"
 #: evileg_core/evileg_core/templates/evileg_core/search_form.html:11
 msgid "Advanced search"
 msgstr "Расширенный поиск"
+
+#: evileg_core/evileg_core/templates/evileg_core/share_link.html:5
+msgid "Share link"
+msgstr "Поделиться ссылкой"
+
+#: evileg_core/evileg_core/templates/evileg_core/share_link.html:9
+msgid "Share link in Facebook"
+msgstr "Поделиться ссылкой в Facebook"
+
+#: evileg_core/evileg_core/templates/evileg_core/share_link.html:10
+msgid "Share link in VKontakte"
+msgstr "Поделиться ссылкой в ВКонтакте"
+
+#: evileg_core/evileg_core/templates/evileg_core/share_link.html:11
+msgid "Share link in Twitter"
+msgstr "Поделиться ссылкой в Twitter"
+
+#: evileg_core/evileg_core/templates/evileg_core/share_link.html:12
+msgid "Share link in LinkedIn"
+msgstr "Поделиться ссылкой в LinkedIn"
 
 #: evileg_core/evileg_core/templatetags/evileg_core.py:21
 msgid "Classic"
