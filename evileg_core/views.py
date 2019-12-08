@@ -175,3 +175,15 @@ class EActivityView(View):
             "result": created,
             "count": self.activity_model.objects.filter(content_type=ct, object_id=pk).count()
         })
+
+
+class EFilterByActivityView(EFilterView):
+    activity_model = None
+
+    def get_queryset(self, **kwargs):
+        model_name = self.model.__name__.lower()
+        activity_set = getattr(self.get_user(**kwargs), '{}s'.format(self.activity_model.__name__.lower())).filter(
+            content_type__model=model_name
+        ).only('object_id', 'user_id')
+        object_ids = [q.object_id for q in activity_set]
+        return super().get_queryset(**kwargs).filter(**{'id__in': object_ids})
