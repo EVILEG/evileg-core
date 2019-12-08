@@ -1,0 +1,4 @@
+{% load trans from i18n %}
+<li title="{% trans "Comments" %}">
+  <a class="activity-footer-btn" href="{{ object.get_absolute_url }}#comments"><span class="mdi mdi-comment mr-1"></span>{{ object.comments_count }}</a>
+</li>

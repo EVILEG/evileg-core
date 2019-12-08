@@ -384,3 +384,19 @@ def tab_item_2(context, title, url='#', icon=None, counter=0, counter_2=0, count
         'ml_auto': 'ml-auto' if kwargs.pop('ml_auto', False) else '',
         'text_color': 'text-{}'.format(text_color) if text_color else ''
     }
+
+
+@register.inclusion_tag('evileg_core/views.html')
+def views(obj):
+    return {'object': obj}
+
+
+@register.inclusion_tag('evileg_core/comments_link.html')
+def comments_link(obj):
+    return {'object': obj}
+
+
+@register.inclusion_tag('evileg_core/edit.html', takes_context=True)
+def edit(context, obj, **kwargs):
+    context['object'] = obj
+    return context

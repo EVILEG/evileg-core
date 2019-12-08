@@ -1,0 +1,4 @@
+{% if user == object.user and object.get_edit_url and object.editable %}
+    {% load trans from i18n %}
+    <li class="float-right"><a class="activity-footer-btn" href="{{ object.get_edit_url }}" title="{% trans "Edit" %}"><span class="mdi mdi-pencil"></span></a></li>
+{% endif %}
