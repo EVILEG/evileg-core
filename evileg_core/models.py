@@ -163,7 +163,7 @@ class EAbstractArticle(EAbstractPost):
     :param views: you can want to count all views of article
     """
 
-    title = models.CharField(_('Title'), max_length=200, blank=True)
+    title = models.CharField(_('Title'), max_length=200)
     views = models.IntegerField(_('Views'), default=0)
     slug = models.SlugField(_('URL'), max_length=50, blank=True)
 
