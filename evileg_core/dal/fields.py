@@ -9,7 +9,7 @@ from tagging.fields import TagField, TagFormField
 
 class ETagFormField(TagFormField):
 
-    def __init__(self, autocomplete_pattern, *args, **kwargs):
+    def __init__(self, autocomplete_pattern='evileg_core:autocomplete_tag', *args, **kwargs):
         if not autocomplete_pattern:
             raise ValueError('This parameter is mandatory')
         kwargs.update({'widget': autocomplete.TaggingSelect2(url=reverse_lazy(autocomplete_pattern))})
@@ -19,7 +19,7 @@ class ETagFormField(TagFormField):
 class ETagField(TagField):
 
     def __init__(self, *args, **kwargs):
-        self.autocomplete_pattern = kwargs.pop('autocomplete_pattern', '')
+        self.autocomplete_pattern = kwargs.pop('autocomplete_pattern', 'evileg_core:autocomplete_tag')
         super().__init__(*args, **kwargs)
 
     def formfield(self, **kwargs):
