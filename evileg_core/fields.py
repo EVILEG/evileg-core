@@ -22,7 +22,7 @@ class EMarkdownField(models.TextField):
 
     def set_markdown(self, instance=None, **kwargs):
         value = getattr(instance, self.attname)
-        if value and len(value) > 0:
+        if (value and len(value) > 0) or getattr(settings, 'MARKDOWN_WRITE_EMPTY_CONTENT', False):
             languages = getattr(settings, "LANGUAGES", None)
             if 'modeltranslation' in settings.INSTALLED_APPS and self.name.endswith(
                     tuple([code for code, language in languages])):
