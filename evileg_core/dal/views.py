@@ -9,4 +9,4 @@ class EGenericAutocomplete(autocomplete.Select2QuerySetView):
 
     def get_queryset(self):
         qs = self.queryset
-        return qs.filter(**{key: self.q for key in self.fields}) if self.q else qs
+        return qs.filter(**{key: self.q for key in self.fields}) if self.q and self.fields else qs

@@ -18,6 +18,9 @@ if apps.is_installed('dal') and apps.is_installed('dal_select2') and apps.is_ins
 
     urlpatterns.append(path(
         'autocomplete-tags/',
-        login_required(EGenericAutocomplete.as_view(queryset=Tag.objects.all())),
+        login_required(EGenericAutocomplete.as_view(
+            queryset=Tag.objects.all(),
+            fields=['name__istartswith']
+        )),
         name='autocomplete_tag')
     )
