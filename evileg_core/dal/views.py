@@ -1,10 +1,12 @@
 # -*- coding: utf-8 -*-
 
 from dal import autocomplete
-from tagging.models import Tag
 
 
-class ETagAutocomplete(autocomplete.Select2QuerySetView):
+class EGenericAutocomplete(autocomplete.Select2QuerySetView):
+    queryset = None
+    fields = None
+
     def get_queryset(self):
-        qs = Tag.objects.all()
-        return qs.filter(name__istartswith=self.q) if self.q else qs
+        qs = self.queryset
+        return qs.filter(**{key: self.q for key in self.fields}) if self.q else qs

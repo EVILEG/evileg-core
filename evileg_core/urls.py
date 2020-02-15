@@ -11,6 +11,13 @@ urlpatterns = [
 ]
 
 if apps.is_installed('dal') and apps.is_installed('dal_select2') and apps.is_installed('tagging'):
+
     from django.contrib.auth.decorators import login_required
-    from .dal.views import ETagAutocomplete
-    urlpatterns.append(path('autocomplete-tags/', login_required(ETagAutocomplete.as_view()), name='autocomplete_tag'))
+    from tagging.models import Tag
+    from .dal.views import EGenericAutocomplete
+
+    urlpatterns.append(path(
+        'autocomplete-tags/',
+        login_required(EGenericAutocomplete.as_view(queryset=Tag.objects.all())),
+        name='autocomplete_tag')
+    )
