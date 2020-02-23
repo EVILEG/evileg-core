@@ -386,6 +386,11 @@ def tab_item_2(context, title, url='#', icon=None, counter=0, counter_2=0, count
     }
 
 
+@register.inclusion_tag('evileg_core/menu_btn.html')
+def menu_btn(title, url, icon):
+    return {'title': title, 'icon': icon, 'url': url}
+
+
 @register.inclusion_tag('evileg_core/views.html')
 def views(obj):
     return {'object': obj}
