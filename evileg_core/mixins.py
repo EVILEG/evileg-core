@@ -1,8 +1,10 @@
 # -*- coding: utf-8 -*-
 
 from django.conf import settings
+from django.contrib.auth import get_user_model
 from django.contrib.auth.decorators import login_required
 from django.core.paginator import Paginator
+from django.shortcuts import get_object_or_404
 from django.template import loader
 from django.urls import reverse
 from django.utils.decorators import method_decorator
@@ -180,4 +182,20 @@ class EBreadCrumbListMixin:
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context.update({'breadcrumb_list': self.get_breadcrumb_list(**kwargs)})
+        return context
+
+
+class EInUserProfileMixin:
+    user_profile = None
+
+    def dispatch(self, request, *args, **kwargs):
+        self.user_profile = get_object_or_404(get_user_model(), username=kwargs['user'], is_active=True)
+        return super().dispatch(request, *args, **kwargs)
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context.update({
+            'user': self.request.user,
+            'user_profile': self.user_profile
+        })
         return context
