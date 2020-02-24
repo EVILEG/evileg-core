@@ -76,7 +76,8 @@ class EPaginatedView(ContextMixin, EPaginateMixin, EAjaxableView):
     model = None
     queryset = None
     template_name = None
-    template_partials_name = 'evileg_core/partials/object_list_preview.html'
+    template_partials_name = getattr(settings, "TEMPLATE_OBJECT_LIST_PREVIEW", 'evileg_core/partials/object_list_preview.html')
+    template_column_partials_name = getattr(settings, "TEMPLATE_OBJECT_LIST_PREVIEW_COLUMNS", 'evileg_core/partials/object_list_preview_columns.html')
     paginated_by = 10
     by_user = False
     columns_view = False
@@ -108,7 +109,7 @@ class EPaginatedView(ContextMixin, EPaginateMixin, EAjaxableView):
         return JsonResponse({
             'object_list': render_to_string(
                 request=request,
-                template_name=self.template_partials_name,
+                template_name=self.template_column_partials_name if self.columns_view else self.template_partials_name,
                 context=self.get_context_data(**kwargs)
             ),
         })
