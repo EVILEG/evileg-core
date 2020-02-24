@@ -9,14 +9,15 @@ from django.utils.http import is_safe_url, urlunquote
 
 
 class ESoup:
-    __slots__ = ['soup', 'tags_for_extracting']
+    __slots__ = ['soup', 'tags_for_extracting', 'dofollow']
 
     """
     Clean up class for extracting unwanted content from text, which was posted by users
     """
-    def __init__(self, text, tags_for_extracting=()):
+    def __init__(self, text, tags_for_extracting=(), dofollow=False):
         self.soup = BeautifulSoup(text, "lxml") if text else None
         self.tags_for_extracting = ('script', 'style',) + tags_for_extracting
+        self.dofollow = dofollow
 
     def _extract_tags(self, soup, tags=()):
         for tag in tags:
@@ -110,8 +111,9 @@ class ESoup:
                     'lang-xhtml', 'lang-xml', 'lang-xsl'
                 )
             )
-            soup = self._add_rel_attr(soup=soup, tag='a', attr='href')
-            soup = self._add_rel_attr(soup=soup, tag='img', attr='src')
+            if not self.dofollow:
+                soup = self._add_rel_attr(soup=soup, tag='a', attr='href')
+                soup = self._add_rel_attr(soup=soup, tag='img', attr='src')
             soup = self._correct_url(soup=soup, tag='a', attr='href')
             soup = self._correct_url(soup=soup, tag='img', attr='src')
             soup = self._add_class_attr(soup=soup, tag='img', classes=('img-fluid',))
@@ -122,8 +124,8 @@ class ESoup:
         return ''
 
     @classmethod
-    def clean_text(cls, text, tags_for_extracting=()):
-        soup = ESoup(text=text, tags_for_extracting=tags_for_extracting)
+    def clean_text(cls, text, tags_for_extracting=(), dofollow=False):
+        soup = ESoup(text=text, tags_for_extracting=tags_for_extracting, dofollow=dofollow)
         return soup.clean()
 
 
@@ -149,8 +151,8 @@ class EMarkdownWorker:
             output_format='html5'
         )
 
-    def get_text(self):
-        return ESoup.clean_text(self.markdown_text)
+    def get_text(self, dofollow=False):
+        return ESoup.clean_text(text=self.markdown_text, dofollow=dofollow)
 
 
 def get_next_url(request):

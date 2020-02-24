@@ -22,14 +22,17 @@ class EMarkdownField(models.TextField):
 
     def set_markdown(self, instance=None, **kwargs):
         value = getattr(instance, self.attname)
+        dofollow = False
+        if hasattr(instance, 'dofollow'):
+            dofollow = getattr(instance, 'dofollow')
         if (value and len(value) > 0) or getattr(settings, 'MARKDOWN_WRITE_EMPTY_CONTENT', False):
             languages = getattr(settings, "LANGUAGES", None)
             if 'modeltranslation' in settings.INSTALLED_APPS and self.name.endswith(
                     tuple([code for code, language in languages])):
                 instance.__dict__['{}_{}'.format(self.html_field, self.name[-2:])] = EMarkdownWorker(
-                    value).get_text()
+                    value).get_text(dofollow)
             else:
-                instance.__dict__[self.html_field] = EMarkdownWorker(value).get_text()
+                instance.__dict__[self.html_field] = EMarkdownWorker(value).get_text(dofollow)
 
     def contribute_to_class(self, cls, name, **kwargs):
         super().contribute_to_class(cls, name, **kwargs)

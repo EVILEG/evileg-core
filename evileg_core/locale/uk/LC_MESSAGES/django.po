@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-12-08 21:45+0600\n"
+"POT-Creation-Date: 2020-02-24 23:12+0600\n"
 "PO-Revision-Date: 2019-12-08 16:48+0100\n"
 "Last-Translator: Evgenii Legotckoi <evileg@evileg.com>\n"
 "Language-Team: \n"
@@ -244,7 +244,7 @@ msgid "Markdown syntax"
 msgstr "Синтаксис Markdown"
 
 #: evileg_core/evileg_core/templates/evileg_core/partials/object_list_preview.html:7
-#: evileg_core/evileg_core/templates/evileg_core/partials/object_list_preview_columns.html:8
+#: evileg_core/evileg_core/templates/evileg_core/partials/object_list_preview_columns.html:12
 msgid "Nothing found"
 msgstr "Нічого не знайдено"
 
