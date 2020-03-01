@@ -129,7 +129,7 @@ class EAbstractPostWithInterface(EAbstractPost, EInterfaceMixin):
     This class is the EAbstractPost with template interface
     """
 
-    def get_preview(self):
+    def get_preview(self, *args, **kwargs):
         return self.content
 
     def get_meta_description(self):
@@ -190,7 +190,7 @@ class EAbstractArticleWithInterface(EAbstractArticle, EInterfaceMixin):
     This class is the EAbstractArticle with template interface
     """
 
-    def get_preview(self):
+    def get_preview(self, *args, **kwargs):
         return self.content
 
     def get_meta_description(self):
@@ -223,7 +223,7 @@ class EAbstractSection(EAbstractArticle):
 
 class EAbstractSectionWithInterface(EAbstractSection, EInterfaceMixin):
 
-    def get_preview(self):
+    def get_preview(self, *args, **kwargs):
         return self.content
 
     def get_meta_description(self):

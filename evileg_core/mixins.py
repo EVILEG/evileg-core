@@ -40,7 +40,7 @@ class EInterfaceMixin:
             return p.get_title()
         raise NotImplementedError("Return title or None")
 
-    def get_preview(self):
+    def get_preview(self, *args, **kwargs):
         raise NotImplementedError("Please return short information about object")
 
     @property
