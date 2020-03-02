@@ -8,6 +8,28 @@ from django.conf import settings
 from django.utils.http import is_safe_url, urlunquote
 
 
+class EImageUrlsGetter:
+    __slots__ = ['soup']
+
+    def __init__(self, text):
+        self.soup = BeautifulSoup(text, "lxml") if text else None
+
+    def handle(self):
+        if self.soup:
+            src_list = set()
+            for tag in self.soup.find_all('img'):
+                src_attr = tag.get('src')
+                if src_attr and src_attr.startswith('/media/'):
+                    src_list.add(src_attr)
+            return src_list
+        return set()
+
+    @classmethod
+    def get_urls(cls, text):
+        soup = EImageUrlsGetter(text=text)
+        return soup.handle()
+
+
 class ESoup:
     __slots__ = ['soup', 'tags_for_extracting', 'dofollow']
 
