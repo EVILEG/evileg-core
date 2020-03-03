@@ -226,7 +226,10 @@ def get_content_type_id(obj):
 
 @register.inclusion_tag('evileg_core/share_link.html')
 def share_link(object):
-    return {'object': object}
+    return {
+        'object': object,
+        'site_url': getattr(settings, 'SITE_URL', '')
+    }
 
 
 @register.inclusion_tag('evileg_core/partials/object_list_preview.html', takes_context=True)
