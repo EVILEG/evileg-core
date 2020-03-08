@@ -78,3 +78,12 @@ class ESectionForm(EArticleForm):
     Form class for class, which inherits from evileg_core.models.EAbstractSection.
     """
     pass
+
+
+class EActionForm(forms.Form):
+    action = forms.ChoiceField(label='')
+    select_across = forms.BooleanField(
+        label=_('Select all'),
+        required=False,
+        initial=False,
+    )

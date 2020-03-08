@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-03-03 05:32+0600\n"
-"PO-Revision-Date: 2019-12-08 16:48+0100\n"
+"POT-Creation-Date: 2020-03-09 05:24+0600\n"
+"PO-Revision-Date: 2020-03-09 00:26+0100\n"
 "Last-Translator: Evgenii Legotckoi <evileg@evileg.com>\n"
 "Language-Team: \n"
 "Language: uk\n"
@@ -120,6 +120,21 @@ msgstr "З дати"
 #: evileg_core/evileg_core/forms.py:39
 msgid "To date"
 msgstr "До дати"
+
+#: evileg_core/evileg_core/forms.py:86
+msgid "Select all"
+msgstr "Вибрати все"
+
+#: evileg_core/evileg_core/mixins.py:362
+msgid ""
+"Items must be selected in order to perform actions on them. No items have "
+"been changed."
+msgstr ""
+"Для виконання дії необхідно обрати елемент. Жодний елемент не був змінений."
+
+#: evileg_core/evileg_core/mixins.py:381
+msgid "No action selected."
+msgstr "Не вибрано жодної дії."
 
 #: evileg_core/evileg_core/models.py:38
 msgid "Author"
