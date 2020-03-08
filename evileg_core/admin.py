@@ -19,7 +19,7 @@ class EAdmin(admin.ModelAdmin):
         css = {
             'all': (
                 '/static/css/evileg_core.min.css',
-                '/static/css/materialdesignicons.min.css',
+                'https://cdn.materialdesignicons.com/4.9.95/css/materialdesignicons.min.css',
                 '/static/css/cropper.min.css',
                 'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons',
                 '/static/css/evileg_core_admin.css'
