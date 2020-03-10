@@ -86,4 +86,5 @@ class EActionForm(forms.Form):
         label=_('Select all'),
         required=False,
         initial=False,
+        widget=forms.CheckboxInput(attrs={'id': 'select_across'})
     )

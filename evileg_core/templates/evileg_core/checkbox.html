@@ -1,0 +1,7 @@
+<div class="e-checkbox {{ wrapper_css }}">
+  <div class="form-check">
+    <input type="checkbox" class="{{ input_css }}" name="{{ name }}" {% if checkbox_id %}id="{{ checkbox_id }}"{% endif %} {% if value %}value="{{ value }}"{% endif %} {% if checked %}{{ checked }}{% endif %}>
+    <label class="{{ label_css }}" {% if checkbox_id %}for="{{ checkbox_id }}"{% endif %}>{{ label }}</label>
+    {% if help_text %}<small class="form-text text-muted">{{ help_text }}</small>{% endif %}
+  </div>
+</div>

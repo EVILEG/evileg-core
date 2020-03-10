@@ -408,3 +408,18 @@ def comments_link(obj):
 def edit(context, obj, **kwargs):
     context['object'] = obj
     return context
+
+
+@register.inclusion_tag('evileg_core/checkbox.html')
+def checkbox(name, value=None, checked=None, checkbox_id=None, label='', help_text=None, input_css='form-check-input m-0', label_css='form-check-label', wrapper_css='m-0'):
+    return {
+        'name': name,
+        'value': value,
+        'checked': checked,
+        'checkbox_id': checkbox_id if checkbox_id else 'checkbox_{}_{}'.format(name, value),
+        'label': label,
+        'help_text': help_text,
+        'input_css': input_css,
+        'label_css': label_css,
+        'wrapper_css': wrapper_css
+    }
