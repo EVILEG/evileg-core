@@ -20,7 +20,9 @@ class EMarkdownField(models.TextField):
     We develop this in near future.
     """
 
-    def set_markdown(self, instance=None, **kwargs):
+    def set_markdown(self, instance=None, update_fields=None, **kwargs):
+        if hasattr(instance, 'views') and update_fields and 'views' in update_fields:
+            return
         value = getattr(instance, self.attname)
         dofollow = False
         if hasattr(instance, 'dofollow'):
@@ -30,9 +32,9 @@ class EMarkdownField(models.TextField):
             if 'modeltranslation' in settings.INSTALLED_APPS and self.name.endswith(
                     tuple([code for code, language in languages])):
                 instance.__dict__['{}_{}'.format(self.html_field, self.name[-2:])] = EMarkdownWorker(
-                    value).get_text(dofollow)
+                    value).get_text(dofollow, self.add_header_anchors)
             else:
-                instance.__dict__[self.html_field] = EMarkdownWorker(value).get_text(dofollow)
+                instance.__dict__[self.html_field] = EMarkdownWorker(value).get_text(dofollow, self.add_header_anchors)
 
     def contribute_to_class(self, cls, name, **kwargs):
         super().contribute_to_class(cls, name, **kwargs)
@@ -45,6 +47,7 @@ class EMarkdownField(models.TextField):
         self.upload_file_link = kwargs.pop("upload_file_link", None)
         self.extended_mode = kwargs.pop("extended_mode", True)
         self.fullscreen = kwargs.pop("fullscreen", True)
+        self.add_header_anchors = kwargs.pop('add_header_anchors', False)
         if not self.upload_link:
             self.upload_link = getattr(settings, 'MARKDOWN_UPLOAD_LINK', None)
         if not self.upload_file_link:

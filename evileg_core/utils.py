@@ -36,15 +36,24 @@ class EImageUrlsGetter:
 
 
 class ESoup:
-    __slots__ = ['soup', 'tags_for_extracting', 'dofollow']
+    __slots__ = ['soup', 'tags_for_extracting', 'dofollow', 'add_header_anchors']
 
     """
     Clean up class for extracting unwanted content from text, which was posted by users
     """
-    def __init__(self, text, tags_for_extracting=(), dofollow=False):
+    def __init__(self, text, tags_for_extracting=(), dofollow=False, add_header_anchors=False):
         self.soup = BeautifulSoup(text, "lxml") if text else None
         self.tags_for_extracting = ('script', 'style',) + tags_for_extracting
         self.dofollow = dofollow
+        self.add_header_anchors = add_header_anchors
+
+    def _add_header_anchors(self, soup):
+        for header_tag in soup.find_all(['h1', 'h2', 'h3', 'h4', 'h5', 'h6']):
+            anchor = soup.new_tag('a')
+            anchor['class'] = 'anchor'
+            anchor['id'] = 'header_{}'.format(header_tag.text.replace(' ', '_'))
+            header_tag.insert(0, anchor)
+        return soup
 
     def _extract_tags(self, soup, tags=()):
         for tag in tags:
@@ -147,13 +156,22 @@ class ESoup:
             soup = self._add_class_attr(soup=soup, tag='table', classes=('table', 'table-bordered', 'table-hover'))
             soup = self._add_class_attr(soup=soup, tag='code', classes=('prettyprint linenums',))
             soup = self._change_tag_name(soup=soup, old_tag='code', new_tag='pre')
+            if self.add_header_anchors:
+                soup = self._add_header_anchors(soup=soup)
+
             return re.sub('<body>|</body>', '', soup.body.prettify())
         return ''
 
     @classmethod
-    def clean_text(cls, text, tags_for_extracting=(), dofollow=False):
-        soup = ESoup(text=text, tags_for_extracting=tags_for_extracting, dofollow=dofollow)
+    def clean_text(cls, text, tags_for_extracting=(), dofollow=False, add_header_anchors=False):
+        soup = ESoup(text=text, tags_for_extracting=tags_for_extracting, dofollow=dofollow, add_header_anchors=add_header_anchors)
         return soup.clean()
+
+
+def set_adding_header_anchors(model, add_header_anchors=True, field_name='content_markdown'):
+    model._meta.get_field(field_name).add_header_anchors = add_header_anchors
+    for code, language in getattr(settings, "LANGUAGES", []):
+        model._meta.get_field('{}_{}'.format(field_name, code)).add_header_anchors = add_header_anchors
 
 
 class EMarkdownWorker:
@@ -178,8 +196,8 @@ class EMarkdownWorker:
             output_format='html5'
         )
 
-    def get_text(self, dofollow=False):
-        return ESoup.clean_text(text=self.markdown_text, dofollow=dofollow)
+    def get_text(self, dofollow=False, add_header_anchors=False):
+        return ESoup.clean_text(text=self.markdown_text, dofollow=dofollow, add_header_anchors=add_header_anchors)
 
 
 def get_next_url(request):
