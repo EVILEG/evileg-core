@@ -3,6 +3,7 @@
 import datetime
 
 import django_filters
+from django.conf import settings
 from django.contrib import admin
 from django.contrib.admin.filters import FieldListFilter
 from django.db.models import DateField, Q
@@ -109,6 +110,27 @@ class EExactEmptyFilter(admin.SimpleListFilter):
         if self.value() == 'null':
             is_null_true = {filter_string: ''}
             return queryset.filter(Q(**is_null_true))
+
+
+class EEmptyTranslatedFieldsFilter(admin.SimpleListFilter):
+    """
+    Filter by empty CharField or TextField
+
+    :param title: Title of filter
+    :param parameter_name: Field name
+    """
+    title = _('Filter title not set')
+    parameter_name = 'parameter name not set'
+
+    def lookups(self, request, model_admin):
+        return (('{}_{}'.format(self.parameter_name, code), _(language)) for code, language in settings.LANGUAGES)
+
+    def queryset(self, request, queryset):
+        if self.value():
+            return queryset.filter(
+                Q(**{'{}__exact'.format(self.value()): ''}) |
+                Q(**{'{}__isnull'.format(self.value()): True})
+            )
 
 
 class EFilterBase(django_filters.FilterSet):
