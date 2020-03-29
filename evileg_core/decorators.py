@@ -17,6 +17,10 @@ def recaptcha(function):
     """
     def wrap(request, *args, **kwargs):
         request.recaptcha_is_valid = None
+        if not hasattr(settings, 'GOOGLE_RECAPTCHA_SECRET_KEY'):
+            request.recaptcha_is_valid = True
+            return function(request, *args, **kwargs)
+
         if request.user.is_authenticated:
             request.recaptcha_is_valid = True
             return function(request, *args, **kwargs)

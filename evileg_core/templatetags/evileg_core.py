@@ -260,7 +260,7 @@ def recaptcha(classes=''):
     """
     return {
         'classes': add_css_class('g-recaptcha', classes, prepend=True),
-        'site_key': getattr(settings, "GOOGLE_RECAPTCHA_SITE_KEY", ''),
+        'site_key': getattr(settings, 'GOOGLE_RECAPTCHA_SITE_KEY', None),
     }
 
 
