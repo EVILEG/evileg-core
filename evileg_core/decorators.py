@@ -17,7 +17,8 @@ def recaptcha(function):
     """
     def wrap(request, *args, **kwargs):
         request.recaptcha_is_valid = None
-        if not hasattr(settings, 'GOOGLE_RECAPTCHA_SECRET_KEY'):
+        google_recaptcha_secret_key = getattr(settings, 'GOOGLE_RECAPTCHA_SECRET_KEY', None)
+        if not google_recaptcha_secret_key or len(google_recaptcha_secret_key) == 0:
             request.recaptcha_is_valid = True
             return function(request, *args, **kwargs)
 
@@ -28,7 +29,7 @@ def recaptcha(function):
         if request.method == 'POST':
             recaptcha_response = request.POST.get('g-recaptcha-response')
             data = {
-                'secret': settings.GOOGLE_RECAPTCHA_SECRET_KEY,
+                'secret': google_recaptcha_secret_key,
                 'response': recaptcha_response
             }
             r = requests.post('https://www.google.com/recaptcha/api/siteverify', data=data)
