@@ -12,7 +12,7 @@ from django.utils.translation import ugettext_lazy as _
 register = template.Library()
 
 
-STATIC_CONTENT_VERSION = 57
+STATIC_CONTENT_VERSION = 58
 
 CLASSIC = 1
 DARCULA = 2

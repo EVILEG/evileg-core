@@ -5011,7 +5011,7 @@ button.bg-dark:focus {
 .my-2 {
   margin-top: 0.5rem !important; }
 
-.mr-2,
+.mr-2, .mdi::before,
 .mx-2 {
   margin-right: 0.5rem !important; }
 
@@ -5049,7 +5049,7 @@ button.bg-dark:focus {
 .my-4 {
   margin-top: 1.5rem !important; }
 
-.mr-4,
+.mr-4, div.drawer_items_list > a.mdi::before,
 .mx-4 {
   margin-right: 1.5rem !important; }
 
@@ -12232,78 +12232,6 @@ pre > pre {
 .pointer {
   cursor: pointer; }
 
-@media (max-width: 100px) {
-  .d-none-100 {
-    display: none !important; } }
-
-@media (max-width: 200px) {
-  .d-none-200 {
-    display: none !important; } }
-
-@media (max-width: 300px) {
-  .d-none-300 {
-    display: none !important; } }
-
-@media (max-width: 400px) {
-  .d-none-400 {
-    display: none !important; } }
-
-@media (max-width: 500px) {
-  .d-none-500 {
-    display: none !important; } }
-
-@media (max-width: 600px) {
-  .d-none-600 {
-    display: none !important; } }
-
-@media (max-width: 700px) {
-  .d-none-700 {
-    display: none !important; } }
-
-@media (max-width: 800px) {
-  .d-none-800 {
-    display: none !important; } }
-
-@media (max-width: 900px) {
-  .d-none-900 {
-    display: none !important; } }
-
-@media (max-width: 1000px) {
-  .d-none-1000 {
-    display: none !important; } }
-
-@media (max-width: 1100px) {
-  .d-none-1100 {
-    display: none !important; } }
-
-@media (max-width: 1200px) {
-  .d-none-1200 {
-    display: none !important; } }
-
-@media (max-width: 1300px) {
-  .d-none-1300 {
-    display: none !important; } }
-
-@media (max-width: 1400px) {
-  .d-none-1400 {
-    display: none !important; } }
-
-@media (max-width: 1500px) {
-  .d-none-1500 {
-    display: none !important; } }
-
-@media (max-width: 1600px) {
-  .d-none-1600 {
-    display: none !important; } }
-
-@media (max-width: 1700px) {
-  .d-none-1700 {
-    display: none !important; } }
-
-@media (max-width: 1800px) {
-  .d-none-1800 {
-    display: none !important; } }
-
 div.drawer_items_list {
   padding: .25rem 0;
   border-bottom: 1px solid #4d4d4d;
@@ -12362,6 +12290,19 @@ div.drawer_items_list > a > .badge {
 
 .mdi-48px:before {
   font-size: 48px; }
+
+.lang-btn {
+  max-height: 40px !important;
+  height: 40px !important;
+  max-width: 48px !important;
+  width: 48px !important; }
+
+.navbar-nav {
+  max-height: 40px;
+  height: 40px; }
+
+.overflow-hidden {
+  overflow: hidden; }
 
 .activity-footer-btn:active {
   color: #a9b7c6 !important;

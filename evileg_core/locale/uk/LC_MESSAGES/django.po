@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-03-09 05:24+0600\n"
+"POT-Creation-Date: 2020-04-28 03:41+0600\n"
 "PO-Revision-Date: 2020-03-09 00:26+0100\n"
 "Last-Translator: Evgenii Legotckoi <evileg@evileg.com>\n"
 "Language-Team: \n"
@@ -57,59 +57,60 @@ msgstr "Встановити позначено як MODERATED"
 msgid "EVILEG Core"
 msgstr "EVILEG Core"
 
-#: evileg_core/evileg_core/decorators.py:36
+#: evileg_core/evileg_core/decorators.py:41
 msgid "Invalid reCAPTCHA. Please try again."
 msgstr "Недійсний RECAPTCHA. Будь ласка спробуйте ще раз."
 
-#: evileg_core/evileg_core/filters.py:67 evileg_core/evileg_core/filters.py:94
+#: evileg_core/evileg_core/filters.py:68 evileg_core/evileg_core/filters.py:95
+#: evileg_core/evileg_core/filters.py:122
 msgid "Filter title not set"
 msgstr "Назва фільтра не встановлена"
 
-#: evileg_core/evileg_core/filters.py:72 evileg_core/evileg_core/filters.py:99
+#: evileg_core/evileg_core/filters.py:73 evileg_core/evileg_core/filters.py:100
 msgid "Not empty only"
 msgstr "Не лише порожній"
 
-#: evileg_core/evileg_core/filters.py:73 evileg_core/evileg_core/filters.py:100
+#: evileg_core/evileg_core/filters.py:74 evileg_core/evileg_core/filters.py:101
 msgid "Empty only"
 msgstr "Порожній лише"
 
-#: evileg_core/evileg_core/filters.py:137
-#: evileg_core/evileg_core/filters.py:161 evileg_core/evileg_core/models.py:166
+#: evileg_core/evileg_core/filters.py:159
+#: evileg_core/evileg_core/filters.py:183 evileg_core/evileg_core/models.py:166
 msgid "Title"
 msgstr "Назва"
 
-#: evileg_core/evileg_core/filters.py:138
-#: evileg_core/evileg_core/filters.py:162
+#: evileg_core/evileg_core/filters.py:160
+#: evileg_core/evileg_core/filters.py:184
 msgid "Title (descending)"
 msgstr "Назва (у зменшенні)"
 
-#: evileg_core/evileg_core/filters.py:139
-#: evileg_core/evileg_core/filters.py:163
+#: evileg_core/evileg_core/filters.py:161
+#: evileg_core/evileg_core/filters.py:185
 msgid "Sort by title"
 msgstr "Сортувати за назвою"
 
-#: evileg_core/evileg_core/filters.py:141 evileg_core/evileg_core/models.py:167
+#: evileg_core/evileg_core/filters.py:163 evileg_core/evileg_core/models.py:167
 #: evileg_core/evileg_core/templates/evileg_core/views.html:2
 msgid "Views"
 msgstr "Перегляди"
 
-#: evileg_core/evileg_core/filters.py:142
+#: evileg_core/evileg_core/filters.py:164
 msgid "Views (descending)"
 msgstr "Перегляди (у зменшенні)"
 
-#: evileg_core/evileg_core/filters.py:143
+#: evileg_core/evileg_core/filters.py:165
 msgid "Sort by views"
 msgstr "Сортувати за переглядами"
 
-#: evileg_core/evileg_core/filters.py:145 evileg_core/evileg_core/models.py:41
+#: evileg_core/evileg_core/filters.py:167 evileg_core/evileg_core/models.py:41
 msgid "Publication date"
 msgstr "Дата публікації"
 
-#: evileg_core/evileg_core/filters.py:146
+#: evileg_core/evileg_core/filters.py:168
 msgid "Publication date (descending)"
 msgstr "Дата публікації (у зменшенні)"
 
-#: evileg_core/evileg_core/filters.py:147
+#: evileg_core/evileg_core/filters.py:169
 msgid "Sort by publication date"
 msgstr "Сортувати за датою публікації"
 
