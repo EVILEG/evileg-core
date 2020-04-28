@@ -2,7 +2,7 @@
 <li class="float-right">
   {% load get_content_type_id from evileg_core %}
   {% get_content_type_id object as content_type %}
-  <button class="activity-footer-btn" role="button" id="shareButton-{{ content_type }}-{{ object.id }}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="{% trans 'Share link' %}">
+  <button class="act-btn" role="button" id="shareButton-{{ content_type }}-{{ object.id }}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="{% trans 'Share link' %}">
     <span class="mdi mdi-share-variant"></span>
   </button>
   <div class="dropdown-menu dropdown-menu-right" aria-labelledby="shareButton-{{ content_type }}-{{ object.id }}">
