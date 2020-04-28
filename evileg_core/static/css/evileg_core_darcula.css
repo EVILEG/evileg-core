@@ -4973,7 +4973,7 @@ button.bg-dark:focus {
 .my-0 {
   margin-top: 0 !important; }
 
-.mr-0,
+.mr-0, .mdi-0::before,
 .mx-0 {
   margin-right: 0 !important; }
 
@@ -5011,7 +5011,7 @@ button.bg-dark:focus {
 .my-2 {
   margin-top: 0.5rem !important; }
 
-.mr-2, .mdi::before,
+.mr-2,
 .mx-2 {
   margin-right: 0.5rem !important; }
 
@@ -12290,6 +12290,9 @@ div.drawer_items_list > a > .badge {
 
 .mdi-48px:before {
   font-size: 48px; }
+
+.mdi::before {
+  margin-right: .5rem; }
 
 .lang-btn {
   max-height: 40px !important;
