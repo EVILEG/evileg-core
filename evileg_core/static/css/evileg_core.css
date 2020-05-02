@@ -12186,6 +12186,11 @@ div.drawer_items_list > a > .badge {
   max-height: 65px;
   height: 65px; }
 
+.h-reset,
+.h-reset .nav-link {
+  max-height: none !important;
+  height: auto !important; }
+
 .left-offset {
   margin-left: -0.6rem !important; }
 

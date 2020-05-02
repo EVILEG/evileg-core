@@ -15,7 +15,7 @@ from evileg_core.json_ld import generate_site_navigation_element_json_ld
 register = template.Library()
 
 
-STATIC_CONTENT_VERSION = 61
+STATIC_CONTENT_VERSION = 62
 
 CLASSIC = 1
 DARCULA = 2
