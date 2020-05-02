@@ -11845,7 +11845,7 @@ pre.prettyprint {
 @media (min-width: 1200px) {
   .drawer {
     left: 0; }
-  .body, .header {
+  .body, .header, .fixed-bottom {
     margin-left: 239px; }
   .shadow-show {
     opacity: 0;
