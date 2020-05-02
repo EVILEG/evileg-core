@@ -6,13 +6,16 @@ from bootstrap4.utils import add_css_class
 from django import template
 from django.conf import settings
 from django.contrib.contenttypes.models import ContentType
+from django.template.base import FilterExpression, kwarg_re
+from django.template.loader import render_to_string
 from django.templatetags.static import static
 from django.utils.translation import ugettext_lazy as _
+from evileg_core.json_ld import generate_site_navigation_element_json_ld
 
 register = template.Library()
 
 
-STATIC_CONTENT_VERSION = 60
+STATIC_CONTENT_VERSION = 61
 
 CLASSIC = 1
 DARCULA = 2
@@ -337,56 +340,186 @@ def get_active(context, url, startswith=False, **kwargs):
     return active_to_css_class[active]
 
 
-def get_nav_item_context(context, title, url='#', icon=None, **kwargs):
-    item_id = kwargs.pop('item_id', None)
-    item_id = 'id={}'.format(item_id) if item_id is not None else ''
-    counter = kwargs.pop('counter', None)
-    visible = True if counter is not None and (kwargs.pop('always_visible', False) or counter > 0) else False
-    text_color = kwargs.pop('text', None)
+def get_counters(**kwargs):
+    counters = []
+    counter_template = 'counter_value_'
 
-    return {
-        'title': title,
-        'url': url,
-        'icon': icon,
-        'active': get_active(context=context, url=url, **kwargs),
-        'counter': human_format(counter) if counter is not None else counter,
-        'item_id': item_id,
-        'badge': kwargs.pop('badge', 'light'),
-        'visible': visible,
-        'mr_auto': 'mr-auto' if kwargs.pop('mr_auto', False) else '',
-        'ml_auto': 'ml-auto' if kwargs.pop('ml_auto', False) else '',
-        'text_color': 'text-{}'.format(text_color) if text_color else ''
-    }
+    for key, value in kwargs.items():
+        if key.startswith(counter_template):
+            counters.append({
+                'id': kwargs.get(key.replace(counter_template, 'counter_id')),
+                'counter': value,
+                'title': kwargs.get(key.replace(counter_template, 'counter_title_')),
+                'badge_css': 'badge badge-{} {} ml-2'.format(
+                    kwargs.get(key.replace(counter_template, 'counter_color_'), 'light'),
+                    'd-inline-block' if kwargs.get('visible', value > 0) else 'd-none'
+                )
+            })
+
+    return counters
 
 
 @register.inclusion_tag('evileg_core/tab_item.html', takes_context=True)
-def tab_item(context, title, url='#', icon=None, **kwargs):
-    return get_nav_item_context(context=context, title=title, url=url, icon=icon, **kwargs)
+def tab_item(context, title, url='#', **kwargs):
+    show = kwargs.get('show', True)
+    if not show:
+        return {'show': show}
 
+    compactable = kwargs.get('compactable')
+    compact_only = kwargs.get('compact_only')
+    icon = kwargs.get('icon')
 
-@register.inclusion_tag('evileg_core/tab_item_2.html', takes_context=True)
-def tab_item_2(context, title, url='#', icon=None, counter=0, counter_2=0, counter_color='light', counter_color_2='light', counter_title='', counter_title_2='', **kwargs):
-    text_color = kwargs.pop('text', None)
+    if icon is None and (compactable or compact_only):
+        raise template.TemplateSyntaxError("'icon' is required, when 'compactable' is True or 'compact_only' is True")
+
+    link_css = 'text-nowrap nav-item nav-link'
+
+    if icon:
+        link_css = add_css_class(link_css, 'mdi mdi-{}'.format(icon))
+
+    text_color = kwargs.get('text_color')
+    if text_color:
+        link_css = add_css_class(link_css, 'text-{}'.format(text_color))
+
+    css = kwargs.get('css')
+    if css:
+        link_css = add_css_class(link_css, css)
+
+    active = get_active(context=context, url=url, **kwargs)
+    if active:
+        link_css = add_css_class(link_css, active)
+
+    user = context.get('user')
+
     return {
         'title': title,
         'url': url,
-        'icon': icon,
-        'active': get_active(context=context, url=url, **kwargs),
-        'counter': human_format(counter),
-        'counter_2': human_format(counter_2),
-        'counter_color': counter_color,
-        'counter_color_2': counter_color_2,
-        'counter_title': counter_title,
-        'counter_title_2': counter_title_2,
-        'mr_auto': 'mr-auto' if kwargs.pop('mr_auto', False) else '',
-        'ml_auto': 'ml-auto' if kwargs.pop('ml_auto', False) else '',
-        'text_color': 'text-{}'.format(text_color) if text_color else ''
+        'link_css': link_css,
+        'counters': get_counters(**kwargs),
+        'compactable': compactable,
+        'compact_only': compact_only,
+        'toggle': kwargs.get('toggle'),
+        'json_ld': generate_site_navigation_element_json_ld(title, url) if not user or user.is_anonymous else None,
+        'show': kwargs.get('show', True)
     }
 
 
 @register.inclusion_tag('evileg_core/menu_btn.html')
-def menu_btn(title, url, icon):
-    return {'title': title, 'icon': icon, 'url': url}
+def menu_btn(title, url, **kwargs):
+    return {'title': title, 'url': url, 'icon': kwargs.get('icon'), 'show': kwargs.get('show', True)}
+
+
+def parse_tag(token, parser):
+    """
+    Generic template tag parser.
+
+    Returns a three-tuple: (tag_name, args, kwargs)
+
+    tag_name is a string, the name of the tag.
+
+    args is a list of FilterExpressions, from all the arguments that didn't look like kwargs,
+    in the order they occurred, including any that were mingled amongst kwargs.
+
+    kwargs is a dictionary mapping kwarg names to FilterExpressions, for all the arguments that
+    looked like kwargs, including any that were mingled amongst args.
+
+    (At rendering time, a FilterExpression f can be evaluated by calling f.resolve(context).)
+    """
+    # Split the tag content into words, respecting quoted strings.
+    bits = token.split_contents()
+
+    # Pull out the tag name.
+    tag_name = bits.pop(0)
+
+    # Parse the rest of the args, and build FilterExpressions from them so that
+    # we can evaluate them later.
+    args = []
+    kwargs = {}
+    for bit in bits:
+        # Is this a kwarg or an arg?
+        match = kwarg_re.match(bit)
+        kwarg_format = match and match.group(1)
+        if kwarg_format:
+            key, value = match.groups()
+            kwargs[key] = FilterExpression(value, parser)
+        else:
+            args.append(FilterExpression(bit, parser))
+
+    return (tag_name, args, kwargs)
+
+
+@register.tag("tabbar")
+def do_tabbar(parser, token):
+    tag_name, args, kwargs = parse_tag(token, parser)
+    nodelist = parser.parse(('end_tabbar',))
+    parser.delete_first_token()
+    return TabBarNode(nodelist, args[0])
+
+
+class TabBarNode(template.Node):
+    def __init__(self, nodelist, menu_target=None):
+        self.nodelist = nodelist
+        self.menu_target = menu_target
+
+    def render(self, context):
+        context.update({
+            'menu_target': str(self.menu_target),
+            'tabbar_content': self.nodelist.render(context)
+        })
+
+        return render_to_string(
+            template_name='evileg_core/tabbar.html',
+            context=context.flatten()
+        )
+
+
+@register.tag("tabbar_flex_content")
+def do_tabbar_flex_content(parser, token):
+    nodelist = parser.parse(('end_tabbar_flex_content',))
+    parser.delete_first_token()
+    return TabBarFlexContentNode(nodelist)
+
+
+class TabBarFlexContentNode(template.Node):
+    def __init__(self, nodelist):
+        self.nodelist = nodelist
+
+    def render(self, context):
+        context.update({
+            'tabbar_flex_content': self.nodelist.render(context)
+        })
+
+        return render_to_string(
+            template_name='evileg_core/tabbar_flex_content.html',
+            context=context.flatten()
+        )
+
+
+@register.tag("modal_menu")
+def do_modal_menu(parser, token):
+    tag_name, args, kwargs = parse_tag(token, parser)
+    nodelist = parser.parse(('end_modal_menu',))
+    parser.delete_first_token()
+    return TabBarMenuNode(nodelist, args[0], kwargs.get('menu_title'))
+
+
+class TabBarMenuNode(template.Node):
+    def __init__(self, nodelist, menu_id=None, menu_title=None):
+        self.nodelist = nodelist
+        self.menu_id = menu_id
+        self.menu_title = menu_title
+
+    def render(self, context):
+        context.update({
+            'menu_id': str(self.menu_id),
+            'menu_title': self.menu_title.resolve(context) if self.menu_title else None,
+            'menu_content': self.nodelist.render(context)
+        })
+
+        return render_to_string(
+            template_name='evileg_core/modal_menu.html',
+            context=context.flatten()
+        )
 
 
 @register.inclusion_tag('evileg_core/views.html')

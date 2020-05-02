@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ESNF-C\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-28 03:41+0600\n"
-"PO-Revision-Date: 2020-03-09 00:25+0100\n"
+"POT-Creation-Date: 2020-05-02 19:44+0600\n"
+"PO-Revision-Date: 2020-05-02 15:32+0200\n"
 "Last-Translator: Evgenii Legotckoi <evileg@evileg.com>\n"
 "Language-Team: EVILEG Team <info@evileg.com>\n"
 "Language: ru\n"
@@ -258,6 +258,10 @@ msgstr "Добавить ссылку"
 msgid "Markdown syntax"
 msgstr "Синтаксис Markdown"
 
+#: evileg_core/evileg_core/templates/evileg_core/modal_menu.html:4
+msgid "Navigation"
+msgstr "Навигация"
+
 #: evileg_core/evileg_core/templates/evileg_core/partials/object_list_preview.html:7
 #: evileg_core/evileg_core/templates/evileg_core/partials/object_list_preview_columns.html:12
 msgid "Nothing found"
@@ -287,10 +291,14 @@ msgstr "Поделиться ссылкой в Twitter"
 msgid "Share link in LinkedIn"
 msgstr "Поделиться ссылкой в LinkedIn"
 
-#: evileg_core/evileg_core/templatetags/evileg_core.py:21
+#: evileg_core/evileg_core/templates/evileg_core/tabbar.html:5
+msgid "More"
+msgstr "Ещё"
+
+#: evileg_core/evileg_core/templatetags/evileg_core.py:24
 msgid "Classic"
 msgstr "Классическая"
 
-#: evileg_core/evileg_core/templatetags/evileg_core.py:22
+#: evileg_core/evileg_core/templatetags/evileg_core.py:25
 msgid "Darcula"
 msgstr "Darcula"

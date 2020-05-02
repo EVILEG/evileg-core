@@ -1,0 +1,9 @@
+{% load tab_item from evileg_core %}
+<div class="overflow-hidden">
+  <div class="nav nav-tabs border-bottom flex-nowrap">
+    {% if menu_target %}
+      {% tab_item _('More') '#' icon='dots-horizontal-circle-outline' css="border-0 btn btn-secondary no-box-shadow" compact_only=True toggle=menu_target %}
+    {% endif %}
+    {{ tabbar_content }}
+  </div>
+</div>

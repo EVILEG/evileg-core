@@ -1,0 +1,11 @@
+<div class="modal fade" id="{{ menu_id|default:'modal_menu' }}" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-lg w-auto modal-content">
+    <div class="modal-header">
+      <span>{{ menu_title|default:_('Navigation') }}</span>
+      <span class="mdi mdi-24px mdi-window-close mdi-0 pointer" data-dismiss="modal" aria-label="Close"></span>
+    </div>
+    <div class="modal-body">
+      {{ menu_content }}
+    </div>
+  </div>
+</div>

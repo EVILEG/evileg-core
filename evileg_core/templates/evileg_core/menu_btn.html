@@ -1,4 +1,12 @@
-<a class="btn btn-dark btn-menu" href="{{ url }}">
-  <div><span class="mdi mdi-36px mdi-{{ icon }}"></span></div>
-  <small>{{ title }}</small>
-</a>
+{% if show %}
+  <a class="btn btn-dark btn-menu" href="{{ url }}">
+    <div class="btn-menu-body">
+      <div class="btn-menu-center">
+        {% if icon %}
+          <div class="btn-menu-icon-offset"><span class="mdi mdi-36px mdi-{{ icon }} mdi-0"></span></div>
+        {% endif %}
+        <small>{{ title }}</small>
+      </div>
+    </div>
+  </a>
+{% endif %}

@@ -1,24 +1,31 @@
-<li {{ item_id }} class="nav-item {{ ml_auto }} {{ mr_auto }}" itemprop="name">
-  {% if icon %}
-    <a class="nav-link {{ text_color }} {{ active }} d-none d-sm-block" href="{{ url }}" itemprop="url">
-      <span class="mdi-{{ icon }} mr-2"></span>
-      <span>{{ title }}</span>
-      {% if counter is not None %}
-        <span class="badge badge-{{ badge }} {{ visible|yesno:'d-inline-block,d-none' }} ml-2">{{ counter }}</span>
-      {% endif %}
+{% if show %}
+  {% if compact_only %}
+    <a{% if item_id %} id="{{ item_id }}"{% endif %} class="{{ link_css }} mdi-24px mdi-0 p-3" href="{{ url }}"{% if toggle %} data-toggle="modal" data-target="#{{ toggle }}"{% endif %}>
+      {% for counter in counters %}
+        <span{% if counter.id %} id="{{ counter.id }}"{% endif %} class="{{ counter.badge_css }}{% if forloop.first %} left-offset{% endif %}" {% if counter.title %}title="{{ counter.title }}"{% endif %}>{{ counter.counter }}</span>
+      {% endfor %}
     </a>
-    <a class="nav-link {{ text_color }} {{ active }} d-block d-sm-none pt-2 pb-3 px-3" href="{{ url }}">
-      <span class="mdi-{{ icon }} mdi-24px" title="{{ title }}"></span>
-      {% if counter is not None %}
-        <span class="badge badge-{{ badge }} {{ visible|yesno:'d-inline-block,d-none' }}" style="margin-left: -0.6rem!important;">{{ counter }}</span>
-      {% endif %}
+  {% elif compactable %}
+    <a{% if item_id %} id="{{ item_id }}"{% endif %} class="{{ link_css }} d-none d-sm-block" href="{{ url }}"{% if toggle %} data-toggle="modal" data-target="#{{ toggle }}"{% endif %}>
+      <span>{{ title }}</span>
+      {% for counter in counters %}
+        <span{% if counter.id %} id="{{ counter.id }}"{% endif %} class="{{ counter.badge_css }}" {% if counter.title %}title="{{ counter.title }}"{% endif %}>{{ counter.counter }}</span>
+      {% endfor %}
+    </a>
+    <a{% if item_id %} id="{{ item_id }}"{% endif %} class="{{ link_css }} mdi-24px mdi-0 d-block d-sm-none p-3" href="{{ url }}"{% if toggle %} data-toggle="modal" data-target="#{{ toggle }}"{% endif %}>
+      {% for counter in counters %}
+        <span{% if counter.id %} id="{{ counter.id }}"{% endif %} class="{{ counter.badge_css }}{% if forloop.first %} left-offset{% endif %}" {% if counter.title %}title="{{ counter.title }}"{% endif %}>{{ counter.counter }}</span>
+      {% endfor %}
     </a>
   {% else %}
-    <a class="nav-link {{ text_color }} {{ active }}" href="{{ url }}" itemprop="url">
+    <a{% if item_id %} id="{{ item_id }}"{% endif %} class="{{ link_css }}" href="{{ url }}"{% if toggle %} data-toggle="modal" data-target="#{{ toggle }}"{% endif %}>
       <span>{{ title }}</span>
-      {% if counter is not None %}
-        <span class="badge badge-{{ badge }} {{ visible|yesno:'d-inline-block,d-none' }}">{{ counter }}</span>
-      {% endif %}
+      {% for counter in counters %}
+        <span{% if counter.id %} id="{{ counter.id }}"{% endif %} class="{{ counter.badge_css }}" {% if counter.title %}title="{{ counter.title }}"{% endif %}>{{ counter.counter }}</span>
+      {% endfor %}
     </a>
   {% endif %}
-</li>
+  {% if json_ld %}
+    <script type="application/ld+json">{{ json_ld }}</script>
+  {% endif %}
+{% endif %}
