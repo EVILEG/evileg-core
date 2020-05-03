@@ -303,6 +303,8 @@ def drawer_item(title, url='#', icon=None, **kwargs):
         'title': title,
         'url': url,
         'icon': icon,
+        'badge_icon': kwargs.pop('badge_icon', None),
+        'badge_color': kwargs.pop('badge_color', 'primary'),
         'counter': human_format(counter) if counter is not None else counter,
         'item_id': 'id={}'.format(item_id) if item_id is not None else '',
         'badge': kwargs.pop('badge', 'light'),

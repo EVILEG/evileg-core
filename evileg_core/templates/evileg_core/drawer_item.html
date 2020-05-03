@@ -1,1 +1,5 @@
-<a {{ item_id }} href="{{ url }}" {% if icon %}class="mdi mdi-{{ icon }} mdi-24px"{% endif %}>{{ title }}{% if counter is not None %}<span class="badge badge-{{ badge }} {{ visible|yesno:'d-inline-block,d-none' }}">{{ counter }}</span>{% endif %}</a>
+<a {{ item_id }} href="{{ url }}" {% if icon %}class="mdi mdi-{{ icon }} mdi-24px"{% endif %}>
+  <span>{{ title }}</span>
+  {% if counter is not None %}<span class="badge badge-{{ badge }} {{ visible|yesno:'d-inline-block,d-none' }}">{{ counter }}</span>{% endif %}
+  {% if badge_icon %}<span class="mdi mdi-{{ badge_icon }} mdi-24px mdi-0 ml-auto text-{{ badge_color }}"></span>{% endif %}
+</a>
