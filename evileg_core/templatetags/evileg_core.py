@@ -453,7 +453,7 @@ def do_tabbar(parser, token):
     tag_name, args, kwargs = parse_tag(token, parser)
     nodelist = parser.parse(('end_tabbar',))
     parser.delete_first_token()
-    return TabBarNode(nodelist, args[0])
+    return TabBarNode(nodelist, args[0] if len(args) > 0 else None)
 
 
 class TabBarNode(template.Node):
@@ -463,7 +463,7 @@ class TabBarNode(template.Node):
 
     def render(self, context):
         context.update({
-            'menu_target': str(self.menu_target),
+            'menu_target': str(self.menu_target) if self.menu_target else None,
             'tabbar_content': self.nodelist.render(context)
         })
 
