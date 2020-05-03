@@ -92,7 +92,7 @@ class EPaginatedView(ContextMixin, EPaginateMixin, EAjaxableView):
     def get_queryset(self, **kwargs):
         qs = None
         if self.queryset:
-            qs = self.queryset.all()
+            qs = self.queryset
         elif self.model and qs is None:
             qs = self.model.objects.all()
         else:
