@@ -6,6 +6,7 @@ from urllib.parse import urlsplit, urlunsplit
 from django.conf import settings
 from django.contrib.auth import get_user_model
 from django.contrib.contenttypes.models import ContentType
+from django.db.models import QuerySet
 from django.http import HttpResponseRedirect, HttpResponse, JsonResponse
 from django.shortcuts import render, get_object_or_404
 from django.template.loader import render_to_string
@@ -91,9 +92,11 @@ class EPaginatedView(ContextMixin, EPaginateMixin, EAjaxableView):
 
     def get_queryset(self, **kwargs):
         qs = None
-        if self.queryset:
+        if self.queryset is not None:
             qs = self.queryset
-        elif self.model and qs is None:
+            if isinstance(qs, QuerySet):
+                qs = qs.all()
+        elif self.model is not None:
             qs = self.model.objects.all()
         else:
             return qs
