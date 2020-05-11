@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-02 19:44+0600\n"
-"PO-Revision-Date: 2020-05-02 15:33+0200\n"
+"POT-Creation-Date: 2020-05-11 22:50+0600\n"
+"PO-Revision-Date: 2020-05-11 18:55+0200\n"
 "Last-Translator: Evgenii Legotckoi <evileg@evileg.com>\n"
 "Language-Team: \n"
 "Language: uk\n"
@@ -21,35 +21,36 @@ msgstr ""
 "(n % 100 >=11 && n % 100 <=14 )) ? 2: 3);\n"
 "X-Generator: Poedit 2.0.6\n"
 
-#: evileg_core/evileg_core/admin.py:62 evileg_core/evileg_core/models.py:107
+#: evileg_core/evileg_core/admin.py:63 evileg_core/evileg_core/admin.py:123
+#: evileg_core/evileg_core/models.py:109
 msgid "SPAM"
 msgstr "СПАМ"
 
-#: evileg_core/evileg_core/admin.py:65
+#: evileg_core/evileg_core/admin.py:66 evileg_core/evileg_core/admin.py:126
 msgid "Set marked as SPAM"
 msgstr "Встановити позначено як СПАМ"
 
-#: evileg_core/evileg_core/admin.py:77
+#: evileg_core/evileg_core/admin.py:78
 msgid "NOT MODERATED"
 msgstr "NOT MODERATED"
 
-#: evileg_core/evileg_core/admin.py:80
+#: evileg_core/evileg_core/admin.py:81
 msgid "Set marked as NOT MODERATED"
 msgstr "Встановити позначку як NOT MODERATED"
 
-#: evileg_core/evileg_core/admin.py:92
+#: evileg_core/evileg_core/admin.py:93
 msgid "POST MODERATED"
 msgstr "POST MODERATED"
 
-#: evileg_core/evileg_core/admin.py:95
+#: evileg_core/evileg_core/admin.py:96
 msgid "Set marked as POST MODERATED"
 msgstr "Встановити позначено як POST MODERATED"
 
-#: evileg_core/evileg_core/admin.py:107
+#: evileg_core/evileg_core/admin.py:108 evileg_core/evileg_core/admin.py:138
 msgid "MODERATED"
 msgstr "MODERATED"
 
-#: evileg_core/evileg_core/admin.py:110
+#: evileg_core/evileg_core/admin.py:111 evileg_core/evileg_core/admin.py:141
 msgid "Set marked as MODERATED"
 msgstr "Встановити позначено як MODERATED"
 
@@ -75,7 +76,7 @@ msgid "Empty only"
 msgstr "Порожній лише"
 
 #: evileg_core/evileg_core/filters.py:159
-#: evileg_core/evileg_core/filters.py:183 evileg_core/evileg_core/models.py:166
+#: evileg_core/evileg_core/filters.py:183 evileg_core/evileg_core/models.py:173
 msgid "Title"
 msgstr "Назва"
 
@@ -89,7 +90,7 @@ msgstr "Назва (у зменшенні)"
 msgid "Sort by title"
 msgstr "Сортувати за назвою"
 
-#: evileg_core/evileg_core/filters.py:163 evileg_core/evileg_core/models.py:167
+#: evileg_core/evileg_core/filters.py:163 evileg_core/evileg_core/models.py:174
 #: evileg_core/evileg_core/templates/evileg_core/views.html:2
 msgid "Views"
 msgstr "Перегляди"
@@ -153,28 +154,36 @@ msgstr "Зміст - Markdown"
 msgid "Last modification date"
 msgstr "Дата останньої модифікації"
 
-#: evileg_core/evileg_core/models.py:108
+#: evileg_core/evileg_core/models.py:110
 msgid "Not Moderated"
 msgstr "Не модеровано"
 
-#: evileg_core/evileg_core/models.py:109
+#: evileg_core/evileg_core/models.py:111
 msgid "Post Moderated"
 msgstr "Пост модеровано"
 
-#: evileg_core/evileg_core/models.py:110
+#: evileg_core/evileg_core/models.py:112
 msgid "Moderated"
 msgstr "Модеровано"
 
+#: evileg_core/evileg_core/models.py:113
+msgid "Volunteer - SPAM"
+msgstr "Волонтер - СПАМ"
+
 #: evileg_core/evileg_core/models.py:114
+msgid "Volunteer - Moderated"
+msgstr "Волонтер - Модерований"
+
+#: evileg_core/evileg_core/models.py:118
 msgid "Moderation"
 msgstr "Модерація"
 
-#: evileg_core/evileg_core/models.py:168
+#: evileg_core/evileg_core/models.py:175
 #: evileg_core/evileg_core/templates/evileg_core/markdown_widget.html:18
 msgid "URL"
 msgstr "URL"
 
-#: evileg_core/evileg_core/models.py:256
+#: evileg_core/evileg_core/models.py:263
 msgid "User"
 msgstr "Користувач"
 

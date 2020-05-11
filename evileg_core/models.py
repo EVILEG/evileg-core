@@ -103,11 +103,15 @@ class EModerationMixin(models.Model):
     NOT_MODERATED = 'N'
     POST_MODERATED = 'P'
     MODERATED = 'M'
+    SPAM_BY_VOLUNTEER = 's'
+    MODERATED_BY_VOLUNTEER = 'm'
     MODERATION_CHOICES = (
         (SPAM, _('SPAM')),
         (NOT_MODERATED, _('Not Moderated')),
         (POST_MODERATED, _('Post Moderated')),
-        (MODERATED, _('Moderated'))
+        (MODERATED, _('Moderated')),
+        (SPAM_BY_VOLUNTEER, _('Volunteer - SPAM')),
+        (MODERATED_BY_VOLUNTEER, _('Volunteer - Moderated'))
     )
 
     moderation = models.CharField(
@@ -118,7 +122,10 @@ class EModerationMixin(models.Model):
     )
 
     def is_approved(self):
-        return self.moderation is not self.SPAM
+        return all(self.moderation is not m for m in [self.SPAM, self.SPAM_BY_VOLUNTEER])
+
+    def is_spam(self):
+        return any(self.moderation is m for m in [self.SPAM, self.SPAM_BY_VOLUNTEER])
 
     class Meta:
         abstract = True

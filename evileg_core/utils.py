@@ -5,10 +5,12 @@ import re
 import markdown
 from bs4 import BeautifulSoup
 from django.conf import settings
+from django.contrib.auth.models import Group, Permission
 from django.utils import six
 from django.utils.functional import lazy
 from django.utils.http import is_safe_url, urlunquote
 from django.utils.safestring import mark_safe
+from evileg_core.shortcuts import get_object_or_none
 
 mark_safe_lazy = lazy(mark_safe, six.text_type)
 
@@ -224,3 +226,15 @@ def get_client_ip(request):
     """
     x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
     return x_forwarded_for.split(',')[-1].strip() if x_forwarded_for else request.META.get('REMOTE_ADDR')
+
+
+def generate_groups_with_permissions(groups_permissions):
+    for group_name in groups_permissions:
+        group, created = Group.objects.get_or_create(name=group_name)
+        for model_cls in groups_permissions[group_name]:
+            for perm_index, perm_name in enumerate(groups_permissions[group_name][model_cls]):
+                codename = perm_name + "_" + model_cls._meta.model_name
+
+                permission = get_object_or_none(klass=Permission, codename=codename)
+                if permission:
+                    group.permissions.add(permission)

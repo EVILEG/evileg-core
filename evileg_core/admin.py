@@ -34,6 +34,7 @@ class EModerationMixinAdmin(EAdmin):
     list_display = ('moderation',)
     list_filter = ('moderation',)
     actions = ['make_spam', 'make_not_moderated', 'make_post_moderated', 'make_moderated']
+    actions_by_volunteer = ['make_spam_by_volunteer', 'make_moderated_by_volunteer']
 
     def moderate(self, request, rows_updated, choice_description):
         """
@@ -108,6 +109,36 @@ class EModerationMixinAdmin(EAdmin):
         )
 
     make_moderated.short_description = _("Set marked as MODERATED")
+
+    def make_spam_by_volunteer(self, request, queryset):
+        """
+        Action for marking content like SPAM by volunteer opinion
+
+        :param request: HTTP request
+        :param queryset: queryset of model objects
+        """
+        self.moderate(
+            request=request,
+            rows_updated=queryset.update(moderation=self.model.SPAM_BY_VOLUNTEER),
+            choice_description=_("SPAM")
+        )
+
+    make_spam_by_volunteer.short_description = _("Set marked as SPAM")
+
+    def make_moderated_by_volunteer(self, request, queryset):
+        """
+        Action for marking content like MODERATED by volunteer opinion
+
+        :param request: HTTP request
+        :param queryset: queryset of model objects
+        """
+        self.moderate(
+            request=request,
+            rows_updated=queryset.update(moderation=self.model.MODERATED),
+            choice_description=_("MODERATED")
+        )
+
+    make_moderated_by_volunteer.short_description = _("Set marked as MODERATED")
 
 
 class EPostAdmin(EAdmin):
