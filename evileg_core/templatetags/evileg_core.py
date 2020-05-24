@@ -110,31 +110,20 @@ def select_static_file(cdn, minified, files_dict):
     return '{}?{}'.format(file_url, STATIC_CONTENT_VERSION)
 
 
-@register.simple_tag(takes_context=True)
-def render_template_full(context, obj):
-    if obj:
-        return obj.render_template_full(context)
-    return ''
+_interface_templates_cache = {}
 
 
 @register.simple_tag(takes_context=True)
-def render_template_preview(context, obj):
-    if obj:
-        return obj.render_template_preview(context)
-    return ''
-
-
-@register.simple_tag(takes_context=True)
-def render_template_info(context, obj):
-    if obj:
-        return obj.render_template_info(context)
-    return ''
-
-
-@register.simple_tag
-def render_template_mail(obj):
-    if obj:
-        return obj.render_template_mail()
+def render_object(context, obj, template_name='TEMPLATE_FULL'):
+    if obj and hasattr(obj, template_name):
+        template_name_attr = getattr(obj, template_name)
+        if template_name_attr not in _interface_templates_cache:
+            _interface_templates_cache[template_name_attr] = template.loader.get_template(template_name_attr)
+        return _interface_templates_cache[template_name_attr].render({
+            'object': obj,
+            'user': context.get('user'),
+            'request': context.get('request')
+        })
     return ''
 
 

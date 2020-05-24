@@ -12,7 +12,6 @@ from django.http import HttpResponseRedirect
 from django.http.response import HttpResponseBase
 from django.shortcuts import get_object_or_404
 from django.shortcuts import render
-from django.template import loader
 from django.urls import reverse
 from django.utils.decorators import method_decorator
 from django.utils.text import capfirst
@@ -20,8 +19,6 @@ from django.utils.translation import ugettext_lazy as _
 from django.views.generic.edit import FormMixin
 
 from .forms import EActionForm
-
-_interface_templates_cache = {}
 
 
 class EInterfaceMixin:
@@ -78,42 +75,6 @@ class EInterfaceMixin:
 
     def get_self(self):
         raise NotImplementedError("Please return self or related object for representation")
-
-    @classmethod
-    def __render_template_full(cls, obj, request_context):
-        if cls.TEMPLATE_FULL not in _interface_templates_cache:
-            _interface_templates_cache[cls.TEMPLATE_FULL] = loader.get_template(cls.TEMPLATE_FULL)
-        return _interface_templates_cache[cls.TEMPLATE_FULL].render({'object': obj, 'user': request_context['user']})
-
-    def render_template_full(self, request_context):
-        return self.__render_template_full(self, request_context)
-
-    @classmethod
-    def __render_template_preview(cls, obj, request_context):
-        if cls.TEMPLATE_PREVIEW not in _interface_templates_cache:
-            _interface_templates_cache[cls.TEMPLATE_PREVIEW] = loader.get_template(cls.TEMPLATE_PREVIEW)
-        return _interface_templates_cache[cls.TEMPLATE_PREVIEW].render({'object': obj, 'user': request_context['user']})
-
-    def render_template_preview(self, request_context):
-        return self.__render_template_preview(self, request_context)
-
-    @classmethod
-    def __render_template_info(cls, obj, request_context):
-        if cls.TEMPLATE_INFO not in _interface_templates_cache:
-            _interface_templates_cache[cls.TEMPLATE_INFO] = loader.get_template(cls.TEMPLATE_INFO)
-        return _interface_templates_cache[cls.TEMPLATE_INFO].render({'object': obj, 'user': request_context['user']})
-
-    def render_template_info(self, request_context):
-        return self.__render_template_info(self, request_context)
-
-    @classmethod
-    def __render_template_mail(cls, obj):
-        if cls.TEMPLATE_MAIL not in _interface_templates_cache:
-            _interface_templates_cache[cls.TEMPLATE_MAIL] = loader.get_template(cls.TEMPLATE_MAIL)
-        return _interface_templates_cache[cls.TEMPLATE_MAIL].render({'object': obj})
-
-    def render_template_mail(self):
-        return self.__render_template_mail(self)
 
 
 class EAjaxableMixin:
