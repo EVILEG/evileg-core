@@ -515,12 +515,12 @@ class TabBarMenuNode(template.Node):
 
 @register.inclusion_tag('evileg_core/views.html')
 def views(obj):
-    return {'object': obj}
+    return {'object': obj} if hasattr(obj, 'views') else {}
 
 
 @register.inclusion_tag('evileg_core/comments_link.html')
 def comments_link(obj):
-    return {'object': obj}
+    return {'object': obj} if hasattr(obj, 'comments_count') else {}
 
 
 @register.inclusion_tag('evileg_core/edit.html', takes_context=True)

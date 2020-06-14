@@ -1,4 +1,6 @@
-{% load trans from i18n %}
-<li title="{% trans "Comments" %}">
-  <a class="act-btn mdi mdi-comment" href="{{ object.get_absolute_url }}#comments">{{ object.comments_count }}</a>
-</li>
+{% if object %}
+  {% load trans from i18n %}
+  <li title="{% trans "Comments" %}">
+    <a class="act-btn mdi mdi-comment" href="{{ object.get_absolute_url }}#comments">{{ object.comments_count }}</a>
+  </li>
+{% endif %}

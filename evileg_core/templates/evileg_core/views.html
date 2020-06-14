@@ -1,2 +1,4 @@
-{% load trans from i18n %}
-<li class="act-btn" title="{% trans "Views" %}"><span class="mdi mdi-eye">{{ object.views }}</span></li>
+{% if object %}
+  {% load trans from i18n %}
+  <li class="act-btn" title="{% trans "Views" %}"><span class="mdi mdi-eye">{{ object.views }}</span></li>
+{% endif %}
