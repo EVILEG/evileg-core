@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-11 22:50+0600\n"
+"POT-Creation-Date: 2020-06-17 01:52+0600\n"
 "PO-Revision-Date: 2020-05-11 18:54+0200\n"
 "Last-Translator: Evgenii Legotckoi <evileg@evileg.com>\n"
 "Language-Team: \n"
@@ -88,7 +88,7 @@ msgid "Sort by title"
 msgstr "Sort by title"
 
 #: evileg_core/evileg_core/filters.py:163 evileg_core/evileg_core/models.py:174
-#: evileg_core/evileg_core/templates/evileg_core/views.html:2
+#: evileg_core/evileg_core/templates/evileg_core/views.html:3
 msgid "Views"
 msgstr "Views"
 
@@ -124,7 +124,7 @@ msgstr "To date"
 msgid "Select all"
 msgstr "Select all"
 
-#: evileg_core/evileg_core/mixins.py:362
+#: evileg_core/evileg_core/mixins.py:323
 msgid ""
 "Items must be selected in order to perform actions on them. No items have "
 "been changed."
@@ -132,7 +132,7 @@ msgstr ""
 "Items must be selected in order to perform actions on them. No items have "
 "been changed."
 
-#: evileg_core/evileg_core/mixins.py:381
+#: evileg_core/evileg_core/mixins.py:342
 msgid "No action selected."
 msgstr "No action selected."
 
@@ -169,7 +169,6 @@ msgid "Volunteer - SPAM"
 msgstr "Volunteer - SPAM"
 
 #: evileg_core/evileg_core/models.py:114
-#| msgid "Not Moderated"
 msgid "Volunteer - Moderated"
 msgstr "Volunteer - Moderated"
 
@@ -186,7 +185,7 @@ msgstr "URL"
 msgid "User"
 msgstr "User"
 
-#: evileg_core/evileg_core/templates/evileg_core/comments_link.html:2
+#: evileg_core/evileg_core/templates/evileg_core/comments_link.html:3
 msgid "Comments"
 msgstr "Comments"
 

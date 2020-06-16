@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ESNF-C\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-11 22:50+0600\n"
+"POT-Creation-Date: 2020-06-17 01:52+0600\n"
 "PO-Revision-Date: 2020-05-11 18:56+0200\n"
 "Last-Translator: Evgenii Legotckoi <evileg@evileg.com>\n"
 "Language-Team: EVILEG Team <info@evileg.com>\n"
@@ -89,7 +89,7 @@ msgid "Sort by title"
 msgstr "Сортировать по заголовку"
 
 #: evileg_core/evileg_core/filters.py:163 evileg_core/evileg_core/models.py:174
-#: evileg_core/evileg_core/templates/evileg_core/views.html:2
+#: evileg_core/evileg_core/templates/evileg_core/views.html:3
 msgid "Views"
 msgstr "Просмотры"
 
@@ -125,7 +125,7 @@ msgstr "До даты"
 msgid "Select all"
 msgstr "Выбрать все"
 
-#: evileg_core/evileg_core/mixins.py:362
+#: evileg_core/evileg_core/mixins.py:323
 msgid ""
 "Items must be selected in order to perform actions on them. No items have "
 "been changed."
@@ -133,7 +133,7 @@ msgstr ""
 "Чтобы произвести действия над объектами, необходимо их выбрать. Объекты не "
 "были изменены."
 
-#: evileg_core/evileg_core/mixins.py:381
+#: evileg_core/evileg_core/mixins.py:342
 msgid "No action selected."
 msgstr "Действие не выбрано."
 
@@ -186,7 +186,7 @@ msgstr "URL"
 msgid "User"
 msgstr "Пользователь"
 
-#: evileg_core/evileg_core/templates/evileg_core/comments_link.html:2
+#: evileg_core/evileg_core/templates/evileg_core/comments_link.html:3
 msgid "Comments"
 msgstr "Комментарии"
 
