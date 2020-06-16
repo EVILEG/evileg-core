@@ -84,7 +84,7 @@ class EPaginatedView(ContextMixin, EPaginateMixin, EAjaxableView):
     columns_view = False
 
     def get_user(self, **kwargs):
-        username = kwargs.pop('user', None)
+        username = kwargs.get('user', None)
         if username:
             return get_object_or_404(get_user_model(), username=username, is_active=True)
         else:
