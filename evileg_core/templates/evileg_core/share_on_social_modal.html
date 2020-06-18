@@ -1,0 +1,40 @@
+{% load modal_menu from evileg_core %}
+{% load trans from i18n %}
+{% modal_menu share_on_social_networks menu_title=_('Share on social networks') %}
+  {# share_vk #}
+  <a id="share_vk" href="#" class="btn btn-dark btn-menu" target="_blank" rel="nofollow" onclick="window.open(this.href, '{% trans 'Share link in VKontakte' %}', 'width=800,height=300'); pages.clearCache(this.href); return false;">
+    <div class="btn-menu-body">
+      <div class="btn-menu-center">
+        <div class="btn-menu-icon-offset"><span class="mdi mdi-36px mdi-vk-box mdi-0"></span></div>
+        <small>VKontakte</small>
+      </div>
+    </div>
+  </a>
+  {# share_facebook #}
+  <a id="share_facebook" href="#" class="btn btn-dark btn-menu" target="_blank" rel="nofollow" onclick="window.open(this.href, '{% trans 'Share link in Facebook' %}', 'width=640,height=436,toolbar=0,status=0'); return false;">
+    <div class="btn-menu-body">
+      <div class="btn-menu-center">
+        <div class="btn-menu-icon-offset"><span class="mdi mdi-36px mdi-facebook-box mdi-0"></span></div>
+        <small>Facebook</small>
+      </div>
+    </div>
+  </a>
+  {# share_twitter #}
+  <a id="share_twitter" href="#" class="btn btn-dark btn-menu" target="_blank" rel="nofollow" onclick="window.open(this.href, '{% trans 'Share link in Twitter' %}'); return false;">
+    <div class="btn-menu-body">
+      <div class="btn-menu-center">
+        <div class="btn-menu-icon-offset"><span class="mdi mdi-36px mdi-twitter-box mdi-0"></span></div>
+        <small>Twitter</small>
+      </div>
+    </div>
+  </a>
+  {# share_linkedin #}
+  <a id="share_linkedin" href="#" class="btn btn-dark btn-menu" target="_blank" rel="nofollow" onclick="window.open(this.href, '{% trans 'Share link in LinkedIn' %}', 'width=800,height=600'); return false;">
+    <div class="btn-menu-body">
+      <div class="btn-menu-center">
+        <div class="btn-menu-icon-offset"><span class="mdi mdi-36px mdi-linkedin-box mdi-0"></span></div>
+        <small>LinkedIn</small>
+      </div>
+    </div>
+  </a>
+{% end_modal_menu %}

@@ -6531,6 +6531,25 @@ jQuery.fn.toggleDrawer = function () {
   return this;
 };
 
+jQuery.fn.share_social = function (url) {
+  var o = $(this[0]);
+  var dialog = $('#share_on_social_networks');
+
+  if (dialog.length) {
+    var share_vk = $('#share_vk');
+    share_vk.attr("href", 'http://vk.com/share.php?url=' + url);
+    var share_facebook = $('#share_facebook');
+    share_facebook.attr("href", 'https://www.facebook.com/sharer/sharer.php?u=' + url);
+    var share_twitter = $('#share_twitter');
+    share_twitter.attr("href", 'https://twitter.com/share?url=' + url);
+    var share_linkedin = $('#share_linkedin');
+    share_linkedin.attr("href", 'https://www.linkedin.com/shareArticle?mini=true&url=' + url);
+    dialog.modal('show');
+  }
+
+  return this;
+};
+
 function getCookie(name) {
   var cookieValue = null;
 

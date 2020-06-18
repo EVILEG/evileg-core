@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-17 01:52+0600\n"
-"PO-Revision-Date: 2020-05-11 18:54+0200\n"
+"POT-Creation-Date: 2020-06-19 01:33+0600\n"
+"PO-Revision-Date: 2020-06-18 21:34+0200\n"
 "Last-Translator: Evgenii Legotckoi <evileg@evileg.com>\n"
 "Language-Team: \n"
 "Language: en\n"
@@ -279,23 +279,27 @@ msgstr "Nothing found"
 msgid "Advanced search"
 msgstr "Advanced search"
 
-#: evileg_core/evileg_core/templates/evileg_core/share_link.html:5
+#: evileg_core/evileg_core/templates/evileg_core/share_link.html:3
 msgid "Share link"
 msgstr "Share link"
 
-#: evileg_core/evileg_core/templates/evileg_core/share_link.html:9
-msgid "Share link in Facebook"
-msgstr "Share link in Facebook"
+#: evileg_core/evileg_core/templates/evileg_core/share_on_social_modal.html:3
+msgid "Share on social networks"
+msgstr "Share on social networks"
 
-#: evileg_core/evileg_core/templates/evileg_core/share_link.html:10
+#: evileg_core/evileg_core/templates/evileg_core/share_on_social_modal.html:5
 msgid "Share link in VKontakte"
 msgstr "Share link in VKontakte"
 
-#: evileg_core/evileg_core/templates/evileg_core/share_link.html:11
+#: evileg_core/evileg_core/templates/evileg_core/share_on_social_modal.html:14
+msgid "Share link in Facebook"
+msgstr "Share link in Facebook"
+
+#: evileg_core/evileg_core/templates/evileg_core/share_on_social_modal.html:23
 msgid "Share link in Twitter"
 msgstr "Share link in Twitter"
 
-#: evileg_core/evileg_core/templates/evileg_core/share_link.html:12
+#: evileg_core/evileg_core/templates/evileg_core/share_on_social_modal.html:32
 msgid "Share link in LinkedIn"
 msgstr "Share link in LinkedIn"
 
