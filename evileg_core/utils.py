@@ -113,6 +113,11 @@ class ESoup:
             tag['class'] = ' '.join(saved_classes)
         return soup
 
+    def _add_attr(self, soup, tag, attr, value):
+        for tag in soup.find_all(tag):
+            tag[attr] = value
+        return soup
+
     def _correct_url(self, soup, tag, attr):
         site_url = getattr(settings, "SITE_URL", None)
         languages = getattr(settings, "LANGUAGES", None)
@@ -154,6 +159,7 @@ class ESoup:
                 soup = self._add_rel_attr(soup=soup, tag='img', attr='src')
             soup = self._correct_url(soup=soup, tag='a', attr='href')
             soup = self._correct_url(soup=soup, tag='img', attr='src')
+            soup = self._add_attr(soup=soup, tag='img', attr='loading', value='lazy')
             soup = self._add_class_attr(soup=soup, tag='img', classes=('img-fluid',))
             soup = self._add_class_attr(soup=soup, tag='table', classes=('table', 'table-bordered', 'table-hover'))
             soup = self._add_class_attr(soup=soup, tag='code', classes=('prettyprint linenums',))
