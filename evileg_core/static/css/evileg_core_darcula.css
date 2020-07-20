@@ -3255,11 +3255,11 @@ tbody.collapse.show {
   position: relative;
   display: block;
   padding: 0.5rem 0.75rem;
-  margin-left: 0;
+  margin-left: -1px;
   line-height: 1.25;
   color: #729fcf;
   background-color: transparent;
-  border: 0 solid #dee2e6; }
+  border: 1px solid #4d4d4d !important; }
   .page-link:hover {
     color: #3e78b6;
     text-decoration: none;
@@ -3295,7 +3295,7 @@ tbody.collapse.show {
   border-color: #dee2e6; }
 
 .pagination-lg .page-link {
-  padding: 0.75rem 0;
+  padding: 0.75rem 1.5rem;
   font-size: 1.25rem;
   line-height: 1.5; }
 
@@ -3308,7 +3308,7 @@ tbody.collapse.show {
   border-bottom-right-radius: 0.3rem; }
 
 .pagination-sm .page-link {
-  padding: 0.25rem 0;
+  padding: 0.25rem 0.5rem;
   font-size: 0.875rem;
   line-height: 1.5; }
 
@@ -10889,63 +10889,6 @@ thead.thead-inverse th,
   box-shadow: none; }
   .progress .progress-bar {
     box-shadow: none; }
-
-.page-item:first-child .page-link {
-  border-top-left-radius: 4em;
-  border-bottom-left-radius: 4em; }
-
-.page-item:last-child .page-link {
-  border-top-right-radius: 4em;
-  border-bottom-right-radius: 4em;
-  margin-right: 0; }
-
-.page-item:first-child .page-link, .page-item:last-child .page-link {
-  display: flex;
-  justify-content: center;
-  padding-right: 0;
-  padding-left: 0; }
-  .page-item:first-child .page-link > .material-icons, .page-item:last-child .page-link > .material-icons {
-    font-size: 1.5em; }
-
-.page-link {
-  min-width: 2.6em;
-  margin-right: 0.5em;
-  text-align: center;
-  border-radius: 4em; }
-  .page-link:hover, .page-link:focus {
-    text-decoration: none; }
-
-.pagination-lg .page-link {
-  min-width: 2.8em; }
-
-.pagination-lg .page-link {
-  padding: 0.75rem 0;
-  font-size: 1.25rem;
-  line-height: 1.5; }
-
-.pagination-lg .page-item:first-child .page-link {
-  border-top-left-radius: 4em;
-  border-bottom-left-radius: 4em; }
-
-.pagination-lg .page-item:last-child .page-link {
-  border-top-right-radius: 4em;
-  border-bottom-right-radius: 4em; }
-
-.pagination-sm .page-link {
-  min-width: 2.2em; }
-
-.pagination-sm .page-link {
-  padding: 0.25rem 0;
-  font-size: 0.875rem;
-  line-height: 1.5; }
-
-.pagination-sm .page-item:first-child .page-link {
-  border-top-left-radius: 4em;
-  border-bottom-left-radius: 4em; }
-
-.pagination-sm .page-item:last-child .page-link {
-  border-top-right-radius: 4em;
-  border-bottom-right-radius: 4em; }
 
 h6 {
   font-weight: 500; }
