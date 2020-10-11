@@ -194,15 +194,16 @@ class EMarkdownWorker:
         self.make_html_from_markdown()
 
     def make_html_from_markdown(self):
-        self.markdown_text = markdown.markdown(
-            self.pre_markdown_text,
-            extensions=['markdown.extensions.attr_list',
-                        'markdown.extensions.tables',
-                        'markdown.extensions.fenced_code',
-                        'markdown.extensions.nl2br',
-                        'evileg_core.extensions.video'],
-            output_format='html5'
-        )
+        if self.pre_markdown_text:
+            self.markdown_text = markdown.markdown(
+                self.pre_markdown_text,
+                extensions=['markdown.extensions.attr_list',
+                            'markdown.extensions.tables',
+                            'markdown.extensions.fenced_code',
+                            'markdown.extensions.nl2br',
+                            'evileg_core.extensions.video'],
+                output_format='html5'
+            )
 
     def get_text(self, dofollow=False, add_header_anchors=False):
         return ESoup.clean_text(text=self.markdown_text, dofollow=dofollow, add_header_anchors=add_header_anchors)
