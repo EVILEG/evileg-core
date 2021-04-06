@@ -4,7 +4,8 @@ from django.contrib.auth import get_user_model
 from django.core.exceptions import ValidationError
 from django.core.validators import validate_email
 from django.db.models import Q
-from evileg_core.shortcuts import get_object_or_none
+
+from .shortcuts import get_object_or_none
 
 
 class EEmailOrUsernameModelBackend:

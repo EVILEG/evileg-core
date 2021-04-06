@@ -3,14 +3,15 @@
 import re
 
 import markdown
+import six
 from bs4 import BeautifulSoup
 from django.conf import settings
 from django.contrib.auth.models import Group, Permission
-from django.utils import six
 from django.utils.functional import lazy
 from django.utils.http import is_safe_url, urlunquote
 from django.utils.safestring import mark_safe
-from evileg_core.shortcuts import get_object_or_none
+
+from .shortcuts import get_object_or_none
 
 mark_safe_lazy = lazy(mark_safe, six.text_type)
 

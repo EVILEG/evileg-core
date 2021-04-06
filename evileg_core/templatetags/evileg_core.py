@@ -10,7 +10,8 @@ from django.template.base import FilterExpression, kwarg_re
 from django.template.loader import render_to_string
 from django.templatetags.static import static
 from django.utils.translation import ugettext_lazy as _
-from evileg_core.json_ld import generate_site_navigation_element_json_ld
+
+from ..json_ld import generate_site_navigation_element_json_ld
 
 register = template.Library()
 
