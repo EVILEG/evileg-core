@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from django import forms
-from django.contrib.admin.templatetags.admin_static import static
+from django.templatetags.static import static
 from django.utils.translation import ugettext_lazy as _
 
 from .widgets import ELesserAdminDateWidget

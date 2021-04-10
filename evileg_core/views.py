@@ -51,25 +51,28 @@ def lang(request, lang_code):
     if (next or not request.is_ajax()) and not is_safe_url(url=next, allowed_hosts=request.get_host()):
         next = get_next_url(request)
     response = HttpResponseRedirect(next) if next else HttpResponse(status=204)
-
     if lang_code and check_for_language(lang_code):
         if next:
             for code_tuple in settings.LANGUAGES:
                 settings_lang_code = "/" + code_tuple[0]
                 parsed = urlsplit(next)
                 if parsed.path.startswith(settings_lang_code):
-                    path = re.sub('^' + settings_lang_code, '', parsed.path)
+                    path = re.sub('^' + settings_lang_code, '/' + lang_code, parsed.path)
                     next = urlunsplit((parsed.scheme, parsed.netloc, path, parsed.query, parsed.fragment))
             response = HttpResponseRedirect(next)
         if hasattr(request, 'session'):
+            # Storing the language in the session is deprecated.
+            # (RemovedInDjango40Warning)
             request.session[LANGUAGE_SESSION_KEY] = lang_code
-        else:
-            response.set_cookie(
-                settings.LANGUAGE_COOKIE_NAME, lang_code,
-                max_age=settings.LANGUAGE_COOKIE_AGE,
-                path=settings.LANGUAGE_COOKIE_PATH,
-                domain=settings.LANGUAGE_COOKIE_DOMAIN,
-            )
+        response.set_cookie(
+            settings.LANGUAGE_COOKIE_NAME, lang_code,
+            max_age=settings.LANGUAGE_COOKIE_AGE,
+            path=settings.LANGUAGE_COOKIE_PATH,
+            domain=settings.LANGUAGE_COOKIE_DOMAIN,
+            secure=settings.LANGUAGE_COOKIE_SECURE,
+            httponly=settings.LANGUAGE_COOKIE_HTTPONLY,
+            samesite=settings.LANGUAGE_COOKIE_SAMESITE,
+        )
     return response
 
 
