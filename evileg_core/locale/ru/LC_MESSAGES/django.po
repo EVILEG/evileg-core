@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ESNF-C\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-19 01:33+0600\n"
+"POT-Creation-Date: 2021-04-11 23:21+0200\n"
 "PO-Revision-Date: 2020-06-18 21:34+0200\n"
 "Last-Translator: Evgenii Legotckoi <evileg@evileg.com>\n"
 "Language-Team: EVILEG Team <info@evileg.com>\n"
@@ -308,10 +308,10 @@ msgstr "Поделиться ссылкой в LinkedIn"
 msgid "More"
 msgstr "Ещё"
 
-#: evileg_core/evileg_core/templatetags/evileg_core.py:24
+#: evileg_core/evileg_core/templatetags/evileg_core.py:25
 msgid "Classic"
 msgstr "Классическая"
 
-#: evileg_core/evileg_core/templatetags/evileg_core.py:25
+#: evileg_core/evileg_core/templatetags/evileg_core.py:26
 msgid "Darcula"
 msgstr "Darcula"
