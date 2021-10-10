@@ -12325,12 +12325,3 @@ div.drawer_items_list > a > .badge {
 
 .form-text {
   padding-left: 1em; }
-
-.article-menu {
-  width: 100% !important;
-  margin-left: 0; }
-
-@media (min-width: 768px) {
-  .article-menu {
-    max-width: 420px;
-    margin-left: 1rem !important; } }
