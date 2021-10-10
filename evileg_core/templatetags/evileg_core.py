@@ -225,7 +225,8 @@ def share_link(object):
     }
 
 
-@register.inclusion_tag('evileg_core/partials/object_list_preview.html', takes_context=True)
+object_list_preview_template = getattr(settings, "TEMPLATE_OBJECT_LIST_PREVIEW", 'evileg_core/partials/object_list_preview.html')
+@register.inclusion_tag(object_list_preview_template, takes_context=True)
 def object_list_preview(context, not_found_message=None, object_list=None):
     if object_list is not None:
         context['object_list'] = object_list
@@ -234,7 +235,8 @@ def object_list_preview(context, not_found_message=None, object_list=None):
     return context
 
 
-@register.inclusion_tag('evileg_core/partials/object_list_preview_columns.html', takes_context=True)
+object_list_preview_columns_template = getattr(settings, "TEMPLATE_OBJECT_LIST_PREVIEW_COLUMNS", 'evileg_core/partials/object_list_preview_columns.html')
+@register.inclusion_tag(object_list_preview_columns_template, takes_context=True)
 def object_list_preview_columns(context, not_found_message=None, object_list=None):
     if object_list is not None:
         context['object_list'] = object_list
