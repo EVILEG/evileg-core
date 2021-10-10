@@ -304,7 +304,8 @@ def drawer_item(title, url='#', icon=None, **kwargs):
     }
 
 
-@register.inclusion_tag('evileg_core/filter_view.html', takes_context=True)
+filter_view_template = getattr(settings, "TEMPLATE_FILTER_VIEW", 'evileg_core/filter_view.html')
+@register.inclusion_tag(filter_view_template, takes_context=True)
 def filter_view(context):
     return context
 
