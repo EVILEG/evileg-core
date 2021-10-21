@@ -11675,25 +11675,6 @@ pre.prettyprint {
 .breadcrumb-item + .breadcrumb-item:before {
   content: "›"; }
 
-::-webkit-scrollbar {
-  width: 6px;
-  background: transparent; }
-
-::-webkit-scrollbar:horizontal {
-  height: 6px;
-  background: transparent; }
-
-::-webkit-scrollbar-track {
-  background: transparent; }
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: #7f7f7f; }
-
-* {
-  scrollbar-width: thin;
-  scrollbar-color: #7f7f7f transparent; }
-
 .sticky {
   position: -webkit-sticky;
   position: sticky;

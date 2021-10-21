@@ -11682,25 +11682,6 @@ blockquote > p {
 .breadcrumb-item + .breadcrumb-item:before {
   content: "›"; }
 
-::-webkit-scrollbar {
-  width: 6px;
-  background: transparent; }
-
-::-webkit-scrollbar:horizontal {
-  height: 6px;
-  background: transparent; }
-
-::-webkit-scrollbar-track {
-  background: transparent; }
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: #121212; }
-
-* {
-  scrollbar-width: thin;
-  scrollbar-color: #121212 transparent; }
-
 .sticky {
   position: -webkit-sticky;
   position: sticky;
