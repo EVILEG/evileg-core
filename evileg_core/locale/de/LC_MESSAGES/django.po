@@ -3,311 +3,314 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-26 18:51+0100\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"POT-Creation-Date: 2021-12-26 19:56+0100\n"
+"PO-Revision-Date: 2021-12-26 21:32+0100\n"
+"Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Last-Translator: Evgenii Legotckoi <evileg@evileg.com>\n"
+"Language-Team: \n"
+"X-Generator: Poedit 2.3\n"
+
 #: evileg_core/evileg_core/admin.py:63 evileg_core/evileg_core/admin.py:123
 #: evileg_core/evileg_core/models.py:109
 msgid "SPAM"
-msgstr ""
+msgstr "SPAM"
 
 #: evileg_core/evileg_core/admin.py:66 evileg_core/evileg_core/admin.py:126
 msgid "Set marked as SPAM"
-msgstr ""
+msgstr "Als SPAM markiertes Set"
 
 #: evileg_core/evileg_core/admin.py:78
 msgid "NOT MODERATED"
-msgstr ""
+msgstr "NICHT MODERIERT"
 
 #: evileg_core/evileg_core/admin.py:81
 msgid "Set marked as NOT MODERATED"
-msgstr ""
+msgstr "Als NICHT MODERIERT markiertes Set"
 
 #: evileg_core/evileg_core/admin.py:93
 msgid "POST MODERATED"
-msgstr ""
+msgstr "POSTMODIERIERT"
 
 #: evileg_core/evileg_core/admin.py:96
 msgid "Set marked as POST MODERATED"
-msgstr ""
+msgstr "Als POST MODERATED markiertes Set"
 
 #: evileg_core/evileg_core/admin.py:108 evileg_core/evileg_core/admin.py:138
 msgid "MODERATED"
-msgstr ""
+msgstr "MODERIERT"
 
 #: evileg_core/evileg_core/admin.py:111 evileg_core/evileg_core/admin.py:141
 msgid "Set marked as MODERATED"
-msgstr ""
+msgstr "Als MODERIERT markiertes Set"
 
 #: evileg_core/evileg_core/apps.py:9
 msgid "EVILEG Core"
-msgstr ""
+msgstr "EVILEG Core"
 
 #: evileg_core/evileg_core/decorators.py:41
 msgid "Invalid reCAPTCHA. Please try again."
-msgstr ""
+msgstr "Ungültiges reCAPTCHA. Bitte versuche es erneut."
 
 #: evileg_core/evileg_core/filters.py:68 evileg_core/evileg_core/filters.py:95
 #: evileg_core/evileg_core/filters.py:122
 msgid "Filter title not set"
-msgstr ""
+msgstr "Filtertitel nicht festgelegt"
 
 #: evileg_core/evileg_core/filters.py:73 evileg_core/evileg_core/filters.py:100
 msgid "Not empty only"
-msgstr ""
+msgstr "Nicht nur leer"
 
 #: evileg_core/evileg_core/filters.py:74 evileg_core/evileg_core/filters.py:101
 msgid "Empty only"
-msgstr ""
+msgstr "Nur leer"
 
 #: evileg_core/evileg_core/filters.py:159
 #: evileg_core/evileg_core/filters.py:183 evileg_core/evileg_core/models.py:173
 msgid "Title"
-msgstr ""
+msgstr "Titel"
 
 #: evileg_core/evileg_core/filters.py:160
 #: evileg_core/evileg_core/filters.py:184
 msgid "Title (descending)"
-msgstr ""
+msgstr "Titel (absteigend)"
 
 #: evileg_core/evileg_core/filters.py:161
 #: evileg_core/evileg_core/filters.py:185
 msgid "Sort by title"
-msgstr ""
+msgstr "Sortierung nach Titel"
 
 #: evileg_core/evileg_core/filters.py:163 evileg_core/evileg_core/models.py:174
 #: evileg_core/evileg_core/templates/evileg_core/views.html:3
 msgid "Views"
-msgstr ""
+msgstr "Ansichten"
 
 #: evileg_core/evileg_core/filters.py:164
 msgid "Views (descending)"
-msgstr ""
+msgstr "Ansichten (absteigend)"
 
 #: evileg_core/evileg_core/filters.py:165
 msgid "Sort by views"
-msgstr ""
+msgstr "Nach Ansichten sortieren"
 
 #: evileg_core/evileg_core/filters.py:167 evileg_core/evileg_core/models.py:41
 msgid "Publication date"
-msgstr ""
+msgstr "Veröffentlichungsdatum"
 
 #: evileg_core/evileg_core/filters.py:168
 msgid "Publication date (descending)"
-msgstr ""
+msgstr "Erscheinungsdatum (absteigend)"
 
 #: evileg_core/evileg_core/filters.py:169
 msgid "Sort by publication date"
-msgstr ""
+msgstr "Sortieren nach Erscheinungsdatum"
 
 #: evileg_core/evileg_core/forms.py:32
 msgid "From date"
-msgstr ""
+msgstr "Ab Datum"
 
 #: evileg_core/evileg_core/forms.py:39
 msgid "To date"
-msgstr ""
+msgstr "Miteinander ausgehen"
 
 #: evileg_core/evileg_core/forms.py:86
 msgid "Select all"
-msgstr ""
+msgstr "Wählen Sie Alle"
 
 #: evileg_core/evileg_core/mixins.py:323
 msgid ""
 "Items must be selected in order to perform actions on them. No items have "
 "been changed."
 msgstr ""
+"Elemente müssen ausgewählt werden, um Aktionen an ihnen auszuführen. Es "
+"wurden keine Elemente geändert."
 
 #: evileg_core/evileg_core/mixins.py:342
 msgid "No action selected."
-msgstr ""
+msgstr "Keine Aktion ausgewählt."
 
 #: evileg_core/evileg_core/models.py:38
 msgid "Author"
-msgstr ""
+msgstr "Autor"
 
 #: evileg_core/evileg_core/models.py:39
 msgid "Content - HTML"
-msgstr ""
+msgstr "Inhalt - HTML"
 
 #: evileg_core/evileg_core/models.py:40
 msgid "Content - Markdown"
-msgstr ""
+msgstr "Inhalt - Markdown"
 
 #: evileg_core/evileg_core/models.py:42
 msgid "Last modification date"
-msgstr ""
+msgstr "Datum der letzten Änderung"
 
 #: evileg_core/evileg_core/models.py:110
 msgid "Not Moderated"
-msgstr ""
+msgstr "Nicht moderiert"
 
 #: evileg_core/evileg_core/models.py:111
 msgid "Post Moderated"
-msgstr ""
+msgstr "Beitrag moderiert"
 
 #: evileg_core/evileg_core/models.py:112
 msgid "Moderated"
-msgstr ""
+msgstr "Moderiert"
 
 #: evileg_core/evileg_core/models.py:113
 msgid "Volunteer - SPAM"
-msgstr ""
+msgstr "Freiwilliger - SPAM"
 
 #: evileg_core/evileg_core/models.py:114
 msgid "Volunteer - Moderated"
-msgstr ""
+msgstr "Ehrenamtlich - Moderiert"
 
 #: evileg_core/evileg_core/models.py:118
 msgid "Moderation"
-msgstr ""
+msgstr "Mäßigung"
 
 #: evileg_core/evileg_core/models.py:175
 #: evileg_core/evileg_core/templates/evileg_core/markdown_widget.html:18
 msgid "URL"
-msgstr ""
+msgstr "URL"
 
 #: evileg_core/evileg_core/models.py:263
 msgid "User"
-msgstr ""
+msgstr "Nutzer"
 
 #: evileg_core/evileg_core/templates/evileg_core/comments_link.html:3
 msgid "Comments"
-msgstr ""
+msgstr "Kommentare"
 
 #: evileg_core/evileg_core/templates/evileg_core/date_range_filter.html:2
 #, python-format
 msgid " By %(filter_title)s "
-msgstr ""
+msgstr " Von %(filter_title)s "
 
 #: evileg_core/evileg_core/templates/evileg_core/date_range_filter.html:30
 #: evileg_core/evileg_core/templates/evileg_core/search_form.html:5
 msgid "Search"
-msgstr ""
+msgstr "Suche"
 
 #: evileg_core/evileg_core/templates/evileg_core/date_range_filter.html:31
 msgid "Clear"
-msgstr ""
+msgstr "Klar"
 
 #: evileg_core/evileg_core/templates/evileg_core/edit.html:3
 msgid "Edit"
-msgstr ""
+msgstr "Bearbeiten"
 
 #: evileg_core/evileg_core/templates/evileg_core/markdown_widget.html:9
 msgid "Add Link"
-msgstr ""
+msgstr "Link hinzufügen"
 
 #: evileg_core/evileg_core/templates/evileg_core/markdown_widget.html:14
 msgid "Text"
-msgstr ""
+msgstr "Text"
 
 #: evileg_core/evileg_core/templates/evileg_core/markdown_widget.html:23
 #: evileg_core/evileg_core/templates/evileg_core/markdown_widget.html:80
 msgid "Close"
-msgstr ""
+msgstr "Nah dran"
 
 #: evileg_core/evileg_core/templates/evileg_core/markdown_widget.html:24
 #: evileg_core/evileg_core/templates/evileg_core/markdown_widget.html:81
 msgid "Insert"
-msgstr ""
+msgstr "Einfügung"
 
 #: evileg_core/evileg_core/templates/evileg_core/markdown_widget.html:34
 #: evileg_core/evileg_core/templates/evileg_core/markdown_widget.html:105
 msgid "Insert code"
-msgstr ""
+msgstr "Code eingeben"
 
 #: evileg_core/evileg_core/templates/evileg_core/markdown_widget.html:39
 msgid "Select language"
-msgstr ""
+msgstr "Sprache auswählen"
 
 #: evileg_core/evileg_core/templates/evileg_core/markdown_widget.html:42
 msgid "Other language"
-msgstr ""
+msgstr "Andere Sprache"
 
 #: evileg_core/evileg_core/templates/evileg_core/markdown_widget.html:69
 msgid "Insert your code"
-msgstr ""
+msgstr "Geben Sie Ihren Code ein"
 
 #: evileg_core/evileg_core/templates/evileg_core/markdown_widget.html:92
 msgid "Preview"
-msgstr ""
+msgstr "Vorschau"
 
 #: evileg_core/evileg_core/templates/evileg_core/markdown_widget.html:98
 msgid "Content separator"
-msgstr ""
+msgstr "Inhaltstrennzeichen"
 
 #: evileg_core/evileg_core/templates/evileg_core/markdown_widget.html:100
 msgid "Upload File"
-msgstr ""
+msgstr "Datei hochladen"
 
 #: evileg_core/evileg_core/templates/evileg_core/markdown_widget.html:103
 msgid "Upload Image"
-msgstr ""
+msgstr "Bild hochladen"
 
 #: evileg_core/evileg_core/templates/evileg_core/markdown_widget.html:106
 msgid "Add link"
-msgstr ""
+msgstr "Link hinzufügen"
 
 #: evileg_core/evileg_core/templates/evileg_core/markdown_widget.html:109
 msgid "Markdown syntax"
-msgstr ""
+msgstr "Markdown-Syntax"
 
 #: evileg_core/evileg_core/templates/evileg_core/modal_menu.html:4
 msgid "Navigation"
-msgstr ""
+msgstr "Navigation"
 
 #: evileg_core/evileg_core/templates/evileg_core/partials/object_list_preview.html:7
 #: evileg_core/evileg_core/templates/evileg_core/partials/object_list_preview_columns.html:12
 msgid "Nothing found"
-msgstr ""
+msgstr "Nichts gefunden"
 
 #: evileg_core/evileg_core/templates/evileg_core/search_form.html:11
 msgid "Advanced search"
-msgstr ""
+msgstr "Erweiterte Suche"
 
 #: evileg_core/evileg_core/templates/evileg_core/share_link.html:3
 msgid "Share link"
-msgstr ""
+msgstr "Einen Link teilen"
 
 #: evileg_core/evileg_core/templates/evileg_core/share_on_social_modal.html:3
 msgid "Share on social networks"
-msgstr ""
+msgstr "In sozialen Netzwerken teilen"
 
 #: evileg_core/evileg_core/templates/evileg_core/share_on_social_modal.html:5
 msgid "Share link in VKontakte"
-msgstr ""
+msgstr "Link in VKontakte teilen"
 
 #: evileg_core/evileg_core/templates/evileg_core/share_on_social_modal.html:14
 msgid "Share link in Facebook"
-msgstr ""
+msgstr "Link in Facebook teilen"
 
 #: evileg_core/evileg_core/templates/evileg_core/share_on_social_modal.html:23
 msgid "Share link in Twitter"
-msgstr ""
+msgstr "Link auf Twitter teilen"
 
 #: evileg_core/evileg_core/templates/evileg_core/share_on_social_modal.html:32
 msgid "Share link in LinkedIn"
-msgstr ""
+msgstr "Link auf LinkedIn teilen"
 
 #: evileg_core/evileg_core/templates/evileg_core/tabbar.html:5
 msgid "More"
-msgstr ""
+msgstr "Mehr"
 
 #: evileg_core/evileg_core/templatetags/evileg_core.py:25
 msgid "Classic"
-msgstr ""
+msgstr "Klassisch"
 
 #: evileg_core/evileg_core/templatetags/evileg_core.py:26
 msgid "Darcula"
-msgstr ""
+msgstr "Darcula"
