@@ -139,11 +139,11 @@ class EFilterView(EPaginatedView):
 
     def _get_context_data(self, **kwargs):
         data = self.request.GET if self.request.method == 'GET' else self.request.POST
-        f = self.model_filter(data, queryset=self.get_queryset(**kwargs))
+        self._f = self.model_filter(data, queryset=self.get_queryset(**kwargs))
         return {
-            'object_list': self.get_paginated_page(f.qs, self.paginated_by),
+            'object_list': self.get_paginated_page(self._f.qs, self.paginated_by),
             'last_question': self.get_pagination_url(),
-            'search_filter': f,
+            'search_filter': self._f,
             'columns_view': self.columns_view
         }
 
