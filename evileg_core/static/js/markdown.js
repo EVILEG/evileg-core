@@ -106,6 +106,7 @@ class EMarkdownEditor {
                     editor.fullScreen();
                 },
                 "Esc": function (cm) {
+                    jQuery('body').removeClass('overflow-hidden');
                     editor.widget.removeClass('markdown-fullscreen');
                     editor.fullscreen = false;
                     editor.fullScreenButton.find('span').removeClass('mdi-fullscreen-exit');
@@ -121,11 +122,13 @@ class EMarkdownEditor {
 
     fullScreen() {
         if (this.fullscreen) {
+            jQuery('body').removeClass('overflow-hidden');
             this.widget.removeClass('markdown-fullscreen');
             this.fullscreen = false;
             this.fullScreenButton.find('span').removeClass('mdi-fullscreen-exit');
             this.fullScreenButton.find('span').addClass('mdi-fullscreen');
         } else {
+            jQuery('body').addClass('overflow-hidden');
             this.widget.addClass('markdown-fullscreen');
             this.fullscreen = true;
             this.fullScreenButton.find('span').removeClass('mdi-fullscreen');

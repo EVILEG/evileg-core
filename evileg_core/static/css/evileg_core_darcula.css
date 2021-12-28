@@ -12135,7 +12135,7 @@ pre > pre {
 .markdown-fullscreen > .tab-content > .tab-pane > div {
   height: calc(100vh - 41px) !important; }
 
-.markdown-fullscreen > .tab-content > .tab-pane > div {
+.markdown-fullscreen > .tab-content > .tab-pane > .tab-preview {
   overflow-y: auto; }
 
 .btn-menu {
