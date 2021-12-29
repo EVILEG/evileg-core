@@ -202,7 +202,9 @@ class EMarkdownWorker:
                             'markdown.extensions.tables',
                             'markdown.extensions.fenced_code',
                             'markdown.extensions.nl2br',
-                            'evileg_core.extensions.video'],
+                            'evileg_core.extensions.video',
+                            'superscript',
+                            'subscript'],
                 output_format='html5'
             )
 
