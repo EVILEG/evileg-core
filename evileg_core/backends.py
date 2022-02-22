@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from django.contrib.auth import get_user_model
+from django.contrib.auth.backends import ModelBackend
 from django.core.exceptions import ValidationError
 from django.core.validators import validate_email
 from django.db.models import Q
@@ -8,7 +9,7 @@ from django.db.models import Q
 from .shortcuts import get_object_or_none
 
 
-class EEmailOrUsernameModelBackend:
+class EEmailOrUsernameModelBackend(ModelBackend):
     """
     Authentication backend for using email or username for authentication on the site.
     """
