@@ -63,6 +63,12 @@ class EAbstractPost(models.Model):
             return p.get_title()
         raise NotImplementedError("Return title or None")
 
+    def get_content(self):
+        return self.content
+
+    def get_content_markdown(self):
+        return self.content_markdown
+
     def editable(self):
         return (timezone.now() - self.pub_date) < timezone.timedelta(days=1)
 
