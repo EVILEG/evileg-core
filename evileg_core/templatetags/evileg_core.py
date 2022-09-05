@@ -16,7 +16,7 @@ from ..json_ld import generate_site_navigation_element_json_ld
 register = template.Library()
 
 
-STATIC_CONTENT_VERSION = 67
+STATIC_CONTENT_VERSION = 68
 
 CLASSIC = 1
 DARCULA = 2

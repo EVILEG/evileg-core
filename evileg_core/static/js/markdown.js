@@ -74,9 +74,6 @@ class EMarkdownEditor {
         this.uploadFileLink = uploadFileLink;
         this.addFileBtn = jQuery('#' + widgetId + '_add_file_btn');
         this.addFileBtn.bind('click', {widgetId: widgetId}, EMarkdownEditor.showUploadFileDialog);
-        // Add special symbols
-        this.addCutBtn = jQuery('#' + widgetId + '_add_cut_btn');
-        this.addCutBtn.bind('click', {widgetId: widgetId}, EMarkdownEditor.insertCut);
 
         const underlinedWidgetId = replaceAll(widgetId, '-', '_');
 
@@ -139,15 +136,6 @@ class EMarkdownEditor {
     static onSelectCode(e) {
         let editor = EMarkdownEditor.get(e.data.widgetId);
         editor.mirrorEditor.setOption("mode", LANGUAGES[editor.selectCode.val()])
-    }
-
-    static insertCut(e) {
-        e.preventDefault();
-        let editor = EMarkdownEditor.get(e.data.widgetId);
-        if (editor) {
-            editor.markdownMirrorEditor.replaceSelection('\n___\n');
-        }
-        return false;
     }
 
     static showUploadDialog(e) {
