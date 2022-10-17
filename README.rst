@@ -16,8 +16,6 @@ You can donate to us with following ways:
 
 - `PayPal.Me <https://www.paypal.me/legotckoi>`_
 - `Yandex.Money <https://money.yandex.ru/to/410011306906193>`_
-- `Patreon <https://www.patreon.com/evileg>`_
-- Bitcoin: 13aqaPG8NZhX3By3he9LtrnHsmvRgsbt95
 
 =============
 Documentation

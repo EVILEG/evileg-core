@@ -8,7 +8,6 @@
     getting_started
     admin
     backends
-    cache
     decorators
     fields
     filters
