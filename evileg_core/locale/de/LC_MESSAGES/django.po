@@ -7,19 +7,19 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-26 19:56+0100\n"
+"POT-Creation-Date: 2022-11-18 21:17+0600\n"
 "PO-Revision-Date: 2021-12-26 21:32+0100\n"
+"Last-Translator: Evgenii Legotckoi <evileg@evileg.com>\n"
+"Language-Team: \n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"Last-Translator: Evgenii Legotckoi <evileg@evileg.com>\n"
-"Language-Team: \n"
 "X-Generator: Poedit 2.3\n"
 
 #: evileg_core/evileg_core/admin.py:63 evileg_core/evileg_core/admin.py:123
-#: evileg_core/evileg_core/models.py:109
+#: evileg_core/evileg_core/models.py:115
 msgid "SPAM"
 msgstr "SPAM"
 
@@ -73,7 +73,7 @@ msgid "Empty only"
 msgstr "Nur leer"
 
 #: evileg_core/evileg_core/filters.py:159
-#: evileg_core/evileg_core/filters.py:183 evileg_core/evileg_core/models.py:173
+#: evileg_core/evileg_core/filters.py:183 evileg_core/evileg_core/models.py:179
 msgid "Title"
 msgstr "Titel"
 
@@ -87,7 +87,7 @@ msgstr "Titel (absteigend)"
 msgid "Sort by title"
 msgstr "Sortierung nach Titel"
 
-#: evileg_core/evileg_core/filters.py:163 evileg_core/evileg_core/models.py:174
+#: evileg_core/evileg_core/filters.py:163 evileg_core/evileg_core/models.py:180
 #: evileg_core/evileg_core/templates/evileg_core/views.html:3
 msgid "Views"
 msgstr "Ansichten"
@@ -152,36 +152,36 @@ msgstr "Inhalt - Markdown"
 msgid "Last modification date"
 msgstr "Datum der letzten Änderung"
 
-#: evileg_core/evileg_core/models.py:110
+#: evileg_core/evileg_core/models.py:116
 msgid "Not Moderated"
 msgstr "Nicht moderiert"
 
-#: evileg_core/evileg_core/models.py:111
+#: evileg_core/evileg_core/models.py:117
 msgid "Post Moderated"
 msgstr "Beitrag moderiert"
 
-#: evileg_core/evileg_core/models.py:112
+#: evileg_core/evileg_core/models.py:118
 msgid "Moderated"
 msgstr "Moderiert"
 
-#: evileg_core/evileg_core/models.py:113
+#: evileg_core/evileg_core/models.py:119
 msgid "Volunteer - SPAM"
 msgstr "Freiwilliger - SPAM"
 
-#: evileg_core/evileg_core/models.py:114
+#: evileg_core/evileg_core/models.py:120
 msgid "Volunteer - Moderated"
 msgstr "Ehrenamtlich - Moderiert"
 
-#: evileg_core/evileg_core/models.py:118
+#: evileg_core/evileg_core/models.py:124
 msgid "Moderation"
 msgstr "Mäßigung"
 
-#: evileg_core/evileg_core/models.py:175
+#: evileg_core/evileg_core/models.py:181
 #: evileg_core/evileg_core/templates/evileg_core/markdown_widget.html:18
 msgid "URL"
 msgstr "URL"
 
-#: evileg_core/evileg_core/models.py:263
+#: evileg_core/evileg_core/models.py:266
 msgid "User"
 msgstr "Nutzer"
 
@@ -226,7 +226,7 @@ msgid "Insert"
 msgstr "Einfügung"
 
 #: evileg_core/evileg_core/templates/evileg_core/markdown_widget.html:34
-#: evileg_core/evileg_core/templates/evileg_core/markdown_widget.html:105
+#: evileg_core/evileg_core/templates/evileg_core/markdown_widget.html:104
 msgid "Insert code"
 msgstr "Code eingeben"
 
@@ -246,23 +246,19 @@ msgstr "Geben Sie Ihren Code ein"
 msgid "Preview"
 msgstr "Vorschau"
 
-#: evileg_core/evileg_core/templates/evileg_core/markdown_widget.html:98
-msgid "Content separator"
-msgstr "Inhaltstrennzeichen"
-
-#: evileg_core/evileg_core/templates/evileg_core/markdown_widget.html:100
+#: evileg_core/evileg_core/templates/evileg_core/markdown_widget.html:99
 msgid "Upload File"
 msgstr "Datei hochladen"
 
-#: evileg_core/evileg_core/templates/evileg_core/markdown_widget.html:103
+#: evileg_core/evileg_core/templates/evileg_core/markdown_widget.html:102
 msgid "Upload Image"
 msgstr "Bild hochladen"
 
-#: evileg_core/evileg_core/templates/evileg_core/markdown_widget.html:106
+#: evileg_core/evileg_core/templates/evileg_core/markdown_widget.html:105
 msgid "Add link"
 msgstr "Link hinzufügen"
 
-#: evileg_core/evileg_core/templates/evileg_core/markdown_widget.html:109
+#: evileg_core/evileg_core/templates/evileg_core/markdown_widget.html:108
 msgid "Markdown syntax"
 msgstr "Markdown-Syntax"
 
@@ -314,3 +310,6 @@ msgstr "Klassisch"
 #: evileg_core/evileg_core/templatetags/evileg_core.py:26
 msgid "Darcula"
 msgstr "Darcula"
+
+#~ msgid "Content separator"
+#~ msgstr "Inhaltstrennzeichen"
