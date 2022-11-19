@@ -115,16 +115,18 @@ _interface_templates_cache = {}
 
 
 @register.simple_tag(takes_context=True)
-def render_object(context, obj, template_name='TEMPLATE_FULL'):
+def render_object(context, obj, template_name='TEMPLATE_FULL', **kwargs):
     if obj and hasattr(obj, template_name):
         template_name_attr = getattr(obj, template_name)
         if template_name_attr not in _interface_templates_cache:
             _interface_templates_cache[template_name_attr] = template.loader.get_template(template_name_attr)
-        return _interface_templates_cache[template_name_attr].render({
+        ctx = {
             'object': obj,
             'user': context.get('user'),
             'request': context.get('request')
-        })
+        }
+        ctx.update(**kwargs)
+        return _interface_templates_cache[template_name_attr].render(ctx)
     return ''
 
 
