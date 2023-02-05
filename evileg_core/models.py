@@ -272,7 +272,9 @@ class EAbstractActivity(models.Model):
     objects = EActivityManager()
 
     def __str__(self):
-        return self.content_object.__str__()[:150]
+        if hasattr(self.content_type.model_class(), '_base_manager'):
+            return self.content_object.__str__()[:150]
+        return ''
 
     def get_self(self):
         """
