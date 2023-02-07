@@ -21,8 +21,6 @@ class EMarkdownField(models.TextField):
     """
 
     def set_markdown(self, instance=None, update_fields=None, **kwargs):
-        if hasattr(instance, 'views') and update_fields and 'views' in update_fields:
-            return
         value = getattr(instance, self.attname)
         dofollow = False
         if hasattr(instance, 'dofollow'):

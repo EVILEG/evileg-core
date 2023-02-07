@@ -173,11 +173,9 @@ class EAbstractArticle(EAbstractPost):
     Class for articles or similar content
 
     :param title: Title of your article
-    :param views: you can want to count all views of article
     """
 
     title = models.CharField(_('Title'), max_length=200)
-    views = models.IntegerField(_('Views'), default=0)
     slug = models.SlugField(_('URL'), max_length=50, blank=True)
 
     lookup_fields = EAbstractPost.lookup_fields + ('title',)

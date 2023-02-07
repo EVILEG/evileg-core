@@ -167,7 +167,6 @@ class EArticleAdmin(EPostAdmin):
     Base class for representation table in Django administration panel.
     This class is designed for classes which inherits from evileg_core.models.EAbstractArticle
     """
-    list_display = EPostAdmin.list_display + ('views',)
     search_fields = EPostAdmin.search_fields + ('title',)
     fields = ['user', 'title', 'content_markdown', 'slug', 'pub_date', 'lastmod']
 

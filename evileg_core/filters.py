@@ -159,10 +159,6 @@ class EArticleFilter(EFilterBase):
         ('title', _('Title')),
         ('-title', _('Title (descending)')),
     ), label=_('Sort by title'))
-    ordering_by_views = filters.OrderingFilter(choices=(
-        ('-views', _('Views')),
-        ('views', _('Views (descending)'))
-    ), label=_('Sort by views'))
     ordering_by_pub_date = filters.OrderingFilter(choices=(
         ('pub_date', _('Publication date')),
         ('-pub_date', _('Publication date (descending)')),
