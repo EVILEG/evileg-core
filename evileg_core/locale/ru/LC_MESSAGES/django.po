@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ESNF-C\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-18 21:17+0600\n"
-"PO-Revision-Date: 2021-12-26 21:25+0100\n"
+"POT-Creation-Date: 2023-02-09 02:40+0600\n"
+"PO-Revision-Date: 2023-02-08 21:43+0100\n"
 "Last-Translator: Evgenii Legotckoi <evileg@evileg.com>\n"
 "Language-Team: EVILEG Team <info@evileg.com>\n"
 "Language: ru\n"
@@ -74,42 +74,29 @@ msgid "Empty only"
 msgstr "Только пустой"
 
 #: evileg_core/evileg_core/filters.py:159
-#: evileg_core/evileg_core/filters.py:183 evileg_core/evileg_core/models.py:179
+#: evileg_core/evileg_core/filters.py:179 evileg_core/evileg_core/models.py:178
 msgid "Title"
 msgstr "Заголовок"
 
 #: evileg_core/evileg_core/filters.py:160
-#: evileg_core/evileg_core/filters.py:184
+#: evileg_core/evileg_core/filters.py:180
 msgid "Title (descending)"
 msgstr "Заголовок (по убыванию)"
 
 #: evileg_core/evileg_core/filters.py:161
-#: evileg_core/evileg_core/filters.py:185
+#: evileg_core/evileg_core/filters.py:181
 msgid "Sort by title"
 msgstr "Сортировать по заголовку"
 
-#: evileg_core/evileg_core/filters.py:163 evileg_core/evileg_core/models.py:180
-#: evileg_core/evileg_core/templates/evileg_core/views.html:3
-msgid "Views"
-msgstr "Просмотры"
-
-#: evileg_core/evileg_core/filters.py:164
-msgid "Views (descending)"
-msgstr "Просмотры (по убыванию)"
-
-#: evileg_core/evileg_core/filters.py:165
-msgid "Sort by views"
-msgstr "Сортировать по просмотрам"
-
-#: evileg_core/evileg_core/filters.py:167 evileg_core/evileg_core/models.py:41
+#: evileg_core/evileg_core/filters.py:163 evileg_core/evileg_core/models.py:41
 msgid "Publication date"
 msgstr "Дата публикации"
 
-#: evileg_core/evileg_core/filters.py:168
+#: evileg_core/evileg_core/filters.py:164
 msgid "Publication date (descending)"
 msgstr "Дата публикации (по убыванию)"
 
-#: evileg_core/evileg_core/filters.py:169
+#: evileg_core/evileg_core/filters.py:165
 msgid "Sort by publication date"
 msgstr "Сортировать по дате публикации"
 
@@ -125,7 +112,7 @@ msgstr "До даты"
 msgid "Select all"
 msgstr "Выбрать все"
 
-#: evileg_core/evileg_core/mixins.py:323
+#: evileg_core/evileg_core/mixins.py:312
 msgid ""
 "Items must be selected in order to perform actions on them. No items have "
 "been changed."
@@ -133,7 +120,7 @@ msgstr ""
 "Чтобы произвести действия над объектами, необходимо их выбрать. Объекты не "
 "были изменены."
 
-#: evileg_core/evileg_core/mixins.py:342
+#: evileg_core/evileg_core/mixins.py:331
 msgid "No action selected."
 msgstr "Действие не выбрано."
 
@@ -177,12 +164,12 @@ msgstr "Волонтёр - Модерировано"
 msgid "Moderation"
 msgstr "Модерация"
 
-#: evileg_core/evileg_core/models.py:181
+#: evileg_core/evileg_core/models.py:179
 #: evileg_core/evileg_core/templates/evileg_core/markdown_widget.html:18
 msgid "URL"
 msgstr "URL"
 
-#: evileg_core/evileg_core/models.py:266
+#: evileg_core/evileg_core/models.py:264
 msgid "User"
 msgstr "Пользователь"
 
@@ -311,6 +298,3 @@ msgstr "Классическая"
 #: evileg_core/evileg_core/templatetags/evileg_core.py:26
 msgid "Darcula"
 msgstr "Darcula"
-
-#~ msgid "Content separator"
-#~ msgstr "Разделитель контента"

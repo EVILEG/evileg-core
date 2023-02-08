@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-18 21:17+0600\n"
-"PO-Revision-Date: 2021-12-26 21:32+0100\n"
+"POT-Creation-Date: 2023-02-09 02:40+0600\n"
+"PO-Revision-Date: 2023-02-08 21:43+0100\n"
 "Last-Translator: Evgenii Legotckoi <evileg@evileg.com>\n"
 "Language-Team: \n"
 "Language: de\n"
@@ -73,42 +73,29 @@ msgid "Empty only"
 msgstr "Nur leer"
 
 #: evileg_core/evileg_core/filters.py:159
-#: evileg_core/evileg_core/filters.py:183 evileg_core/evileg_core/models.py:179
+#: evileg_core/evileg_core/filters.py:179 evileg_core/evileg_core/models.py:178
 msgid "Title"
 msgstr "Titel"
 
 #: evileg_core/evileg_core/filters.py:160
-#: evileg_core/evileg_core/filters.py:184
+#: evileg_core/evileg_core/filters.py:180
 msgid "Title (descending)"
 msgstr "Titel (absteigend)"
 
 #: evileg_core/evileg_core/filters.py:161
-#: evileg_core/evileg_core/filters.py:185
+#: evileg_core/evileg_core/filters.py:181
 msgid "Sort by title"
 msgstr "Sortierung nach Titel"
 
-#: evileg_core/evileg_core/filters.py:163 evileg_core/evileg_core/models.py:180
-#: evileg_core/evileg_core/templates/evileg_core/views.html:3
-msgid "Views"
-msgstr "Ansichten"
-
-#: evileg_core/evileg_core/filters.py:164
-msgid "Views (descending)"
-msgstr "Ansichten (absteigend)"
-
-#: evileg_core/evileg_core/filters.py:165
-msgid "Sort by views"
-msgstr "Nach Ansichten sortieren"
-
-#: evileg_core/evileg_core/filters.py:167 evileg_core/evileg_core/models.py:41
+#: evileg_core/evileg_core/filters.py:163 evileg_core/evileg_core/models.py:41
 msgid "Publication date"
 msgstr "Veröffentlichungsdatum"
 
-#: evileg_core/evileg_core/filters.py:168
+#: evileg_core/evileg_core/filters.py:164
 msgid "Publication date (descending)"
 msgstr "Erscheinungsdatum (absteigend)"
 
-#: evileg_core/evileg_core/filters.py:169
+#: evileg_core/evileg_core/filters.py:165
 msgid "Sort by publication date"
 msgstr "Sortieren nach Erscheinungsdatum"
 
@@ -124,7 +111,7 @@ msgstr "Miteinander ausgehen"
 msgid "Select all"
 msgstr "Wählen Sie Alle"
 
-#: evileg_core/evileg_core/mixins.py:323
+#: evileg_core/evileg_core/mixins.py:312
 msgid ""
 "Items must be selected in order to perform actions on them. No items have "
 "been changed."
@@ -132,7 +119,7 @@ msgstr ""
 "Elemente müssen ausgewählt werden, um Aktionen an ihnen auszuführen. Es "
 "wurden keine Elemente geändert."
 
-#: evileg_core/evileg_core/mixins.py:342
+#: evileg_core/evileg_core/mixins.py:331
 msgid "No action selected."
 msgstr "Keine Aktion ausgewählt."
 
@@ -176,12 +163,12 @@ msgstr "Ehrenamtlich - Moderiert"
 msgid "Moderation"
 msgstr "Mäßigung"
 
-#: evileg_core/evileg_core/models.py:181
+#: evileg_core/evileg_core/models.py:179
 #: evileg_core/evileg_core/templates/evileg_core/markdown_widget.html:18
 msgid "URL"
 msgstr "URL"
 
-#: evileg_core/evileg_core/models.py:266
+#: evileg_core/evileg_core/models.py:264
 msgid "User"
 msgstr "Nutzer"
 
@@ -310,6 +297,3 @@ msgstr "Klassisch"
 #: evileg_core/evileg_core/templatetags/evileg_core.py:26
 msgid "Darcula"
 msgstr "Darcula"
-
-#~ msgid "Content separator"
-#~ msgstr "Inhaltstrennzeichen"
