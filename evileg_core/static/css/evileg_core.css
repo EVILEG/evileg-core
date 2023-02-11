@@ -11609,22 +11609,8 @@ blockquote > p {
   max-height: 200px;
   height: auto; }
 
-.e-text > p, .e-text > div, .e-text > ul, .e-text > blockquote {
-  margin-top: 0;
-  margin-bottom: 1rem;
-  font-size: .875rem;
-  font-weight: 400; }
-
-.e-text {
-  margin: 0;
-  font-size: .875rem;
-  font-weight: 400; }
-
 .e-text-widget {
   clear: both; }
-
-.e-text > p:last-child {
-  margin-bottom: 0 !important; }
 
 .form-row {
   overflow: unset; }

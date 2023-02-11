@@ -6,6 +6,6 @@
         {% if object.get_title is not None %}
             <p class="mb-1"><a href="{{ object.get_absolute_url }}">{{ object.get_title }}</a></p>
         {% endif %}
-        <div class="e-text">{{ object.content|safe }}</div>
+        {{ object.content|safe }}
     </div>
 </div>
