@@ -150,7 +150,12 @@ class EInUserProfileMixin:
     user_profile = None
 
     def dispatch(self, request, *args, **kwargs):
-        self.user_profile = get_object_or_404(get_user_model(), username=kwargs['user'], is_active=True)
+        username = kwargs.get('user', None)
+        user_id = kwargs.get('user_id', None)
+        if user_id:
+            self.user_profile = get_object_or_404(get_user_model(), pk=user_id, is_active=True)
+        elif username:
+            self.user_profile = get_object_or_404(get_user_model(), username=username, is_active=True)
         return super().dispatch(request, *args, **kwargs)
 
     def get_context_data(self, **kwargs):
