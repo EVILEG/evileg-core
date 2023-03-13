@@ -11466,31 +11466,31 @@ h6 {
   .snackbar {
     min-width: 280px; } }
 
-.avatar-0, .avatar-16 {
+.avatar-16 {
   width: 16px;
   height: 16px; }
 
-.avatar-1, .avatar-24 {
+.avatar-24 {
   width: 24px;
   height: 24px; }
 
-.avatar-2, .avatar-32 {
+.avatar-32 {
   width: 32px;
   height: 32px; }
 
-.avatar-3, .avatar-40 {
+.avatar-40 {
   width: 40px;
   height: 40px; }
 
-.avatar-4, .avatar-48 {
+.avatar-48 {
   width: 48px;
   height: 48px; }
 
-.avatar-5, .avatar-56 {
+.avatar-56 {
   width: 56px;
   height: 56px; }
 
-.avatar-6, .avatar-64 {
+.avatar-64 {
   width: 64px;
   height: 64px; }
 
@@ -11514,13 +11514,13 @@ h6 {
   position: absolute;
   left: 1px; }
 
-.online-2 {
+.online-32 {
   top: 18px; }
 
-.online-3 {
+.online-40 {
   top: 26px; }
 
-.online-4 {
+.online-48 {
   top: 34px; }
 
 .card-avatar {
@@ -12047,22 +12047,22 @@ pre > pre {
   font-weight: bold;
   font-size: 50%; }
 
-.avatar-initials-size-1 {
+.avatar-initials-size-24 {
   font-size: 80%; }
 
-.avatar-initials-size-2 {
+.avatar-initials-size-32 {
   font-size: 100%; }
 
-.avatar-initials-size-3 {
+.avatar-initials-size-40 {
   font-size: 120%; }
 
-.avatar-initials-size-4 {
+.avatar-initials-size-48 {
   font-size: 140%; }
 
-.avatar-initials-size-5 {
+.avatar-initials-size-56 {
   font-size: 180%; }
 
-.avatar-initials-size-6 {
+.avatar-initials-size-64 {
   font-size: 230%; }
 
 .avatar-initials-size-120 {
