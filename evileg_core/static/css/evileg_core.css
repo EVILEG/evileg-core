@@ -23,9 +23,9 @@
   --white: #fff;
   --gray: #6c757d;
   --gray-dark: #343a40;
-  --primary: #41cd52;
+  --primary: #28a745;
   --secondary: #6c757d;
-  --success: #41cd52;
+  --success: #28a745;
   --info: #03a9f4;
   --warning: #ff5722;
   --danger: #f44336;
@@ -142,12 +142,12 @@ sup {
   top: -.5em; }
 
 a {
-  color: #41cd52;
+  color: #28a745;
   text-decoration: none;
   background-color: transparent;
   -webkit-text-decoration-skip: objects; }
   a:hover {
-    color: #289936;
+    color: #19692c;
     text-decoration: underline; }
 
 a:not([href]):not([tabindex]) {
@@ -1083,13 +1083,13 @@ pre {
 .table-primary,
 .table-primary > th,
 .table-primary > td {
-  background-color: #caf1cf; }
+  background-color: #c3e6cb; }
 
 .table-hover .table-primary:hover {
-  background-color: #b6ecbd; }
+  background-color: #b1dfbb; }
   .table-hover .table-primary:hover > td,
   .table-hover .table-primary:hover > th {
-    background-color: #b6ecbd; }
+    background-color: #b1dfbb; }
 
 .table-secondary,
 .table-secondary > th,
@@ -1105,13 +1105,13 @@ pre {
 .table-success,
 .table-success > th,
 .table-success > td {
-  background-color: #caf1cf; }
+  background-color: #c3e6cb; }
 
 .table-hover .table-success:hover {
-  background-color: #b6ecbd; }
+  background-color: #b1dfbb; }
   .table-hover .table-success:hover > td,
   .table-hover .table-success:hover > th {
-    background-color: #b6ecbd; }
+    background-color: #b1dfbb; }
 
 .table-info,
 .table-info > th,
@@ -1270,9 +1270,9 @@ pre {
   .form-control:focus, .custom-file-control:focus {
     color: #495057;
     background-color: transparent;
-    border-color: #a6e8ae;
+    border-color: #71dd8a;
     outline: 0;
-    box-shadow: 0 0 0 0.2rem rgba(65, 205, 82, 0.25); }
+    box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25); }
   .form-control::placeholder, .custom-file-control::placeholder {
     color: #6c757d;
     opacity: 1; }
@@ -1439,7 +1439,7 @@ select.form-control-lg:not([size]):not([multiple]), .input-group-lg > select.for
   width: 100%;
   margin-top: 0.25rem;
   font-size: 80%;
-  color: #41cd52; }
+  color: #28a745; }
 
 .valid-tooltip {
   position: absolute;
@@ -1452,18 +1452,18 @@ select.form-control-lg:not([size]):not([multiple]), .input-group-lg > select.for
   font-size: .875rem;
   line-height: 1;
   color: #fff;
-  background-color: rgba(65, 205, 82, 0.8);
+  background-color: rgba(40, 167, 69, 0.8);
   border-radius: .2rem; }
 
 .was-validated .form-control:valid, .was-validated .custom-file-control:valid, .form-control.is-valid, .is-valid.custom-file-control, .was-validated
 .custom-select:valid,
 .custom-select.is-valid {
-  border-color: #41cd52; }
+  border-color: #28a745; }
   .was-validated .form-control:valid:focus, .was-validated .custom-file-control:valid:focus, .form-control.is-valid:focus, .is-valid.custom-file-control:focus, .was-validated
   .custom-select:valid:focus,
   .custom-select.is-valid:focus {
-    border-color: #41cd52;
-    box-shadow: 0 0 0 0.2rem rgba(65, 205, 82, 0.25); }
+    border-color: #28a745;
+    box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25); }
   .was-validated .form-control:valid ~ .valid-feedback, .was-validated .custom-file-control:valid ~ .valid-feedback,
   .was-validated .form-control:valid ~ .valid-tooltip,
   .was-validated .custom-file-control:valid ~ .valid-tooltip, .form-control.is-valid ~ .valid-feedback, .is-valid.custom-file-control ~ .valid-feedback,
@@ -1476,7 +1476,7 @@ select.form-control-lg:not([size]):not([multiple]), .input-group-lg > select.for
     display: block; }
 
 .was-validated .form-check-input:valid ~ .form-check-label, .form-check-input.is-valid ~ .form-check-label {
-  color: #41cd52; }
+  color: #28a745; }
 
 .was-validated .form-check-input:valid ~ .valid-feedback,
 .was-validated .form-check-input:valid ~ .valid-tooltip, .form-check-input.is-valid ~ .valid-feedback,
@@ -1484,9 +1484,9 @@ select.form-control-lg:not([size]):not([multiple]), .input-group-lg > select.for
   display: block; }
 
 .was-validated .custom-control-input:valid ~ .custom-control-label, .custom-control-input.is-valid ~ .custom-control-label {
-  color: #41cd52; }
+  color: #28a745; }
   .was-validated .custom-control-input:valid ~ .custom-control-label::before, .custom-control-input.is-valid ~ .custom-control-label::before {
-    background-color: #a6e8ae; }
+    background-color: #71dd8a; }
 
 .was-validated .custom-control-input:valid ~ .valid-feedback,
 .was-validated .custom-control-input:valid ~ .valid-tooltip, .custom-control-input.is-valid ~ .valid-feedback,
@@ -1494,13 +1494,13 @@ select.form-control-lg:not([size]):not([multiple]), .input-group-lg > select.for
   display: block; }
 
 .was-validated .custom-control-input:valid:checked ~ .custom-control-label::before, .custom-control-input.is-valid:checked ~ .custom-control-label::before {
-  background-color: #69d877; }
+  background-color: #34ce57; }
 
 .was-validated .custom-control-input:valid:focus ~ .custom-control-label::before, .custom-control-input.is-valid:focus ~ .custom-control-label::before {
-  box-shadow: 0 0 0 1px white, 0 0 0 0.2rem rgba(65, 205, 82, 0.25); }
+  box-shadow: 0 0 0 1px white, 0 0 0 0.2rem rgba(40, 167, 69, 0.25); }
 
 .was-validated .custom-file-input:valid ~ .custom-file-label, .custom-file-input.is-valid ~ .custom-file-label {
-  border-color: #41cd52; }
+  border-color: #28a745; }
   .was-validated .custom-file-input:valid ~ .custom-file-label::before, .custom-file-input.is-valid ~ .custom-file-label::before {
     border-color: inherit; }
 
@@ -1510,7 +1510,7 @@ select.form-control-lg:not([size]):not([multiple]), .input-group-lg > select.for
   display: block; }
 
 .was-validated .custom-file-input:valid:focus ~ .custom-file-label, .custom-file-input.is-valid:focus ~ .custom-file-label {
-  box-shadow: 0 0 0 0.2rem rgba(65, 205, 82, 0.25); }
+  box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25); }
 
 .invalid-feedback {
   display: none;
@@ -1666,26 +1666,26 @@ fieldset:disabled a.act-btn {
 
 .btn-primary {
   color: #fff;
-  background-color: #41cd52;
-  border-color: #41cd52; }
+  background-color: #28a745;
+  border-color: #28a745; }
   .btn-primary:hover {
     color: #fff;
-    background-color: #30b741;
-    border-color: #2ead3d; }
+    background-color: #218838;
+    border-color: #1e7e34; }
   .btn-primary:focus, .btn-primary.focus {
-    box-shadow: 0 0 0 0.2rem rgba(65, 205, 82, 0.5); }
+    box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.5); }
   .btn-primary.disabled, .btn-primary:disabled {
     color: #fff;
-    background-color: #41cd52;
-    border-color: #41cd52; }
+    background-color: #28a745;
+    border-color: #28a745; }
   .btn-primary:not(:disabled):not(.disabled):active, .btn-primary:not(:disabled):not(.disabled).active,
   .show > .btn-primary.dropdown-toggle {
     color: #fff;
-    background-color: #2ead3d;
-    border-color: #2ba33a; }
+    background-color: #1e7e34;
+    border-color: #1c7430; }
     .btn-primary:not(:disabled):not(.disabled):active:focus, .btn-primary:not(:disabled):not(.disabled).active:focus,
     .show > .btn-primary.dropdown-toggle:focus {
-      box-shadow: 0 0 0 0.2rem rgba(65, 205, 82, 0.5); }
+      box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.5); }
 
 .btn-secondary {
   color: #fff;
@@ -1712,26 +1712,26 @@ fieldset:disabled a.act-btn {
 
 .btn-success {
   color: #fff;
-  background-color: #41cd52;
-  border-color: #41cd52; }
+  background-color: #28a745;
+  border-color: #28a745; }
   .btn-success:hover {
     color: #fff;
-    background-color: #30b741;
-    border-color: #2ead3d; }
+    background-color: #218838;
+    border-color: #1e7e34; }
   .btn-success:focus, .btn-success.focus {
-    box-shadow: 0 0 0 0.2rem rgba(65, 205, 82, 0.5); }
+    box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.5); }
   .btn-success.disabled, .btn-success:disabled {
     color: #fff;
-    background-color: #41cd52;
-    border-color: #41cd52; }
+    background-color: #28a745;
+    border-color: #28a745; }
   .btn-success:not(:disabled):not(.disabled):active, .btn-success:not(:disabled):not(.disabled).active,
   .show > .btn-success.dropdown-toggle {
     color: #fff;
-    background-color: #2ead3d;
-    border-color: #2ba33a; }
+    background-color: #1e7e34;
+    border-color: #1c7430; }
     .btn-success:not(:disabled):not(.disabled):active:focus, .btn-success:not(:disabled):not(.disabled).active:focus,
     .show > .btn-success.dropdown-toggle:focus {
-      box-shadow: 0 0 0 0.2rem rgba(65, 205, 82, 0.5); }
+      box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.5); }
 
 .btn-info {
   color: #fff;
@@ -1851,27 +1851,27 @@ fieldset:disabled a.act-btn {
       box-shadow: 0 0 0 0.2rem rgba(34, 40, 64, 0.5); }
 
 .btn-outline-primary {
-  color: #41cd52;
+  color: #28a745;
   background-color: transparent;
   background-image: none;
-  border-color: #41cd52; }
+  border-color: #28a745; }
   .btn-outline-primary:hover {
     color: #fff;
-    background-color: #41cd52;
-    border-color: #41cd52; }
+    background-color: #28a745;
+    border-color: #28a745; }
   .btn-outline-primary:focus, .btn-outline-primary.focus {
-    box-shadow: 0 0 0 0.2rem rgba(65, 205, 82, 0.5); }
+    box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.5); }
   .btn-outline-primary.disabled, .btn-outline-primary:disabled {
-    color: #41cd52;
+    color: #28a745;
     background-color: transparent; }
   .btn-outline-primary:not(:disabled):not(.disabled):active, .btn-outline-primary:not(:disabled):not(.disabled).active,
   .show > .btn-outline-primary.dropdown-toggle {
     color: #fff;
-    background-color: #41cd52;
-    border-color: #41cd52; }
+    background-color: #28a745;
+    border-color: #28a745; }
     .btn-outline-primary:not(:disabled):not(.disabled):active:focus, .btn-outline-primary:not(:disabled):not(.disabled).active:focus,
     .show > .btn-outline-primary.dropdown-toggle:focus {
-      box-shadow: 0 0 0 0.2rem rgba(65, 205, 82, 0.5); }
+      box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.5); }
 
 .btn-outline-secondary {
   color: #6c757d;
@@ -1897,27 +1897,27 @@ fieldset:disabled a.act-btn {
       box-shadow: 0 0 0 0.2rem rgba(108, 117, 125, 0.5); }
 
 .btn-outline-success {
-  color: #41cd52;
+  color: #28a745;
   background-color: transparent;
   background-image: none;
-  border-color: #41cd52; }
+  border-color: #28a745; }
   .btn-outline-success:hover {
     color: #fff;
-    background-color: #41cd52;
-    border-color: #41cd52; }
+    background-color: #28a745;
+    border-color: #28a745; }
   .btn-outline-success:focus, .btn-outline-success.focus {
-    box-shadow: 0 0 0 0.2rem rgba(65, 205, 82, 0.5); }
+    box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.5); }
   .btn-outline-success.disabled, .btn-outline-success:disabled {
-    color: #41cd52;
+    color: #28a745;
     background-color: transparent; }
   .btn-outline-success:not(:disabled):not(.disabled):active, .btn-outline-success:not(:disabled):not(.disabled).active,
   .show > .btn-outline-success.dropdown-toggle {
     color: #fff;
-    background-color: #41cd52;
-    border-color: #41cd52; }
+    background-color: #28a745;
+    border-color: #28a745; }
     .btn-outline-success:not(:disabled):not(.disabled):active:focus, .btn-outline-success:not(:disabled):not(.disabled).active:focus,
     .show > .btn-outline-success.dropdown-toggle:focus {
-      box-shadow: 0 0 0 0.2rem rgba(65, 205, 82, 0.5); }
+      box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.5); }
 
 .btn-outline-info {
   color: #03a9f4;
@@ -2036,10 +2036,10 @@ fieldset:disabled a.act-btn {
 
 .btn-link {
   font-weight: 400;
-  color: #41cd52;
+  color: #28a745;
   background-color: transparent; }
   .btn-link:hover {
-    color: #289936;
+    color: #19692c;
     text-decoration: underline;
     background-color: transparent;
     border-color: transparent; }
@@ -2230,7 +2230,7 @@ tbody.collapse.show {
   .dropdown-item.active, .dropdown-item:active {
     color: #fff;
     text-decoration: none;
-    background-color: #41cd52; }
+    background-color: #28a745; }
   .dropdown-item.disabled, .dropdown-item:disabled {
     color: #6c757d;
     background-color: transparent; }
@@ -2538,12 +2538,12 @@ tbody.collapse.show {
   opacity: 0; }
   .custom-control-input:checked ~ .custom-control-label::before {
     color: #fff;
-    background-color: #41cd52; }
+    background-color: #28a745; }
   .custom-control-input:focus ~ .custom-control-label::before {
-    box-shadow: 0 0 0 1px white, 0 0 0 0.2rem rgba(65, 205, 82, 0.25); }
+    box-shadow: 0 0 0 1px white, 0 0 0 0.2rem rgba(40, 167, 69, 0.25); }
   .custom-control-input:active ~ .custom-control-label::before {
     color: #fff;
-    background-color: #cef2d3; }
+    background-color: #9be7ac; }
   .custom-control-input:disabled ~ .custom-control-label {
     color: #6c757d; }
     .custom-control-input:disabled ~ .custom-control-label::before {
@@ -2578,34 +2578,34 @@ tbody.collapse.show {
   border-radius: 0.125rem; }
 
 .custom-checkbox .custom-control-input:checked ~ .custom-control-label::before {
-  background-color: #41cd52; }
+  background-color: #28a745; }
 
 .custom-checkbox .custom-control-input:checked ~ .custom-control-label::after {
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3E%3Cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3E%3C/svg%3E"); }
 
 .custom-checkbox .custom-control-input:indeterminate ~ .custom-control-label::before {
-  background-color: #41cd52; }
+  background-color: #28a745; }
 
 .custom-checkbox .custom-control-input:indeterminate ~ .custom-control-label::after {
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 4'%3E%3Cpath stroke='%23fff' d='M0 2h4'/%3E%3C/svg%3E"); }
 
 .custom-checkbox .custom-control-input:disabled:checked ~ .custom-control-label::before {
-  background-color: rgba(65, 205, 82, 0.5); }
+  background-color: rgba(40, 167, 69, 0.5); }
 
 .custom-checkbox .custom-control-input:disabled:indeterminate ~ .custom-control-label::before {
-  background-color: rgba(65, 205, 82, 0.5); }
+  background-color: rgba(40, 167, 69, 0.5); }
 
 .custom-radio .custom-control-label::before {
   border-radius: 50%; }
 
 .custom-radio .custom-control-input:checked ~ .custom-control-label::before {
-  background-color: #41cd52; }
+  background-color: #28a745; }
 
 .custom-radio .custom-control-input:checked ~ .custom-control-label::after {
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3E%3Ccircle r='3' fill='%23fff'/%3E%3C/svg%3E"); }
 
 .custom-radio .custom-control-input:disabled:checked ~ .custom-control-label::before {
-  background-color: rgba(65, 205, 82, 0.5); }
+  background-color: rgba(40, 167, 69, 0.5); }
 
 .custom-select {
   display: inline-block;
@@ -2621,9 +2621,9 @@ tbody.collapse.show {
   border-radius: 0.125rem;
   appearance: none; }
   .custom-select:focus {
-    border-color: #a6e8ae;
+    border-color: #71dd8a;
     outline: 0;
-    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.075), 0 0 5px rgba(166, 232, 174, 0.5); }
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.075), 0 0 5px rgba(113, 221, 138, 0.5); }
     .custom-select:focus::-ms-value {
       color: #495057;
       background-color: transparent; }
@@ -2664,10 +2664,10 @@ tbody.collapse.show {
   margin: 0;
   opacity: 0; }
   .custom-file-input:focus ~ .custom-file-control {
-    border-color: #a6e8ae;
-    box-shadow: 0 0 0 0.2rem rgba(65, 205, 82, 0.25); }
+    border-color: #71dd8a;
+    box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25); }
     .custom-file-input:focus ~ .custom-file-control::before {
-      border-color: #a6e8ae; }
+      border-color: #71dd8a; }
   .custom-file-input:lang(en) ~ .custom-file-label::after {
     content: "Browse"; }
 
@@ -2745,7 +2745,7 @@ tbody.collapse.show {
 .nav-pills .nav-link.active,
 .nav-pills .show > .nav-link {
   color: #fff;
-  background-color: #41cd52; }
+  background-color: #28a745; }
 
 .nav-fill .nav-item {
   flex: 1 1 auto;
@@ -3257,18 +3257,18 @@ tbody.collapse.show {
   padding: 0.5rem 0.75rem;
   margin-left: -1px;
   line-height: 1.25;
-  color: #41cd52;
+  color: #28a745;
   background-color: #fff;
   border: 1px solid #dee2e6; }
   .page-link:hover {
-    color: #289936;
+    color: #19692c;
     text-decoration: none;
     background-color: #e9ecef;
     border-color: #dee2e6; }
   .page-link:focus {
     z-index: 2;
     outline: 0;
-    box-shadow: 0 0 0 0.2rem rgba(65, 205, 82, 0.25); }
+    box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25); }
   .page-link:not(:disabled):not(.disabled) {
     cursor: pointer; }
 
@@ -3284,8 +3284,8 @@ tbody.collapse.show {
 .page-item.active .page-link {
   z-index: 1;
   color: #fff;
-  background-color: #41cd52;
-  border-color: #41cd52; }
+  background-color: #28a745;
+  border-color: #28a745; }
 
 .page-item.disabled .page-link {
   color: #6c757d;
@@ -3344,11 +3344,11 @@ tbody.collapse.show {
 
 .badge-primary {
   color: #fff;
-  background-color: #41cd52; }
+  background-color: #28a745; }
   .badge-primary[href]:hover, .badge-primary[href]:focus {
     color: #fff;
     text-decoration: none;
-    background-color: #2ead3d; }
+    background-color: #1e7e34; }
 
 .badge-secondary {
   color: #fff;
@@ -3360,11 +3360,11 @@ tbody.collapse.show {
 
 .badge-success {
   color: #fff;
-  background-color: #41cd52; }
+  background-color: #28a745; }
   .badge-success[href]:hover, .badge-success[href]:focus {
     color: #fff;
     text-decoration: none;
-    background-color: #2ead3d; }
+    background-color: #1e7e34; }
 
 .badge-info {
   color: #fff;
@@ -3443,13 +3443,13 @@ tbody.collapse.show {
     color: inherit; }
 
 .alert-primary {
-  color: #226b2b;
-  background-color: #d9f5dc;
-  border-color: #caf1cf; }
+  color: #155724;
+  background-color: #d4edda;
+  border-color: #c3e6cb; }
   .alert-primary hr {
-    border-top-color: #b6ecbd; }
+    border-top-color: #b1dfbb; }
   .alert-primary .alert-link {
-    color: #16441b; }
+    color: #0b2e13; }
 
 .alert-secondary {
   color: #383d41;
@@ -3461,13 +3461,13 @@ tbody.collapse.show {
     color: #202326; }
 
 .alert-success {
-  color: #226b2b;
-  background-color: #d9f5dc;
-  border-color: #caf1cf; }
+  color: #155724;
+  background-color: #d4edda;
+  border-color: #c3e6cb; }
   .alert-success hr {
-    border-top-color: #b6ecbd; }
+    border-top-color: #b1dfbb; }
   .alert-success .alert-link {
-    color: #16441b; }
+    color: #0b2e13; }
 
 .alert-info {
   color: #02587f;
@@ -3534,7 +3534,7 @@ tbody.collapse.show {
   justify-content: center;
   color: #fff;
   text-align: center;
-  background-color: #41cd52;
+  background-color: #28a745;
   transition: width 0.6s ease; }
 
 .progress-bar-striped {
@@ -3592,8 +3592,8 @@ tbody.collapse.show {
   .list-group-item.active {
     z-index: 2;
     color: #fff;
-    background-color: #41cd52;
-    border-color: #41cd52; }
+    background-color: #28a745;
+    border-color: #28a745; }
 
 .list-group-flush .list-group-item {
   border-right: 0;
@@ -3607,15 +3607,15 @@ tbody.collapse.show {
   border-bottom: 0; }
 
 .list-group-item-primary {
-  color: #226b2b;
-  background-color: #caf1cf; }
+  color: #155724;
+  background-color: #c3e6cb; }
   .list-group-item-primary.list-group-item-action:hover, .list-group-item-primary.list-group-item-action:focus {
-    color: #226b2b;
-    background-color: #b6ecbd; }
+    color: #155724;
+    background-color: #b1dfbb; }
   .list-group-item-primary.list-group-item-action.active {
     color: #fff;
-    background-color: #226b2b;
-    border-color: #226b2b; }
+    background-color: #155724;
+    border-color: #155724; }
 
 .list-group-item-secondary {
   color: #383d41;
@@ -3629,15 +3629,15 @@ tbody.collapse.show {
     border-color: #383d41; }
 
 .list-group-item-success {
-  color: #226b2b;
-  background-color: #caf1cf; }
+  color: #155724;
+  background-color: #c3e6cb; }
   .list-group-item-success.list-group-item-action:hover, .list-group-item-success.list-group-item-action:focus {
-    color: #226b2b;
-    background-color: #b6ecbd; }
+    color: #155724;
+    background-color: #b1dfbb; }
   .list-group-item-success.list-group-item-action.active {
     color: #fff;
-    background-color: #226b2b;
-    border-color: #226b2b; }
+    background-color: #155724;
+    border-color: #155724; }
 
 .list-group-item-info {
   color: #02587f;
@@ -4196,12 +4196,12 @@ button.close {
   vertical-align: text-top !important; }
 
 .bg-primary {
-  background-color: #41cd52 !important; }
+  background-color: #28a745 !important; }
 
 a.bg-primary:hover, a.bg-primary:focus,
 button.bg-primary:hover,
 button.bg-primary:focus {
-  background-color: #2ead3d !important; }
+  background-color: #1e7e34 !important; }
 
 .bg-secondary {
   background-color: #6c757d !important; }
@@ -4212,12 +4212,12 @@ button.bg-secondary:focus {
   background-color: #545b62 !important; }
 
 .bg-success {
-  background-color: #41cd52 !important; }
+  background-color: #28a745 !important; }
 
 a.bg-success:hover, a.bg-success:focus,
 button.bg-success:hover,
 button.bg-success:focus {
-  background-color: #2ead3d !important; }
+  background-color: #1e7e34 !important; }
 
 .bg-info {
   background-color: #03a9f4 !important; }
@@ -4296,13 +4296,13 @@ button.bg-dark:focus {
   border-left: 0 !important; }
 
 .border-primary {
-  border-color: #41cd52 !important; }
+  border-color: #28a745 !important; }
 
 .border-secondary {
   border-color: #6c757d !important; }
 
 .border-success {
-  border-color: #41cd52 !important; }
+  border-color: #28a745 !important; }
 
 .border-info {
   border-color: #03a9f4 !important; }
@@ -6030,10 +6030,10 @@ ul.act-footer {
   color: #fff !important; }
 
 .text-primary {
-  color: #41cd52 !important; }
+  color: #28a745 !important; }
 
 a.text-primary:hover, a.text-primary:focus {
-  color: #2ead3d !important; }
+  color: #1e7e34 !important; }
 
 .text-secondary, ul.fl > li > a {
   color: #6c757d !important; }
@@ -6042,10 +6042,10 @@ a.text-secondary:hover, ul.fl > li > a:hover, a.text-secondary:focus, ul.fl > li
   color: #545b62 !important; }
 
 .text-success {
-  color: #41cd52 !important; }
+  color: #28a745 !important; }
 
 a.text-success:hover, a.text-success:focus {
-  color: #2ead3d !important; }
+  color: #1e7e34 !important; }
 
 .text-info {
   color: #03a9f4 !important; }
@@ -6311,22 +6311,22 @@ button:focus {
   .btn.btn-link, .btn-link.custom-file-control::before, .btn-link.act-btn {
     background-color: transparent; }
   .btn.btn-primary, .btn-primary.custom-file-control::before, .btn-primary.act-btn {
-    color: #41cd52;
+    color: #28a745;
     background-color: transparent;
     border-color: #ccc; }
     .btn.btn-primary:hover, .btn-primary.custom-file-control:hover::before, .btn-primary.act-btn:hover {
-      color: #41cd52;
+      color: #28a745;
       background-color: rgba(153, 153, 153, 0.2);
       border-color: rgba(153, 153, 153, 0.2); }
     .btn.btn-primary:focus, .btn-primary.custom-file-control:focus::before, .btn-primary.act-btn:focus, .btn.btn-primary.focus, .btn-primary.focus.custom-file-control::before, .btn-primary.focus.act-btn {
-      color: #41cd52;
+      color: #28a745;
       background-color: rgba(153, 153, 153, 0.2);
       border-color: rgba(153, 153, 153, 0.2); }
     .btn.btn-primary:active, .btn-primary.custom-file-control:active::before, .btn-primary.act-btn:active, .btn.btn-primary.active, .btn-primary.active.custom-file-control::before, .btn-primary.active.act-btn,
     .open > .btn.btn-primary.dropdown-toggle,
     .open > .btn-primary.dropdown-toggle.custom-file-control::before,
     .open > .btn-primary.dropdown-toggle.act-btn {
-      color: #41cd52;
+      color: #28a745;
       background-color: rgba(153, 153, 153, 0.2);
       border-color: rgba(153, 153, 153, 0.2); }
       .btn.btn-primary:active:hover, .btn-primary.custom-file-control:active:hover::before, .btn-primary.act-btn:active:hover, .btn.btn-primary:active:focus, .btn-primary.custom-file-control:active:focus::before, .btn-primary.act-btn:active:focus, .btn.btn-primary:active.focus, .btn-primary.custom-file-control:active.focus::before, .btn-primary.act-btn:active.focus, .btn.btn-primary.active:hover, .btn-primary.active.custom-file-control:hover::before, .btn-primary.active.act-btn:hover, .btn.btn-primary.active:focus, .btn-primary.active.custom-file-control:focus::before, .btn-primary.active.act-btn:focus, .btn.btn-primary.active.focus, .btn-primary.active.focus.custom-file-control::before, .btn-primary.active.focus.act-btn,
@@ -6339,7 +6339,7 @@ button:focus {
       .open > .btn.btn-primary.dropdown-toggle.focus,
       .open > .btn-primary.dropdown-toggle.focus.custom-file-control::before,
       .open > .btn-primary.dropdown-toggle.focus.act-btn {
-        color: #41cd52;
+        color: #28a745;
         background-color: rgba(153, 153, 153, 0.4);
         border-color: rgba(153, 153, 153, 0.4); }
     .open > .btn.btn-primary.dropdown-toggle.bmd-btn-icon, .open > .btn-primary.dropdown-toggle.bmd-btn-icon.custom-file-control::before, .open > .btn-primary.dropdown-toggle.bmd-btn-icon.act-btn {
@@ -6354,22 +6354,22 @@ button:focus {
       background-color: transparent;
       border-color: #ccc; }
     .bg-inverse .btn.btn-primary, .bg-inverse .btn-primary.custom-file-control::before, .bg-inverse .btn-primary.act-btn {
-      color: #41cd52;
+      color: #28a745;
       background-color: transparent;
       border-color: #ccc; }
       .bg-inverse .btn.btn-primary:hover, .bg-inverse .btn-primary.custom-file-control:hover::before, .bg-inverse .btn-primary.act-btn:hover {
-        color: #41cd52;
+        color: #28a745;
         background-color: rgba(204, 204, 204, 0.15);
         border-color: rgba(204, 204, 204, 0.15); }
       .bg-inverse .btn.btn-primary:focus, .bg-inverse .btn-primary.custom-file-control:focus::before, .bg-inverse .btn-primary.act-btn:focus, .bg-inverse .btn.btn-primary.focus, .bg-inverse .btn-primary.focus.custom-file-control::before, .bg-inverse .btn-primary.focus.act-btn {
-        color: #41cd52;
+        color: #28a745;
         background-color: rgba(204, 204, 204, 0.15);
         border-color: rgba(204, 204, 204, 0.15); }
       .bg-inverse .btn.btn-primary:active, .bg-inverse .btn-primary.custom-file-control:active::before, .bg-inverse .btn-primary.act-btn:active, .bg-inverse .btn.btn-primary.active, .bg-inverse .btn-primary.active.custom-file-control::before, .bg-inverse .btn-primary.active.act-btn,
       .open > .bg-inverse .btn.btn-primary.dropdown-toggle,
       .open > .bg-inverse .btn-primary.dropdown-toggle.custom-file-control::before,
       .open > .bg-inverse .btn-primary.dropdown-toggle.act-btn {
-        color: #41cd52;
+        color: #28a745;
         background-color: rgba(204, 204, 204, 0.15);
         border-color: rgba(204, 204, 204, 0.15); }
         .bg-inverse .btn.btn-primary:active:hover, .bg-inverse .btn-primary.custom-file-control:active:hover::before, .bg-inverse .btn-primary.act-btn:active:hover, .bg-inverse .btn.btn-primary:active:focus, .bg-inverse .btn-primary.custom-file-control:active:focus::before, .bg-inverse .btn-primary.act-btn:active:focus, .bg-inverse .btn.btn-primary:active.focus, .bg-inverse .btn-primary.custom-file-control:active.focus::before, .bg-inverse .btn-primary.act-btn:active.focus, .bg-inverse .btn.btn-primary.active:hover, .bg-inverse .btn-primary.active.custom-file-control:hover::before, .bg-inverse .btn-primary.active.act-btn:hover, .bg-inverse .btn.btn-primary.active:focus, .bg-inverse .btn-primary.active.custom-file-control:focus::before, .bg-inverse .btn-primary.active.act-btn:focus, .bg-inverse .btn.btn-primary.active.focus, .bg-inverse .btn-primary.active.focus.custom-file-control::before, .bg-inverse .btn-primary.active.focus.act-btn,
@@ -6382,7 +6382,7 @@ button:focus {
         .open > .bg-inverse .btn.btn-primary.dropdown-toggle.focus,
         .open > .bg-inverse .btn-primary.dropdown-toggle.focus.custom-file-control::before,
         .open > .bg-inverse .btn-primary.dropdown-toggle.focus.act-btn {
-          color: #41cd52;
+          color: #28a745;
           background-color: rgba(204, 204, 204, 0.25);
           border-color: rgba(204, 204, 204, 0.25); }
       .open > .bg-inverse .btn.btn-primary.dropdown-toggle.bmd-btn-icon, .open > .bg-inverse .btn-primary.dropdown-toggle.bmd-btn-icon.custom-file-control::before, .open > .bg-inverse .btn-primary.dropdown-toggle.bmd-btn-icon.act-btn {
@@ -6487,22 +6487,22 @@ button:focus {
     .btn.btn-secondary.btn-link, .btn-secondary.btn-link.custom-file-control::before, .btn-secondary.btn-link.act-btn {
       background-color: transparent; }
   .btn.btn-success, .btn-success.custom-file-control::before, .btn-success.act-btn {
-    color: #41cd52;
+    color: #28a745;
     background-color: transparent;
     border-color: #ccc; }
     .btn.btn-success:hover, .btn-success.custom-file-control:hover::before, .btn-success.act-btn:hover {
-      color: #41cd52;
+      color: #28a745;
       background-color: rgba(153, 153, 153, 0.2);
       border-color: rgba(153, 153, 153, 0.2); }
     .btn.btn-success:focus, .btn-success.custom-file-control:focus::before, .btn-success.act-btn:focus, .btn.btn-success.focus, .btn-success.focus.custom-file-control::before, .btn-success.focus.act-btn {
-      color: #41cd52;
+      color: #28a745;
       background-color: rgba(153, 153, 153, 0.2);
       border-color: rgba(153, 153, 153, 0.2); }
     .btn.btn-success:active, .btn-success.custom-file-control:active::before, .btn-success.act-btn:active, .btn.btn-success.active, .btn-success.active.custom-file-control::before, .btn-success.active.act-btn,
     .open > .btn.btn-success.dropdown-toggle,
     .open > .btn-success.dropdown-toggle.custom-file-control::before,
     .open > .btn-success.dropdown-toggle.act-btn {
-      color: #41cd52;
+      color: #28a745;
       background-color: rgba(153, 153, 153, 0.2);
       border-color: rgba(153, 153, 153, 0.2); }
       .btn.btn-success:active:hover, .btn-success.custom-file-control:active:hover::before, .btn-success.act-btn:active:hover, .btn.btn-success:active:focus, .btn-success.custom-file-control:active:focus::before, .btn-success.act-btn:active:focus, .btn.btn-success:active.focus, .btn-success.custom-file-control:active.focus::before, .btn-success.act-btn:active.focus, .btn.btn-success.active:hover, .btn-success.active.custom-file-control:hover::before, .btn-success.active.act-btn:hover, .btn.btn-success.active:focus, .btn-success.active.custom-file-control:focus::before, .btn-success.active.act-btn:focus, .btn.btn-success.active.focus, .btn-success.active.focus.custom-file-control::before, .btn-success.active.focus.act-btn,
@@ -6515,7 +6515,7 @@ button:focus {
       .open > .btn.btn-success.dropdown-toggle.focus,
       .open > .btn-success.dropdown-toggle.focus.custom-file-control::before,
       .open > .btn-success.dropdown-toggle.focus.act-btn {
-        color: #41cd52;
+        color: #28a745;
         background-color: rgba(153, 153, 153, 0.4);
         border-color: rgba(153, 153, 153, 0.4); }
     .open > .btn.btn-success.dropdown-toggle.bmd-btn-icon, .open > .btn-success.dropdown-toggle.bmd-btn-icon.custom-file-control::before, .open > .btn-success.dropdown-toggle.bmd-btn-icon.act-btn {
@@ -6530,22 +6530,22 @@ button:focus {
       background-color: transparent;
       border-color: #ccc; }
     .bg-inverse .btn.btn-success, .bg-inverse .btn-success.custom-file-control::before, .bg-inverse .btn-success.act-btn {
-      color: #41cd52;
+      color: #28a745;
       background-color: transparent;
       border-color: #ccc; }
       .bg-inverse .btn.btn-success:hover, .bg-inverse .btn-success.custom-file-control:hover::before, .bg-inverse .btn-success.act-btn:hover {
-        color: #41cd52;
+        color: #28a745;
         background-color: rgba(204, 204, 204, 0.15);
         border-color: rgba(204, 204, 204, 0.15); }
       .bg-inverse .btn.btn-success:focus, .bg-inverse .btn-success.custom-file-control:focus::before, .bg-inverse .btn-success.act-btn:focus, .bg-inverse .btn.btn-success.focus, .bg-inverse .btn-success.focus.custom-file-control::before, .bg-inverse .btn-success.focus.act-btn {
-        color: #41cd52;
+        color: #28a745;
         background-color: rgba(204, 204, 204, 0.15);
         border-color: rgba(204, 204, 204, 0.15); }
       .bg-inverse .btn.btn-success:active, .bg-inverse .btn-success.custom-file-control:active::before, .bg-inverse .btn-success.act-btn:active, .bg-inverse .btn.btn-success.active, .bg-inverse .btn-success.active.custom-file-control::before, .bg-inverse .btn-success.active.act-btn,
       .open > .bg-inverse .btn.btn-success.dropdown-toggle,
       .open > .bg-inverse .btn-success.dropdown-toggle.custom-file-control::before,
       .open > .bg-inverse .btn-success.dropdown-toggle.act-btn {
-        color: #41cd52;
+        color: #28a745;
         background-color: rgba(204, 204, 204, 0.15);
         border-color: rgba(204, 204, 204, 0.15); }
         .bg-inverse .btn.btn-success:active:hover, .bg-inverse .btn-success.custom-file-control:active:hover::before, .bg-inverse .btn-success.act-btn:active:hover, .bg-inverse .btn.btn-success:active:focus, .bg-inverse .btn-success.custom-file-control:active:focus::before, .bg-inverse .btn-success.act-btn:active:focus, .bg-inverse .btn.btn-success:active.focus, .bg-inverse .btn-success.custom-file-control:active.focus::before, .bg-inverse .btn-success.act-btn:active.focus, .bg-inverse .btn.btn-success.active:hover, .bg-inverse .btn-success.active.custom-file-control:hover::before, .bg-inverse .btn-success.active.act-btn:hover, .bg-inverse .btn.btn-success.active:focus, .bg-inverse .btn-success.active.custom-file-control:focus::before, .bg-inverse .btn-success.active.act-btn:focus, .bg-inverse .btn.btn-success.active.focus, .bg-inverse .btn-success.active.focus.custom-file-control::before, .bg-inverse .btn-success.active.focus.act-btn,
@@ -6558,7 +6558,7 @@ button:focus {
         .open > .bg-inverse .btn.btn-success.dropdown-toggle.focus,
         .open > .bg-inverse .btn-success.dropdown-toggle.focus.custom-file-control::before,
         .open > .bg-inverse .btn-success.dropdown-toggle.focus.act-btn {
-          color: #41cd52;
+          color: #28a745;
           background-color: rgba(204, 204, 204, 0.25);
           border-color: rgba(204, 204, 204, 0.25); }
       .open > .bg-inverse .btn.btn-success.dropdown-toggle.bmd-btn-icon, .open > .bg-inverse .btn-success.dropdown-toggle.bmd-btn-icon.custom-file-control::before, .open > .bg-inverse .btn-success.dropdown-toggle.bmd-btn-icon.act-btn {
@@ -7027,15 +7027,15 @@ button:focus {
   .btn-group-raised .btn-primary.custom-file-control::before,
   .btn-group-raised .btn-primary.act-btn {
     color: #fff;
-    background-color: #41cd52;
-    border-color: #41cd52; }
+    background-color: #28a745;
+    border-color: #28a745; }
     .btn.bmd-btn-fab.btn-primary:hover, .bmd-btn-fab.btn-primary.custom-file-control:hover::before, .bmd-btn-fab.btn-primary.act-btn:hover, .btn.btn-raised.btn-primary:hover, .btn-raised.btn-primary.custom-file-control:hover::before, .btn-raised.btn-primary.act-btn:hover,
     .btn-group-raised .btn.btn-primary:hover,
     .btn-group-raised .btn-primary.custom-file-control:hover::before,
     .btn-group-raised .btn-primary.act-btn:hover {
       color: #fff;
-      background-color: #34c646;
-      border-color: #2ca53a; }
+      background-color: #24973e;
+      border-color: #1c7631; }
     .btn.bmd-btn-fab.btn-primary:focus, .bmd-btn-fab.btn-primary.custom-file-control:focus::before, .bmd-btn-fab.btn-primary.act-btn:focus, .btn.bmd-btn-fab.btn-primary.focus, .bmd-btn-fab.btn-primary.focus.custom-file-control::before, .bmd-btn-fab.btn-primary.focus.act-btn, .btn.btn-raised.btn-primary:focus, .btn-raised.btn-primary.custom-file-control:focus::before, .btn-raised.btn-primary.act-btn:focus, .btn.btn-raised.btn-primary.focus, .btn-raised.btn-primary.focus.custom-file-control::before, .btn-raised.btn-primary.focus.act-btn,
     .btn-group-raised .btn.btn-primary:focus,
     .btn-group-raised .btn-primary.custom-file-control:focus::before,
@@ -7044,8 +7044,8 @@ button:focus {
     .btn-group-raised .btn-primary.focus.custom-file-control::before,
     .btn-group-raised .btn-primary.focus.act-btn {
       color: #fff;
-      background-color: #34c646;
-      border-color: #2ca53a; }
+      background-color: #24973e;
+      border-color: #1c7631; }
     .btn.bmd-btn-fab.btn-primary:active, .bmd-btn-fab.btn-primary.custom-file-control:active::before, .bmd-btn-fab.btn-primary.act-btn:active, .btn.bmd-btn-fab.btn-primary.active, .bmd-btn-fab.btn-primary.active.custom-file-control::before, .bmd-btn-fab.btn-primary.active.act-btn,
     .open > .btn.bmd-btn-fab.btn-primary.dropdown-toggle,
     .open > .bmd-btn-fab.btn-primary.dropdown-toggle.custom-file-control::before,
@@ -7066,8 +7066,8 @@ button:focus {
     .open >
     .btn-group-raised .btn-primary.dropdown-toggle.act-btn {
       color: #fff;
-      background-color: #34c646;
-      border-color: #2ca53a; }
+      background-color: #24973e;
+      border-color: #1c7631; }
       .btn.bmd-btn-fab.btn-primary:active:hover, .bmd-btn-fab.btn-primary.custom-file-control:active:hover::before, .bmd-btn-fab.btn-primary.act-btn:active:hover, .btn.bmd-btn-fab.btn-primary:active:focus, .bmd-btn-fab.btn-primary.custom-file-control:active:focus::before, .bmd-btn-fab.btn-primary.act-btn:active:focus, .btn.bmd-btn-fab.btn-primary:active.focus, .bmd-btn-fab.btn-primary.custom-file-control:active.focus::before, .bmd-btn-fab.btn-primary.act-btn:active.focus, .btn.bmd-btn-fab.btn-primary.active:hover, .bmd-btn-fab.btn-primary.active.custom-file-control:hover::before, .bmd-btn-fab.btn-primary.active.act-btn:hover, .btn.bmd-btn-fab.btn-primary.active:focus, .bmd-btn-fab.btn-primary.active.custom-file-control:focus::before, .bmd-btn-fab.btn-primary.active.act-btn:focus, .btn.bmd-btn-fab.btn-primary.active.focus, .bmd-btn-fab.btn-primary.active.focus.custom-file-control::before, .bmd-btn-fab.btn-primary.active.focus.act-btn,
       .open > .btn.bmd-btn-fab.btn-primary.dropdown-toggle:hover,
       .open > .bmd-btn-fab.btn-primary.dropdown-toggle.custom-file-control:hover::before,
@@ -7124,19 +7124,19 @@ button:focus {
       .open >
       .btn-group-raised .btn-primary.dropdown-toggle.focus.act-btn {
         color: #fff;
-        background-color: #34c646;
-        border-color: #1e7128; }
+        background-color: #24973e;
+        border-color: #0f401b; }
     .open > .btn.bmd-btn-fab.btn-primary.dropdown-toggle.bmd-btn-icon, .open > .bmd-btn-fab.btn-primary.dropdown-toggle.bmd-btn-icon.custom-file-control::before, .open > .bmd-btn-fab.btn-primary.dropdown-toggle.bmd-btn-icon.act-btn, .open > .btn.btn-raised.btn-primary.dropdown-toggle.bmd-btn-icon, .open > .btn-raised.btn-primary.dropdown-toggle.bmd-btn-icon.custom-file-control::before, .open > .btn-raised.btn-primary.dropdown-toggle.bmd-btn-icon.act-btn, .open >
     .btn-group-raised .btn.btn-primary.dropdown-toggle.bmd-btn-icon, .open >
     .btn-group-raised .btn-primary.dropdown-toggle.bmd-btn-icon.custom-file-control::before, .open >
     .btn-group-raised .btn-primary.dropdown-toggle.bmd-btn-icon.act-btn {
       color: inherit;
-      background-color: #41cd52; }
+      background-color: #28a745; }
       .open > .btn.bmd-btn-fab.btn-primary.dropdown-toggle.bmd-btn-icon:hover, .open > .bmd-btn-fab.btn-primary.dropdown-toggle.bmd-btn-icon.custom-file-control:hover::before, .open > .bmd-btn-fab.btn-primary.dropdown-toggle.bmd-btn-icon.act-btn:hover, .open > .btn.btn-raised.btn-primary.dropdown-toggle.bmd-btn-icon:hover, .open > .btn-raised.btn-primary.dropdown-toggle.bmd-btn-icon.custom-file-control:hover::before, .open > .btn-raised.btn-primary.dropdown-toggle.bmd-btn-icon.act-btn:hover, .open >
       .btn-group-raised .btn.btn-primary.dropdown-toggle.bmd-btn-icon:hover, .open >
       .btn-group-raised .btn-primary.dropdown-toggle.bmd-btn-icon.custom-file-control:hover::before, .open >
       .btn-group-raised .btn-primary.dropdown-toggle.bmd-btn-icon.act-btn:hover {
-        background-color: #34c646; }
+        background-color: #24973e; }
     .btn.bmd-btn-fab.btn-primary.disabled:focus, .bmd-btn-fab.btn-primary.disabled.custom-file-control:focus::before, .bmd-btn-fab.btn-primary.disabled.act-btn:focus, .btn.bmd-btn-fab.btn-primary.disabled.focus, .bmd-btn-fab.btn-primary.disabled.focus.custom-file-control::before, .bmd-btn-fab.btn-primary.disabled.focus.act-btn, .btn.bmd-btn-fab.btn-primary:disabled:focus, .bmd-btn-fab.btn-primary.custom-file-control:disabled:focus::before, .bmd-btn-fab.btn-primary.act-btn:disabled:focus, .btn.bmd-btn-fab.btn-primary:disabled.focus, .bmd-btn-fab.btn-primary.custom-file-control:disabled.focus::before, .bmd-btn-fab.btn-primary.act-btn:disabled.focus, .btn.btn-raised.btn-primary.disabled:focus, .btn-raised.btn-primary.disabled.custom-file-control:focus::before, .btn-raised.btn-primary.disabled.act-btn:focus, .btn.btn-raised.btn-primary.disabled.focus, .btn-raised.btn-primary.disabled.focus.custom-file-control::before, .btn-raised.btn-primary.disabled.focus.act-btn, .btn.btn-raised.btn-primary:disabled:focus, .btn-raised.btn-primary.custom-file-control:disabled:focus::before, .btn-raised.btn-primary.act-btn:disabled:focus, .btn.btn-raised.btn-primary:disabled.focus, .btn-raised.btn-primary.custom-file-control:disabled.focus::before, .btn-raised.btn-primary.act-btn:disabled.focus,
     .btn-group-raised .btn.btn-primary.disabled:focus,
     .btn-group-raised .btn-primary.disabled.custom-file-control:focus::before,
@@ -7150,8 +7150,8 @@ button:focus {
     .btn-group-raised .btn.btn-primary:disabled.focus,
     .btn-group-raised .btn-primary.custom-file-control:disabled.focus::before,
     .btn-group-raised .btn-primary.act-btn:disabled.focus {
-      background-color: #41cd52;
-      border-color: #41cd52; }
+      background-color: #28a745;
+      border-color: #28a745; }
     .btn.bmd-btn-fab.btn-primary.disabled:hover, .bmd-btn-fab.btn-primary.disabled.custom-file-control:hover::before, .bmd-btn-fab.btn-primary.disabled.act-btn:hover, .btn.bmd-btn-fab.btn-primary:disabled:hover, .bmd-btn-fab.btn-primary.custom-file-control:disabled:hover::before, .bmd-btn-fab.btn-primary.act-btn:disabled:hover, .btn.btn-raised.btn-primary.disabled:hover, .btn-raised.btn-primary.disabled.custom-file-control:hover::before, .btn-raised.btn-primary.disabled.act-btn:hover, .btn.btn-raised.btn-primary:disabled:hover, .btn-raised.btn-primary.custom-file-control:disabled:hover::before, .btn-raised.btn-primary.act-btn:disabled:hover,
     .btn-group-raised .btn.btn-primary.disabled:hover,
     .btn-group-raised .btn-primary.disabled.custom-file-control:hover::before,
@@ -7159,8 +7159,8 @@ button:focus {
     .btn-group-raised .btn.btn-primary:disabled:hover,
     .btn-group-raised .btn-primary.custom-file-control:disabled:hover::before,
     .btn-group-raised .btn-primary.act-btn:disabled:hover {
-      background-color: #41cd52;
-      border-color: #41cd52; }
+      background-color: #28a745;
+      border-color: #28a745; }
   .btn.bmd-btn-fab.btn-secondary, .bmd-btn-fab.btn-secondary.custom-file-control::before, .bmd-btn-fab.btn-secondary.act-btn, .btn.btn-raised.btn-secondary, .btn-raised.btn-secondary.custom-file-control::before, .btn-raised.btn-secondary.act-btn,
   .btn-group-raised .btn.btn-secondary,
   .btn-group-raised .btn-secondary.custom-file-control::before,
@@ -7305,15 +7305,15 @@ button:focus {
   .btn-group-raised .btn-success.custom-file-control::before,
   .btn-group-raised .btn-success.act-btn {
     color: #fff;
-    background-color: #41cd52;
-    border-color: #41cd52; }
+    background-color: #28a745;
+    border-color: #28a745; }
     .btn.bmd-btn-fab.btn-success:hover, .bmd-btn-fab.btn-success.custom-file-control:hover::before, .bmd-btn-fab.btn-success.act-btn:hover, .btn.btn-raised.btn-success:hover, .btn-raised.btn-success.custom-file-control:hover::before, .btn-raised.btn-success.act-btn:hover,
     .btn-group-raised .btn.btn-success:hover,
     .btn-group-raised .btn-success.custom-file-control:hover::before,
     .btn-group-raised .btn-success.act-btn:hover {
       color: #fff;
-      background-color: #34c646;
-      border-color: #2ca53a; }
+      background-color: #24973e;
+      border-color: #1c7631; }
     .btn.bmd-btn-fab.btn-success:focus, .bmd-btn-fab.btn-success.custom-file-control:focus::before, .bmd-btn-fab.btn-success.act-btn:focus, .btn.bmd-btn-fab.btn-success.focus, .bmd-btn-fab.btn-success.focus.custom-file-control::before, .bmd-btn-fab.btn-success.focus.act-btn, .btn.btn-raised.btn-success:focus, .btn-raised.btn-success.custom-file-control:focus::before, .btn-raised.btn-success.act-btn:focus, .btn.btn-raised.btn-success.focus, .btn-raised.btn-success.focus.custom-file-control::before, .btn-raised.btn-success.focus.act-btn,
     .btn-group-raised .btn.btn-success:focus,
     .btn-group-raised .btn-success.custom-file-control:focus::before,
@@ -7322,8 +7322,8 @@ button:focus {
     .btn-group-raised .btn-success.focus.custom-file-control::before,
     .btn-group-raised .btn-success.focus.act-btn {
       color: #fff;
-      background-color: #34c646;
-      border-color: #2ca53a; }
+      background-color: #24973e;
+      border-color: #1c7631; }
     .btn.bmd-btn-fab.btn-success:active, .bmd-btn-fab.btn-success.custom-file-control:active::before, .bmd-btn-fab.btn-success.act-btn:active, .btn.bmd-btn-fab.btn-success.active, .bmd-btn-fab.btn-success.active.custom-file-control::before, .bmd-btn-fab.btn-success.active.act-btn,
     .open > .btn.bmd-btn-fab.btn-success.dropdown-toggle,
     .open > .bmd-btn-fab.btn-success.dropdown-toggle.custom-file-control::before,
@@ -7344,8 +7344,8 @@ button:focus {
     .open >
     .btn-group-raised .btn-success.dropdown-toggle.act-btn {
       color: #fff;
-      background-color: #34c646;
-      border-color: #2ca53a; }
+      background-color: #24973e;
+      border-color: #1c7631; }
       .btn.bmd-btn-fab.btn-success:active:hover, .bmd-btn-fab.btn-success.custom-file-control:active:hover::before, .bmd-btn-fab.btn-success.act-btn:active:hover, .btn.bmd-btn-fab.btn-success:active:focus, .bmd-btn-fab.btn-success.custom-file-control:active:focus::before, .bmd-btn-fab.btn-success.act-btn:active:focus, .btn.bmd-btn-fab.btn-success:active.focus, .bmd-btn-fab.btn-success.custom-file-control:active.focus::before, .bmd-btn-fab.btn-success.act-btn:active.focus, .btn.bmd-btn-fab.btn-success.active:hover, .bmd-btn-fab.btn-success.active.custom-file-control:hover::before, .bmd-btn-fab.btn-success.active.act-btn:hover, .btn.bmd-btn-fab.btn-success.active:focus, .bmd-btn-fab.btn-success.active.custom-file-control:focus::before, .bmd-btn-fab.btn-success.active.act-btn:focus, .btn.bmd-btn-fab.btn-success.active.focus, .bmd-btn-fab.btn-success.active.focus.custom-file-control::before, .bmd-btn-fab.btn-success.active.focus.act-btn,
       .open > .btn.bmd-btn-fab.btn-success.dropdown-toggle:hover,
       .open > .bmd-btn-fab.btn-success.dropdown-toggle.custom-file-control:hover::before,
@@ -7402,19 +7402,19 @@ button:focus {
       .open >
       .btn-group-raised .btn-success.dropdown-toggle.focus.act-btn {
         color: #fff;
-        background-color: #34c646;
-        border-color: #1e7128; }
+        background-color: #24973e;
+        border-color: #0f401b; }
     .open > .btn.bmd-btn-fab.btn-success.dropdown-toggle.bmd-btn-icon, .open > .bmd-btn-fab.btn-success.dropdown-toggle.bmd-btn-icon.custom-file-control::before, .open > .bmd-btn-fab.btn-success.dropdown-toggle.bmd-btn-icon.act-btn, .open > .btn.btn-raised.btn-success.dropdown-toggle.bmd-btn-icon, .open > .btn-raised.btn-success.dropdown-toggle.bmd-btn-icon.custom-file-control::before, .open > .btn-raised.btn-success.dropdown-toggle.bmd-btn-icon.act-btn, .open >
     .btn-group-raised .btn.btn-success.dropdown-toggle.bmd-btn-icon, .open >
     .btn-group-raised .btn-success.dropdown-toggle.bmd-btn-icon.custom-file-control::before, .open >
     .btn-group-raised .btn-success.dropdown-toggle.bmd-btn-icon.act-btn {
       color: inherit;
-      background-color: #41cd52; }
+      background-color: #28a745; }
       .open > .btn.bmd-btn-fab.btn-success.dropdown-toggle.bmd-btn-icon:hover, .open > .bmd-btn-fab.btn-success.dropdown-toggle.bmd-btn-icon.custom-file-control:hover::before, .open > .bmd-btn-fab.btn-success.dropdown-toggle.bmd-btn-icon.act-btn:hover, .open > .btn.btn-raised.btn-success.dropdown-toggle.bmd-btn-icon:hover, .open > .btn-raised.btn-success.dropdown-toggle.bmd-btn-icon.custom-file-control:hover::before, .open > .btn-raised.btn-success.dropdown-toggle.bmd-btn-icon.act-btn:hover, .open >
       .btn-group-raised .btn.btn-success.dropdown-toggle.bmd-btn-icon:hover, .open >
       .btn-group-raised .btn-success.dropdown-toggle.bmd-btn-icon.custom-file-control:hover::before, .open >
       .btn-group-raised .btn-success.dropdown-toggle.bmd-btn-icon.act-btn:hover {
-        background-color: #34c646; }
+        background-color: #24973e; }
     .btn.bmd-btn-fab.btn-success.disabled:focus, .bmd-btn-fab.btn-success.disabled.custom-file-control:focus::before, .bmd-btn-fab.btn-success.disabled.act-btn:focus, .btn.bmd-btn-fab.btn-success.disabled.focus, .bmd-btn-fab.btn-success.disabled.focus.custom-file-control::before, .bmd-btn-fab.btn-success.disabled.focus.act-btn, .btn.bmd-btn-fab.btn-success:disabled:focus, .bmd-btn-fab.btn-success.custom-file-control:disabled:focus::before, .bmd-btn-fab.btn-success.act-btn:disabled:focus, .btn.bmd-btn-fab.btn-success:disabled.focus, .bmd-btn-fab.btn-success.custom-file-control:disabled.focus::before, .bmd-btn-fab.btn-success.act-btn:disabled.focus, .btn.btn-raised.btn-success.disabled:focus, .btn-raised.btn-success.disabled.custom-file-control:focus::before, .btn-raised.btn-success.disabled.act-btn:focus, .btn.btn-raised.btn-success.disabled.focus, .btn-raised.btn-success.disabled.focus.custom-file-control::before, .btn-raised.btn-success.disabled.focus.act-btn, .btn.btn-raised.btn-success:disabled:focus, .btn-raised.btn-success.custom-file-control:disabled:focus::before, .btn-raised.btn-success.act-btn:disabled:focus, .btn.btn-raised.btn-success:disabled.focus, .btn-raised.btn-success.custom-file-control:disabled.focus::before, .btn-raised.btn-success.act-btn:disabled.focus,
     .btn-group-raised .btn.btn-success.disabled:focus,
     .btn-group-raised .btn-success.disabled.custom-file-control:focus::before,
@@ -7428,8 +7428,8 @@ button:focus {
     .btn-group-raised .btn.btn-success:disabled.focus,
     .btn-group-raised .btn-success.custom-file-control:disabled.focus::before,
     .btn-group-raised .btn-success.act-btn:disabled.focus {
-      background-color: #41cd52;
-      border-color: #41cd52; }
+      background-color: #28a745;
+      border-color: #28a745; }
     .btn.bmd-btn-fab.btn-success.disabled:hover, .bmd-btn-fab.btn-success.disabled.custom-file-control:hover::before, .bmd-btn-fab.btn-success.disabled.act-btn:hover, .btn.bmd-btn-fab.btn-success:disabled:hover, .bmd-btn-fab.btn-success.custom-file-control:disabled:hover::before, .bmd-btn-fab.btn-success.act-btn:disabled:hover, .btn.btn-raised.btn-success.disabled:hover, .btn-raised.btn-success.disabled.custom-file-control:hover::before, .btn-raised.btn-success.disabled.act-btn:hover, .btn.btn-raised.btn-success:disabled:hover, .btn-raised.btn-success.custom-file-control:disabled:hover::before, .btn-raised.btn-success.act-btn:disabled:hover,
     .btn-group-raised .btn.btn-success.disabled:hover,
     .btn-group-raised .btn-success.disabled.custom-file-control:hover::before,
@@ -7437,8 +7437,8 @@ button:focus {
     .btn-group-raised .btn.btn-success:disabled:hover,
     .btn-group-raised .btn-success.custom-file-control:disabled:hover::before,
     .btn-group-raised .btn-success.act-btn:disabled:hover {
-      background-color: #41cd52;
-      border-color: #41cd52; }
+      background-color: #28a745;
+      border-color: #28a745; }
   .btn.bmd-btn-fab.btn-info, .bmd-btn-fab.btn-info.custom-file-control::before, .bmd-btn-fab.btn-info.act-btn, .btn.btn-raised.btn-info, .btn-raised.btn-info.custom-file-control::before, .btn-raised.btn-info.act-btn,
   .btn-group-raised .btn.btn-info,
   .btn-group-raised .btn-info.custom-file-control::before,
@@ -8237,24 +8237,24 @@ button:focus {
     border-color: currentColor;
     border-style: solid;
     border-width: 1px;
-    color: #41cd52;
+    color: #28a745;
     background-color: transparent;
-    border-color: #41cd52; }
+    border-color: #28a745; }
     .btn.btn-outline-primary:hover, .btn-outline-primary.custom-file-control:hover::before, .btn-outline-primary.act-btn:hover {
-      color: #41cd52;
+      color: #28a745;
       background-color: rgba(153, 153, 153, 0.2);
-      border-color: #41cd52; }
+      border-color: #28a745; }
     .btn.btn-outline-primary:focus, .btn-outline-primary.custom-file-control:focus::before, .btn-outline-primary.act-btn:focus, .btn.btn-outline-primary.focus, .btn-outline-primary.focus.custom-file-control::before, .btn-outline-primary.focus.act-btn {
-      color: #41cd52;
+      color: #28a745;
       background-color: rgba(153, 153, 153, 0.2);
-      border-color: #41cd52; }
+      border-color: #28a745; }
     .btn.btn-outline-primary:active, .btn-outline-primary.custom-file-control:active::before, .btn-outline-primary.act-btn:active, .btn.btn-outline-primary.active, .btn-outline-primary.active.custom-file-control::before, .btn-outline-primary.active.act-btn,
     .open > .btn.btn-outline-primary.dropdown-toggle,
     .open > .btn-outline-primary.dropdown-toggle.custom-file-control::before,
     .open > .btn-outline-primary.dropdown-toggle.act-btn {
-      color: #41cd52;
+      color: #28a745;
       background-color: rgba(153, 153, 153, 0.2);
-      border-color: #41cd52; }
+      border-color: #28a745; }
       .btn.btn-outline-primary:active:hover, .btn-outline-primary.custom-file-control:active:hover::before, .btn-outline-primary.act-btn:active:hover, .btn.btn-outline-primary:active:focus, .btn-outline-primary.custom-file-control:active:focus::before, .btn-outline-primary.act-btn:active:focus, .btn.btn-outline-primary:active.focus, .btn-outline-primary.custom-file-control:active.focus::before, .btn-outline-primary.act-btn:active.focus, .btn.btn-outline-primary.active:hover, .btn-outline-primary.active.custom-file-control:hover::before, .btn-outline-primary.active.act-btn:hover, .btn.btn-outline-primary.active:focus, .btn-outline-primary.active.custom-file-control:focus::before, .btn-outline-primary.active.act-btn:focus, .btn.btn-outline-primary.active.focus, .btn-outline-primary.active.focus.custom-file-control::before, .btn-outline-primary.active.focus.act-btn,
       .open > .btn.btn-outline-primary.dropdown-toggle:hover,
       .open > .btn-outline-primary.dropdown-toggle.custom-file-control:hover::before,
@@ -8265,9 +8265,9 @@ button:focus {
       .open > .btn.btn-outline-primary.dropdown-toggle.focus,
       .open > .btn-outline-primary.dropdown-toggle.focus.custom-file-control::before,
       .open > .btn-outline-primary.dropdown-toggle.focus.act-btn {
-        color: #41cd52;
+        color: #28a745;
         background-color: rgba(153, 153, 153, 0.4);
-        border-color: #41cd52; }
+        border-color: #28a745; }
     .open > .btn.btn-outline-primary.dropdown-toggle.bmd-btn-icon, .open > .btn-outline-primary.dropdown-toggle.bmd-btn-icon.custom-file-control::before, .open > .btn-outline-primary.dropdown-toggle.bmd-btn-icon.act-btn {
       color: inherit;
       background-color: transparent; }
@@ -8275,27 +8275,27 @@ button:focus {
         background-color: rgba(153, 153, 153, 0.2); }
     .btn.btn-outline-primary.disabled:focus, .btn-outline-primary.disabled.custom-file-control:focus::before, .btn-outline-primary.disabled.act-btn:focus, .btn.btn-outline-primary.disabled.focus, .btn-outline-primary.disabled.focus.custom-file-control::before, .btn-outline-primary.disabled.focus.act-btn, .btn.btn-outline-primary:disabled:focus, .btn-outline-primary.custom-file-control:disabled:focus::before, .btn-outline-primary.act-btn:disabled:focus, .btn.btn-outline-primary:disabled.focus, .btn-outline-primary.custom-file-control:disabled.focus::before, .btn-outline-primary.act-btn:disabled.focus {
       background-color: transparent;
-      border-color: #41cd52; }
+      border-color: #28a745; }
     .btn.btn-outline-primary.disabled:hover, .btn-outline-primary.disabled.custom-file-control:hover::before, .btn-outline-primary.disabled.act-btn:hover, .btn.btn-outline-primary:disabled:hover, .btn-outline-primary.custom-file-control:disabled:hover::before, .btn-outline-primary.act-btn:disabled:hover {
       background-color: transparent;
-      border-color: #41cd52; }
+      border-color: #28a745; }
     .bg-inverse .btn.btn-outline-primary, .bg-inverse .btn-outline-primary.custom-file-control::before, .bg-inverse .btn-outline-primary.act-btn {
-      color: #41cd52;
+      color: #28a745;
       background-color: transparent;
-      border-color: #41cd52; }
+      border-color: #28a745; }
       .bg-inverse .btn.btn-outline-primary:hover, .bg-inverse .btn-outline-primary.custom-file-control:hover::before, .bg-inverse .btn-outline-primary.act-btn:hover {
-        color: #41cd52;
+        color: #28a745;
         background-color: rgba(204, 204, 204, 0.15);
         border-color: rgba(204, 204, 204, 0.15); }
       .bg-inverse .btn.btn-outline-primary:focus, .bg-inverse .btn-outline-primary.custom-file-control:focus::before, .bg-inverse .btn-outline-primary.act-btn:focus, .bg-inverse .btn.btn-outline-primary.focus, .bg-inverse .btn-outline-primary.focus.custom-file-control::before, .bg-inverse .btn-outline-primary.focus.act-btn {
-        color: #41cd52;
+        color: #28a745;
         background-color: rgba(204, 204, 204, 0.15);
         border-color: rgba(204, 204, 204, 0.15); }
       .bg-inverse .btn.btn-outline-primary:active, .bg-inverse .btn-outline-primary.custom-file-control:active::before, .bg-inverse .btn-outline-primary.act-btn:active, .bg-inverse .btn.btn-outline-primary.active, .bg-inverse .btn-outline-primary.active.custom-file-control::before, .bg-inverse .btn-outline-primary.active.act-btn,
       .open > .bg-inverse .btn.btn-outline-primary.dropdown-toggle,
       .open > .bg-inverse .btn-outline-primary.dropdown-toggle.custom-file-control::before,
       .open > .bg-inverse .btn-outline-primary.dropdown-toggle.act-btn {
-        color: #41cd52;
+        color: #28a745;
         background-color: rgba(204, 204, 204, 0.15);
         border-color: rgba(204, 204, 204, 0.15); }
         .bg-inverse .btn.btn-outline-primary:active:hover, .bg-inverse .btn-outline-primary.custom-file-control:active:hover::before, .bg-inverse .btn-outline-primary.act-btn:active:hover, .bg-inverse .btn.btn-outline-primary:active:focus, .bg-inverse .btn-outline-primary.custom-file-control:active:focus::before, .bg-inverse .btn-outline-primary.act-btn:active:focus, .bg-inverse .btn.btn-outline-primary:active.focus, .bg-inverse .btn-outline-primary.custom-file-control:active.focus::before, .bg-inverse .btn-outline-primary.act-btn:active.focus, .bg-inverse .btn.btn-outline-primary.active:hover, .bg-inverse .btn-outline-primary.active.custom-file-control:hover::before, .bg-inverse .btn-outline-primary.active.act-btn:hover, .bg-inverse .btn.btn-outline-primary.active:focus, .bg-inverse .btn-outline-primary.active.custom-file-control:focus::before, .bg-inverse .btn-outline-primary.active.act-btn:focus, .bg-inverse .btn.btn-outline-primary.active.focus, .bg-inverse .btn-outline-primary.active.focus.custom-file-control::before, .bg-inverse .btn-outline-primary.active.focus.act-btn,
@@ -8308,7 +8308,7 @@ button:focus {
         .open > .bg-inverse .btn.btn-outline-primary.dropdown-toggle.focus,
         .open > .bg-inverse .btn-outline-primary.dropdown-toggle.focus.custom-file-control::before,
         .open > .bg-inverse .btn-outline-primary.dropdown-toggle.focus.act-btn {
-          color: #41cd52;
+          color: #28a745;
           background-color: rgba(204, 204, 204, 0.25);
           border-color: rgba(204, 204, 204, 0.25); }
       .open > .bg-inverse .btn.btn-outline-primary.dropdown-toggle.bmd-btn-icon, .open > .bg-inverse .btn-outline-primary.dropdown-toggle.bmd-btn-icon.custom-file-control::before, .open > .bg-inverse .btn-outline-primary.dropdown-toggle.bmd-btn-icon.act-btn {
@@ -8318,10 +8318,10 @@ button:focus {
           background-color: rgba(204, 204, 204, 0.15); }
       .bg-inverse .btn.btn-outline-primary.disabled:focus, .bg-inverse .btn-outline-primary.disabled.custom-file-control:focus::before, .bg-inverse .btn-outline-primary.disabled.act-btn:focus, .bg-inverse .btn.btn-outline-primary.disabled.focus, .bg-inverse .btn-outline-primary.disabled.focus.custom-file-control::before, .bg-inverse .btn-outline-primary.disabled.focus.act-btn, .bg-inverse .btn.btn-outline-primary:disabled:focus, .bg-inverse .btn-outline-primary.custom-file-control:disabled:focus::before, .bg-inverse .btn-outline-primary.act-btn:disabled:focus, .bg-inverse .btn.btn-outline-primary:disabled.focus, .bg-inverse .btn-outline-primary.custom-file-control:disabled.focus::before, .bg-inverse .btn-outline-primary.act-btn:disabled.focus {
         background-color: transparent;
-        border-color: #41cd52; }
+        border-color: #28a745; }
       .bg-inverse .btn.btn-outline-primary.disabled:hover, .bg-inverse .btn-outline-primary.disabled.custom-file-control:hover::before, .bg-inverse .btn-outline-primary.disabled.act-btn:hover, .bg-inverse .btn.btn-outline-primary:disabled:hover, .bg-inverse .btn-outline-primary.custom-file-control:disabled:hover::before, .bg-inverse .btn-outline-primary.act-btn:disabled:hover {
         background-color: transparent;
-        border-color: #41cd52; }
+        border-color: #28a745; }
     .btn.btn-outline-primary.btn-link, .btn-outline-primary.btn-link.custom-file-control::before, .btn-outline-primary.btn-link.act-btn {
       background-color: transparent; }
   .btn.btn-outline-secondary, .btn-outline-secondary.custom-file-control::before, .btn-outline-secondary.act-btn {
@@ -8419,24 +8419,24 @@ button:focus {
     border-color: currentColor;
     border-style: solid;
     border-width: 1px;
-    color: #41cd52;
+    color: #28a745;
     background-color: transparent;
-    border-color: #41cd52; }
+    border-color: #28a745; }
     .btn.btn-outline-success:hover, .btn-outline-success.custom-file-control:hover::before, .btn-outline-success.act-btn:hover {
-      color: #41cd52;
+      color: #28a745;
       background-color: rgba(153, 153, 153, 0.2);
-      border-color: #41cd52; }
+      border-color: #28a745; }
     .btn.btn-outline-success:focus, .btn-outline-success.custom-file-control:focus::before, .btn-outline-success.act-btn:focus, .btn.btn-outline-success.focus, .btn-outline-success.focus.custom-file-control::before, .btn-outline-success.focus.act-btn {
-      color: #41cd52;
+      color: #28a745;
       background-color: rgba(153, 153, 153, 0.2);
-      border-color: #41cd52; }
+      border-color: #28a745; }
     .btn.btn-outline-success:active, .btn-outline-success.custom-file-control:active::before, .btn-outline-success.act-btn:active, .btn.btn-outline-success.active, .btn-outline-success.active.custom-file-control::before, .btn-outline-success.active.act-btn,
     .open > .btn.btn-outline-success.dropdown-toggle,
     .open > .btn-outline-success.dropdown-toggle.custom-file-control::before,
     .open > .btn-outline-success.dropdown-toggle.act-btn {
-      color: #41cd52;
+      color: #28a745;
       background-color: rgba(153, 153, 153, 0.2);
-      border-color: #41cd52; }
+      border-color: #28a745; }
       .btn.btn-outline-success:active:hover, .btn-outline-success.custom-file-control:active:hover::before, .btn-outline-success.act-btn:active:hover, .btn.btn-outline-success:active:focus, .btn-outline-success.custom-file-control:active:focus::before, .btn-outline-success.act-btn:active:focus, .btn.btn-outline-success:active.focus, .btn-outline-success.custom-file-control:active.focus::before, .btn-outline-success.act-btn:active.focus, .btn.btn-outline-success.active:hover, .btn-outline-success.active.custom-file-control:hover::before, .btn-outline-success.active.act-btn:hover, .btn.btn-outline-success.active:focus, .btn-outline-success.active.custom-file-control:focus::before, .btn-outline-success.active.act-btn:focus, .btn.btn-outline-success.active.focus, .btn-outline-success.active.focus.custom-file-control::before, .btn-outline-success.active.focus.act-btn,
       .open > .btn.btn-outline-success.dropdown-toggle:hover,
       .open > .btn-outline-success.dropdown-toggle.custom-file-control:hover::before,
@@ -8447,9 +8447,9 @@ button:focus {
       .open > .btn.btn-outline-success.dropdown-toggle.focus,
       .open > .btn-outline-success.dropdown-toggle.focus.custom-file-control::before,
       .open > .btn-outline-success.dropdown-toggle.focus.act-btn {
-        color: #41cd52;
+        color: #28a745;
         background-color: rgba(153, 153, 153, 0.4);
-        border-color: #41cd52; }
+        border-color: #28a745; }
     .open > .btn.btn-outline-success.dropdown-toggle.bmd-btn-icon, .open > .btn-outline-success.dropdown-toggle.bmd-btn-icon.custom-file-control::before, .open > .btn-outline-success.dropdown-toggle.bmd-btn-icon.act-btn {
       color: inherit;
       background-color: transparent; }
@@ -8457,27 +8457,27 @@ button:focus {
         background-color: rgba(153, 153, 153, 0.2); }
     .btn.btn-outline-success.disabled:focus, .btn-outline-success.disabled.custom-file-control:focus::before, .btn-outline-success.disabled.act-btn:focus, .btn.btn-outline-success.disabled.focus, .btn-outline-success.disabled.focus.custom-file-control::before, .btn-outline-success.disabled.focus.act-btn, .btn.btn-outline-success:disabled:focus, .btn-outline-success.custom-file-control:disabled:focus::before, .btn-outline-success.act-btn:disabled:focus, .btn.btn-outline-success:disabled.focus, .btn-outline-success.custom-file-control:disabled.focus::before, .btn-outline-success.act-btn:disabled.focus {
       background-color: transparent;
-      border-color: #41cd52; }
+      border-color: #28a745; }
     .btn.btn-outline-success.disabled:hover, .btn-outline-success.disabled.custom-file-control:hover::before, .btn-outline-success.disabled.act-btn:hover, .btn.btn-outline-success:disabled:hover, .btn-outline-success.custom-file-control:disabled:hover::before, .btn-outline-success.act-btn:disabled:hover {
       background-color: transparent;
-      border-color: #41cd52; }
+      border-color: #28a745; }
     .bg-inverse .btn.btn-outline-success, .bg-inverse .btn-outline-success.custom-file-control::before, .bg-inverse .btn-outline-success.act-btn {
-      color: #41cd52;
+      color: #28a745;
       background-color: transparent;
-      border-color: #41cd52; }
+      border-color: #28a745; }
       .bg-inverse .btn.btn-outline-success:hover, .bg-inverse .btn-outline-success.custom-file-control:hover::before, .bg-inverse .btn-outline-success.act-btn:hover {
-        color: #41cd52;
+        color: #28a745;
         background-color: rgba(204, 204, 204, 0.15);
         border-color: rgba(204, 204, 204, 0.15); }
       .bg-inverse .btn.btn-outline-success:focus, .bg-inverse .btn-outline-success.custom-file-control:focus::before, .bg-inverse .btn-outline-success.act-btn:focus, .bg-inverse .btn.btn-outline-success.focus, .bg-inverse .btn-outline-success.focus.custom-file-control::before, .bg-inverse .btn-outline-success.focus.act-btn {
-        color: #41cd52;
+        color: #28a745;
         background-color: rgba(204, 204, 204, 0.15);
         border-color: rgba(204, 204, 204, 0.15); }
       .bg-inverse .btn.btn-outline-success:active, .bg-inverse .btn-outline-success.custom-file-control:active::before, .bg-inverse .btn-outline-success.act-btn:active, .bg-inverse .btn.btn-outline-success.active, .bg-inverse .btn-outline-success.active.custom-file-control::before, .bg-inverse .btn-outline-success.active.act-btn,
       .open > .bg-inverse .btn.btn-outline-success.dropdown-toggle,
       .open > .bg-inverse .btn-outline-success.dropdown-toggle.custom-file-control::before,
       .open > .bg-inverse .btn-outline-success.dropdown-toggle.act-btn {
-        color: #41cd52;
+        color: #28a745;
         background-color: rgba(204, 204, 204, 0.15);
         border-color: rgba(204, 204, 204, 0.15); }
         .bg-inverse .btn.btn-outline-success:active:hover, .bg-inverse .btn-outline-success.custom-file-control:active:hover::before, .bg-inverse .btn-outline-success.act-btn:active:hover, .bg-inverse .btn.btn-outline-success:active:focus, .bg-inverse .btn-outline-success.custom-file-control:active:focus::before, .bg-inverse .btn-outline-success.act-btn:active:focus, .bg-inverse .btn.btn-outline-success:active.focus, .bg-inverse .btn-outline-success.custom-file-control:active.focus::before, .bg-inverse .btn-outline-success.act-btn:active.focus, .bg-inverse .btn.btn-outline-success.active:hover, .bg-inverse .btn-outline-success.active.custom-file-control:hover::before, .bg-inverse .btn-outline-success.active.act-btn:hover, .bg-inverse .btn.btn-outline-success.active:focus, .bg-inverse .btn-outline-success.active.custom-file-control:focus::before, .bg-inverse .btn-outline-success.active.act-btn:focus, .bg-inverse .btn.btn-outline-success.active.focus, .bg-inverse .btn-outline-success.active.focus.custom-file-control::before, .bg-inverse .btn-outline-success.active.focus.act-btn,
@@ -8490,7 +8490,7 @@ button:focus {
         .open > .bg-inverse .btn.btn-outline-success.dropdown-toggle.focus,
         .open > .bg-inverse .btn-outline-success.dropdown-toggle.focus.custom-file-control::before,
         .open > .bg-inverse .btn-outline-success.dropdown-toggle.focus.act-btn {
-          color: #41cd52;
+          color: #28a745;
           background-color: rgba(204, 204, 204, 0.25);
           border-color: rgba(204, 204, 204, 0.25); }
       .open > .bg-inverse .btn.btn-outline-success.dropdown-toggle.bmd-btn-icon, .open > .bg-inverse .btn-outline-success.dropdown-toggle.bmd-btn-icon.custom-file-control::before, .open > .bg-inverse .btn-outline-success.dropdown-toggle.bmd-btn-icon.act-btn {
@@ -8500,10 +8500,10 @@ button:focus {
           background-color: rgba(204, 204, 204, 0.15); }
       .bg-inverse .btn.btn-outline-success.disabled:focus, .bg-inverse .btn-outline-success.disabled.custom-file-control:focus::before, .bg-inverse .btn-outline-success.disabled.act-btn:focus, .bg-inverse .btn.btn-outline-success.disabled.focus, .bg-inverse .btn-outline-success.disabled.focus.custom-file-control::before, .bg-inverse .btn-outline-success.disabled.focus.act-btn, .bg-inverse .btn.btn-outline-success:disabled:focus, .bg-inverse .btn-outline-success.custom-file-control:disabled:focus::before, .bg-inverse .btn-outline-success.act-btn:disabled:focus, .bg-inverse .btn.btn-outline-success:disabled.focus, .bg-inverse .btn-outline-success.custom-file-control:disabled.focus::before, .bg-inverse .btn-outline-success.act-btn:disabled.focus {
         background-color: transparent;
-        border-color: #41cd52; }
+        border-color: #28a745; }
       .bg-inverse .btn.btn-outline-success.disabled:hover, .bg-inverse .btn-outline-success.disabled.custom-file-control:hover::before, .bg-inverse .btn-outline-success.disabled.act-btn:hover, .bg-inverse .btn.btn-outline-success:disabled:hover, .bg-inverse .btn-outline-success.custom-file-control:disabled:hover::before, .bg-inverse .btn-outline-success.act-btn:disabled:hover {
         background-color: transparent;
-        border-color: #41cd52; }
+        border-color: #28a745; }
     .btn.btn-outline-success.btn-link, .btn-outline-success.btn-link.custom-file-control::before, .btn-outline-success.btn-link.act-btn {
       background-color: transparent; }
   .btn.btn-outline-info, .btn-outline-info.custom-file-control::before, .btn-outline-info.act-btn {
@@ -9245,11 +9245,11 @@ label.checkbox-inline {
       opacity: 0.2; }
     .checkbox label input[type=checkbox]:checked + .checkbox-decorator .check,
     label.checkbox-inline input[type=checkbox]:checked + .checkbox-decorator .check {
-      color: #41cd52;
-      border-color: #41cd52; }
+      color: #28a745;
+      border-color: #28a745; }
     .checkbox label input[type=checkbox]:checked + .checkbox-decorator .check::before,
     label.checkbox-inline input[type=checkbox]:checked + .checkbox-decorator .check::before {
-      color: #41cd52;
+      color: #28a745;
       box-shadow: 0 0 0 10px, 10px -10px 0 10px, 32px 0 0 20px, 032px 0 20px, -5px 5px 0 10px, 20px -12px 0 11px;
       animation: checkbox-on 0.3s forwards; }
     .checkbox label input[type=checkbox][disabled] + .checkbox-decorator .check::after,
@@ -9422,7 +9422,7 @@ label.checkbox-inline {
 .custom-file-control .is-focused [class^='bmd-label'],
 .custom-file-control .is-focused [class*=' bmd-label'], .custom-file-control.is-focused [class^='bmd-label'],
 .custom-file-control.is-focused [class*=' bmd-label'] {
-  color: #41cd52; }
+  color: #28a745; }
 
 .custom-file-control .is-focused .bmd-label-placeholder, .custom-file-control.is-focused .bmd-label-placeholder {
   color: rgba(0, 0, 0, 0.26); }
@@ -9448,7 +9448,7 @@ label.checkbox-inline {
     width: 2.125rem;
     height: 0.875rem;
     cursor: pointer;
-    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.26) 0%, rgba(0, 0, 0, 0.26) 50%, #c2dbc5 50%, #c2dbc5 100%);
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.26) 0%, rgba(0, 0, 0, 0.26) 50%, #97c6a2 50%, #97c6a2 100%);
     background-position: 0%;
     background-size: 4.25rem 0.875rem;
     border-radius: 2.125rem;
@@ -9479,7 +9479,7 @@ label.checkbox-inline {
       background-position: -100%; }
       .switch label input:checked + .bmd-switch-track::after {
         left: calc(100% - 1.25rem);
-        background-color: #41cd52; }
+        background-color: #28a745; }
     .switch label input:disabled + .bmd-switch-track:active::after {
       transform: translateY(-50%); }
     .switch label input:disabled + .bmd-switch-track {
@@ -9519,7 +9519,7 @@ label.radio-inline {
       width: 1.25rem;
       height: 1.25rem;
       content: "";
-      background-color: #41cd52;
+      background-color: #28a745;
       border-radius: 50%;
       transition: transform ease .28s;
       transform: scale3d(0, 0, 0); }
@@ -9536,10 +9536,10 @@ label.radio-inline {
     opacity: 0; }
     .radio label input[type=radio]:checked ~ .bmd-radio::after,
     label.radio-inline input[type=radio]:checked ~ .bmd-radio::after {
-      border-color: #41cd52; }
+      border-color: #28a745; }
     .radio label input[type=radio]:checked ~ .bmd-radio::before,
     label.radio-inline input[type=radio]:checked ~ .bmd-radio::before {
-      background-color: #41cd52; }
+      background-color: #28a745; }
     .radio label input[type=radio]:checked ~ .bmd-radio::before,
     label.radio-inline input[type=radio]:checked ~ .bmd-radio::before {
       transform: scale3d(0.5, 0.5, 1); }
@@ -9977,7 +9977,7 @@ form {
 .is-focused [class*=' bmd-label'],
 .is-focused [class^='bmd-label'],
 .is-focused [class*=' bmd-label'] {
-  color: #41cd52; }
+  color: #28a745; }
 
 .is-focused .bmd-label-placeholder,
 .is-focused .bmd-label-placeholder {
@@ -9994,14 +9994,14 @@ form {
 
 .has-success [class^='bmd-label'],
 .has-success [class*=' bmd-label'] {
-  color: #41cd52; }
+  color: #28a745; }
 
 .has-success .is-focused .valid-feedback, .has-success.is-focused .valid-feedback {
   display: none;
   width: 100%;
   margin-top: 0.25rem;
   font-size: 80%;
-  color: #41cd52; }
+  color: #28a745; }
 
 .has-success .is-focused .valid-tooltip, .has-success.is-focused .valid-tooltip {
   position: absolute;
@@ -10014,7 +10014,7 @@ form {
   font-size: .875rem;
   line-height: 1;
   color: #fff;
-  background-color: rgba(65, 205, 82, 0.8);
+  background-color: rgba(40, 167, 69, 0.8);
   border-radius: .2rem; }
 
 .was-validated .has-success .is-focused .form-control:valid, .was-validated .has-success .is-focused .custom-file-control:valid, .has-success .is-focused .form-control.is-valid, .has-success .is-focused .is-valid.custom-file-control, .was-validated
@@ -10022,14 +10022,14 @@ form {
 .has-success .is-focused .custom-select.is-valid, .was-validated .has-success.is-focused .form-control:valid, .was-validated .has-success.is-focused .custom-file-control:valid, .has-success.is-focused .form-control.is-valid, .has-success.is-focused .is-valid.custom-file-control, .was-validated
 .has-success.is-focused .custom-select:valid,
 .has-success.is-focused .custom-select.is-valid {
-  border-color: #41cd52; }
+  border-color: #28a745; }
   .was-validated .has-success .is-focused .form-control:valid:focus, .was-validated .has-success .is-focused .custom-file-control:valid:focus, .has-success .is-focused .form-control.is-valid:focus, .has-success .is-focused .is-valid.custom-file-control:focus, .was-validated
   .has-success .is-focused .custom-select:valid:focus,
   .has-success .is-focused .custom-select.is-valid:focus, .was-validated .has-success.is-focused .form-control:valid:focus, .was-validated .has-success.is-focused .custom-file-control:valid:focus, .has-success.is-focused .form-control.is-valid:focus, .has-success.is-focused .is-valid.custom-file-control:focus, .was-validated
   .has-success.is-focused .custom-select:valid:focus,
   .has-success.is-focused .custom-select.is-valid:focus {
-    border-color: #41cd52;
-    box-shadow: 0 0 0 0.2rem rgba(65, 205, 82, 0.25); }
+    border-color: #28a745;
+    box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25); }
   .was-validated .has-success .is-focused .form-control:valid ~ .valid-feedback, .was-validated .has-success .is-focused .custom-file-control:valid ~ .valid-feedback,
   .was-validated .has-success .is-focused .form-control:valid ~ .valid-tooltip,
   .was-validated .has-success .is-focused .custom-file-control:valid ~ .valid-tooltip, .has-success .is-focused .form-control.is-valid ~ .valid-feedback, .has-success .is-focused .is-valid.custom-file-control ~ .valid-feedback,
@@ -10052,7 +10052,7 @@ form {
     display: block; }
 
 .was-validated .has-success .is-focused .form-check-input:valid ~ .form-check-label, .has-success .is-focused .form-check-input.is-valid ~ .form-check-label, .was-validated .has-success.is-focused .form-check-input:valid ~ .form-check-label, .has-success.is-focused .form-check-input.is-valid ~ .form-check-label {
-  color: #41cd52; }
+  color: #28a745; }
 
 .was-validated .has-success .is-focused .form-check-input:valid ~ .valid-feedback,
 .was-validated .has-success .is-focused .form-check-input:valid ~ .valid-tooltip, .has-success .is-focused .form-check-input.is-valid ~ .valid-feedback,
@@ -10062,9 +10062,9 @@ form {
   display: block; }
 
 .was-validated .has-success .is-focused .custom-control-input:valid ~ .custom-control-label, .has-success .is-focused .custom-control-input.is-valid ~ .custom-control-label, .was-validated .has-success.is-focused .custom-control-input:valid ~ .custom-control-label, .has-success.is-focused .custom-control-input.is-valid ~ .custom-control-label {
-  color: #41cd52; }
+  color: #28a745; }
   .was-validated .has-success .is-focused .custom-control-input:valid ~ .custom-control-label::before, .has-success .is-focused .custom-control-input.is-valid ~ .custom-control-label::before, .was-validated .has-success.is-focused .custom-control-input:valid ~ .custom-control-label::before, .has-success.is-focused .custom-control-input.is-valid ~ .custom-control-label::before {
-    background-color: #a6e8ae; }
+    background-color: #71dd8a; }
 
 .was-validated .has-success .is-focused .custom-control-input:valid ~ .valid-feedback,
 .was-validated .has-success .is-focused .custom-control-input:valid ~ .valid-tooltip, .has-success .is-focused .custom-control-input.is-valid ~ .valid-feedback,
@@ -10074,13 +10074,13 @@ form {
   display: block; }
 
 .was-validated .has-success .is-focused .custom-control-input:valid:checked ~ .custom-control-label::before, .has-success .is-focused .custom-control-input.is-valid:checked ~ .custom-control-label::before, .was-validated .has-success.is-focused .custom-control-input:valid:checked ~ .custom-control-label::before, .has-success.is-focused .custom-control-input.is-valid:checked ~ .custom-control-label::before {
-  background-color: #69d877; }
+  background-color: #34ce57; }
 
 .was-validated .has-success .is-focused .custom-control-input:valid:focus ~ .custom-control-label::before, .has-success .is-focused .custom-control-input.is-valid:focus ~ .custom-control-label::before, .was-validated .has-success.is-focused .custom-control-input:valid:focus ~ .custom-control-label::before, .has-success.is-focused .custom-control-input.is-valid:focus ~ .custom-control-label::before {
-  box-shadow: 0 0 0 1px white, 0 0 0 0.2rem rgba(65, 205, 82, 0.25); }
+  box-shadow: 0 0 0 1px white, 0 0 0 0.2rem rgba(40, 167, 69, 0.25); }
 
 .was-validated .has-success .is-focused .custom-file-input:valid ~ .custom-file-label, .has-success .is-focused .custom-file-input.is-valid ~ .custom-file-label, .was-validated .has-success.is-focused .custom-file-input:valid ~ .custom-file-label, .has-success.is-focused .custom-file-input.is-valid ~ .custom-file-label {
-  border-color: #41cd52; }
+  border-color: #28a745; }
   .was-validated .has-success .is-focused .custom-file-input:valid ~ .custom-file-label::before, .has-success .is-focused .custom-file-input.is-valid ~ .custom-file-label::before, .was-validated .has-success.is-focused .custom-file-input:valid ~ .custom-file-label::before, .has-success.is-focused .custom-file-input.is-valid ~ .custom-file-label::before {
     border-color: inherit; }
 
@@ -10092,18 +10092,18 @@ form {
   display: block; }
 
 .was-validated .has-success .is-focused .custom-file-input:valid:focus ~ .custom-file-label, .has-success .is-focused .custom-file-input.is-valid:focus ~ .custom-file-label, .was-validated .has-success.is-focused .custom-file-input:valid:focus ~ .custom-file-label, .has-success.is-focused .custom-file-input.is-valid:focus ~ .custom-file-label {
-  box-shadow: 0 0 0 0.2rem rgba(65, 205, 82, 0.25); }
+  box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25); }
 
 .has-success .is-focused [class^='bmd-label'],
 .has-success .is-focused [class*=' bmd-label'], .has-success.is-focused [class^='bmd-label'],
 .has-success.is-focused [class*=' bmd-label'] {
-  color: #41cd52; }
+  color: #28a745; }
 
 .has-success .is-focused .bmd-label-placeholder, .has-success.is-focused .bmd-label-placeholder {
-  color: #41cd52; }
+  color: #28a745; }
 
 .has-success .is-focused .form-control, .has-success .is-focused .custom-file-control, .has-success.is-focused .form-control, .has-success.is-focused .custom-file-control {
-  border-color: #41cd52; }
+  border-color: #28a745; }
 
 .has-success .is-focused .bmd-help, .has-success.is-focused .bmd-help {
   color: rgba(0, 0, 0, 0.54); }
@@ -10827,9 +10827,9 @@ thead.thead-inverse th,
   color: rgba(0, 0, 0, 0.54); }
   .nav-tabs .nav-link.active {
     color: rgba(0, 0, 0, 0.87);
-    border-color: #41cd52; }
+    border-color: #28a745; }
     .nav-tabs .nav-link.active:hover, .nav-tabs .nav-link.active:focus {
-      border-color: #41cd52; }
+      border-color: #28a745; }
   .nav-tabs .nav-link.disabled {
     color: rgba(0, 0, 0, 0.26); }
     .nav-tabs .nav-link.disabled, .nav-tabs .nav-link.disabled:hover, .nav-tabs .nav-link.disabled:focus {
@@ -11688,7 +11688,7 @@ pre.prettyprint {
 
 .select2-container--default .select2-container--focus .select2-selection--multiple,
 .select2-container--default .select2-container--below.answer-success {
-  border: 1px solid #41cd52 !important; }
+  border: 1px solid #28a745 !important; }
 
 .select2-container--default .select2-selection--multiple .select2-selection__choice {
   background-color: #ddd !important;
@@ -12145,7 +12145,7 @@ div.drawer_items_list > a > .badge {
       width: 1.25em;
       height: 1.25em;
       background: transparent;
-      border: 2px solid #2ead3d;
+      border: 2px solid #1e7e34;
       border-radius: 0.125em;
       cursor: pointer;
       transition: background .3s; }
@@ -12158,7 +12158,7 @@ div.drawer_items_list > a > .badge {
     float: left;
     font-size: inherit; }
     .e-checkbox input[type="checkbox"]:checked + label:before {
-      background: #41cd52;
+      background: #28a745;
       border: none; }
     .e-checkbox input[type="checkbox"]:checked + label:after {
       transform: translate(0.25em, 0.33654em) rotate(-45deg);
@@ -12168,9 +12168,9 @@ div.drawer_items_list > a > .badge {
       border-top-style: none;
       border-right-style: none; }
     .e-checkbox input[type="checkbox"]:disabled + label:before {
-      border-color: #23852f; }
+      border-color: #145523; }
     .e-checkbox input[type="checkbox"]:disabled:checked + label:before {
-      background: #23852f; }
+      background: #145523; }
 
 .form-text {
   padding-left: 1em; }
