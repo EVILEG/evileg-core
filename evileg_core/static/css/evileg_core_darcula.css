@@ -4183,7 +4183,7 @@ button.close {
 .align-top {
   vertical-align: top !important; }
 
-.align-middle {
+.align-middle, .avin, .avin-24, .avin-32, .avin-40, .avin-48, .avin-56, .avin-64, .avin-120 {
   vertical-align: middle !important; }
 
 .align-bottom {
@@ -4945,7 +4945,7 @@ button.bg-dark:focus {
 .w-75 {
   width: 75% !important; }
 
-.w-100 {
+.w-100, .avin, .avin-24, .avin-32, .avin-40, .avin-48, .avin-56, .avin-64, .avin-120 {
   width: 100% !important; }
 
 .h-25 {
@@ -4957,7 +4957,7 @@ button.bg-dark:focus {
 .h-75 {
   height: 75% !important; }
 
-.h-100, .btn-menu-body {
+.h-100, .btn-menu-body, .avin, .avin-24, .avin-32, .avin-40, .avin-48, .avin-56, .avin-64, .avin-120 {
   height: 100% !important; }
 
 .mw-100 {
@@ -5970,7 +5970,7 @@ ul.act-footer {
 .text-right {
   text-align: right !important; }
 
-.text-center {
+.text-center, .avin, .avin-24, .avin-32, .avin-40, .avin-48, .avin-56, .avin-64, .avin-120 {
   text-align: center !important; }
 
 @media (min-width: 576px) {
@@ -6008,7 +6008,7 @@ ul.act-footer {
 .text-lowercase {
   text-transform: lowercase !important; }
 
-.text-uppercase {
+.text-uppercase, .avin, .avin-24, .avin-32, .avin-40, .avin-48, .avin-56, .avin-64, .avin-120 {
   text-transform: uppercase !important; }
 
 .text-capitalize {
@@ -12038,7 +12038,7 @@ hr {
 pre > pre {
   margin-bottom: 0 !important; }
 
-.avatar-initials {
+.avatar-initials, .avin, .avin-24, .avin-32, .avin-40, .avin-48, .avin-56, .avin-64, .avin-120 {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -12047,25 +12047,25 @@ pre > pre {
   font-weight: bold;
   font-size: 50%; }
 
-.avatar-initials-size-24 {
+.avatar-initials-size-24, .avin-24 {
   font-size: 80%; }
 
-.avatar-initials-size-32 {
+.avatar-initials-size-32, .avin-32 {
   font-size: 100%; }
 
-.avatar-initials-size-40 {
+.avatar-initials-size-40, .avin-40 {
   font-size: 120%; }
 
-.avatar-initials-size-48 {
+.avatar-initials-size-48, .avin-48 {
   font-size: 140%; }
 
-.avatar-initials-size-56 {
+.avatar-initials-size-56, .avin-56 {
   font-size: 180%; }
 
-.avatar-initials-size-64 {
+.avatar-initials-size-64, .avin-64 {
   font-size: 230%; }
 
-.avatar-initials-size-120 {
+.avatar-initials-size-120, .avin-120 {
   font-size: 300%; }
 
 .text-decoration-none, ul.fl > li > a {
