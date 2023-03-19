@@ -384,7 +384,7 @@ class EMarkdownEditor {
 
             success: function (json) {
                 jQuery('#' + widgetId + '_preview').html(json.preview);
-                prettyPrint();
+                PR.prettyPrint();
             }
         });
     }
