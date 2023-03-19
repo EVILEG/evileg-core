@@ -12299,3 +12299,8 @@ div.drawer_items_list > a > .badge {
 
 .form-text {
   padding-left: 1em; }
+
+.scroll-menu {
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap; }
