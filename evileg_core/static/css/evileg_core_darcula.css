@@ -4183,7 +4183,7 @@ button.close {
 .align-top {
   vertical-align: top !important; }
 
-.align-middle, .avin, .avin-24, .avin-32, .avin-40, .avin-48, .avin-56, .avin-64, .avin-120 {
+.align-middle, [class^="avatar"] {
   vertical-align: middle !important; }
 
 .align-bottom {
@@ -4945,7 +4945,7 @@ button.bg-dark:focus {
 .w-75 {
   width: 75% !important; }
 
-.w-100, .avin, .avin-24, .avin-32, .avin-40, .avin-48, .avin-56, .avin-64, .avin-120 {
+.w-100 {
   width: 100% !important; }
 
 .h-25 {
@@ -4957,7 +4957,7 @@ button.bg-dark:focus {
 .h-75 {
   height: 75% !important; }
 
-.h-100, .btn-menu-body, .avin, .avin-24, .avin-32, .avin-40, .avin-48, .avin-56, .avin-64, .avin-120 {
+.h-100, .btn-menu-body {
   height: 100% !important; }
 
 .mw-100 {
@@ -5970,7 +5970,7 @@ ul.act-footer {
 .text-right {
   text-align: right !important; }
 
-.text-center, .avin, .avin-24, .avin-32, .avin-40, .avin-48, .avin-56, .avin-64, .avin-120 {
+.text-center, [class^="avatar"] {
   text-align: center !important; }
 
 @media (min-width: 576px) {
@@ -6008,7 +6008,7 @@ ul.act-footer {
 .text-lowercase {
   text-transform: lowercase !important; }
 
-.text-uppercase, .avin, .avin-24, .avin-32, .avin-40, .avin-48, .avin-56, .avin-64, .avin-120 {
+.text-uppercase, [class^="avatar"] {
   text-transform: uppercase !important; }
 
 .text-capitalize {
@@ -11466,41 +11466,74 @@ h6 {
   .snackbar {
     min-width: 280px; } }
 
+.avatar-initials, [class^="avatar"] {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white !important;
+  text-decoration: none !important;
+  font-weight: bold; }
+
+.avatar-initials-size-24, .avatar-24 {
+  font-size: 80%; }
+
+.avatar-initials-size-32, .avatar-32 {
+  font-size: 100%; }
+
+.avatar-initials-size-40, .avatar-40 {
+  font-size: 120%; }
+
+.avatar-initials-size-48, .avatar-48 {
+  font-size: 140%; }
+
+.avatar-initials-size-56, .avatar-56 {
+  font-size: 180%; }
+
+.avatar-initials-size-64, .avatar-64 {
+  font-size: 230%; }
+
+.avatar-initials-size-120, .avatar-120 {
+  font-size: 300%; }
+
 .avatar-16 {
-  width: 16px;
-  height: 16px; }
+  width: 16px !important;
+  height: 16px !important; }
 
 .avatar-24 {
-  width: 24px;
-  height: 24px; }
+  width: 24px !important;
+  height: 24px !important; }
 
 .avatar-32 {
-  width: 32px;
-  height: 32px; }
+  width: 32px !important;
+  height: 32px !important; }
 
 .avatar-40 {
-  width: 40px;
-  height: 40px; }
+  width: 40px !important;
+  height: 40px !important; }
 
 .avatar-48 {
-  width: 48px;
-  height: 48px; }
+  width: 48px !important;
+  height: 48px !important; }
 
 .avatar-56 {
-  width: 56px;
-  height: 56px; }
+  width: 56px !important;
+  height: 56px !important; }
 
 .avatar-64 {
-  width: 64px;
-  height: 64px; }
+  width: 64px !important;
+  height: 64px !important; }
 
 .avatar-120 {
-  width: 120px;
-  height: 120px; }
+  width: 120px !important;
+  height: 120px !important; }
 
 .avatar-200 {
-  width: 200px;
-  height: 200px; }
+  width: 200px !important;
+  height: 200px !important; }
+
+[class^="avatar"] {
+  background-color: #6c757d !important;
+  border-radius: 50% !important; }
 
 .btn-200 {
   width: 200px !important; }
@@ -12038,37 +12071,7 @@ hr {
 pre > pre {
   margin-bottom: 0 !important; }
 
-.avatar-initials, .avin, .avin-24, .avin-32, .avin-40, .avin-48, .avin-56, .avin-64, .avin-120 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white !important;
-  text-decoration: none !important;
-  font-weight: bold;
-  font-size: 50%; }
-
-.avatar-initials-size-24, .avin-24 {
-  font-size: 80%; }
-
-.avatar-initials-size-32, .avin-32 {
-  font-size: 100%; }
-
-.avatar-initials-size-40, .avin-40 {
-  font-size: 120%; }
-
-.avatar-initials-size-48, .avin-48 {
-  font-size: 140%; }
-
-.avatar-initials-size-56, .avin-56 {
-  font-size: 180%; }
-
-.avatar-initials-size-64, .avin-64 {
-  font-size: 230%; }
-
-.avatar-initials-size-120, .avin-120 {
-  font-size: 300%; }
-
-.text-decoration-none, ul.fl > li > a {
+.text-decoration-none, .avatar-16, .avatar-24, .avatar-32, .avatar-40, .avatar-48, .avatar-56, .avatar-64, .avatar-120, ul.fl > li > a {
   text-decoration: none !important; }
 
 .message:hover {
