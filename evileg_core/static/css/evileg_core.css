@@ -4183,7 +4183,7 @@ button.close {
 .align-top {
   vertical-align: top !important; }
 
-.align-middle, [class^="avatar"] {
+.align-middle, .avatar, .avatar-16, .avatar-24, .avatar-32, .avatar-40, .avatar-48, .avatar-56, .avatar-64, .avatar-120 {
   vertical-align: middle !important; }
 
 .align-bottom {
@@ -5970,7 +5970,7 @@ ul.act-footer {
 .text-right {
   text-align: right !important; }
 
-.text-center, [class^="avatar"] {
+.text-center, .avatar, .avatar-16, .avatar-24, .avatar-32, .avatar-40, .avatar-48, .avatar-56, .avatar-64, .avatar-120 {
   text-align: center !important; }
 
 @media (min-width: 576px) {
@@ -6008,7 +6008,7 @@ ul.act-footer {
 .text-lowercase {
   text-transform: lowercase !important; }
 
-.text-uppercase, [class^="avatar"] {
+.text-uppercase, .avatar, .avatar-16, .avatar-24, .avatar-32, .avatar-40, .avatar-48, .avatar-56, .avatar-64, .avatar-120 {
   text-transform: uppercase !important; }
 
 .text-capitalize {
@@ -11458,7 +11458,7 @@ h6 {
   .snackbar {
     min-width: 280px; } }
 
-.avatar-initials, [class^="avatar"] {
+.avatar-initials, .avatar, .avatar-16, .avatar-24, .avatar-32, .avatar-40, .avatar-48, .avatar-56, .avatar-64, .avatar-120 {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -11486,6 +11486,10 @@ h6 {
 
 .avatar-initials-size-120, .avatar-120 {
   font-size: 300%; }
+
+.avatar, .avatar-16, .avatar-24, .avatar-32, .avatar-40, .avatar-48, .avatar-56, .avatar-64, .avatar-120 {
+  background-color: #6c757d !important;
+  border-radius: 50% !important; }
 
 .avatar-16 {
   width: 16px !important;
@@ -11522,10 +11526,6 @@ h6 {
 .avatar-200 {
   width: 200px !important;
   height: 200px !important; }
-
-[class^="avatar"] {
-  background-color: #6c757d !important;
-  border-radius: 50% !important; }
 
 .btn-200 {
   width: 200px !important; }
