@@ -4363,7 +4363,7 @@ button.bg-dark:focus {
 .d-inline-block {
   display: inline-block !important; }
 
-.d-block {
+.d-block, .avatar-name {
   display: block !important; }
 
 .d-table {
@@ -5961,7 +5961,7 @@ button.bg-dark:focus {
 .text-nowrap {
   white-space: nowrap !important; }
 
-.text-truncate {
+.text-truncate, .avatar-name {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap; }
@@ -12073,7 +12073,7 @@ hr {
 pre > pre {
   margin-bottom: 0 !important; }
 
-.text-decoration-none, .avatar-24, .avatar-32, .avatar-40, .avatar-48, .avatar-56, .avatar-64, .avatar-120, ul.fl > li > a {
+.text-decoration-none, .avatar-24, .avatar-32, .avatar-40, .avatar-48, .avatar-56, .avatar-64, .avatar-120, .avatar-name, ul.fl > li > a {
   text-decoration: none !important; }
 
 .message:hover {
@@ -12250,6 +12250,9 @@ div.drawer_items_list > a > .badge {
 .act-btn:active {
   color: #a9b7c6 !important;
   background-color: rgba(153, 153, 153, 0.4) !important; }
+
+.avatar-name {
+  max-width: 350px; }
 
 .e-checkbox {
   position: relative;
