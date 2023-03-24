@@ -375,9 +375,9 @@ mark,
   padding-left: 0;
   list-style: none; }
 
-.list-inline-item, ul.act-footer > li {
+.list-inline-item {
   display: inline-block; }
-  .list-inline-item:not(:last-child), ul.act-footer > li:not(:last-child) {
+  .list-inline-item:not(:last-child) {
     margin-right: 0.5rem; }
 
 .initialism {
@@ -4243,12 +4243,14 @@ button.bg-danger:hover,
 button.bg-danger:focus {
   background-color: #ea1c0d !important; }
 
-.bg-light, ul.act-footer {
+.bg-light, .act-footer {
   background-color: #313335 !important; }
 
-a.bg-light:hover, a.bg-light:focus,
+a.bg-light:hover, a.act-footer:hover, a.bg-light:focus, a.act-footer:focus,
 button.bg-light:hover,
-button.bg-light:focus {
+button.act-footer:hover,
+button.bg-light:focus,
+button.act-footer:focus {
   background-color: #191a1b !important; }
 
 .bg-dark {
@@ -4280,7 +4282,7 @@ button.bg-dark:focus {
 .border-left {
   border-left: 1px solid #4d4d4d !important; }
 
-.border-0, ul.act-footer {
+.border-0, .act-footer {
   border: 0 !important; }
 
 .border-top-0 {
@@ -4966,7 +4968,7 @@ button.bg-dark:focus {
 .mh-100 {
   max-height: 100% !important; }
 
-.m-0, ul.act-footer, ul.act-footer > li, .act-btn {
+.m-0, .act-footer, .act-btn {
   margin: 0 !important; }
 
 .mt-0,
@@ -5104,7 +5106,7 @@ button.bg-dark:focus {
 
 .pt-1,
 .py-1,
-ul.act-footer {
+.act-footer {
   padding-top: 0.25rem !important; }
 
 .pr-1,
@@ -5113,7 +5115,7 @@ ul.act-footer {
 
 .pb-1,
 .py-1,
-ul.act-footer {
+.act-footer {
   padding-bottom: 0.25rem !important; }
 
 .pl-1,
@@ -5129,7 +5131,7 @@ ul.act-footer {
 
 .pr-2,
 .px-2,
-ul.act-footer {
+.act-footer {
   padding-right: 0.5rem !important; }
 
 .pb-2,
@@ -5138,7 +5140,7 @@ ul.act-footer {
 
 .pl-2,
 .px-2,
-ul.act-footer {
+.act-footer {
   padding-left: 0.5rem !important; }
 
 .p-3 {
@@ -11971,7 +11973,7 @@ blockquote > p {
 .card-footer {
   background-color: #2b2b2b !important; }
 
-.bg-light, ul.act-footer, .table .thead-light th {
+.bg-light, .act-footer, .table .thead-light th {
   background-color: #313335 !important; }
 
 .card.box-shadow, select option,
