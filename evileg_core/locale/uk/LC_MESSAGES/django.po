@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-09 02:40+0600\n"
+"POT-Creation-Date: 2023-03-29 23:30+0600\n"
 "PO-Revision-Date: 2023-02-08 21:43+0100\n"
 "Last-Translator: Evgenii Legotckoi <evileg@evileg.com>\n"
 "Language-Team: \n"
@@ -114,14 +114,14 @@ msgstr "До дати"
 msgid "Select all"
 msgstr "Вибрати все"
 
-#: evileg_core/evileg_core/mixins.py:312
+#: evileg_core/evileg_core/mixins.py:317
 msgid ""
 "Items must be selected in order to perform actions on them. No items have "
 "been changed."
 msgstr ""
 "Для виконання дії необхідно обрати елемент. Жодний елемент не був змінений."
 
-#: evileg_core/evileg_core/mixins.py:331
+#: evileg_core/evileg_core/mixins.py:336
 msgid "No action selected."
 msgstr "Не вибрано жодної дії."
 
@@ -292,10 +292,10 @@ msgstr "Поділитися посиланням у LinkedIn"
 msgid "More"
 msgstr "Щё"
 
-#: evileg_core/evileg_core/templatetags/evileg_core.py:25
+#: evileg_core/evileg_core/templatetags/evileg_core.py:26
 msgid "Classic"
 msgstr "Класичний"
 
-#: evileg_core/evileg_core/templatetags/evileg_core.py:26
+#: evileg_core/evileg_core/templatetags/evileg_core.py:27
 msgid "Darcula"
 msgstr "Darcula"

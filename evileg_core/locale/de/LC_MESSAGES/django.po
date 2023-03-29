@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-09 02:40+0600\n"
+"POT-Creation-Date: 2023-03-29 23:30+0600\n"
 "PO-Revision-Date: 2023-02-08 21:43+0100\n"
 "Last-Translator: Evgenii Legotckoi <evileg@evileg.com>\n"
 "Language-Team: \n"
@@ -111,7 +111,7 @@ msgstr "Miteinander ausgehen"
 msgid "Select all"
 msgstr "Wählen Sie Alle"
 
-#: evileg_core/evileg_core/mixins.py:312
+#: evileg_core/evileg_core/mixins.py:317
 msgid ""
 "Items must be selected in order to perform actions on them. No items have "
 "been changed."
@@ -119,7 +119,7 @@ msgstr ""
 "Elemente müssen ausgewählt werden, um Aktionen an ihnen auszuführen. Es "
 "wurden keine Elemente geändert."
 
-#: evileg_core/evileg_core/mixins.py:331
+#: evileg_core/evileg_core/mixins.py:336
 msgid "No action selected."
 msgstr "Keine Aktion ausgewählt."
 
@@ -290,10 +290,10 @@ msgstr "Link auf LinkedIn teilen"
 msgid "More"
 msgstr "Mehr"
 
-#: evileg_core/evileg_core/templatetags/evileg_core.py:25
+#: evileg_core/evileg_core/templatetags/evileg_core.py:26
 msgid "Classic"
 msgstr "Klassisch"
 
-#: evileg_core/evileg_core/templatetags/evileg_core.py:26
+#: evileg_core/evileg_core/templatetags/evileg_core.py:27
 msgid "Darcula"
 msgstr "Darcula"
