@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import random
+from urllib.parse import urlparse
 
 from bootstrap4.utils import add_css_class
 from django import template
@@ -331,7 +332,7 @@ def get_active(context, url, startswith=False, **kwargs):
         if startswith:
             active = True if context['request'].path.startswith(url) else None
         else:
-            active = True if context['request'].path == url else None
+            active = True if context['request'].path == urlparse(url).path else None
     else:
         active = None
     return active_to_css_class[active]
