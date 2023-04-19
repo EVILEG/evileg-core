@@ -12308,3 +12308,9 @@ div.drawer_items_list > a > .badge {
   overflow-x: auto;
   overflow-y: hidden;
   white-space: nowrap; }
+
+.sticky-to-navbar {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 56px;
+  z-index: 1020; }
